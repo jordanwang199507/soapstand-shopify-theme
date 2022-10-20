@@ -1,0 +1,282 @@
+*, *::before, *::after{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.container{
+    width: 90%;
+    max-width: 1600px;
+    margin: 0 auto;
+    position: relative;
+}
+
+/* @import url(//db.onlinewebfonts.com/c/6bfddeebdb6be7ad8b3cbf0523b89aca?family=Brevia); */
+
+body{
+    background-color: {{settings.bg}};
+    color: {{settings.text_color}};
+}
+
+/* *,
+*::after,
+*::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+body{
+    box-sizing: border-box;
+    position: relative;
+    font-family: 'Montserrat', sans-serif;
+
+}
+
+.container{
+    width: 90%;
+    max-width: 160rem;
+    margin: 0 auto;
+}
+
+.container-margin-top{ margin-top: 8% !important;}
+
+.container--left{
+    width: 50%;
+}
+
+.navbar{
+    display: flex;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.logo{
+    text-decoration: none;
+    color: black;
+    text-transform: uppercase;
+    margin: 1.5em;
+    padding: .85em 1.25em;
+    border: 1px solid transparent;
+    display: flex;
+    align-items: center;
+}
+
+.nav__content{
+    width: 85%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.nav__list{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+}
+
+.nav__item{
+    margin: 1.5em 0 1.5em 3em;
+    padding: .85em 1.25em;
+    border-radius: 50px;
+    border: 1px solid transparent;
+    transition: all .2s;
+}
+
+.nav__item a{
+    text-decoration: none;
+    color: black;
+}
+
+.nav__item:hover{
+    display: block;
+    margin: 1.5em 0 1.5em 3em;
+    padding: .85em 1.25em;
+    border: 1px solid black;
+}
+
+.landing-page{
+    background-image: url("{{ 'Landing_Jordan.png' | asset_url }}");
+    background-size: 100% 100%;
+    background-position: top;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100vh;
+}
+
+.landing-page-container{
+    width: 80%;
+    margin: 0 auto 0 30px;
+}
+
+.heading-primary{
+    font-family: "Brevia", sans-serif;
+    font-size: 45px;
+    font-weight: 400;
+    color: #a1bbbd;
+    line-height: 1.2;
+    white-space: nowrap;
+}
+
+.heading-primary--secondary-color{
+    color: #0C545E;
+}
+
+.heading-secondary{
+    color: #0C545E;
+    font-size: 18px;
+    word-spacing: 5px;
+    margin-top: 20px;
+    width: 90%;
+}
+
+.heading-buttons{
+    display: inline-grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 2em;
+    position: absolute;
+    bottom: 20%;
+}
+
+.btn, .btn:visited, .btn:link{
+    width: auto;
+    padding: 10px 25px;
+    border-radius: 50px;
+    text-align: center;
+    text-decoration: none;
+    color: #0C545E;
+    transition: all .2s;
+    font-size: 18px;
+
+    background: linear-gradient(#FFF, #FFF) padding-box, linear-gradient(to right, #0C545E 0%, #a1bbbd 100%) border-box;
+    border: 3px solid transparent;
+    background-color: white;
+}
+
+.btn:hover{
+    color: white;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    background: linear-gradient(to right, #0C545E 0%, #a1bbbd 100%) border-box;
+    border: 3px solid transparent;
+}
+
+.heading-socials{
+    display: flex;
+    position: absolute;
+    bottom: 20px;
+}
+
+.heading-socials p{
+    margin: .75em 1em .75em 0;
+    font-size: 18px;
+}
+
+.heading-socials__list{
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+
+.heading-socials__item{
+    margin: .75em;
+}
+
+.heading-socials__item i{
+    font-size: 18px;
+}
+
+@media only screen and (max-width:1300px) {
+    .container-margin-top{ margin-top: 10% !important;}
+
+    .heading-primary{
+        font-size: 36px;
+    }
+
+    .heading-secondary{
+        font-size: 16px;
+        width: 100%;
+    }
+
+    .nav__item{
+        white-space: nowrap;
+        margin: 1.5em 0 1.5em 2em;
+    }
+
+    .nav__item:hover{
+        margin: 1em 0 1em 2em;
+    }
+
+    .btn, .btn:visited, .btn:link{
+        font-size: 16px;
+        white-space: nowrap;
+    }
+}
+
+@media only screen and (max-width:1100px) {
+    .container-margin-top{ margin-top: 12% !important;}
+
+    .heading-primary{
+        font-size: 32px;
+    }
+
+    .heading-secondary{
+        font-size: 14px;
+    }
+
+    .nav__item{
+        white-space: nowrap;
+        margin: 1.5em 0 1.5em 1em;
+    }
+
+    .nav__item:hover{
+        margin: 1.5em 0 1.5em 1em;
+    }
+
+    .heading-buttons{
+        grid-gap: 1em;
+        bottom: 15%;
+    }
+    
+    .btn, .btn:visited, .btn:link{
+        font-size: 14px;
+        padding: 8px 15px;
+    }
+
+    .heading-socials p{
+        font-size: 14px;
+    }
+
+    .heading-socials__item i{
+        font-size: 16px;
+    }
+}
+
+@media only screen and (max-width:950px) {
+    .logo{
+        font-size: 14px;
+        margin: 1.5em;
+        padding: .85em .75em;
+    }
+
+    .nav__content{
+        width: 75%;
+    }
+
+    .nav__item{
+        margin: 1.5em 0 1.5em .5em;
+        padding: .85em .75em;
+    }
+
+    .nav__item:hover{
+        margin: 1.5em 0 1.5em .5em;
+        padding: .85em .75em;
+    }
+
+    .nav__item a{
+        font-size: 14px;
+    }
+} */
+

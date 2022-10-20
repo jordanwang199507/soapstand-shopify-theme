@@ -1,0 +1,222 @@
+
+<header class="header">
+    <div class="container row">
+        <div class="nav-toggle" aria-label="open navigation">
+            <span class="hamburger"></span>
+        </div>
+        <a class="logo" href="#">
+            {{ 'Logo-09.svg' | asset_url | img_tag: 'Logo', 'logo__image' }}            
+        </a>
+        <nav class="nav">
+            <ul class="nav__list">
+                {% for link in linklists.menu.links -%}
+                  <li class="nav__item">{{ link.title | link_to: link.url }}
+                  </li>
+                {%- endfor %}
+              </ul>
+        </nav>
+        {% if section.settings.show_search%}
+          <form action="/search" class="search__form">
+            <input type="search" name="q">
+            <button type="submit">Search</button>
+          </form>
+        {% endif %}
+    </div>
+</header>
+
+<style>
+    .header{
+        {% comment %} background-color: {{ section.settings.header_bg }};
+        {% if section.settings.padding %}
+            padding: 20px;
+        {% else %}
+            padding: 0px;
+        {%endif%} {% endcomment %}
+        padding: 1.2em 0;
+        text-align: center;
+        {% comment %} position: fixed; {% endcomment %}
+        width: 100%;
+        top: 0;
+        left: 0;
+    }
+
+    .logo__image{
+        width: 100px;
+    }
+
+    .nav{
+        width: 100%;
+    }
+
+    .nav-toggle {
+        cursor: pointer;
+        border: 0;
+        width: 3em;
+        height: 3em;
+        padding: 0em;
+        border-radius: 50%;
+        background: #072A2D;
+        color: white;
+        transition: opacity 250ms ease;
+        
+        position: absolute;
+        left: 0;
+    }
+    
+    .nav-toggle:focus,
+    .nav-toggle:hover {
+        opacity: .75;
+    }
+
+    .hamburger {
+        width: 50%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    
+    .hamburger,
+    .hamburger::before,
+    .hamburger::after {
+        display: block;
+        margin: 0 auto;
+        height: 3px;
+        background: white;
+    }
+    
+    .hamburger::before,
+    .hamburger::after {
+        content: '';
+        width: 100%;
+    }
+    
+    .hamburger::before {
+        transform: translateY(-6px);
+    }
+    
+    .hamburger::after {
+        transform: translateY(3px);
+    }
+
+    .nav {
+        visibility: hidden;
+        height: 0;
+        position: absolute;
+    }
+
+    .nav--visible {
+        visibility: visible;
+        height: auto;
+        position: relative;
+    } 
+
+    .nav__list{
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    .nav__item{
+        margin: .75em .75em .75em 1.2em;
+    }
+
+    .nav__item a{
+        text-decoration: none;
+        color: #005560;
+        font-weight: bold;
+        font-size: 22px;
+    }
+
+    .nav__item a:hover, .nav__item:focus{
+        opacity: .75;
+    }
+
+    .search__form{
+        display: flex;
+        align-items: center;
+        margin: auto 0;
+    }
+
+    @media (min-width: 700px) {
+        .row {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .nav-toggle {
+            display: none;
+        }
+
+        .nav {
+            visibility: visible;
+            display: flex;
+            height: auto;
+            align-items: center;
+            justify-content: flex-end;
+        }
+
+        .nav__list{
+            display: flex;
+            margin: 0;
+        }
+
+        .logo{
+            {% comment %} margin: 0 auto; {% endcomment %}
+        }
+    }
+
+    @media (max-width: 900px) {
+        .nav__item{
+            margin: .75em .75em .75em .75em;
+        }
+
+        .nav__item a{
+            font-size: 18px;
+        }
+    }
+
+
+</style>
+
+{% stylesheet %}
+
+    
+{% endstylesheet %}
+
+{% javascript %}
+    console.log("testing");
+
+    const navToggle = document.querySelector('.nav-toggle');
+    const nav = document.querySelector('.nav');
+
+
+    navToggle.addEventListener('click', () => {
+        nav.classList.toggle('nav--visible');
+    })
+{% endjavascript %}
+
+{% schema %}
+    {
+        "name": "Header",
+        "settings": [
+            {
+                "type": "checkbox",
+                "id": "show_search",
+                "label": "Show search form?",
+                "default": false
+            },
+            {
+                "type": "checkbox",
+                "id": "padding",
+                "label": "Include padding for header?",
+                "default": true
+            },
+            {
+                "type": "color",
+                "id": "header_bg",
+                "label": "Background color"
+            }
+        ]
+    }
+{% endschema %}
