@@ -53,11 +53,10 @@
             </div>
             <div class="hero--home01__image-container">
                 {% comment %} {{ 'hero-center.png' | asset_url | img_tag: 'hero center image', 'hero__image--center' }}   {% endcomment %}
-                {{ 'hero-image.svg' | asset_url | img_tag: 'hero image', 'hero--home01__image' }}        
+                {{ 'hero-image.svg' | asset_url | img_tag: 'hero image', 'hero--home01__image' }}  
             </div>
         </div>
         {{ 'hero-corner.svg' | asset_url | img_tag: 'hero corner image', 'hero--home01__image--corner' }}  
-        {{ 'Asset2.svg' | asset_url | img_tag: 'hero corner image', 'hero--home01__image--corner' }}  
     </section>
     <section class="hero--home02" id="about">
         <div class="container row hero--home02__row">
@@ -82,7 +81,6 @@
     .hero--home{
         border: 1px solid black;
         width: 100%;
-        position: relative;
     }
 
     .header{
@@ -200,7 +198,7 @@
         flex-direction:column;
     }
     .hero--home01__image-container{
-        width: 50%;
+        width: 70%;
         margin: 0 auto;
     }
     .hero--home01__image{
@@ -248,7 +246,7 @@
         transition: all .2s;
         font-size: 14px;
 
-        border: 3px solid #005560;
+        border: 2px solid #005560;
         background-color: white;
     }
 
@@ -385,7 +383,7 @@
             position: absolute;
             bottom: 0;
             right: 0;
-            max-height: 90%;
+            max-height: 100%;
         }
 
         .hero--home01__primary{
@@ -399,6 +397,13 @@
 
         .hero--home01__button-groups{
             margin-top: 75px;
+        }
+        
+        .hero--home01__image--center{
+            right: 12%;
+            height: 85%;
+            width: auto;
+            top: -7%;
         }
 
         .btn, .btn:visited, .btn:link{
@@ -499,6 +504,21 @@
 
         .hero--home01__image--corner{
             height: 25%;
+        }
+    }
+
+    @media (max-width: 420px) {
+        .hero--home01__primary{
+            font-size: 28px;
+        }
+
+        .hero--home01__secondary{
+            font-size: 12px;
+        }
+
+        .btn, .btn:visited, .btn:link{
+            padding: 8px 22px;
+            font-size: 12px;
         }
     }
 </style>
