@@ -1,40 +1,32 @@
-
-<header class="header">
-    <div class="container row">
-        <div class="nav-toggle" aria-label="open navigation">
-            <span class="hamburger"></span>
+    <header class="header">
+        <div class="container row">
+            <div class="nav-toggle" aria-label="open navigation">
+                <span class="hamburger"></span>
+            </div>
+            <a class="logo" href="#">
+                {{ 'Logo-09.svg' | asset_url | img_tag: 'Logo', 'logo__image' }}            
+            </a>
+            <nav class="nav">
+                <ul class="nav__list">
+                    {% for link in linklists.menu.links -%}
+                    <li class="nav__item">{{ link.title | link_to: link.url }}
+                    </li>
+                    {%- endfor %}
+                </ul>
+            </nav>
+            {% if section.settings.show_search%}
+            <form action="/search" class="search__form">
+                <input type="search" name="q">
+                <button type="submit">Search</button>
+            </form>
+            {% endif %}
         </div>
-        <a class="logo" href="#">
-            {{ 'Logo-09.svg' | asset_url | img_tag: 'Logo', 'logo__image' }}            
-        </a>
-        <nav class="nav">
-            <ul class="nav__list">
-                {% for link in linklists.menu.links -%}
-                  <li class="nav__item">{{ link.title | link_to: link.url }}
-                  </li>
-                {%- endfor %}
-              </ul>
-        </nav>
-        {% if section.settings.show_search%}
-          <form action="/search" class="search__form">
-            <input type="search" name="q">
-            <button type="submit">Search</button>
-          </form>
-        {% endif %}
-    </div>
-</header>
+    </header>
 
 <style>
     .header{
-        {% comment %} background-color: {{ section.settings.header_bg }};
-        {% if section.settings.padding %}
-            padding: 20px;
-        {% else %}
-            padding: 0px;
-        {%endif%} {% endcomment %}
         padding: 1.2em 0;
         text-align: center;
-        {% comment %} position: fixed; {% endcomment %}
         width: 100%;
         top: 0;
         left: 0;
@@ -118,7 +110,7 @@
     }
 
     .nav__item{
-        margin: .75em .75em .75em 1.2em;
+        margin: .75em .75em .75em 2em;
     }
 
     .nav__item a{
@@ -138,10 +130,9 @@
         margin: auto 0;
     }
 
-    @media (min-width: 700px) {
-        .row {
-            display: flex;
-            justify-content: space-between;
+    @media (min-width: 950px) {
+        .header{
+            height: 15vh;
         }
 
         .nav-toggle {
@@ -160,10 +151,6 @@
             display: flex;
             margin: 0;
         }
-
-        .logo{
-            {% comment %} margin: 0 auto; {% endcomment %}
-        }
     }
 
     @media (max-width: 900px) {
@@ -174,19 +161,13 @@
         .nav__item a{
             font-size: 18px;
         }
-    }
 
+    }
 
 </style>
 
-{% stylesheet %}
-
-    
-{% endstylesheet %}
 
 {% javascript %}
-    console.log("testing");
-
     const navToggle = document.querySelector('.nav-toggle');
     const nav = document.querySelector('.nav');
 
