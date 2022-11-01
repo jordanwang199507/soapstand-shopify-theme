@@ -26,6 +26,8 @@
     <section class="hero--home01">
         <div class="container row hero--home01__row">
             <div class="hero--home01__text">
+                <div class="hero--home01__circle circle-01"></div>
+                <div class="hero--home01__circle circle-02"></div>
                 <div class="hero--home01__primary--container">
                     <div class="hero--home01__primary">let's make</div>
                     <div class="hero--home01__primary">waste-free packaging</div>
@@ -52,28 +54,35 @@
                 </div>
             </div>
             <div class="hero--home01__image-container">
-                {% comment %} {{ 'hero-center.png' | asset_url | img_tag: 'hero center image', 'hero__image--center' }}   {% endcomment %}
                 {{ 'hero-image.svg' | asset_url | img_tag: 'hero image', 'hero--home01__image' }}  
             </div>
         </div>
         {{ 'hero-corner.svg' | asset_url | img_tag: 'hero corner image', 'hero--home01__image--corner' }}  
+        {{ 'hero-bottom.svg' | asset_url | img_tag: 'hero bottom image', 'hero--home01__image--bottom' }}  
     </section>
     <section class="hero--home02" id="about">
+        <div class="hero--home02__title">meet Soapstand</div>
         <div class="container row hero--home02__row">
             <div class="hero--home02__text">
-                <div class="hero--home02__primary">meet Soapstand</div>
-                <p class="hero--home02__secondary hero--home02__secondary--first bold">The new solution to sustainable living</p>
-                <p class="hero--home02__secondary">Soapstand refillery stations make</p>
-                <p class="hero--home02__secondary">buying soaps, <span class="bold">accessible, convenient</span> and <span class="bold">affordable</span>.</p>
+                <div class="hero--home02__circle home02__circle-01">
+                    {{ 'home02__logo.svg' | asset_url | img_tag: 'hero 02 logo', 'hero--home02__logo' }}  
+                </div>
+                <p class="hero--home02__secondary hero--home02__secondary--first bold">The new solution<br>to sustainable living</p>
+                <p class="hero--home02__secondary hero--home02__secondary--second">Soapstand solutions make<br>purchasing soap an accessible,<br>convenient and affordable<br>process.</p>
             </div>
-            <div class="hero--home02__image-container">
+            <div class="hero--home02__image-container-L">
+                <div class="hero--home02__circle home02__circle-02"></div>
+                <div class="hero--home02__circle home02__circle-03"></div>
+                <div class="hero--home02__circle home02__circle-04"></div>
+                <div class="hero--home02__image-container">
+                    <img class="hero--home02__image">
+                </div>
+                <div class="hero--home02__circle home02__circle-05"></div>
+                <div class="hero--home02__circle home02__circle-06"></div>
+
             </div>
         </div>
     </section>    
-
-    {% comment %} <div class="hero__image-container">
-        {{ 'hero-image.svg' | asset_url | img_tag: 'hero image', 'hero__image' }}                    
-    </div> {% endcomment %}
 </section> 
 
 <style>
@@ -169,7 +178,7 @@
     }
 
     .nav__item{
-        margin: .75em .75em .75em 1.2em;
+        margin: .75em .75em .75em 2em;
     }
 
     .nav__item a{
@@ -206,8 +215,26 @@
         object-fit: fill;
     }
 
+    .hero--home01__circle{
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        background: #005560;
+        position: absolute;
+    }
+
+    .circle-01{
+        right: -10%;
+    }
+
+    .circle-02{
+        left: 2%;
+        bottom: 40%;
+    }
+
     .hero--home01__text{
         margin: 20px auto;
+        position: relative;
     }
 
     .hero--home01__primary{
@@ -254,7 +281,7 @@
         color: white;
         box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
         background: linear-gradient(to right, #005560 0%, #94B7B8 100%) border-box;
-        border: 3px solid transparent;
+        border: 2px solid transparent;
     }
 
     .heading-socials{
@@ -281,6 +308,14 @@
         font-size: 14px;
     }
 
+    .hero--home01__image--bottom{
+        position: absolute;
+        filter: drop-shadow(3px 0px 2px rgb(0 0 0 / 0.2));
+        width: 6%;
+        bottom: 0%;
+        left: 10%;
+    }
+
     .hero--home01__image--corner{
         position: absolute;
         right: 0%;
@@ -288,41 +323,132 @@
     }
 
     .hero--home02{
-        height: 75vh;
-        background-image: linear-gradient(
-            to bottom, #004E59, #005560); 
+        height: auto;
+        background: linear-gradient(180deg, #438897 0%, rgba(57, 127, 141, 0.843577) 30.92%, rgba(42, 114, 128, 0.628703) 60.09%, rgba(68, 138, 151, 0.477126) 82.32%, rgba(89, 158, 170, 0.350813) 96.41%); 
+        position: relative;
     }
 
     .hero--home02__row{
-        height: 100%;
         display: flex;
         flex-direction: column;
         align-items: center;
+        height: auto;
+        padding: 30px 0px 90px 0px;
     }
 
     .hero--home02__text{
-        margin-top: 60px;
+        width: 70%;
+        text-align: center;
     }
 
-    .hero--home02__primary{
+    .hero--home02__title{
         font-family: "Brevia", sans-serif;
-        font-size: 36px;
+        font-size: 29px;
+        padding: 70px 0 40px 0;
         font-weight: 400;
-        color: #94B7B8;
-        border-top: 5px solid #94B7B8;
-        border-top-width: medium;
-        width: 50%;
+        color: #ffffff;
+        text-align: center;
+        text-decoration: underline;
+        text-underline-position: under;
         white-space: nowrap;
+    }
+
+    .hero--home02__secondary--first{
+        margin: 0px 0px 10%;
+        word-spacing: 2px;
+        font-size: 30px;
+    }
+
+    .hero--home02__secondary--second{
+        margin-bottom: 10%;
     }
 
     .hero--home02__secondary{
         color: #ffffff;
-        margin: 0;
-        word-spacing: 3px;
     }
 
-    .hero--home02__secondary--first{
-        margin: 50px 0;
+    .hero--home02__circle{
+        border-radius: 50%;
+        background: linear-gradient(180deg, #65ACAE 0%, #317C82 58.57%, #004E59 100%);
+        position: relative;
+    }
+
+    .home02__circle-01{
+        margin: 0 70% 10% 30%;
+        width: 130px;
+        height: 130px;
+    }
+
+    .home02__circle-02{
+        width: 130px;
+        height: 130px;
+        position: absolute;
+        top: 30%;
+        z-index: -1;
+    }
+
+    .home02__circle-03{
+        width: 30px;
+        height: 30px;
+        position: absolute;
+        top: -5%;
+        z-index: 1;
+    }
+
+    .home02__circle-04{
+        width: 50px;
+        height: 50px;
+        position: absolute;
+        top: -2%;
+        z-index: 1;
+    }
+
+    .home02__circle-05{
+        width: 60px;
+        height: 60px;
+        position: absolute;
+        bottom: -2%;
+    }
+
+    .home02__circle-06{
+        width: 35px;
+        height: 35px;
+        position: absolute;
+        bottom: -10%;
+        z-index: 1;
+    }
+
+    .hero--home02__logo{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .hero--home02__image-container-L{
+        width: 100%;
+        position: relative;
+        z-index: 0;
+    }
+
+    .hero--home02__image-container{
+        margin: 0 auto;
+        text-align: center;
+        overflow: hidden;
+        border-radius: 50px;
+        border: 8px solid transparent; 
+        background: linear-gradient(45deg, #3A7E91 100%, #6AB1B1 92.15%, #6AB1B1 71.37%, #65ACAE 100%) border-box;
+        width: 570px;
+        height: 450px;
+    }
+
+    .hero--home02__image{
+        background:url("https://cdn.shopify.com/s/files/1/0549/5580/2693/t/13/assets/home02__image.png?v=143262246980390111351666481222");
+        height: 100%;
+        width: 90%;
+        background-position: left;
+        background-size: cover;
+        transform: scale(1.1);
     }
 
     .bold{
@@ -358,14 +484,25 @@
 
         .hero--home01__row{
             display: flex;
-            flex-direction:row;
-            justify-content: space-between;
-            height: 85vh;
         }
 
         .hero--home01__text{
             margin: 10% 0 0 0;
             width: 60%;
+        }
+
+        .hero--home01__circle{
+            width: 20px;
+            height: 20px;
+        }
+
+        .circle-01{
+            right: 12%;
+        }
+
+        .circle-02{
+            left: 2%;
+            bottom: 40%;
         }
 
         .hero--home01__image-container{
@@ -387,11 +524,11 @@
         }
 
         .hero--home01__primary{
-            font-size: 54px;
+            font-size: 52px;
         }
 
         .hero--home01__secondary{
-            font-size: 20px;
+            font-size: 18px;
             word-spacing: 10px;
         }
 
@@ -406,6 +543,11 @@
             top: -7%;
         }
 
+        .hero--home01__image--bottom{
+            left: 35%;
+            width: 8%;
+        }
+
         .btn, .btn:visited, .btn:link{
             padding: 10px 25px;
             font-size: 18px;
@@ -413,6 +555,7 @@
 
         .heading-socials{
             margin-top: 50px;
+            margin-bottom: 20px;
             font-size: 18px;
         }
 
@@ -422,15 +565,126 @@
 
         .hero--home02__row{
             flex-direction: row;
+            justify-content: space-around;
         }
 
-        .hero--home02__primary{
-            font-size: 54px;
+        .hero--home02__text{
+            height: 100%;
             width: 40%;
+            text-align: left;
         }
 
-        .hero--home02__secondary{
-            font-size: 28px;
+        .hero--home02__title{
+            font-size: 29px;
+            padding: 50px 0 40px 0;
+        }
+
+        .hero--home02__secondary--second{
+            font-size: 32px;
+            margin: 0;
+        }
+
+        .hero--home02__secondary--first{
+            font-size: 38px;
+        }
+
+        .hero--home02__image-container-L{
+            width: 60%;
+            position: relative;
+        }
+
+        .home02__circle-02{
+            top: 30%;
+            left: 12%;
+        }
+
+        .home02__circle-03{
+            left: 12%;
+        }
+
+        .home02__circle-04{
+            left: 18%;
+        }
+
+        .home02__circle-05{
+            right: 17%; 
+        }
+
+        .home02__circle-06{
+            right: 20%
+        }
+
+        .hero--home02__image-container{
+            max-width: 55%;
+            min-width: 650px;
+            width: 550px;
+            height: 550px;
+        }
+    }
+
+    @media (max-width: 1800px) {
+        .home02__circle-02{
+            left: 7%;
+        }
+    
+        .home02__circle-03{
+            left: 7%;
+        }
+
+        .home02__circle-04{
+            left: 13%;
+        }
+
+        .home02__circle-05{
+            right: 13%; 
+        }
+
+        .home02__circle-06{
+            right: 18%
+        }
+    }
+
+    @media (max-width: 1700px) {
+        .home02__circle-02{
+            left: 5%;
+        }
+
+        .home02__circle-03{
+            left: 5%;
+        }
+
+        .home02__circle-04{
+            left: 10%;
+        }
+
+        .home02__circle-05{
+            right: 10%; 
+        }
+
+        .home02__circle-06{
+            right: 15%
+        }
+    }
+
+    @media (max-width: 1550px) {
+        .home02__circle-02{
+            left: 0%;
+        }
+
+        .home02__circle-03{
+            left: 2%;
+        }
+
+        .home02__circle-04{
+            left: 7%;
+        }
+
+        .home02__circle-05{
+            right: 7%; 
+        }
+
+        .home02__circle-06{
+            right: 12%
         }
     }
 
@@ -442,11 +696,44 @@
         .hero--home01__image--corner{
             height: 40%;
         }
+
+        .hero--home02__secondary{
+            font-size: 30px;
+        }
+
+        .hero--home02__secondary--first{
+            font-size: 34px;
+        }
+
+        .home02__circle-02{
+            left: -5%;
+        }
+
+        .home02__circle-03{
+            left: -3%;
+        }
+
+        .home02__circle-04{
+            left: 4%;
+        }
+
+        .home02__circle-05{
+            right: 5%; 
+        }
+
+        .home02__circle-06{
+            right: 10%
+        }
     }
 
-    @media (max-width: 1250px) {
+    @media (max-width: 1300px) {
+        .hero--home01__primary{
+            font-size: 45px;
+        }
+        
         .hero--home01__secondary{
             word-spacing: 5px;
+            font-size: 16px;
         }
 
         .hero--home01__image{
@@ -456,15 +743,153 @@
         .hero--home01__image--corner{
             height: 35%;
         }
+
+        .hero--home02__secondary{
+            font-size: 26px;
+        }
+
+        .hero--home02__secondary--first{
+            font-size: 30px;
+        }
+
+        .home02__circle-02{
+            left: -8%;
+        }
+
+        .home02__circle-03{
+            left: -7%;
+        }
+
+        .home02__circle-04{
+            left: 0%;
+        }
+
+        .home02__circle-05{
+            right: 0%; 
+        }
+
+        .home02__circle-06{
+            right: 5%
+        }
     }
 
     @media (max-width: 1200px) {
-        .hero--home01__primary{
-            font-size: 45px;
+        .hero--home02__secondary{
+            font-size: 26px;
         }
 
-        .hero--home01__secondary{
-            font-size: 18px;
+        .hero--home02__secondary--first{
+            font-size: 30px;
+        }
+
+        .home02__circle-05{
+            right: -5%; 
+        }
+
+        .home02__circle-06{
+            right: 2%
+        }
+    }
+
+    @media (max-width: 1180px) {
+        .hero--home02__secondary{
+            font-size: 22px;
+        }
+
+        .hero--home02__secondary--first{
+            font-size: 28px;
+        }
+
+        .hero--home02__image-container{
+            min-width: 500px;
+            height: 475px;
+        }
+
+        .hero--home02__image{
+            height: 475px;
+            min-width: 500px;
+        }
+
+        .home02__circle-02{
+            left: -4%;
+        }
+
+        .home02__circle-03{
+            left: -2%;
+        }
+
+        .home02__circle-04{
+            left: 6%;
+        }
+
+        .home02__circle-05{
+            right: 5%; 
+        }
+
+        .home02__circle-06{
+            right: 14%
+        }
+    }
+
+    @media (max-width: 975px){
+        .home02__circle-02{
+            left: -10%;
+        }
+
+        .home02__circle-03{
+            left: -7%;
+        }
+
+        .home02__circle-04{
+            left: 2%;
+        }
+
+        .home02__circle-05{
+            right: 0%; 
+        }
+
+        .home02__circle-06{
+            right: 10%
+        }
+    }
+
+    @media (max-width: 950px) {
+        .home02__circle-01{
+            margin: 0 auto 10% auto;
+            width: 110px;
+            height: 110px;
+        }
+
+        .hero--home02__logo{
+            height: 70%;
+        }
+
+        .hero--home02__secondary{
+            font-size: 24px;
+        }
+
+        .hero--home02__secondary--first{
+            font-size: 30px;
+        }
+
+        .home02__circle-02{
+            left: 5%;
+        }
+
+        .home02__circle-03{
+            left: 7%;
+        }
+
+        .home02__circle-04{
+            left: 15%;
+        }
+
+        .home02__circle-05{
+            right: 14%; 
+        }
+
+        .home02__circle-06{
+            right: 18%
         }
     }
 
@@ -485,11 +910,121 @@
             font-size: 14px;
             word-spacing: 4px;
         }
+
+        .hero--home02__title{
+            font-size: 29px;
+        }
+
+        .home02__circle-02{
+            left: 5%;
+        }
+
+        .home02__circle-03{
+            left: 5%;
+        }
+
+        .home02__circle-04{
+            left: 12%;
+        }
+
+        .home02__circle-05{
+            right: 10%; 
+        }
+
+        .home02__circle-06{
+            right: 14%
+        }
     }
 
-    @media (max-width: 650px) {
+    @media (max-width: 800px){
+        .home02__circle-02{
+            left: -2%;
+        }
+
+        .home02__circle-03{
+            left: 0%;
+        }
+
+        .home02__circle-04{
+            left: 8%;
+        }
+
+        .home02__circle-05{
+            right: 5%; 
+        }
+
+        .home02__circle-06{
+            right: 12%
+        }
+    }
+
+
+    @media (max-width: 700px) {
         .hero--home01__image--corner{
             height: 30%;
+        }
+
+        .hero--home02__title{
+            font-size: 24px;
+        }
+
+        .hero--home02__text{
+            width: 100%;
+        }
+
+        .home02__circle-01{
+            width: 100px;
+            height: 100px;
+        }
+
+        .hero--home02__logo{
+            height: 60%;
+        }
+
+        .hero--home02__secondary--first{
+            font-size: 28px;
+        }
+
+        .hero--home02__secondary--second{
+            font-size: 20px;
+        }
+
+        .hero--home02__image-container{
+            width: 500px;
+        }
+
+        .hero--home02__image{
+            height: 475px;
+            min-width: 500px;
+            transform: scale(1.1);
+        }
+
+        .home02__circle-02{
+            left: -4%;
+            width: 100px;
+            height: 100px;
+        }
+
+        .home02__circle-03{
+            left: -2%;
+            width: 20px;
+            height: 20px;
+        }
+
+        .home02__circle-04{
+            left: 6%;
+            width: 40px;
+            height: 40px;
+        }
+
+        .home02__circle-05{
+            width: 50px;
+            height: 50px;
+        }
+
+        .home02__circle-06{
+            width: 25px;
+            height: 25px;
         }
     }
 
@@ -502,8 +1037,34 @@
             min-width: 0%;
         }
 
+        .hero--home01__circle{
+            width: 10px;
+            height: 10px;
+        }
+    
+        .circle-01{
+            right: -5%;
+        }
+
         .hero--home01__image--corner{
             height: 25%;
+        }
+
+        .hero--home02__image-container{
+            width: 90%;
+            min-width: 90%;
+            height: 400px;
+        }
+
+        .hero--home02__image{
+            width: 100%;
+            height: 100%;
+            transform: scale(1);
+            background-position: right;
+        }
+
+        .home02__circle-02{
+            left: -5%;
         }
     }
 
@@ -518,6 +1079,18 @@
 
         .btn, .btn:visited, .btn:link{
             padding: 8px 22px;
+            font-size: 12px;
+        }
+
+        .hero--home02__title{
+            font-size: 22px;
+        }
+
+        .hero--home02__secondary--first{
+            font-size: 24px;
+        }
+
+        .hero--home02__secondary--second{
             font-size: 12px;
         }
     }
