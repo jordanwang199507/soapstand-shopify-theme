@@ -1,28 +1,4 @@
 <section class="hero--home">
-    <header class="header">
-        <div class="container row">
-            <div class="nav-toggle" aria-label="open navigation">
-                <span class="hamburger"></span>
-            </div>
-            <a class="logo" href="#">
-                {{ 'Logo-09.svg' | asset_url | img_tag: 'Logo', 'logo__image' }}            
-            </a>
-            <nav class="nav">
-                <ul class="nav__list">
-                    {% for link in linklists.menu.links -%}
-                    <li class="nav__item">{{ link.title | link_to: link.url }}
-                    </li>
-                    {%- endfor %}
-                </ul>
-            </nav>
-            {% if section.settings.show_search%}
-            <form action="/search" class="search__form">
-                <input type="search" name="q">
-                <button type="submit">Search</button>
-            </form>
-            {% endif %}
-        </div>
-    </header>
     <section class="hero--home01">
         <div class="container row hero--home01__row">
             <div class="hero--home01__text">
@@ -90,112 +66,6 @@
     .hero--home{
         border: 1px solid black;
         width: 100%;
-    }
-
-    .header{
-        padding: 1.2em 0;
-        text-align: center;
-        width: 100%;
-        top: 0;
-        left: 0;
-    }
-
-    .logo__image{
-        width: 100px;
-    }
-
-    .nav{
-        width: 100%;
-    }
-
-    .nav-toggle {
-        cursor: pointer;
-        border: 0;
-        width: 3em;
-        height: 3em;
-        padding: 0em;
-        border-radius: 50%;
-        background: #072A2D;
-        color: white;
-        transition: opacity 250ms ease;
-        
-        position: absolute;
-        left: 0;
-    }
-    
-    .nav-toggle:focus,
-    .nav-toggle:hover {
-        opacity: .75;
-    }
-
-    .hamburger {
-        width: 50%;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-    }
-    
-    .hamburger,
-    .hamburger::before,
-    .hamburger::after {
-        display: block;
-        margin: 0 auto;
-        height: 3px;
-        background: white;
-    }
-    
-    .hamburger::before,
-    .hamburger::after {
-        content: '';
-        width: 100%;
-    }
-    
-    .hamburger::before {
-        transform: translateY(-6px);
-    }
-    
-    .hamburger::after {
-        transform: translateY(3px);
-    }
-
-    .nav {
-        visibility: hidden;
-        height: 0;
-        position: absolute;
-    }
-
-    .nav--visible {
-        visibility: visible;
-        height: auto;
-        position: relative;
-    } 
-
-    .nav__list{
-        margin: 0;
-        padding: 0;
-        list-style: none;
-    }
-
-    .nav__item{
-        margin: .75em .75em .75em 2em;
-    }
-
-    .nav__item a{
-        text-decoration: none;
-        color: #005560;
-        font-weight: bold;
-        font-size: 22px;
-    }
-
-    .nav__item a:hover, .nav__item:focus{
-        opacity: .75;
-    }
-
-    .search__form{
-        display: flex;
-        align-items: center;
-        margin: auto 0;
     }
 
     .hero--home01{
@@ -326,6 +196,7 @@
         height: auto;
         background: linear-gradient(180deg, #438897 0%, rgba(57, 127, 141, 0.843577) 30.92%, rgba(42, 114, 128, 0.628703) 60.09%, rgba(68, 138, 151, 0.477126) 82.32%, rgba(89, 158, 170, 0.350813) 96.41%); 
         position: relative;
+        clip-path: polygon(100% 0%, 0% 0% , 0% 100.00%, 1% 99.94%, 2% 99.78%, 3% 99.51%, 4% 99.15%, 5% 98.71%, 6% 98.21%, 7% 97.65%, 8% 97.06%, 9% 96.47%, 10% 95.88%, 11% 95.32%, 12% 94.82%, 13% 94.38%, 14% 94.02%, 15% 93.76%, 16% 93.60%, 17% 93.55%, 18% 93.61%, 19% 93.77%, 20% 94.04%, 21% 94.41%, 22% 94.85%, 23% 95.36%, 24% 95.92%, 25% 96.51%, 26% 97.10%, 27% 97.69%, 28% 98.24%, 29% 98.75%, 30% 99.18%, 31% 99.54%, 32% 99.80%, 33% 99.95%, 34% 100.00%, 35% 99.94%, 36% 99.77%, 37% 99.49%, 38% 99.13%, 39% 98.68%, 40% 98.17%, 41% 97.61%, 42% 97.02%, 43% 96.42%, 44% 95.84%, 45% 95.29%, 46% 94.78%, 47% 94.35%, 48% 94.00%, 49% 93.74%, 50% 93.59%, 51% 93.55%, 52% 93.62%, 53% 93.79%, 54% 94.07%, 55% 94.44%, 56% 94.89%, 57% 95.40%, 58% 95.96%, 59% 96.55%, 60% 97.15%, 61% 97.73%, 62% 98.28%, 63% 98.78%, 64% 99.21%, 65% 99.56%, 66% 99.81%, 67% 99.96%, 68% 100.00%, 69% 99.93%, 70% 99.75%, 71% 99.47%, 72% 99.10%, 73% 98.64%, 74% 98.13%, 75% 97.57%, 76% 96.98%, 77% 96.38%, 78% 95.80%, 79% 95.25%, 80% 94.75%, 81% 94.32%, 82% 93.98%, 83% 93.73%, 84% 93.59%, 85% 93.55%, 86% 93.62%, 87% 93.81%, 88% 94.09%, 89% 94.47%, 90% 94.92%, 91% 95.44%, 92% 96.00%, 93% 96.59%, 94% 97.19%, 95% 97.77%, 96% 98.32%, 97% 98.81%, 98% 99.24%, 99% 99.58%, 100% 99.82%);
     }
 
     .hero--home02__row{
@@ -333,7 +204,7 @@
         flex-direction: column;
         align-items: center;
         height: auto;
-        padding: 30px 0px 90px 0px;
+        padding: 0px 0px 20% 0px;
     }
 
     .hero--home02__text{
@@ -354,13 +225,8 @@
     }
 
     .hero--home02__secondary--first{
-        margin: 0px 0px 10%;
         word-spacing: 2px;
         font-size: 30px;
-    }
-
-    .hero--home02__secondary--second{
-        margin-bottom: 10%;
     }
 
     .hero--home02__secondary{
@@ -383,7 +249,7 @@
         width: 130px;
         height: 130px;
         position: absolute;
-        top: 30%;
+        top: 25%;
         z-index: -1;
     }
 
@@ -448,7 +314,7 @@
         width: 90%;
         background-position: left;
         background-size: cover;
-        transform: scale(1.1);
+        transform: scale(1.2);
     }
 
     .bold{
@@ -456,38 +322,18 @@
     }
 
     @media (min-width: 950px) {
-        .header{
-            height: 15vh;
-        }
-
         .row {
             display: flex;
             justify-content: space-between;
         }
 
-        .nav-toggle {
-            display: none;
-        }
-
-        .nav {
-            visibility: visible;
-            display: flex;
-            height: auto;
-            align-items: center;
-            justify-content: flex-end;
-        }
-
-        .nav__list{
-            display: flex;
-            margin: 0;
-        }
-
         .hero--home01__row{
             display: flex;
+            height: 85vh;
         }
 
         .hero--home01__text{
-            margin: 10% 0 0 0;
+            margin: 7% 0 0 0;
             width: 60%;
         }
 
@@ -563,9 +409,14 @@
             font-size: 18px;
         }
 
+        .hero--home02{
+            clip-path: polygon(100% 0%, 0% 0% , 0% 96.77%, 1% 96.56%, 2% 95.93%, 3% 94.98%, 4% 93.84%, 5% 92.65%, 6% 91.59%, 7% 90.80%, 8% 90.37%, 9% 90.38%, 10% 90.82%, 11% 91.63%, 12% 92.69%, 13% 93.88%, 14% 95.02%, 15% 95.96%, 16% 96.57%, 17% 96.77%, 18% 96.54%, 19% 95.90%, 20% 94.94%, 21% 93.79%, 22% 92.61%, 23% 91.56%, 24% 90.77%, 25% 90.37%, 26% 90.39%, 27% 90.84%, 28% 91.66%, 29% 92.74%, 30% 93.92%, 31% 95.05%, 32% 95.99%, 33% 96.59%, 34% 96.77%, 35% 96.52%, 36% 95.87%, 37% 94.90%, 38% 93.75%, 39% 92.57%, 40% 91.53%, 41% 90.75%, 42% 90.36%, 43% 90.40%, 44% 90.86%, 45% 91.69%, 46% 92.78%, 47% 93.96%, 48% 95.09%, 49% 96.01%, 50% 96.60%, 51% 96.77%, 52% 96.51%, 53% 95.84%, 54% 94.86%, 55% 93.71%, 56% 92.53%, 57% 91.49%, 58% 90.73%, 59% 90.35%, 60% 90.41%, 61% 90.89%, 62% 91.73%, 63% 92.82%, 64% 94.00%, 65% 95.13%, 66% 96.04%, 67% 96.61%, 68% 96.77%, 69% 96.49%, 70% 95.81%, 71% 94.83%, 72% 93.67%, 73% 92.49%, 74% 91.46%, 75% 90.71%, 76% 90.35%, 77% 90.42%, 78% 90.91%, 79% 91.76%, 80% 92.86%, 81% 94.05%, 82% 95.17%, 83% 96.07%, 84% 96.63%, 85% 96.77%, 86% 96.47%, 87% 95.78%, 88% 94.79%, 89% 93.63%, 90% 92.45%, 91% 91.43%, 92% 90.69%, 93% 90.34%, 94% 90.43%, 95% 90.94%, 96% 91.80%, 97% 92.90%, 98% 94.09%, 99% 95.20%, 100% 96.09%);
+        }
+
         .hero--home02__row{
             flex-direction: row;
             justify-content: space-around;
+            padding: 30px 0px 10% 0px;
         }
 
         .hero--home02__text{
@@ -580,12 +431,13 @@
         }
 
         .hero--home02__secondary--second{
-            font-size: 32px;
-            margin: 0;
+            font-size: 30px;
+            margin-bottom: 10%;
         }
 
         .hero--home02__secondary--first{
             font-size: 38px;
+            margin: 0px 0px 10%;
         }
 
         .hero--home02__image-container-L{
@@ -594,7 +446,7 @@
         }
 
         .home02__circle-02{
-            top: 30%;
+            top: 25%;
             left: 12%;
         }
 
@@ -618,7 +470,11 @@
             max-width: 55%;
             min-width: 650px;
             width: 550px;
-            height: 550px;
+            height: 500px;
+        }
+
+        .hero--home02__image{
+            transform: scale(1.2);
         }
     }
 
@@ -658,7 +514,7 @@
         }
 
         .home02__circle-05{
-            right: 10%; 
+            right: 8%; 
         }
 
         .home02__circle-06{
@@ -697,12 +553,12 @@
             height: 40%;
         }
 
-        .hero--home02__secondary{
-            font-size: 30px;
-        }
-
         .hero--home02__secondary--first{
             font-size: 34px;
+        }
+
+        .hero--home02__secondary--second{
+            font-size: 28px;
         }
 
         .home02__circle-02{
@@ -728,11 +584,11 @@
 
     @media (max-width: 1300px) {
         .hero--home01__primary{
-            font-size: 45px;
+            font-size: 40px;
         }
         
         .hero--home01__secondary{
-            word-spacing: 5px;
+            word-spacing: 2px;
             font-size: 16px;
         }
 
@@ -792,22 +648,26 @@
     }
 
     @media (max-width: 1180px) {
-        .hero--home02__secondary{
-            font-size: 22px;
-        }
-
         .hero--home02__secondary--first{
             font-size: 28px;
         }
 
+        .hero--home02__secondary--second{
+            font-size: 21px;
+        }
+
         .hero--home02__image-container{
             min-width: 500px;
-            height: 475px;
+            height: 400px;
         }
 
         .hero--home02__image{
             height: 475px;
             min-width: 500px;
+            width: 100%;
+            height: 100%;
+            transform: scale(1.1);
+            background-position: left;
         }
 
         .home02__circle-02{
@@ -832,8 +692,16 @@
     }
 
     @media (max-width: 975px){
+        .hero--home02__secondary--first{
+            font-size: 28px;
+        }
+
+        .hero--home02__secondary--second{
+            font-size: 20px;
+        }
+        
         .home02__circle-02{
-            left: -10%;
+            left: -8%;
         }
 
         .home02__circle-03{
@@ -853,23 +721,15 @@
         }
     }
 
-    @media (max-width: 950px) {
+    @media (max-width: 949px) {
         .home02__circle-01{
-            margin: 0 auto 10% auto;
+            margin: 0 auto;
             width: 110px;
             height: 110px;
         }
 
         .hero--home02__logo{
             height: 70%;
-        }
-
-        .hero--home02__secondary{
-            font-size: 24px;
-        }
-
-        .hero--home02__secondary--first{
-            font-size: 30px;
         }
 
         .home02__circle-02{
@@ -889,19 +749,11 @@
         }
 
         .home02__circle-06{
-            right: 18%
+            right: 20%
         }
     }
 
     @media (max-width: 900px) {
-        .nav__item{
-            margin: .75em .75em .75em .75em;
-        }
-
-        .nav__item a{
-            font-size: 18px;
-        }
-
         .hero--home01__primary{
             font-size: 42px;
         }
@@ -928,11 +780,11 @@
         }
 
         .home02__circle-05{
-            right: 10%; 
+            right: 8%; 
         }
 
         .home02__circle-06{
-            right: 14%
+            right: 15%
         }
     }
 
@@ -994,8 +846,6 @@
         }
 
         .hero--home02__image{
-            height: 475px;
-            min-width: 500px;
             transform: scale(1.1);
         }
 
@@ -1053,14 +903,15 @@
         .hero--home02__image-container{
             width: 90%;
             min-width: 90%;
-            height: 400px;
+            height: 300px;
         }
 
         .hero--home02__image{
             width: 100%;
+            min-width: 0px;
             height: 100%;
-            transform: scale(1);
-            background-position: right;
+            transform: scale(1.1);
+            background-position: center;
         }
 
         .home02__circle-02{
@@ -1082,6 +933,10 @@
             font-size: 12px;
         }
 
+        .hero--home02{
+            clip-path: polygon(100% 0%, 0% 0% , 0% 100.00%, 1% 99.99%, 2% 99.95%, 3% 99.89%, 4% 99.81%, 5% 99.71%, 6% 99.59%, 7% 99.44%, 8% 99.28%, 9% 99.11%, 10% 98.92%, 11% 98.73%, 12% 98.52%, 13% 98.31%, 14% 98.09%, 15% 97.88%, 16% 97.67%, 17% 97.46%, 18% 97.26%, 19% 97.07%, 20% 96.89%, 21% 96.73%, 22% 96.58%, 23% 96.45%, 24% 96.34%, 25% 96.26%, 26% 96.19%, 27% 96.15%, 28% 96.13%, 29% 96.14%, 30% 96.16%, 31% 96.22%, 32% 96.29%, 33% 96.39%, 34% 96.51%, 35% 96.64%, 36% 96.80%, 37% 96.97%, 38% 97.15%, 39% 97.35%, 40% 97.55%, 41% 97.76%, 42% 97.98%, 43% 98.19%, 44% 98.40%, 45% 98.61%, 46% 98.82%, 47% 99.01%, 48% 99.19%, 49% 99.36%, 50% 99.51%, 51% 99.64%, 52% 99.76%, 53% 99.85%, 54% 99.92%, 55% 99.97%, 56% 100.00%, 57% 100.00%, 58% 99.97%, 59% 99.93%, 60% 99.86%, 61% 99.77%, 62% 99.66%, 63% 99.52%, 64% 99.37%, 65% 99.21%, 66% 99.03%, 67% 98.84%, 68% 98.63%, 69% 98.42%, 70% 98.21%, 71% 98.00%, 72% 97.78%, 73% 97.57%, 74% 97.37%, 75% 97.17%, 76% 96.99%, 77% 96.82%, 78% 96.66%, 79% 96.52%, 80% 96.40%, 81% 96.30%, 82% 96.22%, 83% 96.17%, 84% 96.14%, 85% 96.13%, 86% 96.15%, 87% 96.19%, 88% 96.25%, 89% 96.33%, 90% 96.44%, 91% 96.57%, 92% 96.71%, 93% 96.87%, 94% 97.05%, 95% 97.24%, 96% 97.44%, 97% 97.65%, 98% 97.86%, 99% 98.07%, 100% 98.29%);
+        }
+
         .hero--home02__title{
             font-size: 22px;
         }
@@ -1091,7 +946,17 @@
         }
 
         .hero--home02__secondary--second{
-            font-size: 12px;
+            font-size: 14px;
+        }
+
+        .home02__circle-05{
+            width: 40px;
+            height: 40px;
+        }
+
+        .home02__circle-06{
+            width: 20px;
+            height: 20px;
         }
     }
 </style>
