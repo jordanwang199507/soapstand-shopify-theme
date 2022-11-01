@@ -15,8 +15,7 @@
     </div> {% endcomment %}
     {% comment %} {% section 'header' %} {% endcomment %}
     {% section 'header' %}
-    {% section 'home01' %}
-    {% comment %} {{content_for_layout}} {% endcomment %}
+    {{content_for_layout}}
     {{ 'script.js' | asset_url | script_tag}}
 
 </body>
