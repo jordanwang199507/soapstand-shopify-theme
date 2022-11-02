@@ -5,17 +5,15 @@
                 <div class="hero--home01__circle circle-01"></div>
                 <div class="hero--home01__circle circle-02"></div>
                 <div class="hero--home01__primary--container">
-                    <div class="hero--home01__primary">let's make</div>
-                    <div class="hero--home01__primary">waste-free packaging</div>
-                    <div class="hero--home01__primary">the <span class="hero--home01__primary--last">norm</span></div> 
+                    <div class="hero--home01__primary">let's make<br>waste-free packaging<br>the <span class="hero--home01__primary--last">norm</span></div>
                 </div>
                 <p class="hero--home01__secondary">Soapstand refill stations support green lifestyles by 
                     <br>making "sustainable" something that is accessible, 
                     <br>convenient and affordable
                 </p>
                 <div class="hero--home01__button-groups">
-                    <a href="#" class="btn">join us</a>
-                    <a href="#" class="btn">watch video</a>
+                    <a href="#" class="btn">{{ section.settings.home01_button01 }}</a>
+                    <a href="#" class="btn">{{ section.settings.home01_button02 }}</a>
                 </div>
 
                 <div class="heading-socials">
@@ -64,7 +62,6 @@
 <style>
     @import url(//db.onlinewebfonts.com/c/6bfddeebdb6be7ad8b3cbf0523b89aca?family=Brevia);
     .hero--home{
-        border: 1px solid black;
         width: 100%;
     }
 
@@ -977,6 +974,26 @@
     "presets": [
         {
             "name": "Home"
+        }
+    ],
+    "settings": [
+        {
+            "type": "text",
+            "id": "home01_primary",
+            "label": "Change Homepage 01 Primary Text",
+            "default": "let's make waste-free packaging the norm"
+        },
+        {
+            "type": "text",
+            "id": "home01_button01",
+            "label": "Change Homepage 01 Button 01 Text",
+            "default": "join us"
+        },
+        {
+            "type": "text",
+            "id": "home01_button02",
+            "label": "Change Homepage 01 Button 02 Text",
+            "default": "watch video"
         }
     ]
 }
