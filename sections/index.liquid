@@ -9,11 +9,15 @@
                 </div>
                 <p class="hero--home01__secondary">Soapstand refill stations support green lifestyles by 
                     <br>making "sustainable" something that is accessible, 
-                    <br>convenient and affordable
+                    <br>convenient and affordable.
                 </p>
                 <div class="hero--home01__button-groups">
-                    <a href="#" class="btn">{{ section.settings.home01_button01 }}</a>
-                    <a href="#" class="btn">{{ section.settings.home01_button02 }}</a>
+                    {% if section.settings.include_home01_button01 %}
+                        <a href="#" class="btn">{{ section.settings.home01_button01 }}</a>
+                    {% endif %}
+                    {% if section.settings.include_home01_button02 %}
+                        <a href="#" class="btn">{{ section.settings.home01_button02 }}</a>
+                    {% endif %}
                 </div>
 
                 <div class="heading-socials">
@@ -978,21 +982,27 @@
     ],
     "settings": [
         {
-            "type": "text",
-            "id": "home01_primary",
-            "label": "Change Homepage 01 Primary Text",
-            "default": "let's make waste-free packaging the norm"
+            "type": "checkbox",
+            "id": "include_home01_button01",
+            "label": "Include Homepage 01 Button 01?",
+            "default": true
         },
         {
             "type": "text",
             "id": "home01_button01",
-            "label": "Change Homepage 01 Button 01 Text",
+            "label": "Homepage 01 Button 01 Text",
             "default": "join us"
+        },
+        {
+            "type": "checkbox",
+            "id": "include_home01_button02",
+            "label": "Include Homepage 01 Button 02",
+            "default": true
         },
         {
             "type": "text",
             "id": "home01_button02",
-            "label": "Change Homepage 01 Button 02 Text",
+            "label": "Homepage 01 Button 02 Text",
             "default": "watch video"
         }
     ]
