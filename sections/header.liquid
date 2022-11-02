@@ -47,7 +47,7 @@
         height: 3em;
         padding: 0em;
         border-radius: 50%;
-        background: #072A2D;
+        background: #005560;
         color: white;
         transition: opacity 250ms ease;
         
@@ -97,7 +97,7 @@
         position: absolute;
     }
 
-    .nav--visible {
+    .visible {
         visibility: visible;
         height: auto;
         position: relative;
@@ -169,12 +169,12 @@
 
 {% javascript %}
     const navToggle = document.querySelector('.nav-toggle');
-    const nav = document.querySelector('.nav');
+    const nav = document.querySelector('nav');
 
 
     navToggle.addEventListener('click', () => {
-        console.log("test");
-        nav.classList.toggle('nav--visible');
+        nav.classList.toggle('visible');
+        console.log('test');
     })
 {% endjavascript %}
 
