@@ -23,11 +23,22 @@
                 <div class="heading-socials">
                     <p>Follow Us</p>
                     <ul class="heading-socials__list">
-                        <li class="heading-socials__item"><i class="fa-brands fa-facebook-f"></i></li>
-                        <li class="heading-socials__item"><i class="fa-brands fa-linkedin-in"></i></li>
-                        <li class="heading-socials__item"><i class="fa-brands fa-instagram"></i></li>
-                        <li class="heading-socials__item"><i class="fa-brands fa-youtube"></i></li>
-                        <li class="heading-socials__item"><i class="fa-brands fa-twitter"></i></li>
+                        {% if section.settings.include_facebook %}
+                            <a href="#"><li class="heading-socials__item"><i class="fa-brands fa-facebook-f"></i></li></a>
+                        {% endif %}
+                        {% if section.settings.include_linkedin %}
+                            <a href=""><li class="heading-socials__item"><i class="fa-brands fa-linkedin-in"></i></li></a>
+                        {% endif %}
+                        {% if section.settings.include_instagram %}
+                            <a href=""><li class="heading-socials__item"><i class="fa-brands fa-instagram"></i></li></a>
+                        {% endif %}
+                        {% if section.settings.include_youtube %}
+                            <a href=""><li class="heading-socials__item"><i class="fa-brands fa-youtube"></i></li></a>
+                        {% endif %}
+                        {% if section.settings.include_twitter %}
+                            <a href=""><li class="heading-socials__item"><i class="fa-brands fa-twitter"></i></li></a>
+                        {% endif %}
+                        
                     </ul>
                 </div>
             </div>
@@ -38,8 +49,8 @@
         {{ 'hero-corner.svg' | asset_url | img_tag: 'hero corner image', 'hero--home01__image--corner' }}  
         {{ 'hero-bottom.svg' | asset_url | img_tag: 'hero bottom image', 'hero--home01__image--bottom' }}  
     </section>
-    <section class="hero--home02" id="about">
-        <div class="hero--home02__title">meet Soapstand</div>
+    <section class="hero--home02">
+        <div class="title__primary hero--home02__title"><span>{{ section.settings.home02_title }}</span></div>
         <div class="container row hero--home02__row">
             <div class="hero--home02__text">
                 <div class="hero--home02__circle home02__circle-01">
@@ -60,7 +71,50 @@
 
             </div>
         </div>
-    </section>    
+    </section>  
+    <section class="hero--home03">
+        <div class="title__primary hero--home03__title"><span>{{ section.settings.home03_title }}</span></div>
+        <div class="container row hero--home03__row">
+            <div class="hero--home03__container hero--home03__container01">
+                <div class="hero--home03__content">
+                    <div class="hero--home03__value container01__value">50%</div>
+                    <div class="icon__container">
+                        <div class="icon-dollar-circle">
+                            <i class="fa-solid fa-dollar-sign"></i>
+                        </div>
+                        <div class="icon-dollar-circle">
+                            <i class="fa-solid fa-dollar-sign"></i>
+                        </div>
+                        <div class="icon-dollar-circle">
+                            <i class="fa-solid fa-dollar-sign"></i>
+                        </div>
+                        <div class="icon-dollar-circle">
+                            <i class="fa-solid fa-dollar-sign"></i>
+                        </div>
+                        <div class="icon-dollar-circle">
+                            <i class="fa-solid fa-dollar-sign"></i>
+                        </div>
+                    </div>
+                    <div class="hero--home03__text container01__text">savings on purchase</div>
+                </div>
+            </div>
+            <div class="hero--home03__container hero--home03__container02">
+                {{ 'home03__container02.svg' | asset_url | img_tag: 'hero home03 container02', 'hero--home03__image-container02' }}  
+                <div class="hero--home03__content">
+                    <div class="hero--home03__text container02__text--primary">each purchase means</div>
+                    <div class="hero--home03__text container02__text--secondary">-1 bottle in our landfill</div>
+                </div>
+            </div>
+            <div class="hero--home03__container hero--home03__container03">
+                {{ 'home03__container03.svg' | asset_url | img_tag: 'hero home03 container02', 'hero--home03__image-container03' }}  
+                <div class="hero--home03__content">
+                    <div class="hero--home03__value container03__value">100%</div>
+                    <div class="hero--home03__text container03__text">possitive<br>impact</div>
+                </div>
+                <a href="#" class="btn btn__secondary">about us</a>
+            </div>
+        </div>
+    </section>
 </section> 
 
 <style>
@@ -109,7 +163,7 @@
     }
 
     .hero--home01__primary{
-        font-family: "Brevia", sans-serif;
+        font-family: "Brevia", Montserrat, sans-serif;
         font-size: 36px;
         font-weight: 400;
         color: #94B7B8;
@@ -134,27 +188,6 @@
         margin-top: 55px;
     }
 
-    .btn, .btn:visited, .btn:link{
-        width: auto;
-        padding: 8px 25px;
-        border-radius: 50px;
-        text-align: center;
-        text-decoration: none;
-        color: #005560;
-        transition: all .2s;
-        font-size: 14px;
-
-        border: 2px solid #005560;
-        background-color: white;
-    }
-
-    .btn:hover{
-        color: white;
-        box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
-        background: linear-gradient(to right, #005560 0%, #94B7B8 100%) border-box;
-        border: 2px solid transparent;
-    }
-
     .heading-socials{
         display: flex;
         margin-top: 30px;
@@ -169,6 +202,16 @@
         list-style: none;
         display: flex;
         align-items: center;
+    }
+
+    .heading-socials__list a {
+        color: black;
+    }
+
+    .heading-socials__list a:hover{
+        opacity: 0.5;
+        color: #4c828c;
+        text-shadow: 3px 2px 2px rgba(76, 130, 140, 0.2);
     }
 
     .heading-socials__item{
@@ -197,7 +240,6 @@
         height: auto;
         background: linear-gradient(180deg, #438897 0%, rgba(57, 127, 141, 0.843577) 30.92%, rgba(42, 114, 128, 0.628703) 60.09%, rgba(68, 138, 151, 0.477126) 82.32%, rgba(89, 158, 170, 0.350813) 96.41%); 
         position: relative;
-        clip-path: polygon(100% 0%, 0% 0% , 0% 100.00%, 1% 99.94%, 2% 99.78%, 3% 99.51%, 4% 99.15%, 5% 98.71%, 6% 98.21%, 7% 97.65%, 8% 97.06%, 9% 96.47%, 10% 95.88%, 11% 95.32%, 12% 94.82%, 13% 94.38%, 14% 94.02%, 15% 93.76%, 16% 93.60%, 17% 93.55%, 18% 93.61%, 19% 93.77%, 20% 94.04%, 21% 94.41%, 22% 94.85%, 23% 95.36%, 24% 95.92%, 25% 96.51%, 26% 97.10%, 27% 97.69%, 28% 98.24%, 29% 98.75%, 30% 99.18%, 31% 99.54%, 32% 99.80%, 33% 99.95%, 34% 100.00%, 35% 99.94%, 36% 99.77%, 37% 99.49%, 38% 99.13%, 39% 98.68%, 40% 98.17%, 41% 97.61%, 42% 97.02%, 43% 96.42%, 44% 95.84%, 45% 95.29%, 46% 94.78%, 47% 94.35%, 48% 94.00%, 49% 93.74%, 50% 93.59%, 51% 93.55%, 52% 93.62%, 53% 93.79%, 54% 94.07%, 55% 94.44%, 56% 94.89%, 57% 95.40%, 58% 95.96%, 59% 96.55%, 60% 97.15%, 61% 97.73%, 62% 98.28%, 63% 98.78%, 64% 99.21%, 65% 99.56%, 66% 99.81%, 67% 99.96%, 68% 100.00%, 69% 99.93%, 70% 99.75%, 71% 99.47%, 72% 99.10%, 73% 98.64%, 74% 98.13%, 75% 97.57%, 76% 96.98%, 77% 96.38%, 78% 95.80%, 79% 95.25%, 80% 94.75%, 81% 94.32%, 82% 93.98%, 83% 93.73%, 84% 93.59%, 85% 93.55%, 86% 93.62%, 87% 93.81%, 88% 94.09%, 89% 94.47%, 90% 94.92%, 91% 95.44%, 92% 96.00%, 93% 96.59%, 94% 97.19%, 95% 97.77%, 96% 98.32%, 97% 98.81%, 98% 99.24%, 99% 99.58%, 100% 99.82%);
     }
 
     .hero--home02__row{
@@ -205,7 +247,7 @@
         flex-direction: column;
         align-items: center;
         height: auto;
-        padding: 0px 0px 20% 0px;
+        padding: 0px 0px 20vh 0px;
     }
 
     .hero--home02__text{
@@ -214,15 +256,7 @@
     }
 
     .hero--home02__title{
-        font-family: "Brevia", sans-serif;
-        font-size: 29px;
         padding: 70px 0 40px 0;
-        font-weight: 400;
-        color: #ffffff;
-        text-align: center;
-        text-decoration: underline;
-        text-underline-position: under;
-        white-space: nowrap;
     }
 
     .hero--home02__secondary--first{
@@ -322,15 +356,86 @@
         font-weight: bold;
     }
 
-    @media (min-width: 950px) {
-        .row {
-            display: flex;
-            justify-content: space-between;
-        }
+    .hero--home03{
+        background-image:url("https://cdn.shopify.com/s/files/1/0549/5580/2693/t/13/assets/home03.png?v=5220540281782753861667424755");
+        background-size: cover;
+        background-position: top;
+        height: auto;
+        padding: 8em 0 2em 0;
+        margin-top: -17vh;
+        position: relative;
+        font-family: "Brevia", Montserrat, sans-serif;
+        color: white;
+    }
 
+    .hero--home03__title{
+        padding: 0px 0px 20px 0px;
+        font-size: 29px;
+    }
+
+    .hero--home03__container{
+        width: 100%;
+        height: 220px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .hero--home03__content{
+        text-align: center;
+    }
+
+    .hero--home03__text{
+        white-space: nowrap;
+    }
+
+    .icon-dollar-circle{
+        margin: .4em;
+        width: 30px;
+        height: 30px;
+        border: 3px solid #4c828c;
+        border-radius: 50%;
+        position: relative;
+        display: inline-block;
+    }
+
+    .fa-dollar-sign{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 20px;
+        color: #4c828c;
+    }
+
+    .hero--home03__container{
+        position: relative;
+    }
+
+    .container02__text--primary{
+        color: #a8cccc;
+        margin-bottom: 1em;
+    }
+
+    .hero--home03__image-container02{
+        position: absolute;
+        height: 140%;
+    }
+
+    .container03__value{
+        margin-bottom: .2em;
+    }
+
+    .hero--home03__image-container03{
+        position: absolute;
+        height: 90%;
+        margin: 5% 5% 0 0;
+    }
+
+    @media (min-width: 950px) {
         .hero--home01__row{
             display: flex;
-            height: 85vh;
+            min-height: 85vh;
         }
 
         .hero--home01__text{
@@ -354,6 +459,7 @@
 
         .hero--home01__image-container{
             height: 100%;
+            min-height: 90vh;
             position: absolute;
             bottom: 0;
             right: 0;
@@ -395,10 +501,6 @@
             width: 8%;
         }
 
-        .btn, .btn:visited, .btn:link{
-            padding: 10px 25px;
-            font-size: 18px;
-        }
 
         .heading-socials{
             margin-top: 50px;
@@ -410,14 +512,10 @@
             font-size: 18px;
         }
 
-        .hero--home02{
-            clip-path: polygon(100% 0%, 0% 0% , 0% 96.77%, 1% 96.56%, 2% 95.93%, 3% 94.98%, 4% 93.84%, 5% 92.65%, 6% 91.59%, 7% 90.80%, 8% 90.37%, 9% 90.38%, 10% 90.82%, 11% 91.63%, 12% 92.69%, 13% 93.88%, 14% 95.02%, 15% 95.96%, 16% 96.57%, 17% 96.77%, 18% 96.54%, 19% 95.90%, 20% 94.94%, 21% 93.79%, 22% 92.61%, 23% 91.56%, 24% 90.77%, 25% 90.37%, 26% 90.39%, 27% 90.84%, 28% 91.66%, 29% 92.74%, 30% 93.92%, 31% 95.05%, 32% 95.99%, 33% 96.59%, 34% 96.77%, 35% 96.52%, 36% 95.87%, 37% 94.90%, 38% 93.75%, 39% 92.57%, 40% 91.53%, 41% 90.75%, 42% 90.36%, 43% 90.40%, 44% 90.86%, 45% 91.69%, 46% 92.78%, 47% 93.96%, 48% 95.09%, 49% 96.01%, 50% 96.60%, 51% 96.77%, 52% 96.51%, 53% 95.84%, 54% 94.86%, 55% 93.71%, 56% 92.53%, 57% 91.49%, 58% 90.73%, 59% 90.35%, 60% 90.41%, 61% 90.89%, 62% 91.73%, 63% 92.82%, 64% 94.00%, 65% 95.13%, 66% 96.04%, 67% 96.61%, 68% 96.77%, 69% 96.49%, 70% 95.81%, 71% 94.83%, 72% 93.67%, 73% 92.49%, 74% 91.46%, 75% 90.71%, 76% 90.35%, 77% 90.42%, 78% 90.91%, 79% 91.76%, 80% 92.86%, 81% 94.05%, 82% 95.17%, 83% 96.07%, 84% 96.63%, 85% 96.77%, 86% 96.47%, 87% 95.78%, 88% 94.79%, 89% 93.63%, 90% 92.45%, 91% 91.43%, 92% 90.69%, 93% 90.34%, 94% 90.43%, 95% 90.94%, 96% 91.80%, 97% 92.90%, 98% 94.09%, 99% 95.20%, 100% 96.09%);
-        }
-
         .hero--home02__row{
             flex-direction: row;
             justify-content: space-around;
-            padding: 30px 0px 10% 0px;
+            padding: 30px 0px 25vh 0px;
         }
 
         .hero--home02__text{
@@ -476,6 +574,41 @@
 
         .hero--home02__image{
             transform: scale(1.2);
+        }
+
+        .hero--home03{
+            padding: 8em 0 0 0;
+        }
+
+        .hero--home03__title{
+            padding: 30px 0px 40px 0px;
+            font-size: 29px;
+        }
+
+        .hero--home03__container{
+            width: 31%;
+            height: 90%;
+        }
+
+        .hero--home03__row{
+            height: 80%;
+        }
+
+        .hero--home03__value{
+            font-size: 45px;
+        }
+
+        .hero--home03__text{
+            font-size: 30px;
+        }
+
+        .hero--home03__image-container02{
+            height: 100%;
+        }
+
+        .hero--home03__image-container03{
+            height: 40%;
+            width: 100%;
         }
     }
 
@@ -581,6 +714,10 @@
         .home02__circle-06{
             right: 10%
         }
+
+        .container02__text--primary, .container02__text--secondary{
+            font-size: 26px;
+        }
     }
 
     @media (max-width: 1300px) {
@@ -649,6 +786,10 @@
     }
 
     @media (max-width: 1180px) {
+        .hero--home02__row{
+            padding: 30px 0px 25vh 0px;
+        }
+
         .hero--home02__secondary--first{
             font-size: 28px;
         }
@@ -690,6 +831,18 @@
         .home02__circle-06{
             right: 14%
         }
+
+        .hero--home03__value{
+            font-size: 38px;
+        }
+
+        .icon-dollar-circle{
+            margin: 0.2em;
+        }
+
+        .hero--home03__text{
+            font-size: 22px;
+        }
     }
 
     @media (max-width: 975px){
@@ -723,6 +876,19 @@
     }
 
     @media (max-width: 949px) {
+        .hero--home01__primary{
+            font-size: 42px;
+        }
+
+        .hero--home01__secondary{
+            font-size: 14px;
+            word-spacing: 4px;
+        }
+
+        .hero--home02__title{
+            font-size: 24px;
+        }
+
         .home02__circle-01{
             margin: 0 auto;
             width: 110px;
@@ -752,16 +918,23 @@
         .home02__circle-06{
             right: 20%
         }
-    }
 
-    @media (max-width: 900px) {
-        .hero--home01__primary{
+        .hero--home03__value{
             font-size: 42px;
         }
 
-        .hero--home01__secondary{
-            font-size: 14px;
-            word-spacing: 4px;
+        .icon-dollar-circle{
+            margin: 0.4em;
+        }
+
+        .hero--home03__text{
+            font-size: 28px;
+        }
+    }
+
+    @media (max-width: 900px) {
+        .hero--home02__row{
+            padding: 30px 0px 25vh 0px;
         }
 
         .hero--home02__title{
@@ -815,6 +988,10 @@
     @media (max-width: 700px) {
         .hero--home01__image--corner{
             height: 30%;
+        }
+
+        .hero--home02__row{
+            padding: 10px 0px 25vh 0px;
         }
 
         .hero--home02__title{
@@ -877,6 +1054,10 @@
             width: 25px;
             height: 25px;
         }
+
+        .hero--home03__title{
+            font-size: 22px;
+        }
     }
 
     @media (max-width: 600px) {
@@ -894,7 +1075,7 @@
         }
     
         .circle-01{
-            right: -5%;
+            right: 5%;
         }
 
         .hero--home01__image--corner{
@@ -918,9 +1099,31 @@
         .home02__circle-02{
             left: -5%;
         }
+
+        .hero--home03__value{
+            font-size: 38px;
+        }
+
+        .icon-dollar-circle{
+            margin: 0.2em;
+            height: 25px;
+            width: 25px;
+        }
+
+        .fa-dollar-sign{
+            font-size: 14px;
+        }
+
+        .hero--home03__text{
+            font-size: 22px;
+        }
+
+        .hero--home03__image-container03{
+            height: 70%;
+        }
     }
 
-    @media (max-width: 420px) {
+    @media (max-width: 450px) {
         .hero--home01__primary{
             font-size: 28px;
         }
@@ -929,17 +1132,8 @@
             font-size: 12px;
         }
 
-        .btn, .btn:visited, .btn:link{
-            padding: 8px 22px;
-            font-size: 12px;
-        }
-
-        .hero--home02{
-            clip-path: polygon(100% 0%, 0% 0% , 0% 100.00%, 1% 99.99%, 2% 99.95%, 3% 99.89%, 4% 99.81%, 5% 99.71%, 6% 99.59%, 7% 99.44%, 8% 99.28%, 9% 99.11%, 10% 98.92%, 11% 98.73%, 12% 98.52%, 13% 98.31%, 14% 98.09%, 15% 97.88%, 16% 97.67%, 17% 97.46%, 18% 97.26%, 19% 97.07%, 20% 96.89%, 21% 96.73%, 22% 96.58%, 23% 96.45%, 24% 96.34%, 25% 96.26%, 26% 96.19%, 27% 96.15%, 28% 96.13%, 29% 96.14%, 30% 96.16%, 31% 96.22%, 32% 96.29%, 33% 96.39%, 34% 96.51%, 35% 96.64%, 36% 96.80%, 37% 96.97%, 38% 97.15%, 39% 97.35%, 40% 97.55%, 41% 97.76%, 42% 97.98%, 43% 98.19%, 44% 98.40%, 45% 98.61%, 46% 98.82%, 47% 99.01%, 48% 99.19%, 49% 99.36%, 50% 99.51%, 51% 99.64%, 52% 99.76%, 53% 99.85%, 54% 99.92%, 55% 99.97%, 56% 100.00%, 57% 100.00%, 58% 99.97%, 59% 99.93%, 60% 99.86%, 61% 99.77%, 62% 99.66%, 63% 99.52%, 64% 99.37%, 65% 99.21%, 66% 99.03%, 67% 98.84%, 68% 98.63%, 69% 98.42%, 70% 98.21%, 71% 98.00%, 72% 97.78%, 73% 97.57%, 74% 97.37%, 75% 97.17%, 76% 96.99%, 77% 96.82%, 78% 96.66%, 79% 96.52%, 80% 96.40%, 81% 96.30%, 82% 96.22%, 83% 96.17%, 84% 96.14%, 85% 96.13%, 86% 96.15%, 87% 96.19%, 88% 96.25%, 89% 96.33%, 90% 96.44%, 91% 96.57%, 92% 96.71%, 93% 96.87%, 94% 97.05%, 95% 97.24%, 96% 97.44%, 97% 97.65%, 98% 97.86%, 99% 98.07%, 100% 98.29%);
-        }
-
         .hero--home02__title{
-            font-size: 22px;
+            font-size: 21px;
         }
 
         .hero--home02__secondary--first{
@@ -958,6 +1152,15 @@
         .home02__circle-06{
             width: 20px;
             height: 20px;
+        }
+
+        .hero--home03__title{
+            font-size: 21px;
+        }
+
+        .hero--home03__image-container02{
+            position: absolute;
+            height: 120%;
         }
     }
 </style>
@@ -1004,8 +1207,51 @@
             "id": "home01_button02",
             "label": "Homepage 01 Button 02 Text",
             "default": "watch video"
+        },
+        {
+            "type": "checkbox",
+            "id": "include_facebook",
+            "label": "Show Facebook link icon",
+            "default": true
+        },
+        {
+            "type": "checkbox",
+            "id": "include_linkedin",
+            "label": "Show Linkedin link icon",
+            "default": true
+        },
+        {
+            "type": "checkbox",
+            "id": "include_instagram",
+            "label": "Show Instagram link icon",
+            "default": true
+        },
+        {
+            "type": "checkbox",
+            "id": "include_youtube",
+            "label": "Show Youtube link icon",
+            "default": true
+        },
+        {
+            "type": "checkbox",
+            "id": "include_twitter",
+            "label": "Show Twitter link icon",
+            "default": true
+        },
+        {
+            "type": "text",
+            "id": "home02_title",
+            "label": "Homepage 02 Title",
+            "default": "meet Soapstand"
+        },
+        {
+            "type": "text",
+            "id": "home03_title",
+            "label": "Homepage 03 Title",
+            "default": "how we do better"
         }
     ]
 }
 {%endschema%}
+
 

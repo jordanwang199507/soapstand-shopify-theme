@@ -1,28 +1,363 @@
-<h1>{{page.title}}</h1>
-<div>
-    {{ page.content}}
-</div>
+<section class="contact">
+    <div class="container contact-page__row">
+        <div class="title__primary contact-page__title"><span>let's connect</span></div>
 
-{% form 'contact' %}
-{{ form.errors | default_errors }}
+        <div class="contact-page__primary">
+            better together
+            {{ 'Asset9.png' | asset_url | img_tag: 'contact page top right icon', 'contact-topRight' }}  
+        </div>
+        <div class="contact-page__secondary">
+            {{ 'Ellipse10.png' | asset_url | img_tag: 'contact page top right icon', 'contact-topLeft' }}  
+            We can do so much together. Let's talk
+        </div>
 
-    <div class="email">
-    <label for="email">Email</label>
-    <input type="email" name="contact[email]" id="email" />
+        <div class="contact-page__content">
+            <div class="if-statement">If you want mail: <span class="if-answer">sales@soapstand.com</span></div>
+            <div class="if-statement">If you wanna hear us out: <span class="if-answer">(604) 672 5522</span></div>
+            <div class="if-statement">If you're on instagram: <span class="if-answer">@thesoapstandco</span></div>
+            <div class="if-statement">If you want to meet us irl: <span class="if-answer">come say hi at 312 Main St</span></div>
+        </div>
+
+        {% form 'contact' %}
+            {{ form.errors | default_errors }}
+
+            <div class="name">
+                <label for="name" class="name__label">name</label>
+                <input type="text" name="contact[name]" class="name__input" id="name" placeholder="name" required/>
+                {{ 'Asset10.png' | asset_url | img_tag: 'contact page top right icon', 'contact-middleRight' }}  
+            </div>
+
+            <div class="email">
+                <label for="email" class="email__label">email</label>
+                <input type="email" name="contact[email]" class="email__input" id="email" placeholder="email" required/>
+            </div>
+
+            <div class="message">
+                {{ 'Ellipse2.png' | asset_url | img_tag: 'contact page top right icon', 'contact-middleLeft' }}  
+                <label for="message" class="message__label">message</label>
+                <textarea name="contact[body]" id="message" class="message__input" placeholder="message" required></textarea>
+                {{ 'Ellipse7.png' | asset_url | img_tag: 'contact page top right icon', 'contact-bottomLeft' }}  
+                {{ 'Asset11.png' | asset_url | img_tag: 'contact page top right icon', 'contact-bottomRight' }}  
+            </div>
+            <div class="submit">
+                <input class="btn btn__secondary btn__contact" type="submit" value="submit" />            
+            </div>
+        {% endform %}
     </div>
+</section> 
 
-    <div class="email">
-        <label for="test">Test</label>
-        <input type="text" name="contact[test]" id="test" />
-    </div>
+<style>
+    @import url(//db.onlinewebfonts.com/c/6bfddeebdb6be7ad8b3cbf0523b89aca?family=Brevia);
+    body{
+        background: #014E59;
+    }
 
-    <div class="message">
-    <label for="message">Message</label>
-    <textarea name="contact[body]" id="message"></textarea>
-    </div>
+    .contact{
+        background: #014E59;
+        min-height: 85vh;
+        height: auto;
+        padding: 1em 5em 3em 5em;
+        text-align: center;
+        position: relative;
+    }
 
-    <div class="submit">
-    <input type="submit" value="Send Email" />
-    </div>
+    .contact-page__title{
+        font-size: 29px;
+        margin-bottom: 3%;
+    }
 
-{% endform %}
+    .contact-page__primary{
+        font-family: "Brevia", Montserrat, sans-serif;
+        font-size: 4em;
+        color: #94B7B8;
+        margin-bottom: 2vh;
+        letter-spacing: 1px;
+        position: relative;
+    }
+
+    .contact-topRight{
+        position: absolute;
+        height: 40px;
+        top: -40px;
+    }
+
+    .contact-page__secondary{
+        font-size: 2em;
+        font-weight: 700;
+        color: white;
+        letter-spacing: 1px;
+        position: relative;
+    }
+
+    .contact-topLeft{
+        position: absolute;
+        height: 20px;
+        top: -30px;
+    }
+
+    .contact-page__content{
+        text-align: left;
+        max-width: 500px;
+        margin: 5vh auto;
+        color: white;
+    }
+
+    .if-statement{
+        margin: .25em;
+        font-size: 1.1em;
+    }
+
+    .if-answer{
+        font-weight: bold;
+    }
+
+    .name, .message{
+        position: relative;
+    }
+
+    .contact-middleRight{
+        position: absolute;
+        height: 40px;
+        right: -10px;
+        top: -45px;
+    }
+
+    .contact-middleLeft{
+        position: absolute;
+        height: 25px;
+        top: 15px;
+        left: -35px;
+    }
+
+    .contact-bottomLeft{
+        position: absolute;
+        height: 20px;
+        left: -5px;
+        bottom: -30px;
+    }
+
+    .contact-bottomRight{
+        position: absolute;
+        height: 60px;
+        right: -20px;
+        bottom: -70px;
+    }
+
+    input:not(:placeholder-shown):invalid{
+        border: none;
+        outline: 2px solid red;
+        border-radius: 5px;
+    }
+
+    .name__label, .email__label, .message__label{
+        display: none;
+    }
+
+    .name__input, .email__input{
+        width: 550px;
+        height: 40px;
+        background: linear-gradient(180.6deg, #004E59 -44.87%, #246770 -7.09%, #66949B 57.12%, #9CBABE 121.34%, #C7D8DA 181.78%, #E5EDEE 234.67%, #F8FAFA 280%, #FFFFFF 310.22%);
+        opacity: 0.4;
+        border: none;
+        border-radius: 10px;
+    }
+
+    .name__input, .email__input{
+        margin-bottom: 2vh;
+    }
+
+    .name__input::placeholder, .email__input::placeholder, .message__input::placeholder{
+        color: white;
+        font-size: 14px;
+    }
+
+    #name, #email, #message{
+        color: white;
+        padding-left: 10px;
+        font-family: Montserrat, sans-serif;
+    }
+
+    .message__input{
+        resize: none;
+        width: 550px;
+        height: 150px;
+        background: linear-gradient(180.6deg, #004E59 -44.87%, #246770 -7.09%, #66949B 57.12%, #9CBABE 121.34%, #C7D8DA 181.78%, #E5EDEE 234.67%, #F8FAFA 280%, #FFFFFF 310.22%);
+        opacity: 0.4;
+        border: none;
+        border-radius: 10px;
+    }
+
+    #message{
+        padding-top: 10px;
+    }
+
+    form{
+        display: inline-block;
+    }
+
+    .submit{
+        height: auto;
+    }
+
+    .btn__contact{
+        margin-top: 50px;
+        position: unset;
+    }
+
+    .shopify-challenge__container{
+        max-width: 100%;
+        height: auto;
+        min-height: 85vh;
+        height: auto;
+        background: #014e59;
+        padding-top: 20px;
+        color: white;
+    }
+
+    .shopify-challenge__button{
+        margin-top: 5%;
+    }
+
+    @media (max-width: 1000px) {
+        .contact-page__primary{
+            font-size: 3.2em
+        }
+
+        .contact-page__secondary{
+            font-size: 1.5em;
+        }
+
+        .contact-page__content{
+            max-width: 450px;
+        }
+
+        .if-statement{
+            font-size: 1em;
+        }
+    }
+
+    @media (max-width: 949px){
+        .contact{
+            padding: 2em 5em 3em 5em;
+        }
+    }
+
+    @media (max-width: 800px) {
+        .contact{
+            padding: 2em 0 10vh 0;
+        }
+
+        .contact-page__title{
+            font-size: 26px;
+        }
+
+        .contact-page__primary{
+            font-size: 2.8em;
+        }
+
+        .contact-page__secondary{
+            font-size: 1.4em;
+        }
+
+        .contact-page__content{
+            max-width: 400px;
+        }
+
+        .if-statement{
+            font-size: .9em;
+        }
+
+        .contact-middleLeft{
+        }
+
+        .contact-middleRight{
+        }
+
+        form{
+            display: unset;
+        }
+
+        .name, .email, .message{
+            width: 80%;
+            margin: 0 auto;
+        }
+
+        .name__input, .email__input, .message__input{
+            width: 100%;
+        }
+    }
+
+    @media (max-width: 600px) {
+        .contact-page__title{
+            font-size: 24px;
+        }
+
+        .contact-page__primary{
+            font-size: 2.6em;
+        }
+
+        .contact-page__secondary{
+            font-size: 1.2em;
+            letter-spacing: 0px;
+        }
+
+        .contact-page__content{
+            max-width: 350px;
+        }
+
+        .if-statement{
+            font-size: 12px;
+        }
+
+        .contact-topLeft{
+            height: 15px;
+        }
+
+        .contact-middleRight{
+            top: -35px;
+            height: 30px;
+        }
+    }
+
+    @media (max-width: 475px) {
+        .contact-page__title{
+            font-size: 20px;
+        }
+
+        .contact-page__primary{
+            font-size: 2em;
+            letter-spacing: 0px;
+        }
+
+        .contact-page__secondary{
+            font-size: 14px;
+        }
+
+        .contact-page__content{
+            max-width: 275px;
+        }
+
+        .if-statement{
+            font-size: 10px;
+        }
+
+        .contact-topLeft{
+            height: 10px;
+            top: -15px;
+        }
+
+        .contact-topRight{
+            height: 25px;
+        }
+
+        .contact-bottomLeft{
+            height: 15px;
+            bottom: -25px;
+        }
+
+        .contact-bottomRight{
+            height: 40px;
+            bottom: -50px;
+        }
+    }
+</style>

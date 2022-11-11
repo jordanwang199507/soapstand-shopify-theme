@@ -14,6 +14,92 @@ body{
     position: relative;
 }
 
+.title__primary{
+    text-align: center;
+}
+
+.title__primary span{
+    font-family: "Brevia", Montserrat, sans-serif;
+    font-weight: 400;
+    color: #ffffff;
+    display: inline-block;
+}
+
+.title__primary span::before{
+    content: '';
+    height: 5px;
+    background: white;
+    border-radius: 5px;
+    display: block;
+}
+
+.btn, .btn:visited, .btn:link{
+    width: auto;
+    padding: 8px 25px;
+    border-radius: 50px;
+    text-align: center;
+    text-decoration: none;
+    color: #005560;
+    transition: all .2s;
+    font-size: 14px;
+
+    border: 2px solid #005560;
+    background-color: white;
+}
+
+.btn:hover{
+    color: white;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    background: linear-gradient(to right, #005560 0%, #94B7B8 100%) border-box;
+    border: 2px solid transparent;
+}
+
+
+.btn__secondary, .btn__secondary:link{
+    position: absolute;
+    bottom: -2vh;
+    color: white;
+    border: none;
+    padding: .75em 1.6em;
+    font-size: 14px;
+    font-family: Montserrat, sans-serif;
+    font-weight: 700;
+    border: 2px solid #014E59;
+    background: linear-gradient(180deg, #588B93 1.67%, rgba(88, 139, 147, 0.654602) 52.62%, rgba(88, 139, 147, 0.272308) 99.79%);
+}
+
+.btn__secondary:hover{
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    color: #a8cccc;
+    background: transparent;
+    border: 2px solid #a8cccc;
+}
+
+
+@media (min-width: 950px) {
+    .row {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .btn, .btn:visited, .btn:link{
+        padding: 10px 25px;
+        font-size: 18px;
+    }
+
+    .btn__secondary, .btn__secondary:link{
+        padding: 1.2em 2.4em;
+        font-size: 14px;
+        bottom: 5vh;
+    }
+}
+
+@media (max-width: 450px) {
+    .btn, .btn:visited, .btn:link{
+        padding: 8px 22px;
+        font-size: 12px;
+    }
+}
 /* @import url(//db.onlinewebfonts.com/c/6bfddeebdb6be7ad8b3cbf0523b89aca?family=Brevia); */
 
 body{

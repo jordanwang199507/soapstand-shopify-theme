@@ -1,27 +1,50 @@
+{% if page_title == "Soapstand | Sustainable Soap Refillery Stations" %}
     <header class="header">
-        <div class="container row">
-            <div class="nav-toggle" aria-label="open navigation">
+                                                            {% comment %} {% elsif page_title == "contact" %} {% endcomment %}
+{% else %}
+    <header class="header header__notHome">
+{% endif %}
+    <div class="container row">
+        <input type="checkbox" id="navi-toggle" class="navigation__checkbox">
+        {% if page_title == "Soapstand | Sustainable Soap Refillery Stations" %}
+            <label class="nav-toggle" for="navi-toggle" aria-label="open navigation">
                 <span class="hamburger"></span>
-            </div>
+            </label>
             <a class="logo" href="#">
-                {{ 'Logo-09.svg' | asset_url | img_tag: 'Logo', 'logo__image' }}            
-            </a>
+                {{ 'Logo-dark.svg' | asset_url | img_tag: 'Logo', 'logo__image' }}            
+            </a>                              {% comment %} {% elsif page_title == "contact" %} {% endcomment %}
             <nav class="nav">
                 <ul class="nav__list">
                     {% for link in linklists.menu.links -%}
-                    <li class="nav__item">{{ link.title | link_to: link.url }}
-                    </li>
+                        <li class="nav__item">{{ link.title | link_to: link.url }}
+                        </li>
                     {%- endfor %}
                 </ul>
             </nav>
-            {% if section.settings.show_search%}
-            <form action="/search" class="search__form">
-                <input type="search" name="q">
-                <button type="submit">Search</button>
-            </form>
-            {% endif %}
-        </div>
-    </header>
+        {% else %}
+            <label class="nav-toggle nav-toggle__notHome" for="navi-toggle" aria-label="open navigation">
+                <span class="hamburger hamburger__notHome"></span>
+            </label>
+            <a class="logo" href="#">
+                {{ 'Logo-light.svg' | asset_url | img_tag: 'Logo', 'logo__image' }}            
+            </a>
+            <nav class="nav nav__notHome">
+                <ul class="nav__list nav__list__notHome">
+                    {% for link in linklists.menu.links -%}
+                        <li class="nav__item nav__item__notHome">{{ link.title | link_to: link.url }}
+                        </li>
+                    {%- endfor %}
+                </ul>
+            </nav>
+        {% endif %}
+        {% if section.settings.show_search%}
+        <form action="/search" class="search__form">
+            <input type="search" name="q">
+            <button type="submit">Search</button>
+        </form>
+        {% endif %}
+    </div>
+</header>
 
 <style>
     .header{
@@ -32,6 +55,10 @@
         left: 0;
     }
 
+    .header__notHome{
+        background: #014E59;
+    }
+
     .logo__image{
         width: 100px;
     }
@@ -40,19 +67,28 @@
         width: 100%;
     }
 
+    .navigation__checkbox{
+        display: none;
+    }
+
     .nav-toggle {
         cursor: pointer;
         border: 0;
-        width: 3em;
-        height: 3em;
+        width: 2.5em;
+        height: 2.5em;
         padding: 0em;
         border-radius: 50%;
-        background: #005560;
-        color: white;
+        background: #014E59;
         transition: opacity 250ms ease;
         
         position: absolute;
-        left: 0;
+        top: 2em;
+        left: 5%;
+        transform: translate(-50%, -50%);
+    }
+
+    .nav-toggle__notHome{
+        background: white;
     }
     
     .nav-toggle:focus,
@@ -62,33 +98,41 @@
 
     .hamburger {
         width: 50%;
-        position: absolute;
+        position: relative;
         top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
     }
     
     .hamburger,
     .hamburger::before,
     .hamburger::after {
-        display: block;
+        display: inline-block;
         margin: 0 auto;
-        height: 3px;
+        height: 2px;
         background: white;
+        width: 1.5rem;
+    }
+
+    .hamburger__notHome,
+    .hamburger__notHome::before,
+    .hamburger__notHome::after {
+        background: #014E59;
     }
     
     .hamburger::before,
     .hamburger::after {
+        position: absolute;
         content: '';
         width: 100%;
+        left: 0;
+        transition: all .2s;
     }
     
     .hamburger::before {
-        transform: translateY(-6px);
+        top: -.5rem;
     }
     
     .hamburger::after {
-        transform: translateY(3px);
+        top: .5rem;
     }
 
     .nav {
@@ -115,9 +159,13 @@
 
     .nav__item a{
         text-decoration: none;
-        color: #005560;
+        color: #014E59;
         font-weight: bold;
         font-size: 22px;
+    }
+
+    .nav__item__notHome a{
+        color: white;
     }
 
     .nav__item a:hover, .nav__item:focus{
@@ -130,9 +178,23 @@
         margin: auto 0;
     }
 
+    .navigation__checkbox:checked + .nav-toggle .hamburger{
+        background-color: transparent;
+    }
+
+    .navigation__checkbox:checked + .nav-toggle .hamburger::before{
+        top: 0;
+        transform: rotate(135deg);
+    }
+    
+    .navigation__checkbox:checked + .nav-toggle .hamburger::after{
+        top: 0;
+        transform: rotate(-135deg);
+    }
+
     @media (min-width: 950px) {
         .header{
-            height: 15vh;
+            min-height: 15vh;
         }
 
         .nav-toggle {
@@ -171,10 +233,8 @@
     const navToggle = document.querySelector('.nav-toggle');
     const nav = document.querySelector('nav');
 
-
     navToggle.addEventListener('click', () => {
         nav.classList.toggle('visible');
-        console.log('test');
     })
 {% endjavascript %}
 
