@@ -19,33 +19,35 @@
         </div>
 
         {% form 'contact' %}
-                <p class="form-success">
-                    {{ 'contact.form.submit' | t }}
-                </p>
-
             {{ form.errors | default_errors }}
+            {% if form.posted_successfully? %}
+                <p class="form-success">
+                    Thank you very much!
+                </p>
+            {% else %}
+                <div class="name">
+                    <label for="name" class="name__label">name</label>
+                    <input type="text" name="contact[name]" class="name__input" id="name" placeholder="name" required/>
+                    {{ 'Asset10.png' | asset_url | img_tag: 'contact page top right icon', 'contact-middleRight' }}  
+                </div>
 
-            <div class="name">
-                <label for="name" class="name__label">name</label>
-                <input type="text" name="contact[name]" class="name__input" id="name" placeholder="name" required/>
-                {{ 'Asset10.png' | asset_url | img_tag: 'contact page top right icon', 'contact-middleRight' }}  
-            </div>
+                <div class="email">
+                    <label for="email" class="email__label">email</label>
+                    <input type="email" name="contact[email]" class="email__input" id="email" placeholder="email" required/>
+                </div>
 
-            <div class="email">
-                <label for="email" class="email__label">email</label>
-                <input type="email" name="contact[email]" class="email__input" id="email" placeholder="email" required/>
-            </div>
+                <div class="message">
+                    {{ 'Ellipse2.png' | asset_url | img_tag: 'contact page top right icon', 'contact-middleLeft' }}  
+                    <label for="message" class="message__label">message</label>
+                    <textarea name="contact[body]" id="message" class="message__input" placeholder="message" required></textarea>
+                    {{ 'Ellipse7.png' | asset_url | img_tag: 'contact page top right icon', 'contact-bottomLeft' }}  
+                    {{ 'Asset11.png' | asset_url | img_tag: 'contact page top right icon', 'contact-bottomRight' }}  
+                </div>
+                <div class="submit">
+                    <input class="btn btn__secondary btn__contact" type="submit" value="submit" />            
+                </div>
+            {% endif %}
 
-            <div class="message">
-                {{ 'Ellipse2.png' | asset_url | img_tag: 'contact page top right icon', 'contact-middleLeft' }}  
-                <label for="message" class="message__label">message</label>
-                <textarea name="contact[body]" id="message" class="message__input" placeholder="message" required></textarea>
-                {{ 'Ellipse7.png' | asset_url | img_tag: 'contact page top right icon', 'contact-bottomLeft' }}  
-                {{ 'Asset11.png' | asset_url | img_tag: 'contact page top right icon', 'contact-bottomRight' }}  
-            </div>
-            <div class="submit">
-                <input class="btn btn__secondary btn__contact" type="submit" value="submit" />            
-            </div>
         {% endform %}
     </div>
 </section> 
