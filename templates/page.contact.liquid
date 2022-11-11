@@ -19,6 +19,10 @@
         </div>
 
         {% form 'contact' %}
+                <p class="form-success">
+                    {{ 'contact.form.submit' | t }}
+                </p>
+
             {{ form.errors | default_errors }}
 
             <div class="name">
