@@ -4,10 +4,10 @@
 
         <div class="contact-page__primary">
             better together
-            {{ 'Asset9.png' | asset_url | img_tag: 'contact page top right icon', 'contact-topRight' }}  
+            {{ 'contact-topRight.png' | asset_url | img_tag: 'contact page top right icon', 'contact-topRight' }}  
         </div>
         <div class="contact-page__secondary">
-            {{ 'Ellipse10.png' | asset_url | img_tag: 'contact page top right icon', 'contact-topLeft' }}  
+            {{ 'contact-topLeft.png' | asset_url | img_tag: 'contact page top right icon', 'contact-topLeft' }}  
             We can do so much together. Let's talk
         </div>
 
@@ -19,16 +19,18 @@
         </div>
 
         {% form 'contact' %}
-            {{ form.errors | default_errors }}
             {% if form.posted_successfully? %}
                 <p class="form-success">
-                    Thank you very much!
+                    {{ 'contact-middleLeft.png' | asset_url | img_tag: 'contact page top right icon', 'contact-middleLeft' }}  
+                    Thank you! The Soapstand team will be in contact with you shortly!
+                    {{ 'contact-bottomLeft.png' | asset_url | img_tag: 'contact page top right icon', 'contact-bottomLeft' }}  
+                    {{ 'contact-bottomRight.png' | asset_url | img_tag: 'contact page top right icon', 'contact-bottomRight' }} 
                 </p>
             {% else %}
                 <div class="name">
                     <label for="name" class="name__label">name</label>
                     <input type="text" name="contact[name]" class="name__input" id="name" placeholder="name" required/>
-                    {{ 'Asset10.png' | asset_url | img_tag: 'contact page top right icon', 'contact-middleRight' }}  
+                    {{ 'contact-middleRight.png' | asset_url | img_tag: 'contact page top right icon', 'contact-middleRight' }}  
                 </div>
 
                 <div class="email">
@@ -37,17 +39,16 @@
                 </div>
 
                 <div class="message">
-                    {{ 'Ellipse2.png' | asset_url | img_tag: 'contact page top right icon', 'contact-middleLeft' }}  
+                    {{ 'contact-middleLeft.png' | asset_url | img_tag: 'contact page top right icon', 'contact-middleLeft' }}  
                     <label for="message" class="message__label">message</label>
                     <textarea name="contact[body]" id="message" class="message__input" placeholder="message" required></textarea>
-                    {{ 'Ellipse7.png' | asset_url | img_tag: 'contact page top right icon', 'contact-bottomLeft' }}  
-                    {{ 'Asset11.png' | asset_url | img_tag: 'contact page top right icon', 'contact-bottomRight' }}  
+                    {{ 'contact-bottomLeft.png' | asset_url | img_tag: 'contact page top right icon', 'contact-bottomLeft' }}  
+                    {{ 'contact-bottomRight.png' | asset_url | img_tag: 'contact page top right icon', 'contact-bottomRight' }}  
                 </div>
                 <div class="submit">
                     <input class="btn btn__secondary btn__contact" type="submit" value="submit" />            
                 </div>
             {% endif %}
-
         {% endform %}
     </div>
 </section> 
@@ -210,18 +211,15 @@
         position: unset;
     }
 
-    .shopify-challenge__container{
-        max-width: 100%;
-        height: auto;
-        min-height: 85vh;
-        height: auto;
-        background: #014e59;
-        padding-top: 20px;
+    .form-success{
+        padding: 4em;
+        background: linear-gradient(180.6deg, #004E59 -44.87%, #246770 -7.09%, #66949B 57.12%, #9CBABE 121.34%, #C7D8DA 181.78%, #E5EDEE 234.67%, #F8FAFA 280%, #FFFFFF 310.22%);
+        border-radius: 25px;
         color: white;
-    }
-
-    .shopify-challenge__button{
-        margin-top: 5%;
+        opacity: .8;
+        font-family: "Brevia";
+        font-size: 20px;
+        position: relative;
     }
 
     @media (max-width: 1000px) {
@@ -250,7 +248,7 @@
 
     @media (max-width: 800px) {
         .contact{
-            padding: 2em 0 10vh 0;
+            padding: 1.5em 0 10vh 0;
         }
 
         .contact-page__title{
@@ -291,6 +289,12 @@
         .name__input, .email__input, .message__input{
             width: 100%;
         }
+
+        .form-success{
+            margin-top: 10%;
+            padding: 3em 2em;
+            font-size: 16px;
+        }
     }
 
     @media (max-width: 600px) {
@@ -322,6 +326,12 @@
         .contact-middleRight{
             top: -35px;
             height: 30px;
+        }
+
+        .form-success{
+            margin-top: 20%;
+            padding: 3em 2em;
+            font-size: 12px;
         }
     }
 

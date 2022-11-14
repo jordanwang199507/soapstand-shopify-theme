@@ -292,7 +292,6 @@
         width: 30px;
         height: 30px;
         position: absolute;
-        top: -5%;
         z-index: 1;
     }
 
@@ -300,7 +299,6 @@
         width: 50px;
         height: 50px;
         position: absolute;
-        top: -2%;
         z-index: 1;
     }
 
@@ -308,14 +306,12 @@
         width: 60px;
         height: 60px;
         position: absolute;
-        bottom: -2%;
     }
 
     .home02__circle-06{
         width: 35px;
         height: 35px;
         position: absolute;
-        bottom: -10%;
         z-index: 1;
     }
 
@@ -327,7 +323,6 @@
     }
 
     .hero--home02__image-container-L{
-        width: 100%;
         position: relative;
         z-index: 0;
     }
@@ -340,16 +335,16 @@
         border: 8px solid transparent; 
         background: linear-gradient(45deg, #3A7E91 100%, #6AB1B1 92.15%, #6AB1B1 71.37%, #65ACAE 100%) border-box;
         width: 570px;
-        height: 450px;
+        height: 500px;
     }
 
     .hero--home02__image{
         background:url("https://cdn.shopify.com/s/files/1/0549/5580/2693/t/13/assets/home02__image.png?v=143262246980390111351666481222");
         height: 100%;
-        width: 90%;
+        width: 100%;
         background-position: left;
         background-size: cover;
-        transform: scale(1.2);
+        transform: scale(1.1);
     }
 
     .bold{
@@ -515,7 +510,7 @@
         .hero--home02__row{
             flex-direction: row;
             justify-content: space-around;
-            padding: 30px 0px 25vh 0px;
+            padding: 30px 0px 30vh 0px;
         }
 
         .hero--home02__text{
@@ -540,40 +535,37 @@
         }
 
         .hero--home02__image-container-L{
-            width: 60%;
             position: relative;
         }
 
         .home02__circle-02{
             top: 25%;
-            left: 12%;
+            left: -50px;
         }
 
         .home02__circle-03{
-            left: 12%;
+            top: -35px;
+            left: -50px;
         }
 
         .home02__circle-04{
-            left: 18%;
+            top: -10px;
+            left: -5px;
         }
 
         .home02__circle-05{
-            right: 17%; 
+            right: -15px;
+            bottom: -15px;
         }
 
         .home02__circle-06{
-            right: 20%
+            bottom: -55px;
+            right: 20px;
         }
 
         .hero--home02__image-container{
             max-width: 55%;
             min-width: 650px;
-            width: 550px;
-            height: 500px;
-        }
-
-        .hero--home02__image{
-            transform: scale(1.2);
         }
 
         .hero--home03{
@@ -612,72 +604,6 @@
         }
     }
 
-    @media (max-width: 1800px) {
-        .home02__circle-02{
-            left: 7%;
-        }
-    
-        .home02__circle-03{
-            left: 7%;
-        }
-
-        .home02__circle-04{
-            left: 13%;
-        }
-
-        .home02__circle-05{
-            right: 13%; 
-        }
-
-        .home02__circle-06{
-            right: 18%
-        }
-    }
-
-    @media (max-width: 1700px) {
-        .home02__circle-02{
-            left: 5%;
-        }
-
-        .home02__circle-03{
-            left: 5%;
-        }
-
-        .home02__circle-04{
-            left: 10%;
-        }
-
-        .home02__circle-05{
-            right: 8%; 
-        }
-
-        .home02__circle-06{
-            right: 15%
-        }
-    }
-
-    @media (max-width: 1550px) {
-        .home02__circle-02{
-            left: 0%;
-        }
-
-        .home02__circle-03{
-            left: 2%;
-        }
-
-        .home02__circle-04{
-            left: 7%;
-        }
-
-        .home02__circle-05{
-            right: 7%; 
-        }
-
-        .home02__circle-06{
-            right: 12%
-        }
-    }
-
     @media (max-width: 1400px) {
         .hero--home01__image{
             min-width: 500px;
@@ -693,26 +619,6 @@
 
         .hero--home02__secondary--second{
             font-size: 28px;
-        }
-
-        .home02__circle-02{
-            left: -5%;
-        }
-
-        .home02__circle-03{
-            left: -3%;
-        }
-
-        .home02__circle-04{
-            left: 4%;
-        }
-
-        .home02__circle-05{
-            right: 5%; 
-        }
-
-        .home02__circle-06{
-            right: 10%
         }
 
         .container02__text--primary, .container02__text--secondary{
@@ -746,24 +652,9 @@
             font-size: 30px;
         }
 
-        .home02__circle-02{
-            left: -8%;
-        }
-
-        .home02__circle-03{
-            left: -7%;
-        }
-
-        .home02__circle-04{
-            left: 0%;
-        }
-
-        .home02__circle-05{
-            right: 0%; 
-        }
-
-        .home02__circle-06{
-            right: 5%
+        .hero--home02__image-container{
+            min-width: 550px;
+            height: 420px;
         }
     }
 
@@ -775,19 +666,11 @@
         .hero--home02__secondary--first{
             font-size: 30px;
         }
-
-        .home02__circle-05{
-            right: -5%; 
-        }
-
-        .home02__circle-06{
-            right: 2%
-        }
     }
 
     @media (max-width: 1180px) {
         .hero--home02__row{
-            padding: 30px 0px 25vh 0px;
+            padding: 30px 0px 30vh 0px;
         }
 
         .hero--home02__secondary--first{
@@ -798,38 +681,13 @@
             font-size: 21px;
         }
 
+        .hero--home02__image-container-L{
+            width: 55%;
+        }
+
         .hero--home02__image-container{
-            min-width: 500px;
             height: 400px;
-        }
-
-        .hero--home02__image{
-            height: 475px;
             min-width: 500px;
-            width: 100%;
-            height: 100%;
-            transform: scale(1.1);
-            background-position: left;
-        }
-
-        .home02__circle-02{
-            left: -4%;
-        }
-
-        .home02__circle-03{
-            left: -2%;
-        }
-
-        .home02__circle-04{
-            left: 6%;
-        }
-
-        .home02__circle-05{
-            right: 5%; 
-        }
-
-        .home02__circle-06{
-            right: 14%
         }
 
         .hero--home03__value{
@@ -845,7 +703,7 @@
         }
     }
 
-    @media (max-width: 975px){
+    @media (max-width: 990px){
         .hero--home02__secondary--first{
             font-size: 28px;
         }
@@ -853,25 +711,13 @@
         .hero--home02__secondary--second{
             font-size: 20px;
         }
-        
-        .home02__circle-02{
-            left: -8%;
-        }
-
-        .home02__circle-03{
-            left: -7%;
-        }
-
-        .home02__circle-04{
-            left: 2%;
-        }
 
         .home02__circle-05{
-            right: 0%; 
+            right: -55px;
         }
 
         .home02__circle-06{
-            right: 10%
+            right: -15px;
         }
     }
 
@@ -889,34 +735,32 @@
             font-size: 24px;
         }
 
+        .hero--home02__image-container-L{
+            width: 90%;
+        }
+
         .home02__circle-01{
             margin: 0 auto;
             width: 110px;
             height: 110px;
         }
 
-        .hero--home02__logo{
-            height: 70%;
-        }
-
-        .home02__circle-02{
-            left: 5%;
-        }
-
         .home02__circle-03{
-            left: 7%;
+            left: 2vw;
+            top: -20px;
         }
 
         .home02__circle-04{
-            left: 15%;
+            left: 6vw;
         }
 
         .home02__circle-05{
-            right: 14%; 
+            right: 5vw;
+            bottom: -10px;
         }
 
-        .home02__circle-06{
-            right: 20%
+        .hero--home02__logo{
+            height: 70%;
         }
 
         .hero--home03__value{
@@ -933,57 +777,34 @@
     }
 
     @media (max-width: 900px) {
-        .hero--home02__row{
-            padding: 30px 0px 25vh 0px;
-        }
-
         .hero--home02__title{
             font-size: 29px;
         }
 
         .home02__circle-02{
-            left: 5%;
-        }
-
-        .home02__circle-03{
-            left: 5%;
-        }
-
-        .home02__circle-04{
-            left: 12%;
-        }
-
-        .home02__circle-05{
-            right: 8%; 
-        }
-
-        .home02__circle-06{
-            right: 15%
+            left: -30px;
         }
     }
 
     @media (max-width: 800px){
-        .home02__circle-02{
-            left: -2%;
-        }
-
         .home02__circle-03{
-            left: 0%;
+            left: -2vw;
+            top: -20px;
         }
 
-        .home02__circle-04{
-            left: 8%;
+       .home02__circle-04{
+            left: 2vw;
         }
 
-        .home02__circle-05{
-            right: 5%; 
+       .home02__circle-05{
+            right: 0px;
         }
 
-        .home02__circle-06{
-            right: 12%
+       .home02__circle-06{
+            bottom: -50px;
+            right: 30px;
         }
     }
-
 
     @media (max-width: 700px) {
         .hero--home01__image--corner{
@@ -1007,6 +828,14 @@
             height: 100px;
         }
 
+        .home02__circle-03{
+            left: -4vw;
+        }
+
+       .home02__circle-04{
+            left: 0px;
+        }
+
         .hero--home02__logo{
             height: 60%;
         }
@@ -1020,7 +849,8 @@
         }
 
         .hero--home02__image-container{
-            width: 500px;
+            width: 100%;
+            min-width: 100%;
         }
 
         .hero--home02__image{
@@ -1028,19 +858,16 @@
         }
 
         .home02__circle-02{
-            left: -4%;
             width: 100px;
             height: 100px;
         }
 
         .home02__circle-03{
-            left: -2%;
             width: 20px;
             height: 20px;
         }
 
         .home02__circle-04{
-            left: 6%;
             width: 40px;
             height: 40px;
         }
@@ -1096,10 +923,6 @@
             background-position: center;
         }
 
-        .home02__circle-02{
-            left: -5%;
-        }
-
         .hero--home03__value{
             font-size: 38px;
         }
@@ -1129,7 +952,8 @@
         }
 
         .hero--home01__secondary{
-            font-size: 12px;
+            font-size: 11px;
+            word-spacing: 1px;
         }
 
         .hero--home02__title{
