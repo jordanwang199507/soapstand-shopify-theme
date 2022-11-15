@@ -7,7 +7,7 @@
             {{ 'contact-topRight.png' | asset_url | img_tag: 'contact page top right icon', 'contact-topRight' }}  
         </div>
         <div class="contact-page__secondary">
-            {{ 'contact-topLeft.png' | asset_url | img_tag: 'contact page top right icon', 'contact-topLeft' }}  
+            {{ 'contact-topLeft.png' | asset_url | img_tag: 'contact page top left icon', 'contact-topLeft' }}  
             We can do so much together. Let's talk
         </div>
 
@@ -21,16 +21,16 @@
         {% form 'contact' %}
             {% if form.posted_successfully? %}
                 <p class="form-success">
-                    {{ 'contact-middleLeft.png' | asset_url | img_tag: 'contact page top right icon', 'contact-middleLeft' }}  
+                    {{ 'contact-middleLeft.png' | asset_url | img_tag: 'contact page middle left icon', 'contact-middleLeft' }}  
                     Thank you! The Soapstand team will be in contact with you shortly!
-                    {{ 'contact-bottomLeft.png' | asset_url | img_tag: 'contact page top right icon', 'contact-bottomLeft' }}  
-                    {{ 'contact-bottomRight.png' | asset_url | img_tag: 'contact page top right icon', 'contact-bottomRight' }} 
+                    {{ 'contact-bottomLeft.png' | asset_url | img_tag: 'contact page bottom left icon', 'contact-bottomLeft' }}  
+                    {{ 'contact-bottomRight.png' | asset_url | img_tag: 'contact page bottom right icon', 'contact-bottomRight' }} 
                 </p>
             {% else %}
                 <div class="name">
                     <label for="name" class="name__label">name</label>
                     <input type="text" name="contact[name]" class="name__input" id="name" placeholder="name" required/>
-                    {{ 'contact-middleRight.png' | asset_url | img_tag: 'contact page top right icon', 'contact-middleRight' }}  
+                    {{ 'contact-middleRight.png' | asset_url | img_tag: 'contact page middle right icon', 'contact-middleRight' }}  
                 </div>
 
                 <div class="email">
@@ -39,11 +39,11 @@
                 </div>
 
                 <div class="message">
-                    {{ 'contact-middleLeft.png' | asset_url | img_tag: 'contact page top right icon', 'contact-middleLeft' }}  
+                    {{ 'contact-middleLeft.png' | asset_url | img_tag: 'contact page middle left icon', 'contact-middleLeft' }}  
                     <label for="message" class="message__label">message</label>
                     <textarea name="contact[body]" id="message" class="message__input" placeholder="message" required></textarea>
-                    {{ 'contact-bottomLeft.png' | asset_url | img_tag: 'contact page top right icon', 'contact-bottomLeft' }}  
-                    {{ 'contact-bottomRight.png' | asset_url | img_tag: 'contact page top right icon', 'contact-bottomRight' }}  
+                    {{ 'contact-bottomLeft.png' | asset_url | img_tag: 'contact page bottom left icon', 'contact-bottomLeft' }}  
+                    {{ 'contact-bottomRight.png' | asset_url | img_tag: 'contact page bottom right icon', 'contact-bottomRight' }}  
                 </div>
                 <div class="submit">
                     <input class="btn btn__secondary btn__contact" type="submit" value="submit" />            
@@ -63,14 +63,14 @@
         background: #014E59;
         min-height: 85vh;
         height: auto;
-        padding: 1em 5em 3em 5em;
+        padding: 20px 5em 3em 5em;
         text-align: center;
         position: relative;
     }
 
     .contact-page__title{
         font-size: 29px;
-        margin-bottom: 3%;
+        margin-bottom: 40px;
     }
 
     .contact-page__primary{
@@ -242,13 +242,13 @@
 
     @media (max-width: 949px){
         .contact{
-            padding: 2em 5em 3em 5em;
+            padding: 30px 5em 3em 5em;
         }
     }
 
     @media (max-width: 800px) {
         .contact{
-            padding: 1.5em 0 10vh 0;
+            padding: 20px 0 10vh 0;
         }
 
         .contact-page__title{

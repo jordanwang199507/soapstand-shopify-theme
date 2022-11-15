@@ -1,54 +1,175 @@
-<div class="page-width">
-  <header class="section-header text-center">
-    <h1 class="section-header__title h2">{{ page.title }}</h1>
-  </header>
-  <div class="grid">
-    <div class="grid__item medium-up--four-fifths medium-up--push-one-tenth">
-      {formbuilder:NzI3MTQ=}
-      {% if page.content != blank %}
-        <div class="rte rte--contact">
-          {{ page.content }}
+<section class="locations">
+    <div class="container locations-page__row">
+        <div class="title__primary locations-page__title"><span>locations</span></div>
+
+        <div class="locations-page__primary">
+            find a soapstand near you
         </div>
-      {% endif %}
-
-      {% form 'contact' %}
-        {% if form.posted_successfully? %}
-          <p class="form-success">
-            {{ 'contact.form.post_success' | t }}
-          </p>
-        {% endif %}
-
-        {{ form.errors | default_errors }} 
-      	
-
-<!--         <div class="grid">
-          <div class="grid__item medium-up--one-half">
-            <label for="ContactFormName" class="label--hidden">{{ 'contact.form.name' | t }}</label>
-            <input type="text" id="ContactFormName" name="contact[{{ 'contact.form.name' | t }}]" placeholder="{{ 'contact.form.name' | t }}" autocapitalize="words" value="{% if form[name] %}{{ form[name] }}{% elsif customer %}{{ customer.name }}{% endif %}">
-          </div>
-          <div class="grid__item medium-up--one-half">
-            <label for="ContactFormEmail" class="label--hidden">{{ 'contact.form.email' | t }}</label>
-            <input type="email" id="ContactFormEmail" name="contact[email]" placeholder="{{ 'contact.form.email' | t }}" autocorrect="off" autocapitalize="off" value="{% if form.email %}{{ form.email }}{% elsif customer %}{{ customer.email }}{% endif %}">
-          </div>
+        <div class="locations-page__secondary">
+            Get directions, store hours<br>and product selections for each location
         </div>
-		
-        <label for="ContactFormPhone" class="label--hidden">{{ 'contact.form.phone' | t }}</label>
-        <input type="tel" id="ContactFormPhone" name="contact[{{ 'contact.form.phone' | t }}]" placeholder="{{ 'contact.form.phone' | t }}" autocapitalize="words" value="{% if form[country] %}{{ form[country] }}{% elsif customer %}{{ customer.country }}{% endif %}">
-		        <div class="grid">
-          <div class="grid__item medium-up--one-half">
-            <label for="ContactFormBusiness" class="label--hidden">{{ 'contact.form.Business' | t }}</label>
-            <input type="text" id="ContactFormBusiness" name="contact[{{ 'contact.form.business' | t }}]" placeholder="{{ 'contact.form. business' | t }}" autocorrect="off" autocapitalize="off" value="{% if form.email %}{{ form.email }}{% elsif customer %}{{ customer.email }}{% endif %}">
-          </div>
-          <div class="grid__item medium-up--one-half">
-            <label for="ContactFormCountry" class="label--hidden">{{ 'contact.form.country' | t }}</label>
-            <input type="text" id="ContactFormCountry" name="contact[{{ 'contact.form.country' | t }}]" placeholder="{{ 'contact.form.country' | t }}" autocorrect="on" value="{% if form[country] %}{{ form[country] }}{% elsif customer %}{{ customer.country }}{% endif %}">
-          </div>
+        <div class="locations-page__map-container">
+            <div class="elfsight-sapp-61504c44-d10e-4419-ac16-261dce2d91fc"></div>                    
         </div>
-        <label for="ContactFormMessage" class="label--hidden">{{ 'contact.form.message' | t }}</label>
-        <textarea rows="6" id="ContactFormMessage" name="contact[{{ 'contact.form.message' | t }}]" placeholder="{{ 'contact.form.message' | t }}">{% if form.body %}{{ form.body }}{% endif %}</textarea>
-
-        <input type="submit" class="btn" value="{{ 'contact.form.send' | t }}"> -->
-      {% endform %}
+        <div class="locations-page__tertiary">
+            Thank you for refilling,<br>don't forget to bring your container!
+        </div>
+        {{ 'locations-bottles.svg' | asset_url | img_tag: 'contact page top right icon', 'locations-bottles' }}  
     </div>
-  </div>
-</div>
+</section>
+
+<style>
+    @import url(//db.onlinewebfonts.com/c/6bfddeebdb6be7ad8b3cbf0523b89aca?family=Brevia);
+    body{
+        background: linear-gradient(179.96deg, #014E59 33.07%, #06525D 42.08%, #195F69 55.1%, #38757D 70.13%, #639299 87.15%, #9AB9BD 105.18%, #DCE6E8 124.21%, #FFFFFF 133.23%);
+    }
+
+    .locations{
+        text-align: center;
+        padding: 20px 0em 3em 0em;
+    }
+
+    .locations-page__title{
+        font-size: 29px;
+        margin-bottom: 50px;
+    }
+
+    .locations-page__primary{
+        font-family: "Brevia", Montserrat, sans-serif;
+        font-size: 3em;
+        color: #94B7B8;
+        margin-bottom: 30px;
+    }
+
+    .locations-page__secondary{
+        font-size: 1.5em;
+        font-weight: 700;
+        color: white;
+        margin-bottom: 50px;
+    }
+
+    .locations-page__map-container{
+        width: 100%;
+        max-width: 1100px;
+        background: #8BB0B2;
+        display: flex;
+        justify-content: center;
+        border-radius: 15px;
+        margin: 0 auto 75px auto;
+    }
+
+    .elfsight-sapp-61504c44-d10e-4419-ac16-261dce2d91fc{
+        width: 80%;
+    }
+
+    .locations-page__tertiary{
+        font-size: 1.5em;
+        color: white;
+        margin-bottom: 45px;
+    }
+
+    .locations-bottles{
+        width: 300px;
+    }
+
+    @media (max-width: 949px) {
+        .locations{
+            padding: 20px 0em 3em 0em;
+        }
+
+        .locations-page__primary{
+            font-size: 2.5em;
+        }
+
+        .locations-page__secondary, .locations-page__tertiary{
+            font-size: 1.2em;
+        }
+
+        .locations-bottles{
+            width: 250px;
+        }
+    }
+
+    @media (max-width: 750px) {
+        .locations-page__primary{
+            letter-spacing: 0px;
+            font-size: 2.3em;
+        }
+
+        .locations-page__secondary, .locations-page__tertiary{
+            font-size: 1.1em;
+        }
+
+        .locations-bottles{
+            width: 200px;
+        }
+    }
+
+    @media (max-width: 600px) {
+        .locations-page__row{
+            width: 95%;
+        }
+
+        .locations-page__title{
+            font-size: 24px;
+            margin-bottom: 45px;
+        }
+
+        .locations-page__primary{
+            font-size: 2.1em;
+        }
+
+        .locations-page__secondary{
+            font-size: 1em;
+        }
+
+        .locations-page__map-container{
+            margin: 0 auto 50px auto;
+        }
+
+        .elfsight-sapp-61504c44-d10e-4419-ac16-261dce2d91fc{
+            width: 90%;
+        }
+
+        .locations-page__tertiary{
+            font-size: 1em;
+            margin-bottom: 30px;
+        }
+
+        .locations-bottles{
+            width: 180px;
+        }
+    }
+
+    @media (max-width: 525px) {
+        .locations-page__primary{
+            font-size: 28px;
+        }
+
+        .locations-page__secondary, .locations-page__tertiary{
+            font-size: 14px;
+        }
+
+        .locations-page__map-container{
+            max-height: 600px;
+        }
+
+        #eapps-google-maps-1.eapps-google-maps{
+            height: 600px;
+        }
+    }
+
+    @media (max-width: 450px) {
+        .locations-page__primary{
+            font-size: 24px;
+        }
+
+        .locations-page__secondary, .locations-page__tertiary{
+            font-size: 12px;
+        }
+
+        .locations-bottles{
+            width: 150px;
+        }
+    }
+</style>
