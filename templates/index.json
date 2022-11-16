@@ -1,10 +1,24 @@
 {
-    "sections": {
-        "main": {
-            "type": "index"
-        }
-    },
-    "order":[
-        "main"
-    ]
+  "sections": {
+    "main": {
+      "type": "index",
+      "settings": {
+        "include_home01_button01": true,
+        "home01_button01": "join us",
+        "home01_button01-link": "https:\/\/www.google.com",
+        "include_home01_button02": true,
+        "home01_button02": "watch video",
+        "include_facebook": true,
+        "include_linkedin": true,
+        "include_instagram": true,
+        "include_youtube": true,
+        "include_twitter": true,
+        "home02_title": "meet Soapstand",
+        "home03_title": "how we do better"
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
 }
