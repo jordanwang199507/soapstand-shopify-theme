@@ -3,9 +3,11 @@
         <div class="error-page__image-container">
             {{ 'error-mainIcon.png' | asset_url | img_tag: 'error page icon', 'error-mainIcon' }}  
         </div>
-        <div class="error-page__button-container">
-            <a href="{{ shop.url }}" class="btn btn__secondary btn__error">home</a>                
-        </div>
+        {% if section.settings.include_error_button01 %}
+            <div class="error-page__button-container">
+                <a href="{{ shop.url }}" class="btn btn__secondary btn__error">{{ section.settings.error_button01_text }}</a>                
+            </div>
+        {% endif %}
     </div>
 </section>
 
@@ -93,6 +95,20 @@
     "presets": [
         {
             "name": "Not found"
+        }
+    ],
+    "settings": [
+        {
+            "type": "checkbox",
+            "id": "include_error_button01",
+            "label": "Include Error Page Button 01",
+            "default": true
+        },
+        {
+            "type": "text",
+            "id": "error_button01_text",
+            "label": "Error Page Button Text",
+            "default": "home"
         }
     ]
 }
