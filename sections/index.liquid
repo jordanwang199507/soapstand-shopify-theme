@@ -16,7 +16,7 @@
                         <a href="{{ section.settings.home01_button01-link }}" class="btn">{{ section.settings.home01_button01 }}</a>
                     {% endif %}
                     {% if section.settings.include_home01_button02 %}
-                        <a href="#" class="btn">{{ section.settings.home01_button02 }}</a>
+                        <a href="{{ section.settings.home01_button02-link }}" class="btn">{{ section.settings.home01_button02 }}</a>
                     {% endif %}
                 </div>
 
@@ -24,19 +24,19 @@
                     <p>Follow Us</p>
                     <ul class="heading-socials__list">
                         {% if section.settings.include_facebook %}
-                            <a href="#"><li class="heading-socials__item"><i class="fa-brands fa-facebook-f"></i></li></a>
+                            <a href="{{ section.settings.facebook-link }}"><li class="heading-socials__item"><i class="fa-brands fa-facebook-f"></i></li></a>
                         {% endif %}
                         {% if section.settings.include_linkedin %}
-                            <a href=""><li class="heading-socials__item"><i class="fa-brands fa-linkedin-in"></i></li></a>
+                            <a href="{{ section.settings.linkedin-link }}"><li class="heading-socials__item"><i class="fa-brands fa-linkedin-in"></i></li></a>
                         {% endif %}
                         {% if section.settings.include_instagram %}
-                            <a href=""><li class="heading-socials__item"><i class="fa-brands fa-instagram"></i></li></a>
+                            <a href="{{ section.settings.instagram-link }}"><li class="heading-socials__item"><i class="fa-brands fa-instagram"></i></li></a>
                         {% endif %}
                         {% if section.settings.include_youtube %}
-                            <a href=""><li class="heading-socials__item"><i class="fa-brands fa-youtube"></i></li></a>
+                            <a href="{{ section.settings.youtube-link }}"><li class="heading-socials__item"><i class="fa-brands fa-youtube"></i></li></a>
                         {% endif %}
                         {% if section.settings.include_twitter %}
-                            <a href=""><li class="heading-socials__item"><i class="fa-brands fa-twitter"></i></li></a>
+                            <a href="{{ section.settings.twitter-link }}"><li class="heading-socials__item"><i class="fa-brands fa-twitter"></i></li></a>
                         {% endif %}
                         
                     </ul>
@@ -111,7 +111,9 @@
                     <div class="hero--home03__value container03__value">100%</div>
                     <div class="hero--home03__text container03__text">possitive<br>impact</div>
                 </div>
-                <a href="#" class="btn btn__secondary">about us</a>
+                {% if section.settings.include_home03_button01 %}
+                    <a href="{{ section.settings.home03_button01-link }}" class="btn btn__secondary">{{ section.settings.home03_button01 }}</a>
+                {% endif %}
             </div>
         </div>
     </section>
@@ -1023,7 +1025,7 @@
         {
             "type": "text",
             "id": "home01_button01-link",
-            "label": "Homepage 01 Button 01 Linky",
+            "label": "Homepage 01 Button 01 Link",
             "default": "https://www.google.com"
         },
         {
@@ -1039,10 +1041,22 @@
             "default": "watch video"
         },
         {
+            "type": "text",
+            "id": "home01_button02-link",
+            "label": "Homepage 01 Button 02 Link",
+            "default": "https://www.youtube.com"
+        },
+        {
             "type": "checkbox",
             "id": "include_facebook",
             "label": "Show Facebook link icon",
             "default": true
+        },
+        {
+            "type": "text",
+            "id": "facebook-link",
+            "label": "Facebook Link",
+            "default": "https://www.facebook.com"
         },
         {
             "type": "checkbox",
@@ -1051,10 +1065,22 @@
             "default": true
         },
         {
+            "type": "text",
+            "id": "linkedin-link",
+            "label": "LinkedIn Link",
+            "default": "https://www.linkedin.com"
+        },
+        {
             "type": "checkbox",
             "id": "include_instagram",
             "label": "Show Instagram link icon",
             "default": true
+        },
+        {
+            "type": "text",
+            "id": "instagram-link",
+            "label": "Instagram Link",
+            "default": "https://www.instagram.com"
         },
         {
             "type": "checkbox",
@@ -1063,10 +1089,22 @@
             "default": true
         },
         {
+            "type": "text",
+            "id": "youtube-link",
+            "label": "Youtube Link",
+            "default": "https://www.youtube.com"
+        },
+        {
             "type": "checkbox",
             "id": "include_twitter",
             "label": "Show Twitter link icon",
             "default": true
+        },
+        {
+            "type": "text",
+            "id": "twitter-link",
+            "label": "Twitter Link",
+            "default": "https://www.twitter.com"
         },
         {
             "type": "text",
@@ -1079,6 +1117,24 @@
             "id": "home03_title",
             "label": "Homepage 03 Title",
             "default": "how we do better"
+        },
+        {
+            "type": "checkbox",
+            "id": "include_home03_button01",
+            "label": "Include Homepage 03 Button 01",
+            "default": true
+        },
+        {
+            "type": "text",
+            "id": "home03_button01",
+            "label": "Homepage 03 Button 01 Text",
+            "default": "about us"
+        },
+        {
+            "type": "text",
+            "id": "home03_button01-link",
+            "label": "Homepage 03 Button 01 Link",
+            "default": "pages/about"
         }
     ]
 }
