@@ -1,8 +1,91 @@
-<div>
-    <h1>404</h1>
-    <h2>Page not found 4040404</h2>
-</div>
+<section class="error">
+    <div class="container error-page__row">
+        <div class="error-page__image-container">
+            {{ 'error-mainIcon.png' | asset_url | img_tag: 'error page icon', 'error-mainIcon' }}  
+        </div>
+        <div class="error-page__button-container">
+            <a href="{{ shop.url }}" class="btn btn__secondary btn__error">home</a>                
+        </div>
+    </div>
+</section>
 
+<style>
+    @import url(//db.onlinewebfonts.com/c/6bfddeebdb6be7ad8b3cbf0523b89aca?family=Brevia);
+    body{
+        background: linear-gradient(179.96deg, #014E59 33.07%, #06525D 42.08%, #195F69 55.1%, #38757D 70.13%, #639299 87.15%, #9AB9BD 105.18%, #DCE6E8 124.21%, #FFFFFF 133.23%);
+    }
+
+    .error{
+        padding: 3em 0em 3em 0em;
+    }
+
+    .error-page__row{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .error-page__image-container{
+        margin-bottom: 75px;
+    }
+
+    .error-page__button-container{
+        width: 100%;
+        height: 70px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .btn__error, .btn__error:link, .btn__error:visited{
+        display: inline-block;
+        color: white;
+        bottom: 0;
+        border: 0px solid transparent;
+        background: linear-gradient(180deg, #588B93 0%, #588B93 34.09%, rgba(88, 139, 147, 0.434154) 100%);
+        padding: 2em 5em;
+    }
+
+    @media (max-width: 949px){
+        .error{
+            padding: 4em 0em 4em 0em;
+        }
+
+        .error-mainIcon{
+            width: 600px;
+        }
+    }
+
+    @media (max-width: 800px){
+        .error-mainIcon{
+            width: 500px;
+        }
+
+        .btn__error, .btn__error:link, .btn__error:visited{
+            padding: 1.6em 4em;
+        }
+    }
+
+    @media (max-width: 600px){
+        .error{
+            padding: 5em 0em 5em 0em;
+        }
+
+        .error-mainIcon{
+            width: 400px;
+        }
+
+        .btn__error, .btn__error:link, .btn__error:visited{
+            padding: 1.4em 4em;
+        }
+    }
+
+    @media (max-width: 450px){
+        .error-mainIcon{
+            width: 300px;
+        }
+    }
+</style>
 
 {% schema %}
 {

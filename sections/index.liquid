@@ -13,7 +13,7 @@
                 </p>
                 <div class="hero--home01__button-groups">
                     {% if section.settings.include_home01_button01 %}
-                        <a href="#" class="btn">{{ section.settings.home01_button01 }}</a>
+                        <a href="{{ section.settings.home01_button01-link }}" class="btn">{{ section.settings.home01_button01 }}</a>
                     {% endif %}
                     {% if section.settings.include_home01_button02 %}
                         <a href="#" class="btn">{{ section.settings.home01_button02 }}</a>
@@ -1019,6 +1019,12 @@
             "id": "home01_button01",
             "label": "Homepage 01 Button 01 Text",
             "default": "join us"
+        },
+        {
+            "type": "text",
+            "id": "home01_button01-link",
+            "label": "Homepage 01 Button 01 Link",
+            "default": "www.google.com"
         },
         {
             "type": "checkbox",
