@@ -40,12 +40,14 @@
     }
 
     .btn__error, .btn__error:link, .btn__error:visited{
-        display: inline-block;
-        color: white;
-        bottom: 0;
-        border: 0px solid transparent;
-        background: linear-gradient(180deg, #588B93 0%, #588B93 34.09%, rgba(88, 139, 147, 0.434154) 100%);
+        border: 2px outset #a8cccc;
         padding: 2em 5em;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    }
+
+    .btn__error:hover{
+        border: 2px inset #a8cccc;
+        box-shadow: rgba(168, 204, 204, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
     }
 
     @media (max-width: 949px){

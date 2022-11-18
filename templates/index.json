@@ -5,7 +5,7 @@
       "settings": {
         "include_home01_button01": true,
         "home01_button01": "join us",
-        "home01_button01-link": "https:\/\/www.facebook.com",
+        "home01_button01-link": "/pages/contact",
         "include_home01_button02": true,
         "home01_button02": "watch video",
         "include_facebook": true,
