@@ -61,7 +61,7 @@
 
     .contact{
         background: #014E59;
-        min-height: 85vh;
+        min-height: 80vh;
         height: auto;
         padding: 0px 5em 3em 5em;
         text-align: center;
@@ -70,6 +70,7 @@
 
     .contact-page__title{
         font-size: 29px;
+        margin-top:20px;
         margin-bottom: 40px;
     }
 
@@ -150,7 +151,9 @@
         bottom: -70px;
     }
 
-    input:not(:placeholder-shown):invalid{
+    .name__input:not(:placeholder-shown):invalid, 
+    .email__input:not(:placeholder-shown):invalid, 
+    .message__input:not(:placeholder-shown):invalid{
         border: none;
         outline: 2px solid red;
         border-radius: 5px;

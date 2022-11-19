@@ -16,6 +16,7 @@
     {% comment %} {% section 'header' %} {% endcomment %}
     {% section 'header' %}
     {{content_for_layout}}
+    {% section 'footer' %}
     {{ 'script.js' | asset_url | script_tag}}
 
 </body>

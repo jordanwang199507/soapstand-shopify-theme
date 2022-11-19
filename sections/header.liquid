@@ -15,6 +15,8 @@
             </a>                              {% comment %} {% elsif page_title == "contact" %} {% endcomment %}
             <nav class="nav">
                 <ul class="nav__list">
+                    {{ 'locations-topLeft.png' | asset_url | img_tag: 'header top left icon', 'header-topLeft' }}
+                    {{ 'locations-topRight.png' | asset_url | img_tag: 'header top right icon', 'header-topRight' }}  
                     {% for link in linklists.menu.links -%}
                         <li class="nav__item">
                             {{ link.title | link_to: link.url }}
@@ -40,6 +42,7 @@
                             <a href="{{ section.settings.twitter-link }}"><li class="nav-socials__item"><i class="fa-brands fa-twitter"></i></li></a>
                         {% endif %}
                     </div>
+                    {{ 'locations-bottomRight.png' | asset_url | img_tag: 'header bottom right icon', 'header-bottomRight' }}  
                 </ul>
             </nav>
         {% else %}
@@ -51,6 +54,8 @@
             </a>
             <nav class="nav nav__notHome">
                 <ul class="nav__list nav__list__notHome">
+                    {{ 'locations-topLeft.png' | asset_url | img_tag: 'header top left icon', 'header-topLeft' }}
+                    {{ 'locations-topRight.png' | asset_url | img_tag: 'header top right icon', 'header-topRight' }}  
                     {% for link in linklists.menu.links -%}
                         <li class="nav__item nav__item__notHome">
                             {{ link.title | link_to: link.url }}
@@ -76,6 +81,7 @@
                             <a href="{{ section.settings.twitter-link }}"><li class="nav-socials__item nav-socials__item__notHome"><i class="fa-brands fa-twitter"></i></li></a>
                         {% endif %}
                     </div>
+                    {{ 'locations-bottomRight.png' | asset_url | img_tag: 'header bottom right icon', 'header-bottomRight' }}  
                 </ul>
             </nav>
         {% endif %}
@@ -96,7 +102,7 @@
         top: 0;
         left: 0;
         height: 15vh;
-        min-height: 120px;
+        max-height: 120px;
         z-index: 1000;
         position: unset;
     }
@@ -214,7 +220,7 @@
         display: flex;
         justify-content: space-evenly;
         align-items: center;
-        margin: 50px auto;
+        margin: 50px auto 75px auto;
     }
 
     .nav-socials__list a {
@@ -334,6 +340,24 @@
         transform: rotate(-135deg);
     }
 
+    .header-topLeft{
+        position: absolute;
+        left: 20%;
+        top: 20px;
+        width: 50px;
+    }
+
+    .header-topRight{
+        position: absolute;
+        right: 20%;
+        top: 50px;
+        width: 40px;
+    }
+
+    .header-bottomRight{
+        width: 50px;
+    }
+
     .section-visible{
         display: none;
     }
@@ -375,6 +399,10 @@
         .nav-socials__list{
             display: none;
         }
+
+        .header-topLeft, .header-topRight, .header-bottomRight{
+            display: none;
+        }
     }
 
     @media (max-width: 949px) {
@@ -392,6 +420,22 @@
         }
     }
 
+    @media (max-width: 450px) {
+        .header-topLeft{
+            position: absolute;
+            left: 15%;
+            top: 20px;
+            width: 30px;
+        }
+
+        .header-topRight{
+            position: absolute;
+            right: 15%;
+            top: 50px;
+            width: 20px;
+        }
+    }
+
 </style>
 
 
@@ -400,24 +444,26 @@
     const nav = document.querySelector('nav');
     const header = document.querySelector('header');
     const section = document.querySelector('section');
+    const footer = document.querySelector('#footer');
     navToggle.addEventListener('click', () => {
         nav.classList.toggle('visible');
         header.classList.toggle('header-position');
         section.classList.toggle('section-visible');
+        footer.classList.toggle('section-visible');
     });
     window.addEventListener("resize", function(event) {
         if(nav.classList.contains('visible')){
             if(window.innerWidth >= 950){
                 header.classList.remove('header-position');
                 section.classList.remove('section-visible');
+                footer.classList.remove('section-visible');
             }else{
                 header.classList.add('header-position');
                 section.classList.add('section-visible');
+                footer.classList.add('section-visible');
             }
         }
     })
-
-
 {% endjavascript %}
 
 {% schema %}

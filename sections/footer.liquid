@@ -1,0 +1,387 @@
+<section class="footer" id="footer">
+    <div class="container footer__row">
+        <div class="footer-container__left">
+            <div class="menu-list">
+                {% for link in linklists.menu.links -%}
+                    <li class="menu__item">
+                        {{ link.title | link_to: link.url }}
+                    </li>
+                {%- endfor %}
+                <li class="menu__item">
+                    <a href="{{ section.settings.business_portal-link }}">business portal</a>
+                </li>
+            </div>
+            <div class="socials-list">
+                <div class="social-list__title">Follow our journey</div>
+                {% if section.settings.include_facebook %}
+                    <a href="{{ section.settings.facebook-link }}"><li class="menu-socials__item"><i class="fa-brands fa-facebook-f"></i></li></a>
+                {% endif %}
+                {% if section.settings.include_linkedin %}
+                    <a href="{{ section.settings.linkedin-link }}"><li class="menu-socials__item"><i class="fa-brands fa-linkedin-in"></i></li></a>
+                {% endif %}
+                {% if section.settings.include_instagram %}
+                    <a href="{{ section.settings.instagram-link }}"><li class="menu-socials__item"><i class="fa-brands fa-instagram"></i></li></a>
+                {% endif %}
+                {% if section.settings.include_youtube %}
+                    <a href="{{ section.settings.youtube-link }}"><li class="menu-socials__item"><i class="fa-brands fa-youtube"></i></li></a>
+                {% endif %}
+                {% if section.settings.include_twitter %}
+                    <a href="{{ section.settings.twitter-link }}"><li class="menu-socials__item"><i class="fa-brands fa-twitter"></i></li></a>
+                {% endif %}
+            </div>
+        </div>
+        <div class="footer-container__right">
+            <div class="subscribe-container">
+              {% form 'customer' %}
+                <input type="hidden" name="contact[tags]" value="newsletter">
+                <label for="NewsletterEmail" class="site-footer__newsletter-label">don't be shy, sign up to our newsletter!</label>
+                <div class="site-footer__newsletter-subheading">for promotions, sales and news</div>
+                <div class="input-group--underline">
+                  <input type="email" placeholder="email" name="contact[email]" id="NewsletterEmail" class="input-group__field site-footer__newsletter-input" autocorrect="off" autocapitalize="off">
+                  <div class="input-group__btn input-group__btn--newsletter">
+                    <button type="submit" class="btn--newsletter__submit">subscribe</button>
+                  </div>
+                </div>
+                <div class="site-footer__newsletter-message" aria-role="alert">
+                  {% if form.posted_successfully? %}
+                    <p class="subscribe-success" aria-role="alert">Thank you for subscribing!</p>
+                  {% endif %}
+                  {{ form.errors | default_errors }}
+                  </div>
+              {% endform %}
+            </div>
+            <div class="logo-container">
+                <span class="copyRight">Copyright &copy; 2022, Soapstand</span>
+                {{ 'Logo-dark.svg' | asset_url | img_tag: 'Footer Logo', 'footer__image' }}            
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<style>
+    .footer{
+        background-image:url("https://cdn.shopify.com/s/files/1/0549/5580/2693/t/13/assets/footer-background.svg?v=5220540281782753861667424755");
+        background-size: cover;
+        background-position: top;
+        height: auto;
+        padding: 8em 0 2em 0;
+        position: relative;
+    }
+
+    .footer__row{
+        display: flex;
+    }
+
+    .footer-container__left{
+        width: 30%;
+    }
+
+    .footer-container__right{
+        width: 70%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .menu-list{
+        list-style: none;
+        font-weight: bold;
+    }
+
+    .menu__item{
+        padding: 10px 0 10px 0;
+    }
+
+    .menu__item a, .menu__item a:visited, .menu__item a:link{
+        color: white;
+        text-decoration: none;
+        font-size: 20px;
+        position: relative;
+    }
+
+    .menu__item a::after{
+        content: "";
+        position: absolute;
+        width: 100%;
+        transform: scaleX(0);
+        height: 2px;
+        bottom: -5px;
+        left: 0;
+        background-color: #a8cccc;
+        transform-origin: bottom right;
+        transition: transform 0.25s ease-out;
+        padding-top: 2px;
+    }
+
+    .menu__item a:hover::after{
+        transform: scaleX(1);
+        transform-origin: bottom left;
+    }
+
+    .socials-list{
+        width: 100%;
+        max-width: 300px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        list-style: none;
+        color: white;
+        margin-top: 50px;
+    }
+
+    .social-list__title{
+        font-size: 12px;
+        color: #a8cccc;
+    }
+
+    .menu-socials__item i{
+        color: white;
+        font-size: 20px;
+    }
+
+    .menu-socials__item i:hover{
+        color: #a8cccc;
+        opacity: .8;
+    }
+
+    .subscribe-container{
+        max-width: 650px; 
+        text-align: center;
+    }
+
+    .subscribe-container form{
+        width: 100%;
+    }
+
+    .input-group--underline{
+        display: table;
+        position: relative;
+        width: 75%;
+        border-collapse: seperate;
+        border-bottom: 2px solid #a8cccc;
+        margin: 0 auto;
+    }
+
+    .site-footer__newsletter-input{
+        font-size: 1.4rem;
+        line-height: 1.71429;
+        width: 100%;
+        padding: 10px 20px;
+        display: table-cell;
+        vertical-align: top;
+        margin: 0;
+        border: 0;
+        background: transparent;
+    }
+
+    .site-footer__newsletter-input:focus{
+        outline: none;
+    }
+
+    .site-footer__newsletter-input::placeholder{
+        color: #a8cccc;
+        font-family: Montserrat, sans-serif;
+        font-size: 18px;
+    }
+
+    #NewsletterEmail{
+        color: white;
+        font-family: Montserrat, sans-serif;
+    }
+
+    .site-footer__newsletter-label{
+        font-size: 22px;
+        color: white;
+        font-weight: bold;
+        letter-spacing: .35;
+        display: block;
+        margin-bottom: 20px;
+    }
+
+    .site-footer__newsletter-subheading{
+        font-size: 18px;
+        color: #a8cccc;
+        display: block;
+        margin-bottom: 20px;
+        letter-spacing: .25;
+    }
+
+    .input-group__btn{
+        text-align: right;
+        opacity: 1;
+        vertical-align: middle;
+        display: table-cell;
+        margin: 0;
+    }
+
+    .btn--newsletter__submit{
+        position: relative;
+        padding: 2px 7px 0;
+        font-size: 1rem;
+        font-weight: 700;
+        letter-spacing: .125rem;
+        float: right;
+        border: none;
+        cursor: pointer;
+        background: transparent;
+        color: #a8cccc;
+        font-family: Montserrat, sans-serif;
+        letter-spacing: .25;
+        font-weight: 100;
+    }
+
+    .subscribe-success{
+        color: white;
+        font-family: "Brevia";
+        font-size: 20px;
+        margin: 20px auto;
+        width: 80%;
+        opacity: 0.8;
+    }
+
+    .logo-container{
+        text-align: right;
+    }
+
+    .copyRight{
+        margin-right: 20px;
+        color: #a8cccc;
+        letter-spacing: .25;
+    }
+
+    .footer__image{
+        width: 150px;
+    }
+
+    @media(max-width: 1050px){
+        .site-footer__newsletter-label{
+            font-size: 20px;
+        }
+    }
+
+    @media(max-width: 949px){
+        .socials-list{
+            width: 250px;
+        }
+
+        .site-footer__newsletter-label{
+            font-size: 18px;
+        }
+
+        .site-footer__newsletter-subheading{
+            font-size: 16px;
+        }
+
+        .input-group--underline{
+            width: 80%;
+        }
+
+        .copyRight{
+            font-size: 16px;
+        }
+    }
+
+    @media(max-width: 800px){
+        .socials-list{
+            width: 300px;
+        }
+
+        .footer-container__right{
+            justify-content: unset;
+        }
+
+        .subscribe-container{
+            text-align: right;
+        }
+
+        .input-group--underline{
+            margin: 0 0 0 auto;
+        }
+
+        .logo-container{
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+        }
+
+        .copyRight{
+            font-size: 16px;
+            margin: 20px 0 20px 0;
+        }
+    }
+</style>
+
+{% schema %}
+    {
+        "name": "Footer",
+        "settings": [
+            {
+                "type": "text",
+                "id": "business_portal-link",
+                "label": "Business Portal Link",
+                "default": "https://soapstandportal.com/"
+            },
+            {
+                "type": "checkbox",
+                "id": "include_facebook",
+                "label": "Show Facebook link icon",
+                "default": true
+            },
+            {
+                "type": "text",
+                "id": "facebook-link",
+                "label": "Facebook Link",
+                "default": "https://www.facebook.com"
+            },
+            {
+                "type": "checkbox",
+                "id": "include_linkedin",
+                "label": "Show Linkedin link icon",
+                "default": true
+            },
+            {
+                "type": "text",
+                "id": "linkedin-link",
+                "label": "LinkedIn Link",
+                "default": "https://www.linkedin.com"
+            },
+            {
+                "type": "checkbox",
+                "id": "include_instagram",
+                "label": "Show Instagram link icon",
+                "default": true
+            },
+            {
+                "type": "text",
+                "id": "instagram-link",
+                "label": "Instagram Link",
+                "default": "https://www.instagram.com"
+            },
+            {
+                "type": "checkbox",
+                "id": "include_youtube",
+                "label": "Show Youtube link icon",
+                "default": true
+            },
+            {
+                "type": "text",
+                "id": "youtube-link",
+                "label": "Youtube Link",
+                "default": "https://www.youtube.com"
+            },
+            {
+                "type": "checkbox",
+                "id": "include_twitter",
+                "label": "Show Twitter link icon",
+                "default": true
+            },
+            {
+                "type": "text",
+                "id": "twitter-link",
+                "label": "Twitter Link",
+                "default": "https://www.twitter.com"
+            }
+        ]
+    }
+{% endschema %}
