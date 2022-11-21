@@ -2,6 +2,7 @@
     <div class="container footer__row">
         <div class="footer-container__left">
             <div class="menu-list">
+                {{ 'Asset18.svg' | asset_url | img_tag: 'footer top image', 'footer__topImage' }}  
                 {% for link in linklists.menu.links -%}
                     <li class="menu__item">
                         {{ link.title | link_to: link.url }}
@@ -29,6 +30,7 @@
                     <a href="{{ section.settings.twitter-link }}"><li class="menu-socials__item"><i class="fa-brands fa-twitter"></i></li></a>
                 {% endif %}
             </div>
+            {{ 'Logo-dark.svg' | asset_url | img_tag: 'Footer Logo', 'footer__image container_left-footer__image' }}            
         </div>
         <div class="footer-container__right">
             <div class="subscribe-container">
@@ -52,10 +54,11 @@
             </div>
             <div class="logo-container">
                 <span class="copyRight">Copyright &copy; 2022, Soapstand</span>
-                {{ 'Logo-dark.svg' | asset_url | img_tag: 'Footer Logo', 'footer__image' }}            
+                {{ 'Logo-dark.svg' | asset_url | img_tag: 'Footer Logo', 'footer__image container_right-footer__image' }}            
             </div>
         </div>
     </div>
+    {{ 'Asset19.svg' | asset_url | img_tag: 'footer top image', 'footer__bottomImage' }}  
 </section>
 
 
@@ -67,10 +70,12 @@
         height: auto;
         padding: 8em 0 2em 0;
         position: relative;
+        overflow: hidden;
     }
 
     .footer__row{
         display: flex;
+        z-index: 5;
     }
 
     .footer-container__left{
@@ -87,10 +92,26 @@
     .menu-list{
         list-style: none;
         font-weight: bold;
+        position: relative;
+        width: 200px;
+    }
+
+    .footer__topImage{
+        position: absolute;
+        width: 80px;
+        right: 0;
+        top: -25px;
+    }
+
+    .footer__bottomImage{
+        position: absolute;
+        width: 120px;
+        bottom: -60px;
+        left: 50%;
     }
 
     .menu__item{
-        padding: 10px 0 10px 0;
+        padding: 15px 0;
     }
 
     .menu__item a, .menu__item a:visited, .menu__item a:link{
@@ -128,6 +149,7 @@
         list-style: none;
         color: white;
         margin-top: 50px;
+        position: relative;
     }
 
     .social-list__title{
@@ -148,6 +170,7 @@
     .subscribe-container{
         max-width: 650px; 
         text-align: center;
+        margin-top: 50px;
     }
 
     .subscribe-container form{
@@ -254,6 +277,10 @@
         width: 150px;
     }
 
+    .container_left-footer__image{
+        display: none;
+    }
+
     @media(max-width: 1050px){
         .site-footer__newsletter-label{
             font-size: 20px;
@@ -263,6 +290,10 @@
     @media(max-width: 949px){
         .socials-list{
             width: 250px;
+        }
+
+        .menu-socials__item i{
+            font-size: 18px;
         }
 
         .site-footer__newsletter-label{
@@ -278,17 +309,52 @@
         }
 
         .copyRight{
-            font-size: 16px;
+            font-size: 15px;
         }
     }
 
     @media(max-width: 800px){
+        .footer__topImage{
+            position: absolute;
+            width: 60px;
+            right: 75px;
+        }
+    
+        .menu__item a, .menu__item a:visited, .menu__item a:link{
+            font-size: 16px;
+        }
+
         .socials-list{
+            margin-top: 40px;
             width: 300px;
         }
 
-        .footer-container__right{
-            justify-content: unset;
+        .menu-socials__item i{
+            font-size: 16px;
+        }
+
+        .site-footer__newsletter-label{
+            font-size: 16px;
+        }
+
+        .site-footer__newsletter-subheading{
+            font-size: 14px;
+        }
+
+        #NewsletterEmail{
+            font-size: 14px;
+        }
+
+        .site-footer__newsletter-input::placeholder{
+            font-size: 14px;
+        }
+
+        .btn--newsletter__submit{
+            font-size: 14px;
+        }
+
+        .subscribe-success{
+            font-size: 16px;
         }
 
         .subscribe-container{
@@ -297,6 +363,7 @@
 
         .input-group--underline{
             margin: 0 0 0 auto;
+            width: 350px;
         }
 
         .logo-container{
@@ -306,8 +373,181 @@
         }
 
         .copyRight{
-            font-size: 16px;
+            font-size: 14px;
             margin: 20px 0 20px 0;
+        }
+
+        .footer__image{
+            width: 130px;
+        }
+    }
+
+    @media(max-width: 600px){
+        .footer__bottomImage{
+            width: 100px;
+            bottom: -50px;
+        }
+
+        .menu__item a, .menu__item a:visited, .menu__item a:link{
+            font-size: 14px;
+        }
+
+        .socials-list{
+            margin-top: 30px;
+            width: 250px;
+        }
+
+        .site-footer__newsletter-label{
+            font-size: 14px;
+        }
+
+        .site-footer__newsletter-subheading{
+            font-size: 12px;
+        }
+
+        .site-footer__newsletter-input::placeholder{
+            font-size: 12px;
+        }
+
+        .btn--newsletter__submit{
+            font-size: 12px;
+        }
+
+        .subscribe-success{
+            font-size: 14px;
+        }
+
+        .input-group--underline{
+            margin: 0 0 0 auto;
+            width: 300px;
+        }
+
+        .copyRight{
+            font-size: 12px;
+        }
+
+        .footer__image{
+            width: 120px;
+        }
+    }
+
+    @media(max-width: 550px){
+        .footer{
+            padding: 6em 0 2em 0;
+        }
+
+        .footer__row{
+            width: 90%;
+        }
+
+        .site-footer__newsletter-label{
+            font-size: 13px;
+            letter-spacing: 0;
+        }
+
+        .site-footer__newsletter-subheading{
+            letter-spacing: 0;
+        }
+
+        .site-footer__newsletter-input::placeholder{
+            font-size: 13px;
+        }
+
+        #NewsletterEmail{
+            font-size: 13px;
+        }
+
+        .input-group--underline{
+            width: 270px;
+        }
+
+        .subscribe-success{
+            font-size: 13px;
+        }
+
+        .copyRight{
+            letter-spacing: 0;
+        }
+
+        .footer__image{
+            width: 110px;
+        }
+    }
+
+    @media(max-width: 450px){
+        .footer__row{
+            display: block;
+        }
+
+        .footer__bottomImage{
+            left: 20%;
+        }
+
+        .footer-container__left{
+            position: relative;
+            width: 100%;
+        }
+
+        .footer-container__right{
+            width: 100%;
+        }
+
+        .footer__topImage{
+            position: absolute;
+            width: 60px;
+            right: 40px;
+            top: -30px;
+        }
+
+        .subscribe-container{
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .menu-list{
+            width: 180px
+        }
+
+        .menu__item{
+            padding: 7.5px 0;
+            letter-spacing: .35;
+        }
+
+        .menu__item a, .menu__item a:visited, .menu__item a:link{
+            font-size: 14px;
+        }
+
+        .socials-list__title{
+            font-size: 11px;
+        }
+
+        .site-footer__newsletter-label{
+            font-size: 14px;
+            letter-spacing: .25;
+        }
+
+        .site-footer__newsletter-subheading{
+            font-size: 13px; 
+            letter-spacing: .25;
+        }
+
+        .site-footer__newsletter-input{
+            padding: 10px;
+        }
+
+        .input-group--underline{
+            width: 100%;
+        }
+
+        .container_left-footer__image{
+            display: unset;
+            position: absolute;
+            right: 0;
+            top: 20%;
+        }
+
+        .container_right-footer__image{
+            display: none;
         }
     }
 </style>

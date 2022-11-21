@@ -242,6 +242,7 @@
         height: auto;
         background: linear-gradient(180deg, #438897 0%, rgba(57, 127, 141, 0.843577) 30.92%, rgba(42, 114, 128, 0.628703) 60.09%, rgba(68, 138, 151, 0.477126) 82.32%, rgba(89, 158, 170, 0.350813) 96.41%); 
         position: relative;
+        padding: 50px 0;
     }
 
     .hero--home02__row{
@@ -371,8 +372,8 @@
     }
 
     .hero--home03__title{
-        padding: 0px 0px 20px 0px;
         font-size: 29px;
+        padding: 30px 0px 40px 0px;
     }
 
     .hero--home03__container{
@@ -438,11 +439,13 @@
     @media (min-width: 950px) {
         .hero--home01__row{
             display: flex;
-            min-height: 85vh;
+            height: 85vh;
+            min-height: 700px;
+            max-height: 900px;
         }
 
         .hero--home01__text{
-            margin: 8% 0 0 0;
+            margin: 120px 0 50px 0;
             width: 60%;
         }
 
@@ -462,7 +465,7 @@
 
         .hero--home01__image-container{
             height: 100%;
-            min-height: 90vh;
+            min-height: 700px;
             position: absolute;
             bottom: 0;
             right: 0;
@@ -515,10 +518,14 @@
             font-size: 18px;
         }
 
+        .hero--home02{
+            padding: 100px 0;
+        }
+
         .hero--home02__row{
             flex-direction: row;
             justify-content: space-around;
-            padding: 30px 0px 30vh 0px;
+            padding: 30px 0px 20vh 0px;
         }
 
         .hero--home02__text{
@@ -529,7 +536,7 @@
 
         .hero--home02__title{
             font-size: 29px;
-            padding: 50px 0 40px 0;
+            padding: 30px 0 50px 0;
         }
 
         .hero--home02__secondary--second{
@@ -577,22 +584,14 @@
         }
 
         .hero--home03{
-            padding: 8em 0 0 0;
-        }
-
-        .hero--home03__title{
-            padding: 30px 0px 40px 0px;
-            font-size: 29px;
+            padding: 10em 0;
         }
 
         .hero--home03__container{
             width: 31%;
             height: 90%;
+            min-height: 500px;
             margin-bottom: 0px;
-        }
-
-        .hero--home03__row{
-            height: 80%;
         }
 
         .hero--home03__value{
@@ -605,6 +604,7 @@
 
         .hero--home03__image-container02{
             height: 90%;
+            max-height: 500px;
         }
 
         .hero--home03__image-container03{
@@ -678,9 +678,6 @@
     }
 
     @media (max-width: 1180px) {
-        .hero--home02__row{
-            padding: 30px 0px 30vh 0px;
-        }
 
         .hero--home02__secondary--first{
             font-size: 28px;
