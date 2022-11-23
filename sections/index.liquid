@@ -109,11 +109,56 @@
                 {{ 'home03__container03.svg' | asset_url | img_tag: 'hero home03 container02', 'hero--home03__image-container03' }}  
                 <div class="hero--home03__content">
                     <div class="hero--home03__value container03__value">100%</div>
-                    <div class="hero--home03__text container03__text">possitive<br>impact</div>
+                    <div class="hero--home03__text container03__text">positive<br>impact</div>
                 </div>
                 {% if section.settings.include_home03_button01 %}
                     <a href="{{ section.settings.home03_button01-link }}" class="btn btn__secondary">{{ section.settings.home03_button01 }}</a>
                 {% endif %}
+            </div>
+        </div>
+    </section>
+    <section class="hero--home04" id="how-to-refill">
+        <div class="title__primary hero--home04__title"><span>{{ section.settings.home04_title }}</span></div>
+        <div class="container row hero--home04__row">
+            <div class="box box-image box1-image">
+                {{ 'home04__image01.svg' | asset_url | img_tag: 'hero home04 image01', 'hero--home04__image01' }}  
+            </div>
+            <div class="box box-text box2-text">
+                <div class="box-text-container box2-text-container">
+                    <div class="box-text-number box2-text-number">1</div>
+                    <p class="box-text-text box2-text-text">Find the nearest Soapstand station at your local grocery or residence, don't forget to bring your container with you!</p>
+                </div>
+            </div>
+            <div class="box box-text box3-text">
+                <div class="box-text-container box3-text-container">
+                    <div class="box-text-number box3-text-number">2</div>
+                    <p class="box-text-text box3-text-text">Once you start interacting with your local Soapstand machine, select the product you wish to dispense as well as the quantity.</p>
+                </div>
+            </div>
+            <div class="box box-image box4-image">
+                <div class="box-image-container">
+                    {{ 'home04__image02.png' | asset_url | img_tag: 'hero home04 image02', 'hero--home04__image02' }}                  
+                </div>
+            </div>
+            <div class="box box-image box5-image">
+                <div class="box-image-container">
+                    {{ 'home04__image03.png' | asset_url | img_tag: 'hero home04 image03', 'hero--home04__image03' }}                  
+                </div>
+            </div>
+            <div class="box box-text box6-text">
+                <div class="box-text-container box6-text-container">
+                    <div class="box-text-number box6-text-number">3</div>
+                    <p class="box-text-text box6-text-text">Once ready to dispense, please press and hold the green light button, your soap will dispense your desired quantity so you can safely stop pressing the button and close the container</p>
+                </div>
+            </div>
+            <div class="box box-text box7-text">
+                <div class="box-text-container box7-text-container">
+                    <div class="box-text-number box7-text-number">4</div>
+                    <p class="box-text-text box7-text-text">Congratulations! You just saved 50% on your purchase and saved a plastic bottle from entering our landfills! Please pay by collecting your reciept from the machine, applying tap payment or QR code.</p>
+                </div>
+            </div>
+            <div class="box box-image box8-image">
+                {{ 'home04__image04.png' | asset_url | img_tag: 'hero home04 image04', 'hero--home04__image04' }}                  
             </div>
         </div>
     </section>
@@ -133,10 +178,12 @@
         display:flex;
         flex-direction:column;
     }
+
     .hero--home01__image-container{
         width: 70%;
         margin: 0 auto;
     }
+
     .hero--home01__image{
         width: 100%;
         object-fit: fill;
@@ -228,6 +275,7 @@
         position: absolute;
         filter: drop-shadow(3px 0px 2px rgb(0 0 0 / 0.2));
         width: 6%;
+        max-width: 150px;
         bottom: 0%;
         left: 10%;
     }
@@ -259,7 +307,7 @@
     }
 
     .hero--home02__title{
-        padding: 70px 0 40px 0;
+        padding: 50px 0 40px 0;
     }
 
     .hero--home02__secondary--first{
@@ -270,6 +318,7 @@
 
     .hero--home02__secondary--second{
         margin-bottom: 40px;
+        font-weight: 200;
     }
 
     .hero--home02__secondary{
@@ -369,6 +418,7 @@
         position: relative;
         font-family: "Brevia", Montserrat, sans-serif;
         color: white;
+        width: 100%;
     }
 
     .hero--home03__title{
@@ -436,12 +486,97 @@
         margin: 5% 5% 0 0;
     }
 
+    .hero--home04{
+        padding: 5em 0 3em 0;
+    }
+    
+    .hero--home04__row{
+        flex-wrap: wrap;
+        padding: 4rem 0;
+        max-width: 1300px;
+    }
+
+    .hero--home04__title{
+        font-size: 29px;
+    }
+
+    .hero--home04__title span{
+        color: #94B7B8;
+    }
+
+    .hero--home04__title span::before{
+        background: #94B7B8;
+    }
+
+    .box{
+        width: 50%;
+        height: 500px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .box-text{
+        height: 300px;
+    }
+
+    .box-text-container{
+        margin: 0 auto;
+        text-align: center;
+    }
+    
+    .box-text-number{
+        text-align: center;
+        font-size: 5em;
+        font-family: "Brevia", Montserrat, sans-serif;
+        background-color: #014E59;
+        background-image: linear-gradient(180deg, #4A9397 34.9%, rgba(74, 147, 151, 0.4375) 67.71%, rgba(74, 147, 151, 0) 100%);
+        background-size: 100%;
+        -webkit-background-clip: text;
+        -moz-background-clip: text;
+        -webkit-text-fill-color: transparent; 
+        -moz-text-fill-color: transparent;
+    }
+
+    .box-text-text{
+        font-size: 22px;
+        letter-spacing: .25;
+        font-weight: 700;
+        color: #014E59;
+    }
+
+    .box-image-container{
+        width: 25rem;
+        height: auto;
+        border: 25px solid transparent;
+        border-radius: 50%;
+        background-image: -webkit-gradient(linear, left top, left bottom, from(white), to(white)), -webkit-gradient(linear, left top, right top, from(#71B9B6), color-stop(18%, #6AB1B1), color-stop(45%, #589EA5), color-stop(77%, #3A7E91), to(#216380));
+        background-image: -o-linear-gradient(white, white), -o-linear-gradient(left, #71B9B6 0%, #6AB1B1 18%, #589EA5 45%, #3A7E91 77%, #216380 100%);
+        background-image: linear-gradient(white, white), linear-gradient(to right, #71B9B6 0%, #6AB1B1 18%, #589EA5 45%, #3A7E91 77%, #216380 100%);
+        background-origin: border-box;
+        background-clip: content-box, border-box;
+    }
+
+    .hero--home04__image01{
+        width: 35rem;
+        height: auto;
+    }
+
+    .hero--home04__image02, .hero--home04__image03{
+        width: 100%;
+        transform: scale(1.01);
+        height: auto;
+    }
+
+    .hero--home04__image04{
+        width: 25rem;
+    }
+
     @media (min-width: 950px) {
         .hero--home01__row{
             display: flex;
-            height: 85vh;
-            min-height: 700px;
-            max-height: 900px;
+            min-height: 650px;
+            max-height: 800px;
         }
 
         .hero--home01__text{
@@ -519,7 +654,7 @@
         }
 
         .hero--home02{
-            padding: 100px 0;
+            padding: 50px 0 75px 0;
         }
 
         .hero--home02__row{
@@ -611,6 +746,26 @@
             height: 40%;
             width: 100%;
         }
+
+        .box{
+            height: 500px;
+        }
+
+        .box-text-container{
+            width: 430px;
+        }
+
+        .box-text-text{
+            font-size: 22px;
+        }
+
+        .box-image-container{
+            width: 25rem;
+        }
+
+        .hero--home04__image04{
+            width: 25rem;
+        }
     }
 
     @media (max-width: 1400px) {
@@ -665,6 +820,10 @@
             min-width: 550px;
             height: 420px;
         }
+
+        .box-text-text{
+            font-size: 20px;
+        }
     }
 
     @media (max-width: 1200px) {
@@ -707,6 +866,10 @@
         .hero--home03__text{
             font-size: 22px;
         }
+
+        .box-text-container{
+            width: 85%;
+        }
     }
 
     @media (max-width: 990px){
@@ -733,8 +896,11 @@
         }
 
         .hero--home01__secondary{
-            font-size: 14px;
             word-spacing: 4px;
+        }
+
+        .hero--home01__image-container{
+            width: 85%;
         }
 
         .hero--home02__title{
@@ -780,6 +946,60 @@
         .hero--home03__text{
             font-size: 28px;
         }
+
+        .hero--home04__row{
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            padding: 2rem 0;
+        }
+
+        .box-text-container{
+            width: 100%;
+            text-align: left;
+        }
+
+        .box-text-text{
+            width: 80%;
+            max-width: 500px;
+            margin: 20px auto;
+        }
+
+        .box{
+            width: 100%;
+        }
+
+        .box1-image{
+            order: 2;
+        }
+
+        .box2-text{
+            order: 1;
+        }
+
+        .box3-text{
+            order: 3;
+        }
+
+        .box4-image{
+            order: 4;
+        }
+
+        .box5-image{
+            order: 6;
+        }
+
+        .box6-text{
+            order: 5;
+        }
+
+        .box7-text{
+            order: 7;
+        }
+
+        .box8-image{
+            order: 8;
+        }
     }
 
     @media (max-width: 900px) {
@@ -813,12 +1033,16 @@
     }
 
     @media (max-width: 700px) {
+        .hero--home01__image-container{
+            width: 100%;
+        }
+
         .hero--home01__image--corner{
             height: 30%;
         }
 
         .hero--home02__row{
-            padding: 10px 0px 25vh 0px;
+            padding: 10px 0px 20vh 0px;
         }
 
         .hero--home02__title{
@@ -888,14 +1112,22 @@
             height: 25px;
         }
 
-        .hero--home03__title{
+        .hero--home03__title, .hero--home04__title{
             font-size: 22px;
+        }
+
+        .box-text-text{
+            font-size: 18px;
         }
     }
 
     @media (max-width: 600px) {
         .hero--home01__primary{
             font-size: 32px;
+        }
+
+        .hero--home01__secondary{
+            font-size: 14px;
         }
 
         .hero--home01__image{
@@ -917,7 +1149,7 @@
 
         .hero--home02__image-container{
             width: 90%;
-            min-width: 90%;
+            max-width: 350px;
             height: 300px;
         }
 
@@ -925,7 +1157,7 @@
             width: 100%;
             min-width: 0px;
             height: 100%;
-            transform: scale(1.1);
+            transform: scale(1.05);
             background-position: center;
         }
 
@@ -950,15 +1182,39 @@
         .hero--home03__image-container03{
             height: 70%;
         }
+
+        .box{
+            height: 420px;
+        }
+
+        .box-text{
+            height: 250px;
+        }
+
+
+        .box-image-container{
+            width: 22rem;
+            border: 20px solid transparent;
+        }
+
+        .box-text-text{
+            width: 90%;
+        }
+
+        .hero--home04__image04{
+            width: 90%;
+            max-width: 350px;
+            min-width: 18rem;
+        }
     }
 
     @media (max-width: 450px) {
         .hero--home01__primary{
-            font-size: 28px;
+            font-size: 27px;
         }
 
         .hero--home01__secondary{
-            font-size: 11px;
+            font-size: 12px;
             word-spacing: 1px;
         }
 
@@ -984,13 +1240,48 @@
             height: 20px;
         }
 
-        .hero--home03__title{
+        .hero--home03__title, .hero--home04__title{
             font-size: 21px;
         }
 
         .hero--home03__image-container02{
             position: absolute;
             height: 120%;
+        }
+
+        .box{
+            height: 350px;
+        }
+
+        .box-text{
+            height: 250px;
+        }
+
+        .box-text-text{
+            font-size: 16px;
+            width: 100%;
+            letter-spacing: 0;
+            word-spacing: .25;
+        }
+
+        .box-image-container{
+            width: 18rem;
+        }
+
+        .hero--home04__image04{
+            min-width: 16rem;
+            max-width: 300px;
+        }
+    }
+
+    @media (max-width: 375px){
+        .hero--home01__secondary{
+            font-size: 11px;
+            word-spacing: .25;
+            letter-spacing: .25;
+        }
+        .box-image-container{
+            width: 16rem;
         }
     }
 </style>
@@ -1139,9 +1430,13 @@
             "id": "home03_button01-link",
             "label": "Homepage 03 Button 01 Link",
             "default": "pages/about"
+        },
+        {
+            "type": "text",
+            "id": "home04_title",
+            "label": "Homepage 04 Title",
+            "default": "how to refill"
         }
     ]
 }
 {%endschema%}
-
-
