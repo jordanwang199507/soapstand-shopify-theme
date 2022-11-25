@@ -9,7 +9,7 @@
             <label class="nav-toggle" for="navi-toggle" aria-label="open navigation">
                 <span class="hamburger"></span>
             </label>
-            <a class="logo" href="#">
+            <a class="logo" href="https://soapstand.com">
                 {{ 'Logo-dark.svg' | asset_url | img_tag: 'Logo', 'logo__image' }}            
             </a>                              {% comment %} {% elsif page_title == "contact" %} {% endcomment %}
             <nav class="nav">
@@ -48,7 +48,7 @@
             <label class="nav-toggle nav-toggle__notHome" for="navi-toggle" aria-label="open navigation">
                 <span class="hamburger hamburger__notHome"></span>
             </label>
-            <a class="logo" href="#">
+            <a class="logo" href="https://soapstand.com">
                 {{ 'Logo-light.svg' | asset_url | img_tag: 'Logo', 'logo__image' }}            
             </a>
             <nav class="nav nav__notHome">
@@ -109,6 +109,10 @@
 
     .header__notHome{
         background: #014E59;
+    }
+
+    .logo{
+        z-index: 5;
     }
 
     .logo__image{
