@@ -1,0 +1,25 @@
+{
+  "current": {
+    "sections": {
+      "header": {
+        "type": "header",
+        "settings": {
+          "business_portal-link": "https:\/\/soapstandportal.com\/",
+          "include_facebook": true,
+          "facebook-link": "https:\/\/www.facebook.com",
+          "include_linkedin": true,
+          "linkedin-link": "https:\/\/www.linkedin.com",
+          "include_instagram": true,
+          "instagram-link": "https:\/\/www.instagram.com",
+          "include_youtube": true,
+          "youtube-link": "https:\/\/www.youtube.com",
+          "include_twitter": true,
+          "twitter-link": "https:\/\/www.twitter.com"
+        }
+      }
+    },
+    "content_for_index": [
+
+    ]
+  }
+}
