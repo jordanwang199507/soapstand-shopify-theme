@@ -1568,27 +1568,6 @@
         nav.classList.toggle('nav--visible');
     });
 
-    const revealSection = function (entries, observer) {
-        const [entry] = entries;
-        if (!entry.isIntersecting) return;
-        entry.target.classList.remove('section--left');
-        entry.target.classList.remove('section--right');
-        observer.unobserve(entry.target);
-    };
-
-    const sectionObserver = new IntersectionObserver(revealSection, {
-        root: null,
-        threshold: 0.1,
-    });
-
-    allSections.forEach(function (section, index) {
-        sectionObserver.observe(section);
-        if(index % 2 == 0){
-            section.classList.add('section--left');
-        }else{
-            section.classList.add('section--right');
-        }
-    });
 {% endjavascript %}
 
 {%schema%}
