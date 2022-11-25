@@ -41,15 +41,15 @@
                 <div class="input-group--underline">
                   <input type="email" placeholder="email" name="contact[email]" id="NewsletterEmail" class="input-group__field site-footer__newsletter-input" autocorrect="off" autocapitalize="off">
                   <div class="input-group__btn input-group__btn--newsletter">
-                    <button type="submit" class="btn--newsletter__submit">subscribe</button>
+                    <button type="submit" class="btn--newsletter__submit arrow">subscribe</button>
                   </div>
                 </div>
                 <div class="site-footer__newsletter-message" aria-role="alert">
-                  {% if form.posted_successfully? %}
-                    <p class="subscribe-success" aria-role="alert">Thank you for subscribing!</p>
-                  {% endif %}
-                  {{ form.errors | default_errors }}
-                  </div>
+                    {% if form.posted_successfully? %}
+                        <p class="subscribe-success" aria-role="alert">Thank you for subscribing!</p>
+                    {% endif %}
+                    {{ form.errors | default_errors }}
+                </div>
               {% endform %}
             </div>
             <div class="logo-container">
@@ -115,7 +115,7 @@
     }
 
     .menu__item a, .menu__item a:visited, .menu__item a:link{
-        color: white;
+        color: #fffdfa;
         text-decoration: none;
         font-size: 20px;
         position: relative;
@@ -147,7 +147,7 @@
         justify-content: space-between;
         align-items: center;
         list-style: none;
-        color: white;
+        color: #fffdfa;
         margin-top: 50px;
         position: relative;
     }
@@ -159,7 +159,7 @@
     }
 
     .menu-socials__item i{
-        color: white;
+        color: #fffdfa;
         font-size: 20px;
     }
 
@@ -171,7 +171,6 @@
     .subscribe-container{
         max-width: 650px; 
         text-align: center;
-        margin-top: 50px;
     }
 
     .subscribe-container form{
@@ -197,6 +196,7 @@
         margin: 0;
         border: 0;
         background: transparent;
+        font-weight: 200;
     }
 
     .site-footer__newsletter-input:focus{
@@ -210,13 +210,13 @@
     }
 
     #NewsletterEmail{
-        color: white;
+        color: #fffdfa;
         font-family: Montserrat, sans-serif;
     }
 
     .site-footer__newsletter-label{
         font-size: 22px;
-        color: white;
+        color: #fffdfa;
         font-weight: bold;
         letter-spacing: .35;
         display: block;
@@ -256,8 +256,22 @@
         font-weight: 100;
     }
 
+    .arrow {
+        margin: 1em 0;
+    }
+    .arrow::after {
+        display: inline-block;
+        padding-left: 8px;
+        content: "➞";
+        transition: transform 0.3s ease-out;
+    }
+
+    .arrow:hover::after {
+        transform: translateX(4px);
+    }
+
     .subscribe-success{
-        color: white;
+        color: #fffdfa;
         font-family: "Brevia";
         font-size: 20px;
         margin: 20px auto;
@@ -274,10 +288,11 @@
         color: #a8cccc;
         letter-spacing: .25;
         font-weight: 200;
+        font-size: 12px;
     }
 
     .footer__image{
-        width: 150px;
+        width: 120px;
     }
 
     .container_left-footer__image{
@@ -381,7 +396,7 @@
         }
 
         .footer__image{
-            width: 130px;
+            width: 110px;
         }
     }
 
@@ -430,7 +445,7 @@
         }
 
         .footer__image{
-            width: 120px;
+            width: 100px;
         }
     }
 
@@ -470,10 +485,6 @@
 
         .copyRight{
             letter-spacing: 0;
-        }
-
-        .footer__image{
-            width: 110px;
         }
     }
 
@@ -575,7 +586,7 @@
                 "type": "text",
                 "id": "facebook-link",
                 "label": "Facebook Link",
-                "default": "https://www.facebook.com"
+                "default": "https://www.facebook.com/TheSoapstand"
             },
             {
                 "type": "checkbox",
@@ -587,7 +598,7 @@
                 "type": "text",
                 "id": "linkedin-link",
                 "label": "LinkedIn Link",
-                "default": "https://www.linkedin.com"
+                "default": "https://www.linkedin.com/company/soapstand"
             },
             {
                 "type": "checkbox",
@@ -599,7 +610,7 @@
                 "type": "text",
                 "id": "instagram-link",
                 "label": "Instagram Link",
-                "default": "https://www.instagram.com"
+                "default": "https://www.instagram.com/soapstandco"
             },
             {
                 "type": "checkbox",

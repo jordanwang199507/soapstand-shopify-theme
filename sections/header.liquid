@@ -1,6 +1,5 @@
 {% if page_title == "Soapstand | Sustainable Soap Refillery Stations" %}
     <header class="header">
-                                                            {% comment %} {% elsif page_title == "contact" %} {% endcomment %}
 {% else %}
     <header class="header header__notHome">
 {% endif %}
@@ -96,14 +95,14 @@
 
 <style>
     .header{
-        padding: 1.2em 0;
+        padding: 1.5em 0;
         text-align: center;
         width: 100%;
         top: 0;
         left: 0;
         height: 15vh;
-        min-height: 120px;
-        max-height: 130px;
+        min-height: 100px;
+        max-height: 145px;
         z-index: 1000;
         position: unset;
     }
@@ -141,7 +140,7 @@
     }
 
     .nav-toggle__notHome{
-        background: white;
+        background: #fffdfa;
     }
     
     .nav-toggle:focus,
@@ -161,7 +160,7 @@
         display: inline-block;
         margin: 0 auto;
         height: 2px;
-        background: white;
+        background: #fffdfa;
         width: 1.5rem;
     }
 
@@ -190,14 +189,13 @@
 
     .nav {
         visibility: hidden;
-        height: 0;
+        max-height: 0;
         position: absolute;
     }
 
     .visible {
         visibility: visible;
-        height: 100vh;
-        height: 100%;
+        max-height: 100vh;
     } 
 
     .nav__list{
@@ -206,7 +204,7 @@
         position: fixed;
         width: 100%;
         left: 0px;
-        background: white;
+        background: #fffdfa;
         overflow: auto;
         padding: 30px 0px 100px 0px;
     }
@@ -229,7 +227,7 @@
     }
 
     .nav-socials__list__notHome a{
-        color: white;
+        color: #fffdfa;
     }
 
     .nav-socials__list a:hover{
@@ -267,7 +265,7 @@
     }
 
     .nav__item__notHome a{
-        color: white;
+        color: #fffdfa;
     }
 
     .nav__item a:hover, .nav__item:focus{
@@ -309,7 +307,7 @@
     }
 
     .business-portal__item__notHome a.business-portal__notHome{
-        color: white;
+        color: #fffdfa;
     }
 
     .business-portal__item a.business-portal:hover{
@@ -421,6 +419,16 @@
         }
     }
 
+    @media (max-width: 500px){
+        .nav__item a{
+            font-size: 20px;
+        }
+
+        .nav-socials__item i{
+            font-size: 18px;
+        }
+    }
+
     @media (max-width: 450px) {
         .header-topLeft{
             position: absolute;
@@ -464,7 +472,7 @@
                 footer.classList.add('section-visible');
             }
         }
-    })
+    });
 {% endjavascript %}
 
 {% schema %}
@@ -487,7 +495,7 @@
                 "type": "text",
                 "id": "facebook-link",
                 "label": "Facebook Link",
-                "default": "https://www.facebook.com"
+                "default": "https://www.facebook.com/TheSoapstand"
             },
             {
                 "type": "checkbox",
@@ -499,7 +507,7 @@
                 "type": "text",
                 "id": "linkedin-link",
                 "label": "LinkedIn Link",
-                "default": "https://www.linkedin.com"
+                "default": "https://www.linkedin.com/company/soapstand"
             },
             {
                 "type": "checkbox",
@@ -511,7 +519,7 @@
                 "type": "text",
                 "id": "instagram-link",
                 "label": "Instagram Link",
-                "default": "https://www.instagram.com"
+                "default": "https://www.instagram.com/soapstandco"
             },
             {
                 "type": "checkbox",

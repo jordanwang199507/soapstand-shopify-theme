@@ -1,5 +1,5 @@
 <section class="hero--home">
-    <section class="hero--home01">
+    <section class="hero--home01 home--section">
         <div class="container row hero--home01__row">
             <div class="hero--home01__text">
                 <div class="hero--home01__circle circle-01"></div>
@@ -49,9 +49,9 @@
         {{ 'hero-corner.svg' | asset_url | img_tag: 'hero corner image', 'hero--home01__image--corner' }}  
         {{ 'hero-bottom.svg' | asset_url | img_tag: 'hero bottom image', 'hero--home01__image--bottom' }}  
     </section>
-    <section class="hero--home02">
+    <section class="hero--home02 home--section">
         <div class="title__primary hero--home02__title"><span>{{ section.settings.home02_title }}</span></div>
-        <div class="container row hero--home02__row">
+        <div class="container row home--container hero--home02__row">
             <div class="hero--home02__text">
                 <div class="hero--home02__circle home02__circle-01">
                     {{ 'home02__logo.svg' | asset_url | img_tag: 'hero 02 logo', 'hero--home02__logo' }}  
@@ -72,9 +72,9 @@
             </div>
         </div>
     </section>  
-    <section class="hero--home03">
+    <section class="hero--home03 home--section">
         <div class="title__primary hero--home03__title"><span>{{ section.settings.home03_title }}</span></div>
-        <div class="container row hero--home03__row">
+        <div class="container row home--container hero--home03__row">
             <div class="hero--home03__container hero--home03__container01">
                 <div class="hero--home03__content">
                     <div class="hero--home03__value container01__value">50%</div>
@@ -117,50 +117,59 @@
             </div>
         </div>
     </section>
-    <section class="hero--home04" id="how-to-refill">
+    <section class="hero--home04 home--section" id="howto">
         <div class="title__primary hero--home04__title"><span>{{ section.settings.home04_title }}</span></div>
-        <div class="container row hero--home04__row">
+        {{ 'home04-topCenter.svg' | asset_url | img_tag: 'hero home04 top background image', 'hero--home04__topCenter' }}  
+        <div class="container row home--container hero--home04__row">
             <div class="box box-image box1-image">
+                {{ 'home04-center.svg' | asset_url | img_tag: 'hero home04 top background image', 'hero--home04__center hero--home04__center01' }}  
                 {{ 'home04__image01.svg' | asset_url | img_tag: 'hero home04 image01', 'hero--home04__image01' }}  
             </div>
             <div class="box box-text box2-text">
                 <div class="box-text-container box2-text-container">
                     <div class="box-text-number box2-text-number">1</div>
-                    <p class="box-text-text box2-text-text">Find the nearest Soapstand station at your local grocery or residence, don't forget to bring your container with you!</p>
+                    <p class="box-text-text box2-text-text">{{ section.settings.refill_step01 }}</p>
                 </div>
             </div>
             <div class="box box-text box3-text">
                 <div class="box-text-container box3-text-container">
                     <div class="box-text-number box3-text-number">2</div>
-                    <p class="box-text-text box3-text-text">Once you start interacting with your local Soapstand machine, select the product you wish to dispense as well as the quantity.</p>
+                    <p class="box-text-text box3-text-text">{{ section.settings.refill_step02 }}</p>
                 </div>
             </div>
             <div class="box box-image box4-image">
                 <div class="box-image-container">
-                    {{ 'home04__image02.png' | asset_url | img_tag: 'hero home04 image02', 'hero--home04__image02' }}                  
+                    {{ 'home04__image02.png' | asset_url | img_tag: 'hero home04 image02', 'hero--home04__image02' }}    
+                    {{ 'home04-center.svg' | asset_url | img_tag: 'hero home04 top background image', 'hero--home04__center hero--home04__center02' }}  
+              
                 </div>
             </div>
             <div class="box box-image box5-image">
                 <div class="box-image-container">
+                    {{ 'home04-center.svg' | asset_url | img_tag: 'hero home04 top background image', 'hero--home04__center hero--home04__center03' }}  
                     {{ 'home04__image03.png' | asset_url | img_tag: 'hero home04 image03', 'hero--home04__image03' }}                  
                 </div>
+
             </div>
             <div class="box box-text box6-text">
                 <div class="box-text-container box6-text-container">
                     <div class="box-text-number box6-text-number">3</div>
-                    <p class="box-text-text box6-text-text">Once ready to dispense, please press and hold the green light button, your soap will dispense your desired quantity so you can safely stop pressing the button and close the container</p>
+                    <p class="box-text-text box6-text-text">{{ section.settings.refill_step03 }}</p>
                 </div>
             </div>
             <div class="box box-text box7-text">
                 <div class="box-text-container box7-text-container">
                     <div class="box-text-number box7-text-number">4</div>
-                    <p class="box-text-text box7-text-text">Congratulations! You just saved 50% on your purchase and saved a plastic bottle from entering our landfills! Please pay by collecting your reciept from the machine, applying tap payment or QR code.</p>
+                    <p class="box-text-text box7-text-text">{{ section.settings.refill_step04 }}</p>
                 </div>
             </div>
             <div class="box box-image box8-image">
+                {{ 'home04-center.svg' | asset_url | img_tag: 'hero home04 top background image', 'hero--home04__center hero--home04__center04' }}  
                 {{ 'home04__image04.png' | asset_url | img_tag: 'hero home04 image04', 'hero--home04__image04' }}                  
             </div>
         </div>
+        {{ 'home04-bottomLeft.svg' | asset_url | img_tag: 'hero home04 bottom left background image', 'hero--home04__bottomLeft' }}
+        {{ 'home04-bottomRight.svg' | asset_url | img_tag: 'hero home04 bottom right background image', 'hero--home04__bottomRight' }}  
     </section>
 </section> 
 
@@ -168,6 +177,11 @@
     @import url(//db.onlinewebfonts.com/c/6bfddeebdb6be7ad8b3cbf0523b89aca?family=Brevia);
     .hero--home{
         width: 100%;
+        overflow: hidden;
+    }
+
+    .home--container{
+        transition: transform 1s, opacity 1s;
     }
 
     .hero--home01{
@@ -203,7 +217,7 @@
 
     .circle-02{
         left: 2%;
-        bottom: 40%;
+        bottom: 41%;
     }
 
     .hero--home01__text{
@@ -322,7 +336,7 @@
     }
 
     .hero--home02__secondary{
-        color: #ffffff;
+        color: #fffdfa;
     }
 
     .hero--home02__circle{
@@ -417,7 +431,7 @@
         margin-top: -17vh;
         position: relative;
         font-family: "Brevia", Montserrat, sans-serif;
-        color: white;
+        color: #fffdfa;
         width: 100%;
     }
 
@@ -488,6 +502,31 @@
 
     .hero--home04{
         padding: 5em 0 3em 0;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .hero--home04__topCenter{
+        position: absolute;
+        width: 100%;
+        top: 27.5rem;
+        z-index: -1;
+    }
+
+    .hero--home04__bottomLeft{
+        position: absolute;
+        bottom: 22rem;
+        width: 15rem;
+        left: -20px;
+        z-index: -1;
+    }
+
+    .hero--home04__bottomRight{
+        position: absolute;
+        width: 12rem;
+        bottom: 0px;
+        right: 0;
+        z-index: -1;
     }
     
     .hero--home04__row{
@@ -514,6 +553,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        position: relative;
     }
 
     .box-text{
@@ -550,11 +590,40 @@
         height: auto;
         border: 25px solid transparent;
         border-radius: 50%;
-        background-image: -webkit-gradient(linear, left top, left bottom, from(white), to(white)), -webkit-gradient(linear, left top, right top, from(#71B9B6), color-stop(18%, #6AB1B1), color-stop(45%, #589EA5), color-stop(77%, #3A7E91), to(#216380));
-        background-image: -o-linear-gradient(white, white), -o-linear-gradient(left, #71B9B6 0%, #6AB1B1 18%, #589EA5 45%, #3A7E91 77%, #216380 100%);
-        background-image: linear-gradient(white, white), linear-gradient(to right, #71B9B6 0%, #6AB1B1 18%, #589EA5 45%, #3A7E91 77%, #216380 100%);
+        background-image: -webkit-gradient(linear, left top, left bottom, from(#fffdfa), to(#fffdfa)), -webkit-gradient(linear, left top, right top, from(#71B9B6), color-stop(18%, #6AB1B1), color-stop(45%, #589EA5), color-stop(77%, #3A7E91), to(#216380));
+        background-image: -o-linear-gradient(#fffdfa, #fffdfa), -o-linear-gradient(left, #71B9B6 0%, #6AB1B1 18%, #589EA5 45%, #3A7E91 77%, #216380 100%);
+        background-image: linear-gradient(#fffdfa, #fffdfa), linear-gradient(to right, #71B9B6 0%, #6AB1B1 18%, #589EA5 45%, #3A7E91 77%, #216380 100%);
         background-origin: border-box;
         background-clip: content-box, border-box;
+        position: relative;
+    }
+
+    .hero--home04__center{
+        position: absolute;
+    }
+
+    .hero--home04__center01{
+        width: 40px;
+        top: 50px;
+        right: 20px;        
+    }
+
+    .hero--home04__center02{
+        width: 30px;
+        bottom: -10px;
+        left: -20px;
+    }
+
+    .hero--home04__center03{
+        width: 30px;
+        top: -10px;
+        right: 0px;
+    }
+
+    .hero--home04__center04{
+        width: 30px;
+        top: 50px;
+        left: 50px;
     }
 
     .hero--home04__image01{
@@ -572,11 +641,23 @@
         width: 25rem;
     }
 
+    .section--left{
+        opacity: 0;
+        transform: translateX(-8rem);
+    }
+
+    .section--right{
+        opacity: 0;
+        transform: translateX(8rem);
+    }
+
+
     @media (min-width: 950px) {
         .hero--home01__row{
             display: flex;
             min-height: 650px;
             max-height: 800px;
+            height: 85vh;
         }
 
         .hero--home01__text{
@@ -623,7 +704,8 @@
 
         .hero--home01__secondary{
             font-size: 18px;
-            word-spacing: 10px;
+            word-spacing: 5px;
+            letter-spacing: .5
         }
 
         .hero--home01__button-groups{
@@ -747,6 +829,14 @@
             width: 100%;
         }
 
+        .hero--home04__topCenter{
+            top: 24.5rem;
+        }
+
+        .hero--home04__center{
+            display: none;
+        }
+
         .box{
             height: 500px;
         }
@@ -788,6 +878,10 @@
         .container02__text--primary, .container02__text--secondary{
             font-size: 26px;
         }
+
+        .hero--home04__topCenter{
+            top: 26.5rem;
+        }
     }
 
     @media (max-width: 1300px) {
@@ -823,6 +917,10 @@
 
         .box-text-text{
             font-size: 20px;
+        }
+
+        .hero--home04__topCenter{
+            top: 27.5rem;
         }
     }
 
@@ -952,6 +1050,16 @@
             flex-direction: column;
             flex-wrap: wrap;
             padding: 2rem 0;
+        }
+
+        .hero--home04__topCenter{
+            width: 200%;
+            top: 40rem;
+        }
+
+        .hero--home04__bottomLeft{
+            bottom: 43rem;
+            width: 12rem;
         }
 
         .box-text-container{
@@ -1116,6 +1224,14 @@
             font-size: 22px;
         }
 
+        .hero--home04__image01{
+            width: 90%;
+        }
+
+        .box-text{
+            height: 250px;
+        }
+
         .box-text-text{
             font-size: 18px;
         }
@@ -1183,39 +1299,69 @@
             height: 70%;
         }
 
+        .hero--home04__topCenter{
+            top: 35rem;
+        }
+
+        .hero--home04__bottomLeft{
+            bottom: 36rem;
+            left: -30px;
+            transform: rotate(5deg);
+            width: 10rem;
+        }
+
+        .hero--home04__bottomRight{
+            width: 9rem;
+            bottom: -35px;
+        }
+
+        .hero--home04__center01{
+            width: 30px;
+            top: 50px;
+            right: 20px;        
+        }
+
         .box{
-            height: 420px;
+            height: 400px;
         }
 
         .box-text{
             height: 250px;
         }
 
-
         .box-image-container{
-            width: 22rem;
+            width: 20rem;
             border: 20px solid transparent;
         }
 
         .box-text-text{
             width: 90%;
+            font-size: 16px;
+        }
+
+        .box-text-number{
+            font-size: 3.5rem;
         }
 
         .hero--home04__image04{
             width: 90%;
-            max-width: 350px;
-            min-width: 18rem;
+            max-width: 320px;
+            min-width: 16rem;
         }
     }
 
     @media (max-width: 450px) {
         .hero--home01__primary{
-            font-size: 27px;
+            font-size: 26px;
         }
 
         .hero--home01__secondary{
-            font-size: 12px;
+            font-size: 11px;
             word-spacing: 1px;
+        }
+
+        .heading-socials p{
+            font-size: 12px;
         }
 
         .hero--home02__title{
@@ -1249,39 +1395,72 @@
             height: 120%;
         }
 
+        .hero--home04__center01{
+            width: 25px;
+            top: 50px;
+            right: 0px;        
+        }
+
+        .hero--home04__center02{
+            width: 25px;
+        }
+
+        .hero--home04__center03{
+            width: 25px;
+            top: -20px;
+            right: -10px;
+        }
+
+        .hero--home04__center04{
+            width: 25px;
+            top: 20px;
+            left: 20px;
+        }
+
+        .hero--home04__topCenter{
+            top: 32rem;
+        }
+
+        .hero--home04__bottomLeft{
+            bottom: 29rem;
+            width: 9rem;
+        }
+
         .box{
-            height: 350px;
+            height: 300px;
         }
 
         .box-text{
-            height: 250px;
+            height: 200px;
+            margin-top: 20px;
         }
 
         .box-text-text{
-            font-size: 16px;
-            width: 100%;
+            font-size: 14px;
+            margin: 20px auto;
             letter-spacing: 0;
             word-spacing: .25;
         }
 
-        .box-image-container{
-            width: 18rem;
+        .hero--home04__image01{
+            width: 100%;
         }
 
         .hero--home04__image04{
-            min-width: 16rem;
-            max-width: 300px;
+            min-width: 15rem;
+            max-width: 280px;
+        }
+
+        .box-image-container{
+            width: 16rem;
         }
     }
 
     @media (max-width: 375px){
         .hero--home01__secondary{
-            font-size: 11px;
+            font-size: 10px;
             word-spacing: .25;
             letter-spacing: .25;
-        }
-        .box-image-container{
-            width: 16rem;
         }
     }
 </style>
@@ -1289,11 +1468,35 @@
 {% javascript %}
     const navToggle = document.querySelector('.nav-toggle');
     const nav = document.querySelector('.nav');
-
+    const allSections = document.querySelectorAll('.home--container');
 
     navToggle.addEventListener('click', () => {
         nav.classList.toggle('nav--visible');
-    })
+    });
+
+    const revealSection = function (entries, observer) {
+        const [entry] = entries;
+
+        if (!entry.isIntersecting) return;
+
+        entry.target.classList.remove('section--left');
+        entry.target.classList.remove('section--right');
+        observer.unobserve(entry.target);
+    };
+
+    const sectionObserver = new IntersectionObserver(revealSection, {
+        root: null,
+        threshold: 0,
+    });
+
+    allSections.forEach(function (section, index) {
+        sectionObserver.observe(section);
+        if(index % 2 == 0){
+            section.classList.add('section--left');
+        }else{
+            section.classList.add('section--right');
+        }
+    });
 {% endjavascript %}
 
 {%schema%}
@@ -1351,7 +1554,7 @@
             "type": "text",
             "id": "facebook-link",
             "label": "Facebook Link",
-            "default": "https://www.facebook.com"
+            "default": "https://www.facebook.com/TheSoapstand"
         },
         {
             "type": "checkbox",
@@ -1363,7 +1566,7 @@
             "type": "text",
             "id": "linkedin-link",
             "label": "LinkedIn Link",
-            "default": "https://www.linkedin.com"
+            "default": "https://www.linkedin.com/company/soapstand"
         },
         {
             "type": "checkbox",
@@ -1375,7 +1578,7 @@
             "type": "text",
             "id": "instagram-link",
             "label": "Instagram Link",
-            "default": "https://www.instagram.com"
+            "default": "https://www.instagram.com/soapstandco"
         },
         {
             "type": "checkbox",
@@ -1436,6 +1639,30 @@
             "id": "home04_title",
             "label": "Homepage 04 Title",
             "default": "how to refill"
+        },
+        {
+            "type": "text",
+            "id": "refill_step01",
+            "label": "How to Refill Step 01",
+            "default": "Find the nearest Soapstand station at your local grocery or residence, don't forget to bring your container with you!"
+        },
+        {
+            "type": "text",
+            "id": "refill_step02",
+            "label": "How to Refill Step 02",
+            "default": "Once you start interacting with your local Soapstand machine, select the product you wish to dispense as well as the quantity."
+        },
+        {
+            "type": "text",
+            "id": "refill_step03",
+            "label": "How to Refill Step 03",
+            "default": "Once ready to dispense, please press and hold the green light button, your soap will dispense your desired quantity so you can safely stop pressing the button and close the container."
+        },
+        {
+            "type": "text",
+            "id": "refill_step04",
+            "label": "How to Refill Step 04",
+            "default": "Congratulations! You just saved 50% on your purchase and saved a plastic bottle from entering our landfills! Please pay by collecting your reciept from the machine, applying tap payment or QR code."
         }
     ]
 }

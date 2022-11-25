@@ -12,10 +12,18 @@
         </div>
 
         <div class="contact-page__content">
-            <div class="if-statement">If you want mail: <span class="if-answer">sales@soapstand.com</span></div>
-            <div class="if-statement">If you wanna hear us out: <span class="if-answer">(604) 672 5522</span></div>
-            <div class="if-statement">If you're on instagram: <span class="if-answer">@thesoapstandco</span></div>
-            <div class="if-statement">If you want to meet us irl: <span class="if-answer">come say hi at 312 Main St</span></div>
+            {% if section.settings.include_email %}
+                <div class="if-statement">{{ section.settings.include_emailLeft }}<span class="if-answer">{{ section.settings.include_emailRight }}</span></div>
+            {% endif %}
+            {% if section.settings.include_phone %}
+                <div class="if-statement">{{ section.settings.include_phoneLeft }} <span class="if-answer">{{ section.settings.include_phoneRight }}</span></div>            
+            {% endif %}
+            {% if section.settings.include_instagram %}
+                <div class="if-statement">{{ section.settings.include_instagramLeft }}<span class="if-answer">{{ section.settings.include_instagramRight }}</span></div>
+            {% endif %}
+            {% if section.settings.include_address %}
+                <div class="if-statement">{{ section.settings.include_addressLeft }}<span class="if-answer">{{ section.settings.include_addressRight }}</span></div>
+            {% endif %}
         </div>
 
         {% form 'contact' %}
@@ -78,7 +86,7 @@
         font-family: "Brevia", Montserrat, sans-serif;
         font-size: 4em;
         color: #94B7B8;
-        margin-bottom: 2vh;
+        margin-bottom: 30px;
         letter-spacing: 1px;
         position: relative;
     }
@@ -92,7 +100,7 @@
     .contact-page__secondary{
         font-size: 2em;
         font-weight: 700;
-        color: white;
+        color: #fffdfa;
         letter-spacing: 1px;
         position: relative;
     }
@@ -106,8 +114,8 @@
     .contact-page__content{
         text-align: left;
         max-width: 500px;
-        margin: 5em auto;
-        color: white;
+        margin: 40px auto;
+        color: #fffdfa;
     }
 
     .if-statement{
@@ -155,7 +163,7 @@
     .email__input:not(:placeholder-shown):invalid, 
     .message__input:not(:placeholder-shown):invalid{
         border: none;
-        outline: 2px solid red;
+        outline: 2px solid #C75052;
         border-radius: 5px;
     }
 
@@ -166,23 +174,20 @@
     .name__input, .email__input{
         width: 550px;
         height: 40px;
-        background: linear-gradient(180.6deg, #004E59 -44.87%, #246770 -7.09%, #66949B 57.12%, #9CBABE 121.34%, #C7D8DA 181.78%, #E5EDEE 234.67%, #F8FAFA 280%, #FFFFFF 310.22%);
-        opacity: 0.4;
+        background: linear-gradient(180.6deg, #004E59 -44.87%, #246770 -7.09%, #66949B 57.12%, #9CBABE 121.34%, #C7D8DA 181.78%, #E5EDEE 234.67%, #F8FAFA 280%, #fffdfa 310.22%);
         border: none;
         border-radius: 10px;
-    }
-
-    .name__input, .email__input{
-        margin-bottom: 2vh;
+        opacity: 0.6;
+        margin-bottom: 20px;
     }
 
     .name__input::placeholder, .email__input::placeholder, .message__input::placeholder{
-        color: white;
+        color: #fffdfa;
         font-size: 14px;
     }
 
     #name, #email, #message{
-        color: white;
+        color: #fffdfa;
         padding-left: 10px;
         font-family: Montserrat, sans-serif;
     }
@@ -191,14 +196,20 @@
         resize: none;
         width: 550px;
         height: 150px;
-        background: linear-gradient(180.6deg, #004E59 -44.87%, #246770 -7.09%, #66949B 57.12%, #9CBABE 121.34%, #C7D8DA 181.78%, #E5EDEE 234.67%, #F8FAFA 280%, #FFFFFF 310.22%);
-        opacity: 0.4;
+        background: linear-gradient(180.6deg, #004E59 -44.87%, #246770 -7.09%, #66949B 57.12%, #9CBABE 121.34%, #C7D8DA 181.78%, #E5EDEE 234.67%, #F8FAFA 280%, #fffdfa 310.22%);
+        opacity: 0.6;
         border: none;
         border-radius: 10px;
     }
 
     #message{
         padding-top: 10px;
+    }
+
+    .name__input:focus, .email__input:focus, .message__input:focus{
+        border: none;
+        outline: 2px solid #a9cdce;
+        border-radius: 5px;
     }
 
     form{
@@ -216,9 +227,9 @@
 
     .form-success{
         padding: 4em;
-        background: linear-gradient(180.6deg, #004E59 -44.87%, #246770 -7.09%, #66949B 57.12%, #9CBABE 121.34%, #C7D8DA 181.78%, #E5EDEE 234.67%, #F8FAFA 280%, #FFFFFF 310.22%);
+        background: linear-gradient(180.6deg, #004E59 -44.87%, #246770 -7.09%, #66949B 57.12%, #9CBABE 121.34%, #C7D8DA 181.78%, #E5EDEE 234.67%, #F8FAFA 280%, #fffdfa 310.22%);
         border-radius: 25px;
-        color: white;
+        color: #fffdfa;
         opacity: .8;
         font-family: "Brevia";
         font-size: 20px;
@@ -356,6 +367,11 @@
             max-width: 275px;
         }
 
+        .name, .email, .message{
+            width: 90%;
+            margin: 0 auto;
+        }
+
         .if-statement{
             font-size: 10px;
         }
@@ -380,3 +396,83 @@
         }
     }
 </style>
+
+{% schema %}
+    {
+        "name": "Contact",
+        "settings": [
+            {
+                "type": "checkbox",
+                "id": "include_email",
+                "label": "Include Email Information",
+                "default": true
+            },
+            {
+                "type": "text",
+                "id": "include_emailLeft",
+                "label": "If Statement: Email Infomration",
+                "default": "If you want mail: "
+            },
+            {
+                "type": "text",
+                "id": "include_emailRight",
+                "label": "Email Information",
+                "default": "sales@soapstand.com"
+            },
+            {
+                "type": "checkbox",
+                "id": "include_phone",
+                "label": "Include Phone Information",
+                "default": true
+            },
+            {
+                "type": "text",
+                "id": "include_phoneLeft",
+                "label": "If Statement: Phone Infomration",
+                "default": "If you wannna hear us out: "
+            },
+            {
+                "type": "text",
+                "id": "include_phoneRight",
+                "label": "Phone Information",
+                "default": "(604) 672 5522"
+            },
+            {
+                "type": "checkbox",
+                "id": "include_instagram",
+                "label": "Include Instagram Information",
+                "default": true
+            },
+            {
+                "type": "text",
+                "id": "include_instagramLeft",
+                "label": "If Statement: Instagram Infomration",
+                "default": "If you're on instagram: "
+            },
+            {
+                "type": "text",
+                "id": "include_instagramRight",
+                "label": "Instagram Information",
+                "default": "@soapstandco"
+            },
+            {
+                "type": "checkbox",
+                "id": "include_address",
+                "label": "Include Address Information",
+                "default": true
+            },
+            {
+                "type": "text",
+                "id": "include_addressLeft",
+                "label": "If Statement: Address Infomration",
+                "default": "If you want to meet us irl: "
+            },
+            {
+                "type": "text",
+                "id": "include_addressRight",
+                "label": "Address Information",
+                "default": "come say hi at 312 Main St"
+            }
+        ]
+    }
+{% endschema %}
