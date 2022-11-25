@@ -159,6 +159,18 @@
         bottom: -70px;
     }
 
+    .name__input:not(:-moz-placeholder-shown):invalid, .email__input:not(:-moz-placeholder-shown):invalid, .message__input:not(:-moz-placeholder-shown):invalid{
+        border: none;
+        outline: 2px solid #C75052;
+        border-radius: 5px;
+    }
+
+    .name__input:not(:-ms-input-placeholder):invalid, .email__input:not(:-ms-input-placeholder):invalid, .message__input:not(:-ms-input-placeholder):invalid{
+        border: none;
+        outline: 2px solid #C75052;
+        border-radius: 5px;
+    }
+
     .name__input:not(:placeholder-shown):invalid, 
     .email__input:not(:placeholder-shown):invalid, 
     .message__input:not(:placeholder-shown):invalid{
@@ -174,11 +186,32 @@
     .name__input, .email__input{
         width: 550px;
         height: 40px;
+        background: -o-linear-gradient(269.4deg, #004E59 -44.87%, #246770 -7.09%, #66949B 57.12%, #9CBABE 121.34%, #C7D8DA 181.78%, #E5EDEE 234.67%, #F8FAFA 280%, #fffdfa 310.22%);
         background: linear-gradient(180.6deg, #004E59 -44.87%, #246770 -7.09%, #66949B 57.12%, #9CBABE 121.34%, #C7D8DA 181.78%, #E5EDEE 234.67%, #F8FAFA 280%, #fffdfa 310.22%);
         border: none;
         border-radius: 10px;
         opacity: 0.6;
         margin-bottom: 20px;
+    }
+
+    .name__input::-webkit-input-placeholder, .email__input::-webkit-input-placeholder, .message__input::-webkit-input-placeholder{
+        color: #fffdfa;
+        font-size: 14px;
+    }
+
+    .name__input::-moz-placeholder, .email__input::-moz-placeholder, .message__input::-moz-placeholder{
+        color: #fffdfa;
+        font-size: 14px;
+    }
+
+    .name__input:-ms-input-placeholder, .email__input:-ms-input-placeholder, .message__input:-ms-input-placeholder{
+        color: #fffdfa;
+        font-size: 14px;
+    }
+
+    .name__input::-ms-input-placeholder, .email__input::-ms-input-placeholder, .message__input::-ms-input-placeholder{
+        color: #fffdfa;
+        font-size: 14px;
     }
 
     .name__input::placeholder, .email__input::placeholder, .message__input::placeholder{
@@ -196,6 +229,7 @@
         resize: none;
         width: 550px;
         height: 150px;
+        background: -o-linear-gradient(269.4deg, #004E59 -44.87%, #246770 -7.09%, #66949B 57.12%, #9CBABE 121.34%, #C7D8DA 181.78%, #E5EDEE 234.67%, #F8FAFA 280%, #fffdfa 310.22%);
         background: linear-gradient(180.6deg, #004E59 -44.87%, #246770 -7.09%, #66949B 57.12%, #9CBABE 121.34%, #C7D8DA 181.78%, #E5EDEE 234.67%, #F8FAFA 280%, #fffdfa 310.22%);
         opacity: 0.6;
         border: none;
@@ -227,6 +261,7 @@
 
     .form-success{
         padding: 4em;
+        background: -o-linear-gradient(269.4deg, #004E59 -44.87%, #246770 -7.09%, #66949B 57.12%, #9CBABE 121.34%, #C7D8DA 181.78%, #E5EDEE 234.67%, #F8FAFA 280%, #fffdfa 310.22%);
         background: linear-gradient(180.6deg, #004E59 -44.87%, #246770 -7.09%, #66949B 57.12%, #9CBABE 121.34%, #C7D8DA 181.78%, #E5EDEE 234.67%, #F8FAFA 280%, #fffdfa 310.22%);
         border-radius: 25px;
         color: #fffdfa;

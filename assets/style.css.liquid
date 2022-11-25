@@ -1,5 +1,6 @@
 *, *::before, *::after{
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
 }
 
 body{
@@ -41,6 +42,8 @@ body{
     text-align: center;
     text-decoration: none;
     color: #005560;
+    -webkit-transition: all .2s;
+    -o-transition: all .2s;
     transition: all .2s;
     font-size: 14px;
 
@@ -50,7 +53,10 @@ body{
 
 .btn:hover{
     color: #fffdfa;
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    -webkit-box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    background: -webkit-gradient(linear, left top, right top, from(#005560), to(#94B7B8)) border-box;
+    background: -o-linear-gradient(left, #005560 0%, #94B7B8 100%) border-box;
     background: linear-gradient(to right, #005560 0%, #94B7B8 100%) border-box;
     border: 2px solid transparent;
 }
@@ -66,11 +72,14 @@ body{
     font-family: Montserrat, sans-serif;
     font-weight: 700;
     border: 2px solid #014E59;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(1.67%, #588B93), color-stop(52.62%, rgba(88, 139, 147, 0.654602)), color-stop(99.79%, rgba(88, 139, 147, 0.272308)));
+    background: -o-linear-gradient(top, #588B93 1.67%, rgba(88, 139, 147, 0.654602) 52.62%, rgba(88, 139, 147, 0.272308) 99.79%);
     background: linear-gradient(180deg, #588B93 1.67%, rgba(88, 139, 147, 0.654602) 52.62%, rgba(88, 139, 147, 0.272308) 99.79%);
 }
 
 .btn__secondary:hover{
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    -webkit-box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
     color: #a8cccc;
     background: transparent;
     border: 2px solid #a8cccc;
@@ -79,8 +88,12 @@ body{
 
 @media (min-width: 950px) {
     .row {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        justify-content: space-between;
+        -webkit-box-pack: justify;
+            -ms-flex-pack: justify;
+                justify-content: space-between;
     }
 
     .btn, .btn:visited, .btn:link{
