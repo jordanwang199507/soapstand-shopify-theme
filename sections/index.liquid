@@ -1454,6 +1454,10 @@
             word-spacing: 1px;
         }
 
+        .hero--home01__circle{
+            bottom: 45%;
+        }
+
         .heading-socials p{
             font-size: 12px;
         }
@@ -1566,6 +1570,10 @@
 
     navToggle.addEventListener('click', () => {
         nav.classList.toggle('nav--visible');
+    });
+
+    window.addEventListener('load', function () {
+        document.getElementsByTagName("html")[0].style.visibility = "visible";
     });
 
 {% endjavascript %}
