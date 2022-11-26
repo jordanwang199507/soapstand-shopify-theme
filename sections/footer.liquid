@@ -48,7 +48,7 @@
                     {% if form.posted_successfully? %}
                         <p class="subscribe-success" aria-role="alert">Thank you for subscribing!</p>
                     {% elsif form.errors %}
-                        <p class="subscribe-error">Please double check email!</p>
+                        <p class="subscribe-error">{{ form.errors.messages['email'] }}</p>
                     {% endif %}
                 </div>
               {% endform %}
