@@ -22,7 +22,7 @@
                         </li>
                     {%- endfor %}
                     <li class="nav__item business-portal__item">
-                        <a class="business-portal" href="{{ section.settings.business_portal-link }}">Business Portal</a>
+                        <a class="business-portal" href="{{ section.settings.business_portal-link }}">business portal</a>
                     </li>
                     <div class="nav-socials__list">
                         {% if section.settings.include_facebook %}
@@ -61,7 +61,7 @@
                         </li>
                     {%- endfor %}
                     <li class="nav__item business-portal__item business-portal__item__notHome">
-                        <a class="business-portal business-portal__notHome" href="{{ section.settings.business_portal-link }}">Business Portal</a>
+                        <a class="business-portal business-portal__notHome" href="{{ section.settings.business_portal-link }}">business portal</a>
                     </li>
                     <div class="nav-socials__list nav-socials__list__notHome">
                         {% if section.settings.include_facebook %}
@@ -281,6 +281,10 @@
         position: relative;
     }
 
+    .nav__item a.business-portal{
+        font-weight: 400;
+    }
+
     .nav__item__notHome a{
         color: #fffdfa;
     }
@@ -330,11 +334,6 @@
                 transform-origin: bottom left;
     }
 
-    .business-portal__item a.business-portal{
-        display: inline-block;
-        letter-spacing: 2px;
-    }
-
     .business-portal__item__notHome a.business-portal__notHome{
         color: #fffdfa;
     }
@@ -366,6 +365,7 @@
 
     .navigation__checkbox:checked + .nav-toggle .hamburger::before{
         top: 0;
+        position: absolute;
         -webkit-transform: rotate(135deg);
             -ms-transform: rotate(135deg);
                 transform: rotate(135deg);
@@ -373,6 +373,7 @@
     
     .navigation__checkbox:checked + .nav-toggle .hamburger::after{
         top: 0;
+        position: absolute;
         -webkit-transform: rotate(-135deg);
             -ms-transform: rotate(-135deg);
                 transform: rotate(-135deg);
@@ -458,11 +459,6 @@
 
         .business-portal__item{
             margin: 4em .75em .75em .75em;
-        }
-
-        .nav__item a.business-portal{
-            font-weight: 100;
-            font-size: 18px;
         }
     }
 

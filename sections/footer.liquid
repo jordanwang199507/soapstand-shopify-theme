@@ -48,7 +48,9 @@
                     {% if form.posted_successfully? %}
                         <p class="subscribe-success" aria-role="alert">Thank you for subscribing!</p>
                     {% endif %}
-                    {{ form.errors | default_errors }}
+                    {% if form.errors %}
+                        <p class="subscribe-error">{{ form.errors.messages['email'] }}</p>
+                    {% endif %}
                 </div>
               {% endform %}
             </div>
@@ -327,7 +329,7 @@
                 transform: translateX(4px);
     }
 
-    .subscribe-success{
+    .subscribe-success, .subscribe-error{
         color: #fffdfa;
         font-family: "Brevia";
         font-size: 20px;
@@ -444,7 +446,7 @@
             font-size: 14px;
         }
 
-        .subscribe-success{
+        .subscribe-success, .subscribe-error{
             font-size: 16px;
         }
 
@@ -527,7 +529,7 @@
             font-size: 12px;
         }
 
-        .subscribe-success{
+        .subscribe-success, .subscribe-error{
             font-size: 14px;
         }
 
@@ -591,7 +593,7 @@
             width: 270px;
         }
 
-        .subscribe-success{
+        .subscribe-success, .subscribe-error{
             font-size: 13px;
         }
 
