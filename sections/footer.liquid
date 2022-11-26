@@ -47,8 +47,7 @@
                 <div class="site-footer__newsletter-message" aria-role="alert">
                     {% if form.posted_successfully? %}
                         <p class="subscribe-success" aria-role="alert">Thank you for subscribing!</p>
-                    {% endif %}
-                    {% if form.errors %}
+                    {% elsif form.errors %}
                         <p class="subscribe-error">Please check entered email!</p>
                     {% endif %}
                 </div>
