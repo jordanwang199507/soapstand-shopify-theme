@@ -49,7 +49,7 @@
                         <p class="subscribe-success" aria-role="alert">Thank you for subscribing!</p>
                     {% endif %}
                     {% if form.errors %}
-                        <p class="subscribe-error">{{ form.errors.messages['email'] }}</p>
+                        <p class="subscribe-error" aria-role="alert">{{ form.errors.messages['email'] }}</p>
                     {% endif %}
                 </div>
               {% endform %}
