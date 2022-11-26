@@ -39,7 +39,7 @@
                 <label for="NewsletterEmail" class="site-footer__newsletter-label">don't be shy, sign up to our newsletter!</label>
                 <div class="site-footer__newsletter-subheading">for promotions, sales and news</div>
                 <div class="input-group--underline">
-                  <input type="email" placeholder="email" name="contact[email]" id="NewsletterEmail" class="input-group__field site-footer__newsletter-input" autocorrect="off" autocapitalize="off" required>
+                  <input type="email" placeholder="email" name="contact[email]" id="NewsletterEmail" class="input-group__field site-footer__newsletter-input" autocorrect="off" autocapitalize="off">
                   <div class="input-group__btn input-group__btn--newsletter">
                     <button type="submit" class="btn--newsletter__submit arrow">subscribe</button>
                   </div>
@@ -47,7 +47,7 @@
                 <div class="site-footer__newsletter-message" aria-role="alert">
                     {% if form.posted_successfully? %}
                         <p class="subscribe-success" aria-role="alert">Thank you for subscribing!</p>
-                    {% else %}
+                    {% elsif form.errors %}
                         <p class="subscribe-error" aria-role="alert">Please check entered email!</p>
                     {% endif %}
                 </div>
