@@ -5,16 +5,30 @@
       "settings": {
         "include_home01_button01": true,
         "home01_button01": "join us",
-        "home01_button01-link": "/pages/contact",
-        "include_home01_button02": true,
+        "home01_button01-link": "\/pages\/contact",
+        "include_home01_button02": false,
         "home01_button02": "watch video",
+        "home01_button02-link": "https:\/\/www.youtube.com",
         "include_facebook": true,
+        "facebook-link": "https:\/\/www.facebook.com\/TheSoapstand",
         "include_linkedin": true,
+        "linkedin-link": "https:\/\/www.linkedin.com\/company\/soapstand",
         "include_instagram": true,
+        "instagram-link": "https:\/\/www.instagram.com\/soapstandco",
         "include_youtube": true,
+        "youtube-link": "https:\/\/www.youtube.com",
         "include_twitter": true,
+        "twitter-link": "https:\/\/www.twitter.com",
         "home02_title": "meet Soapstand",
-        "home03_title": "how we do better"
+        "home03_title": "how we do better",
+        "include_home03_button01": false,
+        "home03_button01": "about us",
+        "home03_button01-link": "pages\/about",
+        "home04_title": "how to refill",
+        "refill_step01": "Find the nearest Soapstand station at your local grocery or residence, don't forget to bring your container with you!",
+        "refill_step02": "Once you start interacting with your local Soapstand machine, select the product you wish to dispense as well as the quantity.",
+        "refill_step03": "Once ready to dispense, please press and hold the green light button, your soap will dispense your desired quantity so you can safely stop pressing the button and close the container.",
+        "refill_step04": "Congratulations! You just saved 50% on your purchase and saved a plastic bottle from entering our landfills! Please pay by collecting your reciept from the machine, applying tap payment or QR code."
       }
     }
   },
