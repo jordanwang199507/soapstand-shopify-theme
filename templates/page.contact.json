@@ -6,7 +6,7 @@
         "include_email": true,
         "include_emailLeft": "If you want mail:",
         "include_emailRight": "sales@soapstand.com",
-        "include_phone": true,
+        "include_phone": false,
         "include_phoneLeft": "If you wannna hear us out:",
         "include_phoneRight": "(604) 672 5522",
         "include_instagram": true,
