@@ -10,6 +10,11 @@
     {%- if settings.favicon != blank -%}
         <link rel="shortcut icon" href="{{ settings.favicon | img_url: '32x32' }}" type="image/png">
     {%- endif -%}
+    {% if page_title == "Soapstand | Sustainable Soap Refillery Stations" %}
+        <title>Soapstand - Homepage</title>
+    {% else %}
+        <title>Soapstand - {{ page_title }}</title>
+    {% endif %}
 </head>
 <body>
     {% comment %} <div class="landing-page">
