@@ -7,14 +7,30 @@
         "settings": {
           "business_portal-link": "https:\/\/soapstandportal.com\/",
           "include_facebook": true,
-          "facebook-link": "https:\/\/www.facebook.com",
+          "facebook-link": "https:\/\/www.facebook.com\/TheSoapstand",
           "include_linkedin": true,
-          "linkedin-link": "https:\/\/www.linkedin.com",
+          "linkedin-link": "https:\/\/www.linkedin.com\/company\/soapstand",
           "include_instagram": true,
-          "instagram-link": "https:\/\/www.instagram.com",
-          "include_youtube": true,
+          "instagram-link": "https:\/\/www.instagram.com\/soapstandco",
+          "include_youtube": false,
           "youtube-link": "https:\/\/www.youtube.com",
-          "include_twitter": true,
+          "include_twitter": false,
+          "twitter-link": "https:\/\/www.twitter.com"
+        }
+      },
+      "footer": {
+        "type": "footer",
+        "settings": {
+          "business_portal-link": "https:\/\/soapstandportal.com\/",
+          "include_facebook": true,
+          "facebook-link": "https:\/\/www.facebook.com\/TheSoapstand",
+          "include_linkedin": true,
+          "linkedin-link": "https:\/\/www.linkedin.com\/company\/soapstand",
+          "include_instagram": true,
+          "instagram-link": "https:\/\/www.instagram.com\/soapstandco",
+          "include_youtube": false,
+          "youtube-link": "https:\/\/www.youtube.com",
+          "include_twitter": false,
           "twitter-link": "https:\/\/www.twitter.com"
         }
       }
