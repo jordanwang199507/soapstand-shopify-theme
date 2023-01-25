@@ -120,17 +120,33 @@
     <section class="hero--home03a home--section">
         <div class="container row home--container hero--home03a__row">
             <div class="hero--home03a__text-container"> 
-                <div class="hero--home03a__title"><span>{{ section.settings.home03a_title }}</span></div>
-                <div class="hero--home03a__text"><span>{{ section.settings.home03a_text }}</span></div>
-            </div>
-            <div class="hero--hom03a__partners-conatiner">
-                <div class="partners partner01">
-
+                <span class="text-decor text-decor01"></span>    
+                <span class="text-decor text-decor02"></span>
+                <span class="text-decor text-decor03"></span>
+                <span class="text-decor text-decor04"></span>
+                <div class="hero--home03a__title">
+                    <span>{{ section.settings.home03a_title }}</span>
                 </div>
-                <div class="partners partner02"></div>
-                <div class="partners partner03"></div>
-                <div class="partners partner04"></div>
-                <div class="partners partner05"></div>
+                <div class="hero--home03a__text">
+                    <span>{{ section.settings.home03a_text }}</span>
+                </div>
+            </div>
+            <div class="hero--home03a__partners-conatiner">
+                <div class="partners partner01">
+                    {{ 'partner01-GoodFilling.png' | asset_url | img_tag: 'partner 01 Good Filling', 'partners-logo partner01-GF' }}  
+                </div>
+                <div class="partners partner02">
+                    {{ 'partner02-ChoicesMarket.png' | asset_url | img_tag: 'partner 02 Choices Market', 'partners-logo partner02-CM' }}  
+                </div>
+                <div class="partners partner03">
+                    {{ 'partner03-Stongs.png' | asset_url | img_tag: 'partner 03 Stongs', 'partners-logo partner03-S' }}  
+                </div>
+                <div class="partners partner04">
+                    {{ 'partner04-FamousFoods.png' | asset_url | img_tag: 'partner 04 FF', 'partners-logo partner04-FF' }}  
+                </div>
+                <div class="partners partner05">
+                    {{ 'partner05-UBC.png' | asset_url | img_tag: 'partner 05 UBC', 'partners-logo partner05-UBC' }}  
+                </div>
             </div>
         </div>
     </section>
@@ -480,7 +496,7 @@
         background-size: cover;
         background-position: top;
         height: auto;
-        padding: 8em 0 8em 0;
+        padding: 8em 0 4em 0;
         margin-top: -17vh;
         position: relative;
         font-family: "Brevia", Montserrat, sans-serif;
@@ -575,6 +591,7 @@
         padding: 80px 75px 50px 75px;
         width: 550px;
         line-height: 1.5;
+        position: relative;
     }
 
     .hero--home03a__title{
@@ -583,6 +600,7 @@
         font-family: "Brevia", Montserrat, sans-serif;
         letter-spacing: .35;
         word-spacing: .45;
+        position: relative;
     }
 
     .hero--home03a__text{
@@ -590,11 +608,83 @@
         font-size: 24px;
         color: #a8cccc;
         font-weight: 200;
-        letter-spacing: .35;
+        letter-spacing: .25;
         word-spacing: .45;
+        position: relative;
+        z-index: 10;
     }
 
-    .hero--hom03a__partners-conatiner{
+    .text-decor, .text-decor:before, .text-decor:after{
+        content: '';
+        background: #266872;
+        border-radius: 50%;
+        position: absolute;
+    }
+
+    .text-decor01{
+        width: 30px;
+        height: 30px;
+        left: 55px;
+        top: 75px;
+    }
+
+    .text-decor01:before{
+        width: 15px;
+        height: 15px;
+        top: 30px;
+        left: -10px;
+    }
+
+    .text-decor02{
+        width: 27px;
+        height: 27px;
+        right: 120px;
+        top: 105px;
+    }
+
+    .text-decor02:before{
+        width: 10px;
+        height: 10px;
+        right: 5px;
+        top: 30px;
+    }
+
+    .text-decor03{
+        width: 60px;
+        height: 60px;
+        top: 175px;
+        left: 50%;
+    }
+
+    .text-decor03:before{
+        width: 10px;
+        height: 10px;
+        bottom: 0;
+        right: -15px;
+    }
+
+    .text-decor04{
+        width: 35px;
+        height: 35px;
+        bottom: 20%;
+        right: 75px;
+    }
+
+    .text-decor04:before{
+        height: 15px;
+        width: 15px;
+        top: -10px;
+        left: -10px;
+    }
+
+    .text-decor04:after{
+        height: 10px;
+        width: 10px;
+        top: -20px;
+        right: -20px;
+    }
+
+    .hero--home03a__partners-conatiner{
         width: 650px;
         max-width: 650px;
         min-width: 620px;
@@ -610,6 +700,81 @@
         height: 11em;
         border-radius: 50%;
         background: #266872;
+        position: relative;
+    }
+
+    .partners:before, .partners:after{
+        content: '';
+        background: #266872;
+        position: absolute;
+        border-radius: 50%;
+    }
+
+    .partner01:before{
+        width: 15px;
+        height: 15px;
+    }
+
+    .partner02:before{
+        width: 15px;
+        height: 15px;
+        top: 6px;
+        left: 28px;
+    }
+
+    .partner03:before{
+        width: 15px;
+        height: 15px;
+        top: -2px;
+        left: 28px;
+    }
+
+    .partner04:before{
+        width: 20px;
+        height: 20px;
+        top: 0px;
+        right: 5px;
+    }
+
+    .partner04:after{
+        width: 10px;
+        height: 10px;
+        top: 20px;
+        right: -5px;
+    }
+
+    .partner05:before{
+        width: 10px;
+        height: 10px;
+        bottom: 10px;
+        right: 5px;
+    }
+
+    .partners-logo{
+        width: 75%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .partner02-CM{
+        width: 90%;
+    }
+
+    .partner03-S{
+        border-radius: 50%;
+        width: 85%;
+    }
+
+    .partner04-FF{
+        border-radius: 50%;
+        width: 85%;
+    }
+
+    .partner05-UBC{
+        width: 85%;
+        transform: translate(-50%, -45%);
     }
 
     .hero--home04{
@@ -1126,7 +1291,23 @@
             font-size: 22px;
         }
 
-        .hero--hom03a__partners-conatiner{
+        .text-decor01{
+            left: -15px;
+        }
+
+        .text-decor02{
+            right: 100px;
+        }
+
+        .text-decor03{
+            left: 40%;
+        }
+
+        .text-decor04{
+            bottom: 0;
+        }
+
+        .hero--home03a__partners-conatiner{
             min-width: 500px;
         }
 
@@ -1213,12 +1394,32 @@
 
         .hero--home03a__text-container{
             margin: 0 auto;
+            width: 100%;
         }
 
         .hero--home03a__title{
             font-size: 34px;
             text-align: center;
             margin: 0 auto;
+        }
+
+        .text-decor01{
+            top: 15px;
+            left: 0;
+        }
+
+        .text-decor02{
+            top: 20px;
+            right: 50px;
+        }
+
+        .text-decor03{
+            left: 50%;
+        }
+
+        .text-decor04{
+            bottom: 20%;
+            right: 50px;
         }
 
         .hero--home03a__text{
@@ -1346,6 +1547,11 @@
             bottom: -50px;
             right: 30px;
         }
+
+        .partners{
+            height: 10em;
+            width: 10em;
+        }
     }
 
     @media (max-width: 700px) {
@@ -1434,6 +1640,16 @@
             font-size: 22px;
         }
 
+        .hero--home03a__partners-conatiner{
+            min-width: 400px;
+            width: 500px;
+        }
+
+        .partners{
+            height: 9em;
+            width: 9em;
+        }
+
         .hero--home04__image01{
             width: 90%;
         }
@@ -1511,6 +1727,58 @@
             height: 70%;
         }
 
+        .hero--home03a__title{
+            font-size: 30px;
+        }
+
+        .hero--home03a__text{
+            font-size: 18px;
+            text-align: center;
+            width: 100%;
+        }
+
+        .text-decor03{
+            left: 50%;
+            top: 160px;
+            height: 50px;
+            width: 50px;
+        }
+
+        .text-decor04{
+            right: 0;
+            height: 30px;
+            width: 30px;
+        }
+
+        .hero--home03a__partners-conatiner{
+            min-width: 100%;
+            width: 100%;
+        }
+
+        .partners{
+            width: 7em;
+            height: 7em;
+        }
+
+        .partner02:before{
+            top: -5px;
+        }
+
+        .partner03:before{
+            top: -15px;
+        }
+
+        .partner04:before{
+            top: -5px;
+            right: 0;
+            height: 15px;
+            width: 15px;
+        }
+
+        .partner04:after{
+            top: 10px;
+        }
+
         .hero--home04__topCenter{
             top: 35rem;
         }
@@ -1564,6 +1832,51 @@
         }
     }
 
+    @media (max-width: 465px){
+        .hero--home03a__text-container{
+            padding: 20px 0px 70px 0px;
+        }
+
+        .text-decor01{
+            width: 25px;
+            height: 25px;
+        }
+
+        .text-decor01:before{
+            width: 10px;
+            height: 10px;
+        }
+
+        .text-decor02{
+            right: 0px;
+            width: 20px;
+            height: 20px;
+        }
+
+        .text-decor03{
+            top: 80px;
+        }
+
+        .text-decor04{
+            height: 20px;
+            width: 20px;
+        }
+
+        .text-decor04:before{
+            height: 12px;
+            width: 12px;
+        }
+        
+        .text-decor04:after{
+            height: 8px;
+            width: 8px;
+        }
+
+        .partners{
+            margin: 0;
+        }
+    }
+
     @media (max-width: 450px) {
         .hero--home01__primary{
             font-size: 26px;
@@ -1611,6 +1924,28 @@
         .hero--home03__image-container02{
             position: absolute;
             height: 120%;
+        }
+
+        .hero--home03a{
+            padding: 0 0 6em 0;
+        }
+
+        .hero--home03a__title{
+            width: 80%;
+            font-size: 22px;
+        }
+
+        .hero--home03a__text{
+            font-size: 14px;
+        }
+
+        .text-decor04, .text-decor04:before, .text-decor04:after{
+            display: none;
+        }
+
+        .partners{
+            width: 6em;
+            height: 6em;
         }
 
         .hero--home04__center01{
@@ -1679,6 +2014,16 @@
             font-size: 10px;
             word-spacing: .25;
             letter-spacing: .25;
+        }
+
+        .hero--home03a__row{
+            width: 100%;
+        }
+
+        .partners{
+            margin: 5px;
+            height: 5.5em;
+            width: 5.5em;
         }
     }
 </style>
