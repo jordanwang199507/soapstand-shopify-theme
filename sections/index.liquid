@@ -117,6 +117,23 @@
             </div>
         </div>
     </section>
+    <section class="hero--home03a home--section">
+        <div class="container row home--container hero--home03a__row">
+            <div class="hero--home03a__text-container"> 
+                <div class="hero--home03a__title"><span>{{ section.settings.home03a_title }}</span></div>
+                <div class="hero--home03a__text"><span>{{ section.settings.home03a_text }}</span></div>
+            </div>
+            <div class="hero--hom03a__partners-conatiner">
+                <div class="partners partner01">
+
+                </div>
+                <div class="partners partner02"></div>
+                <div class="partners partner03"></div>
+                <div class="partners partner04"></div>
+                <div class="partners partner05"></div>
+            </div>
+        </div>
+    </section>
     <section class="hero--home04 home--section" id="howto">
         <div class="title__primary hero--home04__title"><span>{{ section.settings.home04_title }}</span></div>
         {{ 'home04-topCenter.svg' | asset_url | img_tag: 'hero home04 top background image', 'hero--home04__topCenter' }}  
@@ -544,6 +561,57 @@
         margin: 5% 5% 0 0;
     }
 
+    .hero--home03a{
+        background: #004E58;
+        padding: 0 0 10em 0;
+        margin-top: -5px;
+    }
+
+    .hero--home03a__row{
+        justify-content: space-evenly;
+    }
+
+    .hero--home03a__text-container{
+        padding: 80px 75px 50px 75px;
+        width: 550px;
+        line-height: 1.5;
+    }
+
+    .hero--home03a__title{
+        font-size: 36px;
+        color: #fffdfa;
+        font-family: "Brevia", Montserrat, sans-serif;
+        letter-spacing: .35;
+        word-spacing: .45;
+    }
+
+    .hero--home03a__text{
+        width: 400px;
+        font-size: 24px;
+        color: #a8cccc;
+        font-weight: 200;
+        letter-spacing: .35;
+        word-spacing: .45;
+    }
+
+    .hero--hom03a__partners-conatiner{
+        width: 650px;
+        max-width: 650px;
+        min-width: 620px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        margin: 0 auto;
+    }
+
+    .partners{
+        margin: 10px;
+        width: 11em;
+        height: 11em;
+        border-radius: 50%;
+        background: #266872;
+    }
+
     .hero--home04{
         padding: 5em 0 3em 0;
         position: relative;
@@ -866,7 +934,7 @@
         }
 
         .hero--home03{
-            padding: 10em 0;
+            padding: 10em 0 5em 0;
         }
 
         .hero--home03__container{
@@ -892,6 +960,18 @@
         .hero--home03__image-container03{
             height: 40%;
             width: 100%;
+        }
+
+        .hero--home03a{
+            padding: 5em 0 10em 0;
+        }
+
+        .hero--home03a__title{
+            font-size: 36px;
+        }
+
+        .hero--home03a__text{
+            font-size: 24px;
         }
 
         .hero--home04__topCenter{
@@ -1000,7 +1080,6 @@
     }
 
     @media (max-width: 1180px) {
-
         .hero--home02__secondary--first{
             font-size: 28px;
         }
@@ -1032,6 +1111,28 @@
 
         .box-text-container{
             width: 85%;
+        }
+
+        .hero--home03a__text-container{
+            padding: 80px 0px 50px 0px;
+        }
+
+        .hero--home03a__title{
+            font-size: 32px;
+            width: 350px;
+        }
+
+        .hero--home03a__text{
+            font-size: 22px;
+        }
+
+        .hero--hom03a__partners-conatiner{
+            min-width: 500px;
+        }
+
+        .partners{
+            width: 9em;
+            height: 9em;
         }
     }
 
@@ -1108,6 +1209,26 @@
 
         .hero--home03__text{
             font-size: 28px;
+        }
+
+        .hero--home03a__text-container{
+            margin: 0 auto;
+        }
+
+        .hero--home03a__title{
+            font-size: 34px;
+            text-align: center;
+            margin: 0 auto;
+        }
+
+        .hero--home03a__text{
+            font-size: 24px;
+            margin: 0 auto;
+        }
+
+        .partners{
+            height: 11em;
+            width: 11em;
         }
 
         .hero--home04__row{
@@ -1707,6 +1828,18 @@
             "id": "home03_button01-link",
             "label": "Homepage 03 Button 01 Link",
             "default": "pages/about"
+        },
+        {
+            "type": "text",
+            "id": "home03a_title",
+            "label": "Homepage Partner Section Title",
+            "default": "We work with the best partners"
+        },
+        {
+            "type": "text",
+            "id": "home03a_text",
+            "label": "Homepage Partner Section Text",
+            "default": "Located in Canada and the USA"
         },
         {
             "type": "text",
