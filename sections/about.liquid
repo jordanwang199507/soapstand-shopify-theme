@@ -129,7 +129,7 @@
               {% when 'slide' %}
                 <div class="slide" {{ block.shopify_attributes }}>
                   <div class="slide-content">
-                    {{ block.settings.image | image_url: width: 2048 | image_tag }}
+                    {{ block.settings.image | image_url: width: 2048 | image_tag: 'slide-image' }}
                   </div>
                 </div>
             {% endcase %}
