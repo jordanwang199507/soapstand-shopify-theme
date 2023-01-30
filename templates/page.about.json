@@ -2,52 +2,6 @@
   "sections": {
     "main": {
       "type": "about",
-      "blocks": {
-        "fc6fcab1-0af7-48d7-a52d-38a317a17064": {
-          "type": "slide",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/Slide-01.png"
-          }
-        },
-        "80a707e7-0f3a-4f59-8acb-8a0c74420f9e": {
-          "type": "slide",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/slide-02.png"
-          }
-        },
-        "e9fb237d-f125-400e-ad96-2538fd5d23b9": {
-          "type": "slide",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/slide-03.png"
-          }
-        },
-        "f3badcd2-a8dd-402e-b23c-ce53c98cbce1": {
-          "type": "slide",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/slide-04.png"
-          }
-        },
-        "823557b9-a328-44fb-b4de-8db0b9057ac8": {
-          "type": "slide",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/slide-05.png"
-          }
-        },
-        "3bf6c4ff-f1a5-4132-88da-28d53d6bd2d6": {
-          "type": "slide",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/slide-06.png"
-          }
-        }
-      },
-      "block_order": [
-        "fc6fcab1-0af7-48d7-a52d-38a317a17064",
-        "80a707e7-0f3a-4f59-8acb-8a0c74420f9e",
-        "e9fb237d-f125-400e-ad96-2538fd5d23b9",
-        "f3badcd2-a8dd-402e-b23c-ce53c98cbce1",
-        "823557b9-a328-44fb-b4de-8db0b9057ac8",
-        "3bf6c4ff-f1a5-4132-88da-28d53d6bd2d6"
-      ],
       "settings": {
         "about_page__circle_title": "the Soapstand team",
         "about_content__title": "who are we ??",
