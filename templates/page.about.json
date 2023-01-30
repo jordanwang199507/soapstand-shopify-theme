@@ -2,6 +2,24 @@
   "sections": {
     "main": {
       "type": "about",
+      "blocks": {
+        "61448683-edc8-4835-94ee-da562bdf5d20": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Slide-01.png"
+          }
+        },
+        "995c287a-8f21-4751-bfe1-07ec4f74975c": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/slide-02.png"
+          }
+        }
+      },
+      "block_order": [
+        "61448683-edc8-4835-94ee-da562bdf5d20",
+        "995c287a-8f21-4751-bfe1-07ec4f74975c"
+      ],
       "settings": {
         "about_page__circle_title": "the Soapstand team",
         "about_content__title": "who are we ??",
