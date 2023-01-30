@@ -20,12 +20,33 @@
           "settings": {
             "image": "shopify:\/\/shop_images\/slide-03.png"
           }
+        },
+        "ece6dfd3-0774-49d5-936a-9940afdeb199": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/slide-04.png"
+          }
+        },
+        "25195d9c-90d1-4536-ac53-a32f1192a3d3": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/slide-05.png"
+          }
+        },
+        "20902ece-bd22-4bb1-9775-ae9a5d006626": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/slide-06.png"
+          }
         }
       },
       "block_order": [
         "fc6fcab1-0af7-48d7-a52d-38a317a17064",
         "66e7cd7a-53d5-404f-91b8-04511ae5ac17",
-        "b0213ea3-3ff3-4f1a-bfdf-63ed5c903561"
+        "b0213ea3-3ff3-4f1a-bfdf-63ed5c903561",
+        "ece6dfd3-0774-49d5-936a-9940afdeb199",
+        "25195d9c-90d1-4536-ac53-a32f1192a3d3",
+        "20902ece-bd22-4bb1-9775-ae9a5d006626"
       ],
       "settings": {
         "about_page__circle_title": "the Soapstand team",
