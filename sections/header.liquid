@@ -363,18 +363,20 @@
         background-color: transparent;
     }
 
-    .navigation__checkbox:checked + .nav-toggle .hamburger::before{
-        top: 0em !important;
+    .navigation__checkbox:checked + .hamburger:before{
         -webkit-transform: rotate(135deg);
             -ms-transform: rotate(135deg);
                 transform: rotate(135deg);
+        top: 0em !important;
+        padding: 0px;
     }
     
-    .navigation__checkbox:checked + .nav-toggle .hamburger::after{
-        top: 0em !important;
+    .navigation__checkbox:checked + .hamburger:after{
         -webkit-transform: rotate(-135deg);
             -ms-transform: rotate(-135deg);
                 transform: rotate(-135deg);
+        top: 0em !important;
+        padding: 0px;
     }
 
     .header-topLeft{
