@@ -364,7 +364,7 @@
     }
 
     .navigation__checkbox:checked + .nav-toggle .hamburger::before,
-    .nav-toggle:hover + .hamburger::before{
+    .nav-toggle:focus + .hamburger::before{
         -webkit-transform: rotate(135deg);
             -ms-transform: rotate(135deg);
                 transform: rotate(135deg);
@@ -372,7 +372,7 @@
     }
     
     .navigation__checkbox:checked + .nav-toggle .hamburger::after,
-    .nav-toggle:hover + .hamburger::after{
+    .nav-toggle:focus + .hamburger::after{
         -webkit-transform: rotate(-135deg);
             -ms-transform: rotate(-135deg);
                 transform: rotate(-135deg);
@@ -486,6 +486,13 @@
             top: 50px;
             width: 20px;
         }
+    }
+
+    @media (hover: none) and (pointer: coarse) {
+    #btn-one:hover {
+        background-color: transparent!important;
+        color: black;
+    }
     }
 </style>
 
