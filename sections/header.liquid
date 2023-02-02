@@ -4,7 +4,7 @@
     <header class="header header__notHome">
 {% endif %}
     <div class="container row">
-        <input type="checkbox" id="navi-toggle" class="navigation__checkbox" autocomplete="off">
+        <input type="checkbox" id="navi-toggle" class="navigation__checkbox">
         {% if page_title == "Soapstand | Sustainable Soap Refillery Stations" %}
             <label class="nav-toggle" for="navi-toggle" aria-label="open navigation">
                 <span class="hamburger"></span>
@@ -513,10 +513,6 @@
                 footer.classList.add('section-visible');
             }
         }
-    });
-    document.querySelector('.navigation__checkbox').addEventListener('mousedown', function(){
-        document.querySelector('.hamburger::before').style.top = "0em";
-        document.querySelector('.hamburger::after').style.top = "0em";
     });
 {% endjavascript %}
 
