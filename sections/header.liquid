@@ -364,7 +364,11 @@
     }
 
     .navigation__checkbox:focus-visible + .nav-toggle .hamburger::before,
-    .navigation__checkbox:focus-visible + .nav-toggle .hamburger::after{
+    .navigation__checkbox:focus + .nav-toggle .hamburger::before,
+    .navigation__checkbox:target + .nav-toggle .hamburger::before,
+    .navigation__checkbox:focus-visible + .nav-toggle .hamburger::after,
+    .navigation__checkbox:focus + .nav-toggle .hamburger::after,
+    .navigation__checkbox:target + .nav-toggle .hamburger::after{
         top: .0em;
     }
 
