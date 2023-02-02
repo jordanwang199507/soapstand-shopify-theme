@@ -145,6 +145,7 @@
         -webkit-transform: translate(-50%, -50%);
             -ms-transform: translate(-50%, -50%);
                 transform: translate(-50%, -50%);
+        touch-action: auto;
     }
 
     .nav-toggle__notHome{
@@ -361,15 +362,6 @@
 
     .navigation__checkbox:checked + .nav-toggle .hamburger{
         background-color: transparent;
-    }
-
-    .navigation__checkbox:focus-visible + .nav-toggle .hamburger::before,
-    .navigation__checkbox:focus + .nav-toggle .hamburger::before,
-    .navigation__checkbox:target + .nav-toggle .hamburger::before,
-    .navigation__checkbox:focus-visible + .nav-toggle .hamburger::after,
-    .navigation__checkbox:focus + .nav-toggle .hamburger::after,
-    .navigation__checkbox:target + .nav-toggle .hamburger::after{
-        top: .0em;
     }
 
     .navigation__checkbox:checked + .nav-toggle .hamburger::before{
