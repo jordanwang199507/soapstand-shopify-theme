@@ -4,7 +4,7 @@
     <header class="header header__notHome">
 {% endif %}
     <div class="container row">
-        <input type="checkbox" id="navi-toggle" class="navigation__checkbox">
+        <input type="checkbox" id="navi-toggle" class="navigation__checkbox" autocomplete="off">
         {% if page_title == "Soapstand | Sustainable Soap Refillery Stations" %}
             <label class="nav-toggle" for="navi-toggle" aria-label="open navigation">
                 <span class="hamburger"></span>
@@ -367,14 +367,14 @@
         -webkit-transform: rotate(135deg);
             -ms-transform: rotate(135deg);
                 transform: rotate(135deg);
-        top: .0em;
+        top: .5em;
     }
     
     .navigation__checkbox:checked + .nav-toggle .hamburger::after{
         -webkit-transform: rotate(-135deg);
             -ms-transform: rotate(-135deg);
                 transform: rotate(-135deg);
-        top: .0em;
+        top: -.5em;
     }
 
     .header-topLeft{
