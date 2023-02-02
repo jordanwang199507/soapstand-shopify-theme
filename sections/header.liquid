@@ -156,6 +156,10 @@
         opacity: .75;
     }
 
+    .nav-toggle:focus + .hamburger::before, .nav-toggle:focus + .hamburger::after{
+        top: 0em;
+    }
+
     .hamburger {
         width: 50%;
         position: relative;
@@ -367,14 +371,14 @@
         -webkit-transform: rotate(135deg);
             -ms-transform: rotate(135deg);
                 transform: rotate(135deg);
-        top: .5em;
+        top: .0em;
     }
     
     .navigation__checkbox:checked + .nav-toggle .hamburger::after{
         -webkit-transform: rotate(-135deg);
             -ms-transform: rotate(-135deg);
                 transform: rotate(-135deg);
-        top: -.5em;
+        top: .0em;
     }
 
     .header-topLeft{
