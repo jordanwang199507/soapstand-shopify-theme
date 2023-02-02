@@ -363,6 +363,11 @@
         background-color: transparent;
     }
 
+    .navigation__checkbox:focus-visible + .nav-toggle .hamburger::before,
+    .navigation__checkbox:focus-visible + .nav-toggle .hamburger::after{
+        top: .0em;
+    }
+
     .navigation__checkbox:checked + .nav-toggle .hamburger::before{
         -webkit-transform: rotate(135deg);
             -ms-transform: rotate(135deg);
