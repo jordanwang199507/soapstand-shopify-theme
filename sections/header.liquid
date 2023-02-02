@@ -363,20 +363,26 @@
         background-color: transparent;
     }
 
-    .navigation__checkbox:checked + .nav-toggle .hamburger::before,
     .navigation__checkbox:active + .nav-toggle .hamburger::before{
+        top: 0em;
+    }
+
+    .navigation__checkbox:checked + .nav-toggle .hamburger::before{
         -webkit-transform: rotate(135deg);
             -ms-transform: rotate(135deg);
                 transform: rotate(135deg);
         top: .0em;
     }
     
-    .navigation__checkbox:checked + .nav-toggle .hamburger::after,
-    .navigation__checkbox:active + .nav-toggle .hamburger::after{
+    .navigation__checkbox:checked + .nav-toggle .hamburger::after{
         -webkit-transform: rotate(-135deg);
             -ms-transform: rotate(-135deg);
                 transform: rotate(-135deg);
         top: .0em;
+    }
+
+    .navigation__checkbox:active + .nav-toggle .hamburger::after{
+        top: 0em;
     }
 
     .header-topLeft{
