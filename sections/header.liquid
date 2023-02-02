@@ -188,9 +188,15 @@
         -o-transition: all .2s;
         transition: all .2s;
     }
+
+    .hamburger::before {
+        top: -.5rem;
+    }
     
-
-
+    .hamburger::after {
+        top: .5rem;
+    }
+    
     .nav {
         visibility: hidden;
         height: 0;
@@ -357,14 +363,6 @@
         background-color: transparent;
     }
 
-    .nav-toggle:focus + .hamburger::before{
-        top: 5em;
-    }
-
-    .nav-toggle:focus + .hamburger::after{
-        top: 1em;
-    }
-
     .navigation__checkbox:checked + .nav-toggle .hamburger::before{
         -webkit-transform: rotate(135deg);
             -ms-transform: rotate(135deg);
@@ -488,12 +486,6 @@
         }
     }
 
-    @media (hover: none) and (pointer: coarse) {
-    #btn-one:hover {
-        background-color: transparent!important;
-        color: black;
-    }
-    }
 </style>
 
 
@@ -521,6 +513,10 @@
                 footer.classList.add('section-visible');
             }
         }
+    });
+    navToggle.addEventListener('mousedown', function(){
+        document.querySelector('.hamburger::before').style.top = "0em";
+        document.querySelector('.hamburger::after').style.top = "0em";
     });
 {% endjavascript %}
 
