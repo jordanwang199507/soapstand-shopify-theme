@@ -1,4 +1,147 @@
-<h1>{{page.title}}</h1>
-<div>
-    {{ page.content}}
-</div>
+<section class="questions">
+    <div class="questions-container">
+        <h1 class="questions-title">Frequently Asked Questions</h1>
+        <div class="questions-bg"></div>
+        <div class="questions-all">
+            <div class="question question01">What's included in my purchase?</div>
+            <div class="answer answer01">Upon purchase, you receive your brand new station, your payment method of choice (TAP machine or receipt printer) as well as ready to use user portal that already has your information set up so you can start managing your station(s).  </div>
+        </div>
+        <div class="questions-all">
+            <div class="question question02">Is my station assembled?</div>
+            <div class="answer answer02">We work hard to develop, enhance and provide you the best user experience with our stations, to make sustainability a fast, easy and effective process so your business can grow, effectively and sustainable.</div>
+        </div>
+        <div class="questions-all">
+            <div class="question question03">Does Soapstand ship stations abroad?</div>
+            <div class="answer answer03">We work hard to develop, enhance and provide you the best user experience with our stations, to make sustainability a fast, easy and effective process so your business can grow, effectively and sustainable.</div>
+        </div>
+        <div class="questions-all">
+            <div class="question question04">How responsive is tech support?</div>
+            <div class="answer answer04">Our team works hard to be as present as possible, we have a very responsive line and are always available for you via e-mail at sales@soapstand.com </div>
+        </div>
+        <div class="questions-all">
+            <div class="question question05">Does Soapstand offer warranty?</div>
+            <div class="answer answer05">We work hard to develop, enhance and provide you the best user experience with our stations, to make sustainability a fast, easy and effective process so your business can grow, effectively and sustainable.</div>
+        </div>
+        <div class="questions-all">
+            <div class="question question06">How can I fix technicalities with my station?</div>
+            <div class="answer answer06">Our station is fully equipped with its user friendly UI that also includes an intuitive “maintenance mode” which allows your employees to communicate with the station directly, fix any minor issues with connection or refill products. </div>
+        </div>
+        <div class="questions-all">
+            <div class="question question07">Can I change my station from a far?</div>
+            <div class="answer answer07">Of course you can! Our system comes with access to your very own user portal. This portal is already set-up to manage everything about your new station. From network connection to product replacements, daily logs and general analysis. </div>
+        </div>
+        <div class="questions-all">
+            <div class="question question08">You still have questions?</div>
+            <div class="answer answer08">Email us at sales@soapstand.com</div>
+        </div>
+    </div>
+</section>
+
+
+<style>
+  .questions{
+    width: 100%;
+    background: var(--color-dark-blue);
+    position: relative;
+
+  }
+  .questions-container{
+    max-width: 1450px;
+    margin: 0 auto;
+    width: 90%;
+    min-height: 80rem;
+    height: auto;
+    margin-top: -50px;
+    padding: 13rem 0 8rem 0;
+  }
+
+  .questions-title{
+    padding-top: 5rem;
+    font-size: 8.2rem;
+    font-weight: 500;
+    color: var(--color-white);
+    width: 80rem;
+    margin-bottom: 10rem;
+  }
+
+  .questions-bg{
+    height: 50rem;
+    width: 51rem;
+    background-image: url(../assets/FAQ-bg-sm.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: right;
+    position: absolute;
+    right: 0rem;
+    top: 15rem;
+  }
+
+  .question{
+    font-weight: 700;
+    font-size: 4rem;
+    color: white;
+  }
+
+  .answer{
+    font-weight: 400;
+    font-size: 2.6rem;
+    color: white;
+    margin: 3rem 0 8rem 0;
+  }
+
+  /* 1000px tab-land*/
+  @media only screen and (max-width: 62.5em){
+
+  }
+  /* 800px tab-port*/
+  @media only screen and (max-width: 50em){
+
+  }
+  /*700px*/ 
+  @media only screen and (max-width: 43.75em){
+    .questions-container{
+        padding: 13rem 0 4rem 0;
+    }
+    .questions-title{
+        font-size: 7.2rem;
+        width: unset;
+    }
+    .question{
+        font-size: 3.5rem;
+    }
+    .answer{
+        font-size: 2.2rem;
+    }
+  }
+  /* 600px */
+  @media only screen and (max-width: 37.5em){
+    .questions-title{
+        font-size: 5.2rem;
+    }
+    .question{
+        font-size: 3rem;
+    }
+    .answer{
+        font-size: 2rem;
+    }
+  }
+  /*500px*/
+  @media only screen and (max-width: 31.25em){
+    .questions-title{
+        font-size: 4.2rem;
+        margin-bottom: 5rem;
+    }
+    .question{
+        font-size: 2.8rem;
+    }
+    .answer{
+        font-size: 1.6rem;
+    }
+  }
+  /*400px*/
+  @media only screen and (max-width: 25em){
+    .questions-title{
+        font-size: 4rem;
+    }
+  }
+</style>

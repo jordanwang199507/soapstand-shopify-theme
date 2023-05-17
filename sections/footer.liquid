@@ -1,776 +1,141 @@
 <section class="footer" id="footer">
-    <div class="container footer__row">
-        <div class="footer-container__left">
-            <div class="menu-list">
-                {{ 'footer-topImage.svg' | asset_url | img_tag: 'footer top image', 'footer__topImage' }}  
-                {% for link in linklists.menu.links -%}
-                    <li class="menu__item">
-                        {{ link.title | link_to: link.url }}
-                    </li>
-                {%- endfor %}
-                <li class="menu__item">
-                    <a href="{{ section.settings.business_portal-link }}">business portal</a>
+    <div class="footerContainer footer__row">
+        <ul class="footer-list">
+            {% for link in linklists.b2bmenu.links -%}
+                <li class="footer-item">
+                    {{ link.title | link_to: link.url }}
                 </li>
-            </div>
-            <div class="socials-list">
-                <div class="social-list__title">Follow our journey</div>
-                {% if section.settings.include_facebook %}
-                    <a href="{{ section.settings.facebook-link }}"><li class="menu-socials__item"><i class="fa-brands fa-facebook-f"></i></li></a>
-                {% endif %}
-                {% if section.settings.include_linkedin %}
-                    <a href="{{ section.settings.linkedin-link }}"><li class="menu-socials__item"><i class="fa-brands fa-linkedin-in"></i></li></a>
-                {% endif %}
-                {% if section.settings.include_instagram %}
-                    <a href="{{ section.settings.instagram-link }}"><li class="menu-socials__item"><i class="fa-brands fa-instagram"></i></li></a>
-                {% endif %}
-                {% if section.settings.include_youtube %}
-                    <a href="{{ section.settings.youtube-link }}"><li class="menu-socials__item"><i class="fa-brands fa-youtube"></i></li></a>
-                {% endif %}
-                {% if section.settings.include_twitter %}
-                    <a href="{{ section.settings.twitter-link }}"><li class="menu-socials__item"><i class="fa-brands fa-twitter"></i></li></a>
-                {% endif %}
-            </div>
-            {{ 'Logo-dark.svg' | asset_url | img_tag: 'Footer Logo', 'footer__image container_left-footer__image' }}            
+            {%- endfor %}
+        </ul>
+        <div class="footer-nameContainer">
+            <div class="footer-name"></div>
         </div>
-        <div class="footer-container__right">
-            <div class="subscribe-container">
-              {% form 'customer' %}
-                <input type="hidden" name="contact[tags]" value="newsletter">
-                <label for="NewsletterEmail" class="site-footer__newsletter-label">don't be shy, sign up to our newsletter!</label>
-                <div class="site-footer__newsletter-subheading">for promotions, sales and news</div>
-                <div class="input-group--underline">
-                  <input type="email" placeholder="email" name="contact[email]" id="NewsletterEmail" class="input-group__field site-footer__newsletter-input" autocorrect="off" autocapitalize="off" required>
-                  <div class="input-group__btn input-group__btn--newsletter">
-                    <button type="submit" class="btn--newsletter__submit arrow">subscribe</button>
-                  </div>
-                </div>
-                <div class="site-footer__newsletter-message" aria-role="alert">
-                    {% if form.posted_successfully? %}
-                        <p class="subscribe-success" aria-role="alert">Thank you for subscribing!</p>
-                    {% endif %}
-                    {% if form.errors %}
-                        <ul class="form-errors-list">
-                            {% for error in form.errors %}
-                                <li>
-                                {% if error == 'form' %}
-                                    {{ form.errors.messages[error] }}
-                                {% else %}
-                                    {{ form.errors.translated_fields[error] }} - {{ form.errors.messages[error] }}
-                                {% endif %}
-                                </li>
-                            {% endfor %}
-                        </ul>
-                    {% endif %}
-                </div>
-              {% endform %}
-            </div>
-            <div class="logo-container">
-                <span class="copyRight">Copyright &copy; 2022, Soapstand</span>
-                {{ 'Logo-dark.svg' | asset_url | img_tag: 'Footer Logo', 'footer__image container_right-footer__image' }}            
-            </div>
+        <div class="footer-copyRight">All rights reserved Soapstand Co.</div>
+        <div class="footer-logoContainer">
+            <div class="footer-logo"></div>
         </div>
     </div>
-    {{ 'footer-bottomImage.svg' | asset_url | img_tag: 'footer top image', 'footer__bottomImage' }}  
 </section>
 
 
 <style>
     .footer{
-        background-image:url("https://cdn.shopify.com/s/files/1/0549/5580/2693/files/footer-background.svg?v=1670367355");
-        background-size: cover;
-        background-position: top;
-        height: auto;
-        padding: 8em 0 2em 0;
-        position: relative;
-        overflow: hidden;
-    }
-
-    .footer__row{
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: flex;
-        z-index: 5;
-        margin-top: 50px;
-    }
-
-    .footer-container__left{
-        width: 30%;
-    }
-
-    .footer-container__right{
-        width: 70%;
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: flex;
-        -webkit-box-orient: vertical;
-        -webkit-box-direction: normal;
-            -ms-flex-direction: column;
-                flex-direction: column;
-        -webkit-box-pack: justify;
-            -ms-flex-pack: justify;
-                justify-content: space-between;
-    }
-
-    .menu-list{
-        list-style: none;
-        font-weight: bold;
-        position: relative;
-        width: 200px;
-    }
-
-    .footer__topImage{
-        position: absolute;
-        width: 80px;
-        right: 0;
-        top: -25px;
-    }
-
-    .footer__bottomImage{
-        position: absolute;
-        width: 120px;
-        bottom: -60px;
-        left: 50%;
-    }
-
-    .menu__item{
-        padding: 12px 0;
-    }
-
-    .menu__item a, .menu__item a:visited, .menu__item a:link{
-        color: #fffdfa;
-        text-decoration: none;
-        font-size: 20px;
-        position: relative;
-    }
-
-    .menu__item a::after{
-        content: "";
-        position: absolute;
+        margin-top: auto;
+        background: var(--color-dark-blue);
         width: 100%;
-        -webkit-transform: scaleX(0);
-            -ms-transform: scaleX(0);
-                transform: scaleX(0);
-        height: 2px;
-        bottom: -5px;
-        left: 0;
-        background-color: #a8cccc;
-        -webkit-transform-origin: bottom right;
-            -ms-transform-origin: bottom right;
-                transform-origin: bottom right;
-        -webkit-transition: -webkit-transform 0.25s ease-out;
-        transition: -webkit-transform 0.25s ease-out;
-        -o-transition: transform 0.25s ease-out;
-        transition: transform 0.25s ease-out;
-        transition: transform 0.25s ease-out, -webkit-transform 0.25s ease-out;
-        padding-top: 2px;
-    }
-
-    .menu__item a:hover::after{
-        -webkit-transform: scaleX(1);
-            -ms-transform: scaleX(1);
-                transform: scaleX(1);
-        -webkit-transform-origin: bottom left;
-            -ms-transform-origin: bottom left;
-                transform-origin: bottom left;
-    }
-
-    .socials-list{
-        width: 100%;
-        max-width: 300px;
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: flex;
-        -webkit-box-pack: justify;
-            -ms-flex-pack: justify;
-                justify-content: space-between;
-        -webkit-box-align: center;
-            -ms-flex-align: center;
-                align-items: center;
-        list-style: none;
-        color: #fffdfa;
-        margin-top: 50px;
+        height: 25vh;
+        min-height: 37rem;
         position: relative;
     }
-
-    .social-list__title{
-        font-size: 12px;
-        color: #a8cccc;
-        font-weight: 200;
-    }
-
-    .menu-socials__item i{
-        color: #fffdfa;
-        font-size: 20px;
-    }
-
-    .menu-socials__item i:hover{
-        color: #a8cccc;
-        opacity: .8;
-    }
-
-    .subscribe-container{
-        max-width: 650px; 
-        text-align: center;
-    }
-
-    .subscribe-container form{
-        width: 100%;
-    }
-
-    .input-group--underline{
-        display: table;
-        position: relative;
-        width: 75%;
-        border-collapse: seperate;
-        border-bottom: 2px solid #a8cccc;
+    .footerContainer{
+        width: 80%;
+        height: 100%;
+        max-width: 1450px;
+        min-width: 320px;
         margin: 0 auto;
+        padding: 7rem 0 0 0;
     }
-
-    .site-footer__newsletter-input{
-        font-size: 1.1rem;
-        line-height: 1.71429;
+    .footer-logoContainer{
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        height: 30rem;
+        width: 30rem;
+    }
+    .footer-logo{
+        background-image: url(../assets/Footer-logo.png);
+        height: 100%;
+        background-size: cover;
+        background-position: right;
+    }
+    .footer-list{
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        margin: 0 auto;
+        font-size: 2rem;
+        padding: 0 10rem;
+    }
+    .footer-item{
+        list-style: none;
+    }
+    .footer-item:not(:last-child){
+        margin-right: 5rem;
+    }
+    .footer-item a{
+        color: white;
+        text-decoration: none;
+    }
+    .footer-nameContainer{
+        width: 27rem;
+        height: 2.4rem;
+        position: absolute;
+        bottom: 40%;
+    }
+    .footer-name{
+        background-image: url(../assets/Footer-name.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        height: 100%;
         width: 100%;
-        padding: 10px 20px;
-        display: table-cell;
-        vertical-align: top;
-        margin: 0;
-        border: 0;
-        background: transparent;
-        font-weight: 200;
     }
-
-    .site-footer__newsletter-input:focus{
-        outline: none;
+    .footer-copyRight{
+        position: absolute;
+        text-align: center;
+        bottom: 5rem;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: white;
+        font-size: 1.6rem;
     }
-
-    .site-footer__newsletter-input::-webkit-input-placeholder{
-        color: #a8cccc;
-        font-family: Montserrat, sans-serif;
-        font-size: 18px;
-    }
-
-    .site-footer__newsletter-input::-moz-placeholder{
-        color: #a8cccc;
-        font-family: Montserrat, sans-serif;
-        font-size: 18px;
-    }
-
-    .site-footer__newsletter-input:-ms-input-placeholder{
-        color: #a8cccc;
-        font-family: Montserrat, sans-serif;
-        font-size: 18px;
-    }
-
-    .site-footer__newsletter-input::-ms-input-placeholder{
-        color: #a8cccc;
-        font-family: Montserrat, sans-serif;
-        font-size: 18px;
-    }
-
-    .site-footer__newsletter-input::placeholder{
-        color: #a8cccc;
-        font-family: Montserrat, sans-serif;
-        font-size: 18px;
-    }
-
-    #NewsletterEmail{
-        color: #fffdfa;
-        font-family: Montserrat, sans-serif;
-    }
-
-    .site-footer__newsletter-label{
-        font-size: 22px;
-        color: #fffdfa;
-        font-weight: bold;
-        letter-spacing: .35;
-        display: block;
-        margin-bottom: 20px;
-    }
-
-    .site-footer__newsletter-subheading{
-        font-size: 18px;
-        color: #a8cccc;
-        display: block;
-        margin-bottom: 20px;
-        letter-spacing: .25;
-        font-weight: 200;
-    }
-
-    .input-group__btn{
-        text-align: right;
-        opacity: 1;
-        vertical-align: middle;
-        display: table-cell;
-        margin: 0;
-    }
-
-    .btn--newsletter__submit{
-        position: relative;
-        padding: 2px 7px 0;
-        font-size: 1rem;
-        font-weight: 700;
-        letter-spacing: .125rem;
-        float: right;
-        border: none;
-        cursor: pointer;
-        background: transparent;
-        color: #a8cccc;
-        font-family: Montserrat, sans-serif;
-        letter-spacing: .25;
-        font-weight: 100;
-    }
-
-    .arrow {
-        margin: 1em 0;
-    }
-    .arrow::after {
-        display: inline-block;
-        padding-left: 8px;
-        content: "➞";
-        -webkit-transition: -webkit-transform 0.3s ease-out;
-        transition: -webkit-transform 0.3s ease-out;
-        -o-transition: transform 0.3s ease-out;
-        transition: transform 0.3s ease-out;
-        transition: transform 0.3s ease-out, -webkit-transform 0.3s ease-out;
-    }
-
-    .arrow:hover::after {
-        -webkit-transform: translateX(4px);
-            -ms-transform: translateX(4px);
-                transform: translateX(4px);
-    }
-
-    .subscribe-success{
-        color: #fffdfa;
-        font-family: "Brevia";
-        font-size: 20px;
-        margin: 20px auto;
-        width: 80%;
-        opacity: 0.8;
-    }
-
-    .form-errors-list li{
-        list-style: none; 
-        color: #fffdfa;
-        font-family: "Brevia";
-        font-size: 20px;
-        margin: 20px auto;
-        width: 80%;
-        opacity: 0.8;
-    }
-
-    .logo-container{
-        text-align: right;
-    }
-
-    .copyRight{
-        margin-right: 20px;
-        color: #a8cccc;
-        letter-spacing: .25;
-        font-weight: 200;
-        font-size: 12px;
-    }
-
-    .footer__image{
-        width: 120px;
-    }
-
-    .container_left-footer__image{
-        display: none;
-    }
-
-    @media(max-width: 1050px){
-        .site-footer__newsletter-label{
-            font-size: 20px;
+    /* 1200px tab-land*/
+    @media only screen and (max-width: 75em){
+        .footer-list{
+            padding: 0 5rem;
         }
     }
-
-    @media(max-width: 949px){
-        .socials-list{
-            width: 250px;
-        }
-
-        .menu-socials__item i{
-            font-size: 18px;
-        }
-
-        .site-footer__newsletter-label{
-            font-size: 18px;
-        }
-
-        .site-footer__newsletter-subheading{
-            font-size: 16px;
-        }
-
-        .input-group--underline{
-            width: 80%;
-        }
-
-        .copyRight{
-            font-size: 15px;
+    /* 800px tab-port*/
+    @media only screen and (max-width: 50em){
+        .footer-list{
+            padding: 0 0rem;
         }
     }
-
-    @media(max-width: 800px){
-        .footer__topImage{
-            position: absolute;
-            width: 60px;
-            right: 75px;
-        }
-    
-        .menu__item a, .menu__item a:visited, .menu__item a:link{
-            font-size: 16px;
-        }
-
-        .socials-list{
-            margin-top: 40px;
-            width: 300px;
-        }
-
-        .menu-socials__item i{
-            font-size: 16px;
-        }
-
-        .site-footer__newsletter-label{
-            font-size: 16px;
-        }
-
-        .site-footer__newsletter-subheading{
-            font-size: 14px;
-        }
-
-        #NewsletterEmail{
-            font-size: 14px;
-        }
-
-        .site-footer__newsletter-input::-webkit-input-placeholder{
-            font-size: 14px;
-        }
-
-        .site-footer__newsletter-input::-moz-placeholder{
-            font-size: 14px;
-        }
-
-        .site-footer__newsletter-input:-ms-input-placeholder{
-            font-size: 14px;
-        }
-
-        .site-footer__newsletter-input::-ms-input-placeholder{
-            font-size: 14px;
-        }
-
-        .site-footer__newsletter-input::placeholder{
-            font-size: 14px;
-        }
-
-        .btn--newsletter__submit{
-            font-size: 14px;
-        }
-
-        .subscribe-success, .form-errors-list li{
-            font-size: 16px;
-        }
-
-        .subscribe-container{
-            text-align: right;
-        }
-
-        .input-group--underline{
-            margin: 0 0 0 auto;
-            width: 350px;
-        }
-
-        .logo-container{
-            display: -webkit-box;
-            display: -ms-flexbox;
-            display: flex;
-            -webkit-box-orient: vertical;
-            -webkit-box-direction: normal;
-                -ms-flex-direction: column;
-                    flex-direction: column;
-            -webkit-box-align: end;
-                -ms-flex-align: end;
-                    align-items: flex-end;
-        }
-
-        .copyRight{
-            font-size: 14px;
-            margin: 20px 0 20px 0;
-        }
-
-        .footer__image{
-            width: 110px;
-        }
+    /*700px*/ 
+    @media only screen and (max-width: 43.75em){
     }
-
-    @media(max-width: 600px){
-        .footer__bottomImage{
-            width: 100px;
-            bottom: -50px;
-        }
-
-        .menu__item a, .menu__item a:visited, .menu__item a:link{
-            font-size: 14px;
-        }
-
-        .socials-list{
-            margin-top: 30px;
-            width: 250px;
-        }
-
-        .site-footer__newsletter-label{
-            font-size: 14px;
-        }
-
-        .site-footer__newsletter-subheading{
-            font-size: 12px;
-        }
-
-        .site-footer__newsletter-input::-webkit-input-placeholder{
-            font-size: 12px;
-        }
-
-        .site-footer__newsletter-input::-moz-placeholder{
-            font-size: 12px;
-        }
-
-        .site-footer__newsletter-input:-ms-input-placeholder{
-            font-size: 12px;
-        }
-
-        .site-footer__newsletter-input::-ms-input-placeholder{
-            font-size: 12px;
-        }
-
-        .site-footer__newsletter-input::placeholder{
-            font-size: 12px;
-        }
-
-        .btn--newsletter__submit{
-            font-size: 12px;
-        }
-
-        .subscribe-success, .form-errors-list li{
-            font-size: 14px;
-        }
-
-        .input-group--underline{
-            margin: 0 0 0 auto;
-            width: 300px;
-        }
-
-        .copyRight{
-            font-size: 12px;
-        }
-
-        .footer__image{
-            width: 100px;
-        }
-    }
-
-    @media(max-width: 550px){
-        .footer{
-            padding: 6em 0 2em 0;
-        }
-
-        .footer__row{
+    /* 600px */
+    @media only screen and (max-width: 37.5em){
+        .footerContainer{
             width: 90%;
+            min-width: 0%;
         }
-
-        .site-footer__newsletter-label{
-            font-size: 13px;
-            letter-spacing: 0;
+        .footer-logoContainer{
+            width: 20rem;
+            height: 20rem;
         }
-
-        .site-footer__newsletter-subheading{
-            letter-spacing: 0;
+        .footer-list{
+            margin-top: 2rem;
+            align-items: flex-start;
+            flex-direction: column;
         }
-
-        .site-footer__newsletter-input::-webkit-input-placeholder{
-            font-size: 13px;
+        .footer-item{
+            margin-bottom: 2rem;
         }
-
-        .site-footer__newsletter-input::-moz-placeholder{
-            font-size: 13px;
-        }
-
-        .site-footer__newsletter-input:-ms-input-placeholder{
-            font-size: 13px;
-        }
-
-        .site-footer__newsletter-input::-ms-input-placeholder{
-            font-size: 13px;
-        }
-
-        .site-footer__newsletter-input::placeholder{
-            font-size: 13px;
-        }
-
-        #NewsletterEmail{
-            font-size: 13px;
-        }
-
-        .input-group--underline{
-            width: 270px;
-        }
-
-        .subscribe-success, .form-errors-list li{
-            font-size: 13px;
-        }
-
-        .copyRight{
-            letter-spacing: 0;
+        .footer-nameContainer{
+            bottom: unset;
+            top: 10%;
+            left: 5vw;
+            width: 20rem;
+            height: 1.8rem;
         }
     }
-
-    @media(max-width: 450px){
-        .footer__row{
-            display: block;
+    /*400px*/
+    @media only screen and (max-width: 25em){
+        .footer{
+            min-height: 35rem;
         }
-
-        .footer__bottomImage{
-            left: 20%;
-        }
-
-        .footer-container__left{
-            position: relative;
-            width: 100%;
-        }
-
-        .footer-container__right{
-            width: 100%;
-        }
-
-        .footer__topImage{
-            position: absolute;
-            width: 60px;
-            right: 40px;
-            top: -30px;
-        }
-
-        .subscribe-container{
-            margin-top: 30px;
-            text-align: center;
-        }
-
-        .menu-list{
-            width: 180px
-        }
-
-        .menu__item{
-            padding: 7.5px 0;
-            letter-spacing: .35;
-        }
-
-        .menu__item a, .menu__item a:visited, .menu__item a:link{
-            font-size: 14px;
-        }
-
-        .socials-list__title{
-            font-size: 11px;
-        }
-
-        .site-footer__newsletter-label{
-            font-size: 14px;
-            letter-spacing: .25;
-        }
-
-        .site-footer__newsletter-subheading{
-            font-size: 13px; 
-            letter-spacing: .25;
-        }
-
-        .site-footer__newsletter-input{
-            padding: 10px;
-        }
-
-        .input-group--underline{
-            width: 100%;
-        }
-
-        .container_left-footer__image{
-            display: unset;
-            position: absolute;
-            right: 0;
-            top: 20%;
-        }
-
-        .container_right-footer__image{
-            display: none;
+        .footer-copyRight{
+            bottom: 2rem;
         }
     }
 </style>
-
-{% schema %}
-    {
-        "name": "Footer",
-        "settings": [
-            {
-                "type": "text",
-                "id": "business_portal-link",
-                "label": "Business Portal Link",
-                "default": "https://soapstandportal.com/"
-            },
-            {
-                "type": "checkbox",
-                "id": "include_facebook",
-                "label": "Show Facebook link icon",
-                "default": true
-            },
-            {
-                "type": "text",
-                "id": "facebook-link",
-                "label": "Facebook Link",
-                "default": "https://www.facebook.com/TheSoapstand"
-            },
-            {
-                "type": "checkbox",
-                "id": "include_linkedin",
-                "label": "Show Linkedin link icon",
-                "default": true
-            },
-            {
-                "type": "text",
-                "id": "linkedin-link",
-                "label": "LinkedIn Link",
-                "default": "https://www.linkedin.com/company/soapstand"
-            },
-            {
-                "type": "checkbox",
-                "id": "include_instagram",
-                "label": "Show Instagram link icon",
-                "default": true
-            },
-            {
-                "type": "text",
-                "id": "instagram-link",
-                "label": "Instagram Link",
-                "default": "https://www.instagram.com/soapstandco"
-            },
-            {
-                "type": "checkbox",
-                "id": "include_youtube",
-                "label": "Show Youtube link icon",
-                "default": true
-            },
-            {
-                "type": "text",
-                "id": "youtube-link",
-                "label": "Youtube Link",
-                "default": "https://www.youtube.com"
-            },
-            {
-                "type": "checkbox",
-                "id": "include_twitter",
-                "label": "Show Twitter link icon",
-                "default": true
-            },
-            {
-                "type": "text",
-                "id": "twitter-link",
-                "label": "Twitter Link",
-                "default": "https://www.twitter.com"
-            }
-        ]
-    }
-{% endschema %}

@@ -1,114 +1,50 @@
-{% if page_title == "Soapstand | Sustainable Soap Refillery Stations" %}
-    <header class="header">
-{% else %}
-    <header class="header header__notHome">
-{% endif %}
+<script src="https://code.jquery.com/jquery-2.1.4.js"></script>
+<header class="header">
+    <label class="nav-toggle" for="navi-toggle" aria-label="open navigation">
+        <span class="hamburger"></span>
+    </label>
     <div class="container row">
-        <input type="checkbox" id="navi-toggle" class="navigation__checkbox" autocomplete="off">
-        {% if page_title == "Soapstand | Sustainable Soap Refillery Stations" %}
-            <label class="nav-toggle" for="navi-toggle" aria-label="open navigation">
-                <span class="hamburger"></span>
-            </label>
-            <a class="logo" href="https://soapstand.com">
-                {{ 'Logo-dark.svg' | asset_url | img_tag: 'Logo', 'logo__image' }}            
-            </a>                              {% comment %} {% elsif page_title == "contact" %} {% endcomment %}
-            <nav class="nav">
-                <ul class="nav__list">
-                    {{ 'locations-topLeft.png' | asset_url | img_tag: 'header top left icon', 'header-topLeft' }}
-                    {{ 'locations-topRight.png' | asset_url | img_tag: 'header top right icon', 'header-topRight' }}  
-                    {% for link in linklists.menu.links -%}
-                        <li class="nav__item">
-                            {{ link.title | link_to: link.url }}
-                        </li>
-                    {%- endfor %}
-                    <li class="nav__item business-portal__item">
-                        <a class="business-portal" href="{{ section.settings.business_portal-link }}">business portal</a>
-                    </li>
-                    <div class="nav-socials__list">
-                        {% if section.settings.include_facebook %}
-                            <a href="{{ section.settings.facebook-link }}"><li class="nav-socials__item"><i class="fa-brands fa-facebook-f"></i></li></a>
-                        {% endif %}
-                        {% if section.settings.include_linkedin %}
-                            <a href="{{ section.settings.linkedin-link }}"><li class="nav-socials__item"><i class="fa-brands fa-linkedin-in"></i></li></a>
-                        {% endif %}
-                        {% if section.settings.include_instagram %}
-                            <a href="{{ section.settings.instagram-link }}"><li class="nav-socials__item"><i class="fa-brands fa-instagram"></i></li></a>
-                        {% endif %}
-                        {% if section.settings.include_youtube %}
-                            <a href="{{ section.settings.youtube-link }}"><li class="nav-socials__item"><i class="fa-brands fa-youtube"></i></li></a>
-                        {% endif %}
-                        {% if section.settings.include_twitter %}
-                            <a href="{{ section.settings.twitter-link }}"><li class="nav-socials__item"><i class="fa-brands fa-twitter"></i></li></a>
-                        {% endif %}
-                    </div>
-                    {{ 'locations-bottomRight.png' | asset_url | img_tag: 'header bottom right icon', 'header-bottomRight' }}  
-                </ul>
-            </nav>
+        <a class="logo" href="https://soapstand.com">
+        {% if page_title == "FAQ" %}
+            {{ 'Nav-logo-bubbles.png' | asset_url | img_tag: 'Logo', 'logo__image' }}       
         {% else %}
-            <label class="nav-toggle nav-toggle__notHome" for="navi-toggle" aria-label="open navigation">
-                <span class="hamburger hamburger__notHome"></span>
-            </label>
-            <a class="logo" href="https://soapstand.com">
-                {{ 'Logo-light.svg' | asset_url | img_tag: 'Logo', 'logo__image' }}            
-            </a>
-            <nav class="nav nav__notHome">
-                <ul class="nav__list nav__list__notHome">
-                    {{ 'locations-topLeft.png' | asset_url | img_tag: 'header top left icon', 'header-topLeft' }}
-                    {{ 'locations-topRight.png' | asset_url | img_tag: 'header top right icon', 'header-topRight' }}  
-                    {% for link in linklists.menu.links -%}
-                        <li class="nav__item nav__item__notHome">
-                            {{ link.title | link_to: link.url }}
-                        </li>
-                    {%- endfor %}
-                    <li class="nav__item business-portal__item business-portal__item__notHome">
-                        <a class="business-portal business-portal__notHome" href="{{ section.settings.business_portal-link }}">business portal</a>
-                    </li>
-                    <div class="nav-socials__list nav-socials__list__notHome">
-                        {% if section.settings.include_facebook %}
-                            <a href="{{ section.settings.facebook-link }}"><li class="nav-socials__item nav-socials__item__notHome"><i class="fa-brands fa-facebook-f"></i></li></a>
-                        {% endif %}
-                        {% if section.settings.include_linkedin %}
-                            <a href="{{ section.settings.linkedin-link }}"><li class="nav-socials__item nav-socials__item__notHome"><i class="fa-brands fa-linkedin-in"></i></li></a>
-                        {% endif %}
-                        {% if section.settings.include_instagram %}
-                            <a href="{{ section.settings.instagram-link }}"><li class="nav-socials__item nav-socials__item__notHome"><i class="fa-brands fa-instagram"></i></li></a>
-                        {% endif %}
-                        {% if section.settings.include_youtube %}
-                            <a href="{{ section.settings.youtube-link }}"><li class="nav-socials__item nav-socials__item__notHome"><i class="fa-brands fa-youtube"></i></li></a>
-                        {% endif %}
-                        {% if section.settings.include_twitter %}
-                            <a href="{{ section.settings.twitter-link }}"><li class="nav-socials__item nav-socials__item__notHome"><i class="fa-brands fa-twitter"></i></li></a>
-                        {% endif %}
-                    </div>
-                    {{ 'locations-bottomRight.png' | asset_url | img_tag: 'header bottom right icon', 'header-bottomRight' }}  
-                </ul>
-            </nav>
+            {{ 'Nav-logo-white.png' | asset_url | img_tag: 'Logo', 'logo__image' }}       
         {% endif %}
-        {% if section.settings.show_search%}
-        <form action="/search" class="search__form">
-            <input type="search" name="q">
-            <button type="submit">Search</button>
-        </form>
+        </a>   
+        <div class="nav-container">
+        <nav class="nav">
+        {% if page_title == "FAQ" %}
+            <ul class="nav__list nav__list-FAQ">
+        {% else %}
+            <ul class="nav__list">
         {% endif %}
+                {% for link in linklists.b2bmenu.links -%}
+                    <li class="nav__item">
+                        {{ link.title | link_to: link.url }}
+                     </li>
+                {%- endfor %}
+            </ul>
+        </nav>
+        </div>
+
     </div>
 </header>
 
 <style>
     .header{
-        padding: 1.5em 0;
-        text-align: center;
         width: 100%;
-        top: 0;
-        left: 0;
-        height: 15vh;
-        min-height: 100px;
-        max-height: 145px;
         z-index: 1000;
-        position: unset;
+        margin: 0 auto;
     }
 
-    .header__notHome{
-        background: #014E59;
+    .row{
+        display: flex;
+        justify-content: space-between;
+        width: 90%;
+        max-width: 1350px;
+        min-width: 320px;
+        margin: 2rem auto 0 auto;
+        align-items: center;
     }
 
     .logo{
@@ -116,187 +52,58 @@
     }
 
     .logo__image{
-        width: 100px;
+        width: 4rem;
+        height: 4rem;
     }
 
-    .nav{
-        width: 100%;
-    }
-
-    .navigation__checkbox{
-        display: none;
-    }
-
-    .nav-toggle {
-        cursor: pointer;
-        border: 0;
-        width: 2.5em;
-        height: 2.5em;
-        padding: 0em;
-        border-radius: 50%;
-        background: #014E59;
-        -webkit-transition: opacity 250ms ease;
-        -o-transition: opacity 250ms ease;
-        transition: opacity 250ms ease;
-        
-        position: absolute;
-        top: 2em;
-        left: 5%;
-        -webkit-transform: translate(-50%, -50%);
-            -ms-transform: translate(-50%, -50%);
-                transform: translate(-50%, -50%);
-    }
-
-    .nav-toggle__notHome{
-        background: #fffdfa;
-    }
-    
-    .nav-toggle:focus,
-    .nav-toggle:hover {
-        opacity: .75;
-    }
-
-    .hamburger {
-        width: 50%;
-        position: relative;
-        top: 50%;
-    }
-    
-    .hamburger,
-    .hamburger::before,
-    .hamburger::after {
-        display: inline-block;
-        margin: 0 auto;
-        height: 2px;
-        background: #fffdfa;
-        width: 1.5rem;
-    }
-
-    .hamburger__notHome,
-    .hamburger__notHome::before,
-    .hamburger__notHome::after {
-        background: #014E59;
-    }
-    
-    .hamburger::before,
-    .hamburger::after {
-        position: absolute;
-        content: '';
-        width: 100%;
-        left: 0;
-        -webkit-transition: all .2s;
-        -o-transition: all .2s;
-        transition: all .2s;
-    }
-
-    .hamburger::before {
-        top: -.5rem;
-    }
-    
-    .hamburger::after {
-        top: .5rem;
-    }
-    
     .nav {
-        visibility: hidden;
-        height: 0;
-        position: absolute;
-    }
-
-    .visible {
         visibility: visible;
-        height: 100vh;
-        height: 100%;
-    } 
+        height: auto;
+    }
 
     .nav__list{
-        list-style: none;
-        height: 100%;
-        position: fixed;
-        width: 100%;
-        left: 0px;
-        background: #fffdfa;
-        overflow: auto;
-        padding: 30px 0px 100px 0px;
-    }
-
-    .nav__list__notHome{
-        background: #014E59;
-    }
-
-    .nav-socials__list{
-        width: 100%;
-        max-width: 200px;
         display: -webkit-box;
         display: -ms-flexbox;
         display: flex;
-        -webkit-box-pack: space-evenly;
-            -ms-flex-pack: space-evenly;
-                justify-content: space-evenly;
-        -webkit-box-align: center;
-            -ms-flex-align: center;
-                align-items: center;
-        margin: 50px auto 75px auto;
-    }
-
-    .nav-socials__list a {
-        color: #014E59;
-    }
-
-    .nav-socials__list__notHome a{
-        color: #fffdfa;
-    }
-
-    .nav-socials__list a:hover{
-        opacity: 0.5;
-        color: #4c828c;
-        text-shadow: 3px 2px 2px rgba(76, 130, 140, 0.2);
-    }
-
-    .nav-socials__list__notHome a:hover{
-        opacity: 0.5;
-        color: #94B7B8;
-        text-shadow: 3px 2px 2px rgba(148, 183, 184, 0.2);
-    }
-
-    .nav-socials__list .nav-socials__item{
-        margin: 5px;
-    }
-
-    .nav-socials__item i{
-        font-size: 20px;
+        margin: 0;
+        height: auto;
+        position: unset;
+        width: auto;
+        background: transparent;
+        overflow-y: unset;
+        padding: 0;
+        min-height: auto;
+        max-height: auto;
+        list-style: none;
+        color: var(--color-white);
     }
 
     .nav__item{
-        margin: .75em .75em .75em 2em;
+        margin-left: 10rem;
     }
 
     .nav__item a{
+        font-family: "Montserrat";
         text-decoration: none;
-        color: #014E59;
-        font-weight: bold;
-        font-size: 22px;
+        color: var(--color-white);
+        font-size: 2rem;
+        font-weight: 400;
 
         display: inline-block;
         position: relative;
+    }
+
+    .nav__list-FAQ .nav__item a{
+        color: var(--color-bubbles);
     }
 
     .nav__item a.business-portal{
         font-weight: 400;
     }
 
-    .nav__item__notHome a{
-        color: #fffdfa;
-    }
-
     .nav__item a:hover, .nav__item:focus{
         opacity: 0.75;
-        color: #4c828c;
-    }
-
-    .nav__item__notHome a:hover, .nav__item:focus{
-        opacity: 0.75;
-        color: #94B7B8;
+        color: var(--color-white);
     }
 
     .nav__item a::after{
@@ -309,7 +116,7 @@
         height: 2px;
         bottom: -5px;
         left: 0;
-        background-color: #014E59;
+        background-color: var(--color-white);
         -webkit-transform-origin: bottom right;
             -ms-transform-origin: bottom right;
                 transform-origin: bottom right;
@@ -321,10 +128,6 @@
         padding-top: 2px;
     }
 
-    .nav__item__notHome a::after{
-        background-color: #94B7B8;
-    }
-
     .nav__item a:hover::after{
         -webkit-transform: scaleX(1);
             -ms-transform: scaleX(1);
@@ -332,10 +135,6 @@
         -webkit-transform-origin: bottom left;
             -ms-transform-origin: bottom left;
                 transform-origin: bottom left;
-    }
-
-    .business-portal__item__notHome a.business-portal__notHome{
-        color: #fffdfa;
     }
 
     .business-portal__item a.business-portal:hover{
@@ -359,234 +158,121 @@
         margin: auto 0;
     }
 
-    .navigation__checkbox:checked + .nav-toggle .hamburger{
-        background-color: transparent;
+    @media only screen and (max-width: 800px){
+        .nav__item{
+            margin-left: 5rem;
+        }
+    }
+    @media only screen and (max-width: 600px){
+        .nav-toggle {
+            cursor: pointer;
+            border: 0;
+            width: 2.5em;
+            height: 2.5em;
+            padding: 0em;
+            border-radius: 50%;
+            -webkit-transition: opacity 250ms ease;
+            -o-transition: opacity 250ms ease;
+            transition: opacity 250ms ease;
+            
+            position: absolute;
+            top: 3em;
+            right: 2rem;
+            -webkit-transform: translate(-50%, -50%);
+                -ms-transform: translate(-50%, -50%);
+                    transform: translate(-50%, -50%);
+        }
+        .hamburger {
+            width: 50%;
+            position: relative;
+            top: 50%;
+        }
+        
+        .hamburger,
+        .hamburger::before,
+        .hamburger::after {
+            display: inline-block;
+            margin: 0 auto;
+            height: 2px;
+            background: #fffdfa;
+            width: 2rem;
+        }
+        .hamburger::before,
+        .hamburger::after {
+            position: absolute;
+            content: '';
+            width: 100%;
+            left: 0;
+            -webkit-transition: all .2s;
+            -o-transition: all .2s;
+            transition: all .2s;
+        }
+        .hamburger::before {
+            top: -.75rem;
+        }
+        
+        .hamburger::after {
+            top: .75rem;
+        }
+        nav{
+            width: 100%;
+            height: 100% !important;
+        }
+        .nav-container{
+            height: 60vh;
+            min-height: 55rem;
+            width: 60%;
+            background: #005560;
+            position: absolute;
+            left: -60rem;
+            transition: .2s all;
+        }
+        .row{
+            position: relative;
+            display: block;
+            margin: 0;
+        }
+        .logo{
+            position: absolute;
+            top: 2rem;
+            left: 3rem;
+        }
+        .nav__list{
+            flex-direction: column;
+            height: 40rem;
+            width: 100%;
+            align-items: center;
+            justify-content: space-around;
+            padding-top: 7rem;
+        }
+        .nav__item{
+            margin-left: 0;
+        }
+
+        .menu-appear{
+            left: 0 !important;
+        }
     }
 
-    .navigation__checkbox:checked + .nav-toggle .hamburger::before{
-        -webkit-transform: rotate(135deg);
-            -ms-transform: rotate(135deg);
-                transform: rotate(135deg);
-        top: .0em;
+    @media only screen and (max-width: 500px){
+        .logo__image{
+            height: 3rem;
+            width: 3rem;
+        }
     }
     
-    .navigation__checkbox:checked + .nav-toggle .hamburger::after{
-        -webkit-transform: rotate(-135deg);
-            -ms-transform: rotate(-135deg);
-                transform: rotate(-135deg);
-        top: .0em;
-    }
-
-    .header-topLeft{
-        position: absolute;
-        left: 20%;
-        top: 20px;
-        width: 50px;
-    }
-
-    .header-topRight{
-        position: absolute;
-        right: 20%;
-        top: 50px;
-        width: 40px;
-    }
-
-    .header-bottomRight{
-        width: 50px;
-    }
-
-    .section-visible{
-        display: none;
-    }
-
-    .header-position{
-        position: fixed;
-    }
-
-    @media (min-width: 950px) {
-        .nav-toggle {
-            display: none;
-        }
-
-        .nav {
-            visibility: visible;
-            display: -webkit-box;
-            display: -ms-flexbox;
-            display: flex;
-            height: auto;
-            -webkit-box-align: center;
-                -ms-flex-align: center;
-                    align-items: center;
-            -webkit-box-pack: end;
-                -ms-flex-pack: end;
-                    justify-content: flex-end;
-        }
-
-        .nav__list{
-            display: -webkit-box;
-            display: -ms-flexbox;
-            display: flex;
-            margin: 0;
-            height: auto;
-            position: unset;
-            width: auto;
-            background: transparent;
-            overflow-y: unset;
-            padding: 0;
-            min-height: auto;
-            max-height: auto;
-        }
-
-        .business-portal__item{
-            display: none;
-        }
-
-        .nav-socials__list{
-            display: none;
-        }
-
-        .header-topLeft, .header-topRight, .header-bottomRight{
-            display: none;
-        }
-    }
-
-    @media (max-width: 949px) {
-        .nav__item{
-            margin: 2em .75em .75em .75em;
-        }
-
-        .business-portal__item{
-            margin: 4em .75em .75em .75em;
-        }
-    }
-
-    @media (max-width: 500px){
-        .nav__item a{
-            font-size: 20px;
-        }
-
-        .nav-socials__item i{
-            font-size: 18px;
-        }
-    }
-
-    @media (max-width: 450px) {
-        .header-topLeft{
-            position: absolute;
-            left: 15%;
-            top: 20px;
-            width: 30px;
-        }
-
-        .header-topRight{
-            position: absolute;
-            right: 15%;
-            top: 50px;
-            width: 20px;
-        }
-    }
 
 </style>
 
 
 {% javascript %}
     const navToggle = document.querySelector('.nav-toggle');
-    const nav = document.querySelector('nav');
-    const header = document.querySelector('header');
-    const section = document.querySelector('section');
-    const footer = document.querySelector('#shopify-section-footer');
+    const navContainer = document.querySelector('.nav-container');
     navToggle.addEventListener('click', () => {
-        nav.classList.toggle('visible');
-        header.classList.toggle('header-position');
-        section.classList.toggle('section-visible');
-        footer.classList.toggle('section-visible');
+            console.log("test");
+            navContainer.classList.toggle('menu-appear');
     });
-    window.addEventListener("resize", function(event) {
-        if(nav.classList.contains('visible')){
-            if(window.innerWidth >= 950){
-                header.classList.remove('header-position');
-                section.classList.remove('section-visible');
-                footer.classList.remove('section-visible');
-            }else{
-                header.classList.add('header-position');
-                section.classList.add('section-visible');
-                footer.classList.add('section-visible');
-            }
-        }
-    });
+
 {% endjavascript %}
 
-{% schema %}
-    {
-        "name": "Header",
-        "settings": [
-            {
-                "type": "text",
-                "id": "business_portal-link",
-                "label": "Business Portal Link",
-                "default": "https://soapstandportal.com/"
-            },
-            {
-                "type": "checkbox",
-                "id": "include_facebook",
-                "label": "Show Facebook link icon",
-                "default": true
-            },
-            {
-                "type": "text",
-                "id": "facebook-link",
-                "label": "Facebook Link",
-                "default": "https://www.facebook.com/TheSoapstand"
-            },
-            {
-                "type": "checkbox",
-                "id": "include_linkedin",
-                "label": "Show Linkedin link icon",
-                "default": true
-            },
-            {
-                "type": "text",
-                "id": "linkedin-link",
-                "label": "LinkedIn Link",
-                "default": "https://www.linkedin.com/company/soapstand"
-            },
-            {
-                "type": "checkbox",
-                "id": "include_instagram",
-                "label": "Show Instagram link icon",
-                "default": true
-            },
-            {
-                "type": "text",
-                "id": "instagram-link",
-                "label": "Instagram Link",
-                "default": "https://www.instagram.com/soapstandco"
-            },
-            {
-                "type": "checkbox",
-                "id": "include_youtube",
-                "label": "Show Youtube link icon",
-                "default": true
-            },
-            {
-                "type": "text",
-                "id": "youtube-link",
-                "label": "Youtube Link",
-                "default": "https://www.youtube.com"
-            },
-            {
-                "type": "checkbox",
-                "id": "include_twitter",
-                "label": "Show Twitter link icon",
-                "default": true
-            },
-            {
-                "type": "text",
-                "id": "twitter-link",
-                "label": "Twitter Link",
-                "default": "https://www.twitter.com"
-            }
-        ]
-    }
-{% endschema %}
 
