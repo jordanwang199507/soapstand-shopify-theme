@@ -10,7 +10,7 @@
             </div>
         </div>
     </div>
-    <div class="contact-form">
+    <div class="form">
         <div class="contact-formL">
             {% form 'contact' %}
                 {% if form.posted_successfully? %}
@@ -121,6 +121,19 @@
     .sub-title{
         font-weight: 400;
         font-size: 3.5rem;
+    }
+    .form{
+        padding: 0 5rem;
+        max-width: 131rem;
+        width: 100%;
+        height: auto;
+        min-height: 75rem;
+        max-height: 75rem;
+        margin: 0 auto;
+        background: var(--color-water);
+        margin-top: -50rem;
+        margin-bottom: 20rem;
+        position: relative;
     }
 
   /* 1000px tab-land*/
