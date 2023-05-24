@@ -13,24 +13,39 @@
     <div class="form">
         <div class="contact-formL">
             {% form 'contact' %}
+                <div class="form-title">Send us a direct message</div>
                 {% if form.posted_successfully? %}
                     <p class="form-success">
                         Thank you! The Soapstand team will be in contact with you shortly!
                     </p>
                 {% else %}
-                    <div class="name">
-                        <label for="name" class="name__label">name</label>
-                        <input type="text" name="contact[name]" class="name__input" id="name" placeholder="name" required/>
+                    <div class="input-row">
+                        <div class="first-name input-field">
+                            <label for="first-name" class="name__label">First Name</label>
+                            <input type="text" name="contact[first-name]" class="name__input" id="first-name" placeholder="First Name" required/>
+                        </div>
+                        <div class="last-name input-field">
+                            <label for="last-name" class="name__label">Last Name</label>
+                            <input type="text" name="contact[last-name]" class="name__input" id="last-name" placeholder="Last Name" required/>
+                        </div>
                     </div>
-
-                    <div class="email">
-                        <label for="email" class="email__label">email</label>
-                        <input type="email" name="contact[email]" class="email__input" id="email" placeholder="email" required/>
+                    <div class="input-row">
+                        <div class="phone input-field">
+                            <label for="phone" class="phone__label">Phone</label>
+                            <input type="phone" name="contact[phone]" class="phone__input" id="phone" placeholder="Phone" required/>
+                        </div>
+                        <div class="email input-field">
+                            <label for="email" class="email__label">Email</label>
+                            <input type="email" name="contact[email]" class="email__input" id="email" placeholder="Email" required/>
+                        </div>
                     </div>
-
+                    <div class="organization input-field">
+                        <label for="organization" class="organization__label">Group or Company</label>
+                        <input type="text" name="contact[organization]" class="organization__input" id="organization" placeholder="Group or Company" required/>
+                    </div>
                     <div class="message">
-                        <label for="message" class="message__label">message</label>
-                        <textarea name="contact[body]" id="message" class="message__input" placeholder="message" required></textarea>
+                        <label for="message" class="message__label">Your message</label>
+                        <textarea name="contact[body]" id="message" class="message__input" placeholder="Your message..." required></textarea>
                     </div>
                     <div class="submit">
                         <input class="btn" type="submit" value="submit" />            
@@ -39,13 +54,13 @@
             {% endform %}
         </div>
         <div class="contact-formR">
-            <div class="contact-formR-title">Contact Info</div>
+            <div class="form-title">Contact Info</div>
             <div class="contact-formR-info">
-                <div class="contact-email">
+                <div class="contact-info contact-email">
                     <i class="fa-regular fa-envelope"></i>
                     <div class="contact-emailAddress">sales@soapstand.com</div>            
                 </div>
-                <div class="contact-mobile">
+                <div class="contact-info contact-mobile">
                     <i class="fa-solid fa-mobile-screen-button"></i>
                     <div class="contact-mobileNumber">Contact Info</div>
                 </div>
@@ -53,10 +68,10 @@
             <div class="contact-formR-socialMedia">
                 <ul class="contact-formR-socialList">
                     {% if section.settings.include_facebook %}
-                        <a href="{{ section.settings.facebook-link }}"><li class="heading-socials__item"><i class="fa-brands fa-facebook"></i></li></a>
+                        <a href="{{ section.settings.facebook-link }}"><li class="contact-socials__item"><i class="fa-brands fa-facebook"></i></li></a>
                     {% endif %}
                     {% if section.settings.include_instagram %}
-                        <a href="{{ section.settings.instagram-link }}"><li class="heading-socials__item"><i class="fa-brands fa-instagram"></i></li></a>
+                        <a href="{{ section.settings.instagram-link }}"><li class="contact-socials__item"><i class="fa-brands fa-instagram"></i></li></a>
                     {% endif %}
                 </ul>
             </div>
@@ -69,11 +84,10 @@
     .contact{
         width: 100%;
     }
-
     .contact-imageContainer{
         width: 100%;
         height: 150vh;
-        min-height: 90rem;
+        min-height: 150rem;
         max-height: 155rem;
         position: relative;
         margin-top: -5rem;
@@ -127,13 +141,62 @@
         max-width: 131rem;
         width: 100%;
         height: auto;
-        min-height: 75rem;
-        max-height: 75rem;
+        min-height: 65rem;
+        max-height: 65rem;
         margin: 0 auto;
         background: var(--color-water);
         margin-top: -50rem;
         margin-bottom: 20rem;
         position: relative;
+        font-family: "Montserrat", sans-serif;
+        padding: 4rem 6vw;
+        display: flex;
+        justify-content: space-between;
+    }
+    .contact-formL{
+        width: 58%;
+        border: 1px solid black;
+    }
+    .contact-formR{
+        width: 38%;
+        padding: 0 3rem;
+    }
+    .form-title{
+        font-size: 3rem;
+        color: var(--color-white);
+        margin-bottom: 5rem;
+    }
+    .input-field{
+        display: flex;
+        flex-direction: column;
+    }
+    .contact-info{
+        display: flex;
+        margin: 0 auto 5rem auto;
+        align-items: center;
+        color: var(--color-white);
+    }
+    .contact-info i{
+        font-size: 4rem;
+        width: 15%;
+        text-align: center;
+        margin-right: 2rem;
+    }
+    .contact-emailAddress, .contact-mobileNumber{
+        font-size: 1.8rem;
+        font-weight: 400;
+    }
+    .contact-formR-socialList{
+        display: flex;
+        list-style: none;
+        margin-top: 10vh;
+        padding-left: 1rem;
+    }
+    .contact-socials__item{
+        color: var(--color-white);
+        font-size: 4rem;
+        padding-right: 4rem;
+        text-align: center;
     }
 
   /* 1000px tab-land*/
