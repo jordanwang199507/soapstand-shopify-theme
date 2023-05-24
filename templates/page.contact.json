@@ -4,16 +4,16 @@
       "type": "contact",
       "settings": {
         "include_email": true,
-        "include_emailLeft": "If you want mail:",
+        "include_emailLeft": "Email us at:",
         "include_emailRight": "sales@soapstand.com",
         "include_phone": false,
-        "include_phoneLeft": "If you wannna hear us out:",
+        "include_phoneLeft": "If you want to hear us out:",
         "include_phoneRight": "(604) 672 5522",
         "include_instagram": true,
-        "include_instagramLeft": "If you're on instagram:",
+        "include_instagramLeft": "Follow us on Instagram",
         "include_instagramRight": "@soapstandco",
         "include_address": true,
-        "include_addressLeft": "If you want to meet us irl:",
+        "include_addressLeft": "Come meet us in person",
         "include_addressRight": "come say hi at 312 Main St"
       }
     }
