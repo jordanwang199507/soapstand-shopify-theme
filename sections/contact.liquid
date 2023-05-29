@@ -76,6 +76,7 @@
                 </ul>
             </div>
         </div>
+        <div class="contact-bgIcon"></div>
     </div>
 
 </section> 
@@ -137,19 +138,16 @@
         font-size: 3.5rem;
     }
     .form{
-        padding: 0 5rem;
         max-width: 131rem;
         width: 100%;
         height: auto;
-        min-height: 65rem;
-        max-height: 65rem;
         margin: 0 auto;
         background: var(--color-water);
         margin-top: -50rem;
         margin-bottom: 20rem;
         position: relative;
         font-family: "Montserrat", sans-serif;
-        padding: 4rem 6vw;
+        padding: 6rem 6vw;
         display: flex;
         justify-content: space-between;
     }
@@ -232,7 +230,7 @@
         font-family: "Montserrat", sans-serif;
         font-size: 1.6rem;
         color: var(--color-white);
-        padding: .5rem .5rem 0 .5rem;
+        padding: .75rem .75rem 0 .75rem;
     }
     .message__input::placeholder{
         color: var(--color-white);
@@ -256,12 +254,23 @@
         margin-top: 1rem;
         border: 2px solid var(--color-white);
         background: transparent;
-        padding: .75rem 4rem;
+        padding: .5rem 3.5rem;
         font-size: 1.8rem;
         color: white;
         border-radius: 25px;
         text-transform: capitalize;
         line-height: 26px;
+        cursor: pointer;
+        transition: all .2s;
+    }
+    .btn-contact:hover{
+        color: #fffdfa;
+        -webkit-box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+                box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+        background: -webkit-gradient(linear, left top, right top, from(#005560), to(#94B7B8)) border-box;
+        background: -o-linear-gradient(left, var(--color-dark-blue) 0%, var(--color-bubbles) 100%) border-box;
+        background: linear-gradient(to right, var(--color-dark-blue) 0%, var(--color-bubbles) 100%) border-box;
+        border: 2px solid transparent;
     }
     .contact-info{
         display: flex;
@@ -291,6 +300,18 @@
         padding-right: 4rem;
         text-align: center;
     }
+    .contact-socials__item:hover {
+        opacity: 0.7;
+    }
+    .contact-bgIcon{
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        height: 30rem;
+        width: 30rem;
+        background-image: url("https://cdn.shopify.com/s/files/1/0549/5580/2693/files/Contact-bgIcon.png?v=1685388061");
+        background-size: contain;
+    }
 
   /* 1000px tab-land*/
   @media only screen and (max-width: 62.5em){
@@ -310,7 +331,32 @@
   }
   /*700px*/ 
   @media only screen and (max-width: 43.75em){
-
+    .form{
+        flex-direction: column;
+    }
+    .form-title{
+        margin-bottom: 3rem;
+    }
+    .contact-formL{
+        width: 90%;
+        margin: 0 auto;
+    }
+    .contact-formR{
+        width: 90%;
+        margin: 0 auto;
+        padding: unset;
+    }
+    .contact-info{
+        margin: 0 5rem 2rem 0;
+    }
+    .contact-info i{
+        text-align: left;
+        width: 8%;
+    }
+    .contact-formR-socialList{
+        margin-top: 2vh;
+        padding-left: 0;
+    }
   }
   /* 600px */
   @media only screen and (max-width: 37.5em){
@@ -319,18 +365,39 @@
   /*500px*/
   @media only screen and (max-width: 31.25em){
     .contact-imageContainer{
-        min-height: 70rem;
+        min-height: 125rem;
         max-height: 125rem;
         margin-top: -5rem;
     }
     .contact-titleContainer{
         width: 40rem;
     }
+    .form{
+        margin-top: -30rem;
+        margin-bottom: 0;
+    }
     .main-title{
         font-size: 4rem;
     }
     .sub-title{
         font-size: 2.2rem;
+    }
+    .input-row{
+        display: block;
+    }
+    .input-field{
+        width: 100%;
+    }
+    .contact-info i{
+        font-size: 3.2rem;
+        text-align: unset;
+    }
+    .contact-socials__item{
+        font-size: 3.2rem;
+    }
+    .btn-contact{
+        font-size: 1.4rem;
+        padding: .4rem 3rem;
     }
   }
   /*400px*/
@@ -347,6 +414,9 @@
     .sub-title{
         width: 90%;
         font-size: 2rem;
+    }
+    .contact-formR{
+        margin-top: 3rem;
     }
   }
 </style>
