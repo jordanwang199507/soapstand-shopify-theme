@@ -1,20 +1,33 @@
 <script src="https://code.jquery.com/jquery-2.1.4.js"></script>
 <header class="header">
     <label class="nav-toggle" for="navi-toggle" aria-label="open navigation">
+    {% if page_title == "FAQ" or page_title=="how to refill (new)"%}
+        <span class="hamburger hamburger--bubbles"></span>
+    {% elsif page_title == "locations (new)"%}
+        <span class="hamburger hamburger--dark"></span>
+    {% else %}
         <span class="hamburger"></span>
+    {% endif %}
     </label>
     <div class="container row">
         <a class="logo" href="https://soapstand.com">
-        {% if page_title == "FAQ" %}
-            {{ 'Nav-logo-bubbles.png' | asset_url | img_tag: 'Logo', 'logo__image' }}       
+        {% if page_title == "FAQ" or page_title=="how to refill (new)"%}
+            <div class="logo__image logo__image--FAQ"></div>
+            {% comment %} {{ 'Nav-logo-bubbles.png' | asset_url | img_tag: 'Logo', 'logo__image' }} {% endcomment %}
+        {% elsif page_title == "locations (new)"%}
+            <div class="logo__image logo__image--locations"></div>
+            {% comment %} {{ '' | asset_url | img_tag: 'Logo', 'logo__image' }} {% endcomment %}
         {% else %}
-            {{ 'Nav-logo-white.png' | asset_url | img_tag: 'Logo', 'logo__image' }}       
+            <div class="logo__image logo__image--others"></div>
+            {% comment %} {{ 'Nav-logo-white.png' | asset_url | img_tag: 'Logo', 'logo__image' }}        {% endcomment %}
         {% endif %}
         </a>   
         <div class="nav-container">
         <nav class="nav">
-        {% if page_title == "FAQ" %}
+        {% if page_title == "FAQ" or page_title=="how to refill (new)"%}
             <ul class="nav__list nav__list-FAQ">
+        {% elsif page_title == "locations (new)"%}
+            <ul class="nav__list nav__list-refill">
         {% else %}
             <ul class="nav__list">
         {% endif %}
@@ -55,7 +68,18 @@
         width: 4rem;
         height: 4rem;
     }
-
+    .logo__image--FAQ{
+        background-image: url("https://cdn.shopify.com/s/files/1/0549/5580/2693/files/Nav-logo-bubbles.png?v=1686010449");
+        background-size: contain;
+    }
+    .logo__image--locations{
+        background-image: url("https://cdn.shopify.com/s/files/1/0549/5580/2693/files/Nav-logo-dark-blue.png?v=1686005961");
+        background-size: contain;
+    }
+    .logo__image--others{
+        background-image: url("https://cdn.shopify.com/s/files/1/0549/5580/2693/files/Nav-logo-white.png?v=1686005695");
+        background-size: contain;
+    }
     .nav {
         visibility: visible;
         height: auto;
@@ -96,6 +120,9 @@
     .nav__list-FAQ .nav__item a{
         color: var(--color-bubbles);
     }
+    .nav__list-refill .nav__item a{
+        color: var(--color-dark-blue);
+    }
 
     .nav__item a.business-portal{
         font-weight: 400;
@@ -104,6 +131,10 @@
     .nav__item a:hover, .nav__item:focus{
         opacity: 0.75;
         color: var(--color-white);
+    }
+
+    .nav__list-refill .nav__item a:hover, .nav__list-refill .nav__item:focus{
+        color: var(--color-dark-blue);
     }
 
     .nav__item a::after{
@@ -128,6 +159,9 @@
         padding-top: 2px;
     }
 
+    .nav__list-refill .nav__item a::after{
+        background-color: var(--color-dark-blue);
+    }
     .nav__item a:hover::after{
         -webkit-transform: scaleX(1);
             -ms-transform: scaleX(1);
@@ -164,6 +198,10 @@
         }
     }
     @media only screen and (max-width: 600px){
+        .refill-toggle{
+            background-image: url("https://cdn.shopify.com/s/files/1/0549/5580/2693/files/Nav-logo-white.png?v=1686005695");
+            background-size: contain;
+        }
         .nav-toggle {
             cursor: pointer;
             border: 0;
@@ -196,6 +234,16 @@
             height: 2px;
             background: #fffdfa;
             width: 2rem;
+        }
+        .hamburger--bubbles,
+        .hamburger--bubbles::before,
+        .hamburger--bubbles::after {
+            background: var(--color-bubbles);
+        }
+        .hamburger--dark,
+        .hamburger--dark::before,
+        .hamburger--dark::after {
+            background: var(--color-dark-blue);
         }
         .hamburger::before,
         .hamburger::after {
@@ -245,6 +293,15 @@
             justify-content: space-around;
             padding-top: 7rem;
         }
+        .nav__list-refill .nav__item a{
+            color: var(--color-white);
+        }
+        .nav__list-refill .nav__item a:hover, .nav__list-refill .nav__item:focus{
+            color: var(--color-white);
+        }
+        .nav__list-refill .nav__item a::after{
+            background-color: var(--color-white);
+        }
         .nav__item{
             margin-left: 0;
         }
@@ -268,9 +325,10 @@
 {% javascript %}
     const navToggle = document.querySelector('.nav-toggle');
     const navContainer = document.querySelector('.nav-container');
+    const logoImage = document.querySelector('.logo__image--locations');
     navToggle.addEventListener('click', () => {
-            console.log("test");
             navContainer.classList.toggle('menu-appear');
+            logoImage.classList.toggle('refill-toggle');
     });
 
 {% endjavascript %}
