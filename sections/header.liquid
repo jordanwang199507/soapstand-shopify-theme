@@ -3,7 +3,7 @@
     <label class="nav-toggle" for="navi-toggle" aria-label="open navigation">
     {% if page_title == "FAQ" or page_title=="how to refill (new)"%}
         <span class="hamburger hamburger--bubbles"></span>
-    {% elsif page_title == "locations (new)"%}
+    {% elsif page_title == "locations (new)" or page_title=="our stations" or page_title=="SS1" or page_title=="SS2" or page_title=="SS4"%}
         <span class="hamburger hamburger--dark"></span>
     {% else %}
         <span class="hamburger"></span>
@@ -14,7 +14,7 @@
         {% if page_title == "FAQ" or page_title=="how to refill (new)"%}
             <div class="logo__image logo__image--FAQ"></div>
             {% comment %} {{ 'Nav-logo-bubbles.png' | asset_url | img_tag: 'Logo', 'logo__image' }} {% endcomment %}
-        {% elsif page_title == "locations (new)"%}
+        {% elsif page_title == "locations (new)" or page_title=="our stations" or page_title=="SS1" or page_title=="SS2" or page_title=="SS4"%}
             <div class="logo__image logo__image--locations"></div>
             {% comment %} {{ '' | asset_url | img_tag: 'Logo', 'logo__image' }} {% endcomment %}
         {% else %}
@@ -26,7 +26,7 @@
         <nav class="nav">
         {% if page_title == "FAQ" or page_title=="how to refill (new)"%}
             <ul class="nav__list nav__list-FAQ">
-        {% elsif page_title == "locations (new)"%}
+        {% elsif page_title == "locations (new)" or page_title=="our stations" or page_title=="SS1" or page_title=="SS2" or page_title=="SS4"%}
             <ul class="nav__list nav__list-refill">
         {% else %}
             <ul class="nav__list">
