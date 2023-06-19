@@ -267,7 +267,6 @@
 
     .homepage-bg{
         background-image: url("https://cdn.shopify.com/s/files/1/0549/5580/2693/files/HomepageA.png?v=1684362150");
-        {% comment %} background-image: url(assets/HomepageA.png); {% endcomment %}
         background-size: cover;
         background-position: center;
         position: absolute;
@@ -342,7 +341,6 @@
     }
     .homepage-02bg{
         background-image: url("https://cdn.shopify.com/s/files/1/0549/5580/2693/files/Homepage-02.png?v=1684362249");
-        {% comment %} background-image: url(assets/Homepage-02.png); {% endcomment %}
         height: 100%;
         background-size: cover;
         background-position: 75%;
@@ -440,16 +438,22 @@
     }
 
     .homepage01-bodyContainer04{
+        display: -ms-grid;
         display: grid;
         height: auto;
         margin: 0 auto;
         grid-template-columns: repeat(auto-fill, minmax(min(350px,100%), 1fr));
+        -ms-grid-rows: 250px 3rem 250px;
         grid-template-rows: repeat(2, 250px);
         grid-auto-flow: row;
         grid-auto-rows: 250px;
         grid-gap: 3rem;
 
-        align-items: center;
+        -webkit-box-align: center;
+
+            -ms-flex-align: center;
+
+                align-items: center;
         justify-items: center;
     }
 
@@ -504,7 +508,6 @@
 
     .homepage-container05-image{
         background-image: url("https://cdn.shopify.com/s/files/1/0549/5580/2693/files/Homepage-05.png?v=1684362149");
-        {% comment %} background-image: url(assets/Homepage-05.png); {% endcomment %}
         height: 100%;
         background-size: contain;
         background-position: center;
@@ -531,7 +534,11 @@
         position: absolute;
         top: 50%;
         left: 50%;
-        transform: translate(-50%, -50%);
+        -webkit-transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+                transform: translate(-50%, -50%);
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
         width: 75%;
         max-width: 1250px;
@@ -539,8 +546,13 @@
 
     .container05-bodyL{
         width: 80%;
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        flex-direction: column;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
         font-size: 3.2rem;
         color: var(--color-white);
         line-height: 2;
@@ -553,9 +565,15 @@
 
     .container05-bodyR{
         width: 20%;
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        align-items: center;
-        justify-content: center;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
     }
 
     .btn-readMore{
@@ -570,6 +588,8 @@
     }
 
     .homepage01-container06{
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
         padding: 5rem 2rem 6rem 2rem;
     }
@@ -583,7 +603,6 @@
 
     .container06-imgContainer{
         background-image: url("https://cdn.shopify.com/s/files/1/0549/5580/2693/files/Homepage-06.png?v=1684362150");
-        {% comment %} background-image: url(assets/Homepage-06.png); {% endcomment %}
         background-size: cover;
         background-position: center;
     }
@@ -672,17 +691,26 @@
         font-size: 1.8rem;
     }
     .homepage01-container06{
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        flex-direction: column;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
     }
     .container06-imgContainer{
-        order: 2;
+        -webkit-box-ordinal-group: 3;
+            -ms-flex-order: 2;
+                order: 2;
         width: 100%;
         height: 40vh;
         min-height: 35rem;
     }
     .container06-textContainer{
-        order: 1;
+        -webkit-box-ordinal-group: 2;
+            -ms-flex-order: 1;
+                order: 1;
         width: 80%;
         margin: 0 auto;
         padding: 0rem 0rem 4rem 0rem;
@@ -702,6 +730,7 @@
         margin-bottom: 2vh;
     }
     .homepage01-bodyContainer04{
+        -ms-grid-rows: 150px 3rem 150px;
         grid-template-rows: repeat(2, 150px);
         grid-auto-rows: 150px;
     }
@@ -716,8 +745,13 @@
         height: 5rem;
     }
     .homepage-container05-body{
-        flex-direction: column;
-        align-items: center;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
         width: 80%;
     }
     .container05-bodyL{
@@ -731,7 +765,9 @@
     .container05-bodyR{
         width: 100%;
         margin-top: 5rem;
-        justify-content: flex-start;
+        -webkit-box-pack: start;
+            -ms-flex-pack: start;
+                justify-content: flex-start;
     }
     .btn-readMore{
         font-size: 1.6rem;
@@ -866,7 +902,6 @@
         font-size: 2rem;
     }
 }
-
 </style>
 
 {% javascript %}

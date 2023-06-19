@@ -43,8 +43,12 @@
     }
     .SS1-content{
         padding: 12rem 0 0 0;   
+        display: -webkit-box;   
+        display: -ms-flexbox;   
         display: flex;
-        justify-content: space-between; 
+        -webkit-box-pack: justify;
+            -ms-flex-pack: justify;
+                justify-content: space-between; 
         min-height: 70rem;
     }
     .SS1-shortDescription{
@@ -108,8 +112,12 @@
         font-weight: 700;
     }
     .SS1-spec-table{
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        justify-content: space-between;
+        -webkit-box-pack: justify;
+            -ms-flex-pack: justify;
+                justify-content: space-between;
     }
     .SS1-spec-tableL{
         width: 60rem;
@@ -133,8 +141,12 @@
         width: 18rem;
     }
     .SS1-spec-row{
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        justify-content: space-between;
+        -webkit-box-pack: justify;
+            -ms-flex-pack: justify;
+                justify-content: space-between;
         line-height: 2;
     }
     .SS1-height-text, .SS1-width-text, .SS1-depth-text{
@@ -150,15 +162,6 @@
     .btn--black, .btn--black:visited, .btn--black:link{
         display: inline-block;
         margin-bottom: 5rem;
-    }
-
-    /* 1000px tab-land*/
-    @media only screen and (max-width: 62.5em){
-
-    }
-    /* 900px tab-port*/
-    @media only screen and (max-width: 56.25em){
-
     }
     /* 800px tab-port*/
     @media only screen and (max-width: 50em){
@@ -182,10 +185,6 @@
             width: 90%;
         }
     }
-    /* 750px tab-port*/
-    @media only screen and (max-width: 46.875em){
-
-    }
     /*700px*/ 
     @media only screen and (max-width: 43.75em){
         .SS1-spec-table{
@@ -201,10 +200,6 @@
         .SS1-image{
             background-size: cover;
         }
-    }
-    /*600px*/ 
-    @media only screen and (max-width: 37.5em){
-
     }
     /*500px*/
     @media only screen and (max-width: 31.25em){
@@ -259,6 +254,9 @@
         .SS1-spec-title{
             font-size: 3.2rem;
             text-align: left;
+        }
+        .btn--black, .btn--black:visited, .btn--black:link{
+            width: 12rem;
         }
     }
 </style>

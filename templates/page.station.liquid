@@ -12,7 +12,7 @@
             {% comment %} <div class="stations-animation-R"></div> {% endcomment %}
         </div>
     </div>
-    <div class="stations-container stations-container02">
+    {% comment %} <div class="stations-container stations-container02">
         <div class="stations-SS2-bg">
             <div class="stations-SS2-image"></div>
             <div class="stations-SS2-bgLayer"></div>
@@ -26,7 +26,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> {% endcomment %}
     <div class="stations-container stations-container02">
         <div class="stations-SS1-bg">
             <div class="stations-SS1-image"></div>
@@ -71,10 +71,19 @@
         min-height: 70rem;
         height: 60vh;
         padding: 13rem 4rem 5rem 4rem;
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
     }
     .stations-titleContainer{
         position: relative;
@@ -86,7 +95,9 @@
         color: var(--color-dark-blue);
         text-align: center;
         left: 50%;
-        transform: translate(-50%, -0%);
+        -webkit-transform: translate(-50%, -0%);
+            -ms-transform: translate(-50%, -0%);
+                transform: translate(-50%, -0%);
         width: 100%;
     }
     .stations-title01{
@@ -108,7 +119,9 @@
         position: absolute;
         top: 0;
         right: -15rem;
-        transform: translate(-0%, -20%);
+        -webkit-transform: translate(-0%, -20%);
+            -ms-transform: translate(-0%, -20%);
+                transform: translate(-0%, -20%);
         z-index: 0;
     }
     .stations-bg-animation{
@@ -116,9 +129,14 @@
         height: 45px;
         width: 45px;
         position: relative;
-        transform: rotate(315deg);
+        -webkit-transform: rotate(315deg);
+            -ms-transform: rotate(315deg);
+                transform: rotate(315deg);
+        -webkit-transition: all .2s;
+        -o-transition: all .2s;
         transition: all .2s;
-        animation: arrowAnimation 3s infinite;
+        -webkit-animation: arrowAnimation 3s infinite;
+                animation: arrowAnimation 3s infinite;
     }
     .stations-bg-animation:before{
         content: '';
@@ -136,15 +154,23 @@
         border-radius: 99px 0px 0px 99px;
         background: var(--color-bubbles);
         position: absolute;
-        transform: rotate(90deg);
+        -webkit-transform: rotate(90deg);
+            -ms-transform: rotate(90deg);
+                transform: rotate(90deg);
         bottom: 50%;
         left: -50%;
     }
+    @-webkit-keyframes arrowAnimation{
+        0%   {-webkit-transform: rotate(315deg) scale(1);transform: rotate(315deg) scale(1);}
+        25%  {-webkit-transform: rotate(315deg) scale(1.2);transform: rotate(315deg) scale(1.2);}
+        50%  {-webkit-transform: rotate(315deg) scale(1);transform: rotate(315deg) scale(1);}
+        75% {-webkit-transform: rotate(315deg) scale(1.2);transform: rotate(315deg) scale(1.2);}
+    }
     @keyframes arrowAnimation{
-        0%   {transform: rotate(315deg) scale(1);}
-        25%  {transform: rotate(315deg) scale(1.2);}
-        50%  {transform: rotate(315deg) scale(1);}
-        75% {transform: rotate(315deg) scale(1.2);}
+        0%   {-webkit-transform: rotate(315deg) scale(1);transform: rotate(315deg) scale(1);}
+        25%  {-webkit-transform: rotate(315deg) scale(1.2);transform: rotate(315deg) scale(1.2);}
+        50%  {-webkit-transform: rotate(315deg) scale(1);transform: rotate(315deg) scale(1);}
+        75% {-webkit-transform: rotate(315deg) scale(1.2);transform: rotate(315deg) scale(1.2);}
     }
     .stations-container02{
         max-width: 100% !important;
@@ -190,7 +216,11 @@
         position: absolute;
         top: 50%;
         left: 50%;
-        transform: translate(-70%, -50%);
+        -webkit-transform: translate(-70%, -50%);
+            -ms-transform: translate(-70%, -50%);
+                transform: translate(-70%, -50%);
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
         width: 60%;
         max-width: 750px;
@@ -198,8 +228,13 @@
 
     .SS2-bodyL, .SS1-bodyL, .SS4-bodyL{
         width: 50rem;
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        flex-direction: column;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
         font-size: 3.2rem;
         color: var(--color-white);
         line-height: 2;
@@ -212,9 +247,15 @@
 
     .SS2-bodyR, .SS1-bodyR, .SS4-bodyR{
         width: 20rem;
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        align-items: center;
-        justify-content: center;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
         margin-left: 1rem;
     }
     
@@ -246,10 +287,14 @@
         }
         .stations-SS2-body, .stations-SS1-body, .stations-SS4-body{
             display: block;
-            transform: translate(-60%, -50%);
+            -webkit-transform: translate(-60%, -50%);
+                -ms-transform: translate(-60%, -50%);
+                    transform: translate(-60%, -50%);
         }
         .SS2-bodyR, .SS1-bodyR, .SS4-bodyR{
-            justify-content: unset;
+            -webkit-box-pack: unset;
+                -ms-flex-pack: unset;
+                    justify-content: unset;
             margin-left: 0rem;
         }
     }
@@ -262,13 +307,21 @@
             width: 100%;
         }
         .stations-bg-animation{
-            transform: rotate(315deg) scale(.8);
+            -webkit-transform: rotate(315deg) scale(.8);
+                -ms-transform: rotate(315deg) scale(.8);
+                    transform: rotate(315deg) scale(.8);
+        }
+        @-webkit-keyframes arrowAnimation{
+            0%   {-webkit-transform: rotate(315deg) scale(.8);transform: rotate(315deg) scale(.8);}
+            25%  {-webkit-transform: rotate(315deg) scale(1);transform: rotate(315deg) scale(1);}
+            50%  {-webkit-transform: rotate(315deg) scale(.8);transform: rotate(315deg) scale(.8);}
+            75% {-webkit-transform: rotate(315deg) scale(1);transform: rotate(315deg) scale(1);}
         }
         @keyframes arrowAnimation{
-            0%   {transform: rotate(315deg) scale(.8);}
-            25%  {transform: rotate(315deg) scale(1);}
-            50%  {transform: rotate(315deg) scale(.8);}
-            75% {transform: rotate(315deg) scale(1);}
+            0%   {-webkit-transform: rotate(315deg) scale(.8);transform: rotate(315deg) scale(.8);}
+            25%  {-webkit-transform: rotate(315deg) scale(1);transform: rotate(315deg) scale(1);}
+            50%  {-webkit-transform: rotate(315deg) scale(.8);transform: rotate(315deg) scale(.8);}
+            75% {-webkit-transform: rotate(315deg) scale(1);transform: rotate(315deg) scale(1);}
         }
     }
     /*500px*/
@@ -297,19 +350,29 @@
             font-size: 3.2rem;
         }
         .stations-bg-animation{
-            transform: rotate(315deg) scale(.6);
+            -webkit-transform: rotate(315deg) scale(.6);
+                -ms-transform: rotate(315deg) scale(.6);
+                    transform: rotate(315deg) scale(.6);
+        }
+        @-webkit-keyframes arrowAnimation{
+            0%   {-webkit-transform: rotate(315deg) scale(.6);transform: rotate(315deg) scale(.6);}
+            25%  {-webkit-transform: rotate(315deg) scale(.8);transform: rotate(315deg) scale(.8);}
+            50%  {-webkit-transform: rotate(315deg) scale(.6);transform: rotate(315deg) scale(.6);}
+            75% {-webkit-transform: rotate(315deg) scale(.8);transform: rotate(315deg) scale(.8);}
         }
         @keyframes arrowAnimation{
-            0%   {transform: rotate(315deg) scale(.6);}
-            25%  {transform: rotate(315deg) scale(.8);}
-            50%  {transform: rotate(315deg) scale(.6);}
-            75% {transform: rotate(315deg) scale(.8);}
+            0%   {-webkit-transform: rotate(315deg) scale(.6);transform: rotate(315deg) scale(.6);}
+            25%  {-webkit-transform: rotate(315deg) scale(.8);transform: rotate(315deg) scale(.8);}
+            50%  {-webkit-transform: rotate(315deg) scale(.6);transform: rotate(315deg) scale(.6);}
+            75% {-webkit-transform: rotate(315deg) scale(.8);transform: rotate(315deg) scale(.8);}
         }
         .stations-container02{
             height: 30rem;
         }
         .stations-SS2-body, .stations-SS1-body, .stations-SS4-body{
-            transform: translate(-50%, -50%);
+            -webkit-transform: translate(-50%, -50%);
+                -ms-transform: translate(-50%, -50%);
+                    transform: translate(-50%, -50%);
             width: 80%;
         }
         .SS2-bodyL, .SS1-bodyL, .SS4-bodyL{

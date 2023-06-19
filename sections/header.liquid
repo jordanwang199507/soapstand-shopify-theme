@@ -36,6 +36,13 @@
                         {{ link.title | link_to: link.url }}
                      </li>
                 {%- endfor %}
+                <li class="nav__item business-portal__item">
+                    <a class="business-portal" href="http://soapstandportal.com/">business portal</a>
+                </li>
+                <div class="nav-socials__list">
+                    <a href="https://www.facebook.com/TheSoapstand"><li class="nav-socials__item"><i class="fa-brands fa-facebook-f"></i></li></a>
+                    <a href="https://www.instagram.com/soapstandco"><li class="nav-socials__item"><i class="fa-brands fa-instagram"></i></li></a>
+                </div>
             </ul>
         </nav>
         </div>
@@ -51,13 +58,19 @@
     }
 
     .row{
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        justify-content: space-between;
+        -webkit-box-pack: justify;
+            -ms-flex-pack: justify;
+                justify-content: space-between;
         width: 90%;
         max-width: 1350px;
         min-width: 320px;
         margin: 2rem auto 0 auto;
-        align-items: center;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
     }
 
     .logo{
@@ -106,6 +119,10 @@
         margin-left: 10rem;
     }
 
+    .business-portal__item{
+        display: none;
+    }
+
     .nav__item a{
         font-family: "Montserrat";
         text-decoration: none;
@@ -125,7 +142,12 @@
     }
 
     .nav__item a.business-portal{
-        font-weight: 400;
+        margin-top: 2rem;
+        font-weight: 200;
+    }
+
+    .nav-socials__list{
+        display: none;
     }
 
     .nav__item a:hover, .nav__item:focus{
@@ -267,12 +289,14 @@
             height: 100% !important;
         }
         .nav-container{
-            height: 60vh;
+            height: 50vh;
             min-height: 55rem;
             width: 60%;
             background: #005560;
             position: absolute;
             left: -60rem;
+            -webkit-transition: .2s all;
+            -o-transition: .2s all;
             transition: .2s all;
         }
         .row{
@@ -286,11 +310,17 @@
             left: 3rem;
         }
         .nav__list{
-            flex-direction: column;
-            height: 40rem;
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+                -ms-flex-direction: column;
+                    flex-direction: column;
+            height: 50rem;
             width: 100%;
-            align-items: center;
-            justify-content: space-around;
+            -webkit-box-align: center;
+                -ms-flex-align: center;
+                    align-items: center;
+            -ms-flex-pack: distribute;
+                justify-content: space-around;
             padding-top: 7rem;
         }
         .nav__list-refill .nav__item a{
@@ -305,7 +335,32 @@
         .nav__item{
             margin-left: 0;
         }
+        .business-portal__item{
+            display: inline-block;
+        }
+        .nav-socials__list{
+            width: 100%;
+            max-width: 200px;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-pack: space-evenly;
+                -ms-flex-pack: space-evenly;
+                    justify-content: space-evenly;
+            -webkit-box-align: center;
+                -ms-flex-align: center;
+                    align-items: center;
+        }
 
+        .nav-socials__list a {
+            color: var(--color-white);
+            font-size: 2.3rem;
+        }
+        .nav-socials__list a:hover{
+            opacity: 0.5;
+            color: var(color-bubbles);
+            text-shadow: 3px 2px 2px rgba(76, 130, 140, 0.2);
+        }
         .menu-appear{
             left: 0 !important;
         }

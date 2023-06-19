@@ -6,7 +6,7 @@
                 <div class="SS2-shortDescription02">Ideal for tight aisles</div>
                 <div class="SS2-name">SS 2</div>
             </div>
-            <div class="SS2-image"></div>
+            <div class="SS2-image">Coming Soon</div>
         </div>
         <div class="SS2-spec">
             <div class="SS2-spec-title"><span class="station-modelNum">SS 2</span> Light and compact</div>
@@ -43,8 +43,12 @@
     }
     .SS2-content{
         padding: 12rem 0 0 0;   
+        display: -webkit-box;   
+        display: -ms-flexbox;   
         display: flex;
-        justify-content: space-between; 
+        -webkit-box-pack: justify;
+            -ms-flex-pack: justify;
+                justify-content: space-between; 
         min-height: 70rem;
     }
     .SS2-shortDescription{
@@ -90,6 +94,11 @@
         background-position: bottom;
         background-repeat: no-repeat;
         margin-top: 2rem;
+        text-align: center;
+        padding-top: 30%;
+        color: var(--color-water);
+        font-weight: 700;
+        font-size: 4rem;
     }
     .SS2-spec{
         width: 85%;
@@ -108,8 +117,12 @@
         font-weight: 700;
     }
     .SS2-spec-table{
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        justify-content: space-between;
+        -webkit-box-pack: justify;
+            -ms-flex-pack: justify;
+                justify-content: space-between;
     }
     .SS2-spec-tableL{
         width: 60rem;
@@ -133,8 +146,12 @@
         width: 18rem;
     }
     .SS2-spec-row{
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        justify-content: space-between;
+        -webkit-box-pack: justify;
+            -ms-flex-pack: justify;
+                justify-content: space-between;
         line-height: 2;
     }
     .SS2-height-text, .SS2-width-text, .SS2-depth-text{
@@ -150,15 +167,6 @@
     .btn--black, .btn--black:visited, .btn--black:link{
         display: inline-block;
         margin-bottom: 5rem;
-    }
-
-    /* 1000px tab-land*/
-    @media only screen and (max-width: 62.5em){
-
-    }
-    /* 900px tab-port*/
-    @media only screen and (max-width: 56.25em){
-
     }
     /* 800px tab-port*/
     @media only screen and (max-width: 50em){
@@ -182,10 +190,6 @@
             width: 90%;
         }
     }
-    /* 750px tab-port*/
-    @media only screen and (max-width: 46.875em){
-
-    }
     /*700px*/ 
     @media only screen and (max-width: 43.75em){
         .SS2-spec-table{
@@ -195,13 +199,6 @@
             width: 100%;
             margin-right: 0;
         }
-    }
-    /* 650px */
-    @media only screen and (max-width: 40.625em){
-    }
-    /*600px*/ 
-    @media only screen and (max-width: 37.5em){
-
     }
     /*500px*/
     @media only screen and (max-width: 31.25em){
@@ -255,6 +252,9 @@
         .SS2-spec-title{
             font-size: 3rem;
             text-align: left;
+        }
+        .btn--black, .btn--black:visited, .btn--black:link{
+            width: 12rem;
         }
     }
 </style>
