@@ -38,11 +38,11 @@
     <div class="about-container04-row">
       <div class="member">
         <div class="member-image member-image01"></div>
-        {% comment %} <div class="member-text" onclick="">
+        <div class="member-text" onclick="">
           <div class="member-name">Andy</div>
           <div class="member-title">CEO</div>
-        </div> {% endcomment %}
-        {% comment %} <div class="member-bgLayer" onclick=""></div> {% endcomment %}
+        </div>
+        <div class="member-bgLayer" onclick=""></div>
       </div>
       <div class="member">
         <div class="member-image member-image02"></div>
@@ -197,17 +197,14 @@
     position: relative;
   }
   .member-image{
-    height: 100%;
-    width: 100%;
+    height: 40rem;
+    width: 33rem;
     background-size: cover;
     background-position: top;
   }
   .member-image01{
-    height: 50rem;
-    width: 40rem;
-    background-size: cover;
-    background-position: top;
     background-image: url("https://cdn.shopify.com/s/files/1/0549/5580/2693/files/Member-Andy.png?v=1684362149");
+    {% comment %} background-image: url(../assets/Member-Andy.png); {% endcomment %}
   }
   .member-image02{
     background-image: url("https://cdn.shopify.com/s/files/1/0549/5580/2693/files/Member-Lode.png?v=1684362150");
