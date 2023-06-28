@@ -38,7 +38,7 @@
         position: relative;
     }
     .footerContainer{
-        width: 80%;
+        width: 85%;
         height: 100%;
         max-width: 1450px;
         min-width: 320px;
@@ -122,19 +122,20 @@
     }
     /* 800px tab-port*/
     @media only screen and (max-width: 50em){
+        .footerContainer{
+            width: 90%;
+            min-width: 0%;
+        }
         .footer-list{
             padding: 0 0rem;
         }
     }
     /*700px*/ 
     @media only screen and (max-width: 43.75em){
+
     }
     /* 600px */
     @media only screen and (max-width: 37.5em){
-        .footerContainer{
-            width: 90%;
-            min-width: 0%;
-        }
         .footer-logoContainer{
             width: 20rem;
             height: 20rem;
@@ -170,6 +171,9 @@
             left: 5vw;
             width: 20rem;
             height: 1.8rem;
+        }
+        .footer-copyRight{
+            bottom: 1rem;
         }
     }
     /*400px*/
