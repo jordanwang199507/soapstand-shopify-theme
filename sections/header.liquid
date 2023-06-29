@@ -381,7 +381,7 @@
     const navToggle = document.querySelector('.nav-toggle');
     const navContainer = document.querySelector('.nav-container');
     const logoImage = document.querySelector('.logo__image--locations');
-    document.getElementsByClassName("nav-toggle").addEventListener('click', () => {
+    navToggle.addEventListener('mousedown', () => {
             navContainer.classList.toggle('menu-appear');
             logoImage.classList.toggle('refill-toggle');
     });
