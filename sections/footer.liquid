@@ -16,9 +16,10 @@
                 <a href="https://www.instagram.com/soapstandco"><li class="nav-socials__item"><i class="fa-brands fa-instagram"></i></li></a>
             </ul>
         </div>
-
         <div class="footer-nameContainer">
+        <a class="footer-home" href="https://soapstand.com">
             <div class="footer-name"></div>
+        </a>
         </div>
         <div class="footer-copyRight">All rights reserved Soapstand Co.</div>
         <div class="footer-logoContainer">
@@ -79,7 +80,7 @@
         list-style: none;
     }
     .footer-item:not(:last-child){
-        margin-right: 2rem;
+        {% comment %} margin-right: 2rem; {% endcomment %}
     }
     .footer-item a{
         color: white;
@@ -122,9 +123,30 @@
         .footerContainer{
             width: 90%;
             min-width: 0%;
+            padding: 4rem 0 0 0;
         }
         .footer-list{
             padding: 0 0rem;
+        }
+        .footer-list01{
+            width: 100%;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+        .footer-item{
+            width: 30%;
+            margin: 1rem;
+        }
+        .footer-nameContainer{
+            bottom: 10%;
+            left: 5%;
+        }
+        .footer-copyRight{
+            bottom: 3%;
+            left: 5%;
+            transform: unset;
         }
     }
     /*700px*/ 
@@ -134,8 +156,8 @@
     /* 600px */
     @media only screen and (max-width: 37.5em){
         .footer{
-            height: 37vh;
-            min-height: 35rem;
+            height: 32vh;
+            min-height: 34rem;
         }
         .footer-logoContainer{
             width: 20rem;
@@ -148,8 +170,13 @@
                     align-items: flex-start;
             -webkit-box-orient: vertical;
             -webkit-box-direction: normal;
-                -ms-flex-direction: column;
-                    flex-direction: column;
+            flex-wrap: wrap;
+            width: 100%;
+            justify-content: start;
+        }
+        .footer-list01{
+            text-align: left;
+            margin-top: 4rem;
         }
         .footer-list02{
             -webkit-box-orient: horizontal;
@@ -164,7 +191,9 @@
             margin-right: 1rem;
         }
         .footer-item{
+            margin: 0;
             margin-bottom: 2rem;
+            width: 50%;
         }
         .footer-nameContainer{
             bottom: unset;
