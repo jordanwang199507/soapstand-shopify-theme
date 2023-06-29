@@ -1,7 +1,13 @@
 <meta name="format-detection" content="telephone=no">
 <section class="about">
   <div class="about-container about-container01">
-    <div class="about-image"></div>
+    <div class="about-image">
+        <div class="about-outerBound">
+            <div class="about-titleContainer">
+                <h1 class="main-title">Get to know the team</h1>
+            </div>
+        </div>
+    </div>
   </div>
   <div class="about-container about-container02">
     <div class="block-A">
@@ -102,6 +108,27 @@
     height: 80vh;
     max-height: 80rem;
     margin-top: -50px;
+    position: relative;
+  }
+  .about-outerBound{
+      max-width: 1650px;
+      width: 100%;
+      height: 100%;
+      margin: 0 auto;
+      padding: 0 4rem;
+  }
+  .about-titleContainer{
+      padding: 20rem 0;
+      position: absolute;
+      top: 20%;
+      width: 50rem;
+      color: var(--color-dark-blue);
+  }
+  .main-title{
+      font-size: 6rem;
+      font-weight: 700;
+      margin-bottom: 2rem;
+      margin-left: 5rem;
   }
   .about-image{
     height: 100%;
