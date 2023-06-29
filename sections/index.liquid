@@ -1,209 +1,109 @@
 <section class="hero--home">
-    <section class="hero--home01 home--section">
-        <div class="container row hero--home01__row">
-            <div class="hero--home01__text">
-                <div class="hero--home01__circle circle-01"></div>
-                <div class="hero--home01__circle circle-02"></div>
-                <div class="hero--home01__primary--container">
-                    <div class="hero--home01__primary">let's make<br>waste-free packaging<br>the <span class="hero--home01__primary--last">norm</span></div>
-                </div>
-                <p class="hero--home01__secondary">Soapstand refill stations support green lifestyles by 
-                    <br>making "sustainable" something that is accessible, 
-                    <br>convenient and affordable.
-                </p>
-                <div class="hero--home01__button-groups">
-                    {% if section.settings.include_home01_button01 %}
-                        <a href="{{ section.settings.home01_button01-link }}" class="btn">{{ section.settings.home01_button01 }}</a>
-                    {% endif %}
-                    {% if section.settings.include_home01_button02 %}
-                        <a href="{{ section.settings.home01_button02-link }}" class="btn">{{ section.settings.home01_button02 }}</a>
-                    {% endif %}
-                </div>
-
-                <div class="heading-socials">
-                    <p>Follow Us</p>
-                    <ul class="heading-socials__list">
-                        {% if section.settings.include_facebook %}
-                            <a href="{{ section.settings.facebook-link }}"><li class="heading-socials__item"><i class="fa-brands fa-facebook-f"></i></li></a>
-                        {% endif %}
-                        {% if section.settings.include_linkedin %}
-                            <a href="{{ section.settings.linkedin-link }}"><li class="heading-socials__item"><i class="fa-brands fa-linkedin-in"></i></li></a>
-                        {% endif %}
-                        {% if section.settings.include_instagram %}
-                            <a href="{{ section.settings.instagram-link }}"><li class="heading-socials__item"><i class="fa-brands fa-instagram"></i></li></a>
-                        {% endif %}
-                        {% if section.settings.include_youtube %}
-                            <a href="{{ section.settings.youtube-link }}"><li class="heading-socials__item"><i class="fa-brands fa-youtube"></i></li></a>
-                        {% endif %}
-                        {% if section.settings.include_twitter %}
-                            <a href="{{ section.settings.twitter-link }}"><li class="heading-socials__item"><i class="fa-brands fa-twitter"></i></li></a>
-                        {% endif %}
-                        
-                    </ul>
-                </div>
+    <section class="homepage01">
+        <div class="homepage-container homepage01-container01">
+            <div class="homepage-bg"></div>
+            <div class="homepage-bgLayer"></div>
+            <div class="homepage-titleLayer">
+                <div class="homepage01-title">Zero-waste refill made fast and easy</div>
             </div>
-            <div class="hero--home01__image-container">
-                {{ 'hero-image.svg' | asset_url | img_tag: 'hero image', 'hero--home01__image' }}  
+            {{ 'Homepage-logo.png' | asset_url | img_tag: 'homepage background logo', 'homepage-logo' }} 
+        </div>
+        <div class="homepage-container homepage01-container02">
+            <div class="homepage01-subtitle">
+                <div class="homepage01-subtitle01">Scale your impact</div>
+                <div class="homepage01-subtitle02">Your zero waste business in a box</div>    
+            </div> 
+        </div>
+        <div class="homepage-container homepage01-container03">
+            <div class="homepage-02bg"></div>
+        </div>
+        <div class="homepage-container homepage01-container03slider">
+            <div class="about-contact__slide">
+                <div class="slide slide--1">
+                  <div class="slide-content">
+                    <h3 class="slide-title">The Entrepeneur</h3>
+                    <div class="slide-body">We know exactly how hard it is to run a zero-waste business, so we created Soapstand for you. Grow your business with this smart refillery while saving time and money.</div>
+                  </div>
+                </div>
+                <div class="slide slide--2">
+                  <div class="slide-content">
+                    <h3 class="slide-title">Retail & Grocery</h3>
+                    <div class="slide-body">With your customers becoming more conscious about their plastic usage, Soapstand is a great way to make both a statement and start your zero-waste journey without the hassle.</div>
+                  </div>
+                </div>
+                <div class="slide slide--3">
+                  <div class="slide-content">
+                    <h3 class="slide-title">Everyone</h3>
+                    <div class="slide-body">We believe zero-waste and reuse is for everyone. To realize the future we all want, we need every single person on-board. If you have an idea on how we can partner, let's talk.</div>
+                  </div>
+                </div>
+                {% comment %} <div class="slide slide--4">
+                  <div class="slide-content">
+                    <h3 class="slide-title">The apartment owner</h3>
+                    <div class="slide-body">You wanna offer your tenants a fast, accessible and affordable way to purchase cleaning products while promoting a zero-waste lifestyle? We have just what you want, this is the station for you. </div>
+                  </div>
+                </div> {% endcomment %}
             </div>
         </div>
-        {{ 'hero-corner.svg' | asset_url | img_tag: 'hero corner image', 'hero--home01__image--corner' }}  
-        {{ 'hero-bottom.svg' | asset_url | img_tag: 'hero bottom image', 'hero--home01__image--bottom' }}  
-    </section>
-    <section class="hero--home02 home--section">
-        <div class="title__primary hero--home02__title"><span>{{ section.settings.home02_title }}</span></div>
-        <div class="container row home--container hero--home02__row">
-            <div class="hero--home02__text">
-                <div class="hero--home02__circle home02__circle-01">
-                    {{ 'home02__logo.svg' | asset_url | img_tag: 'hero 02 logo', 'hero--home02__logo' }}  
-                </div>
-                <p class="hero--home02__secondary hero--home02__secondary--first bold">The new solution<br>to sustainable living</p>
-                <p class="hero--home02__secondary hero--home02__secondary--second">Soapstand solutions make<br>purchasing soap an accessible,<br>convenient and affordable<br>process.</p>
+        <div class="homepage-container homepage01-container04">
+            <div class="homepage01-titleContainer04">
+                <p class="homepage01-subtitle04">We made refill easy</p>
+                <div class="homepage01-title04">Power your business with Soapstand</div>
             </div>
-            <div class="hero--home02__image-container-L">
-                <div class="hero--home02__circle home02__circle-02"></div>
-                <div class="hero--home02__circle home02__circle-03"></div>
-                <div class="hero--home02__circle home02__circle-04"></div>
-                <div class="hero--home02__image-container">
-                    <img class="hero--home02__image">
+            <div class="homepage01-bodyContainer04">
+                <div class="block block-01">
+                    <div class="block-title block-title01">01 ─ Cleaen and Fast</div>
+                    <div class="block-body block-body01">Manual filling takes a long time and can be a sticky experience. With Soapstand, you can fill a single 1 litre / 32oz bottle as fast as 20 seconds</div>
                 </div>
-                <div class="hero--home02__circle home02__circle-05"></div>
-                <div class="hero--home02__circle home02__circle-06"></div>
-
+                <div class="block block-02">
+                    <div class="block-title block-title02">02 ─ Interactive</div>
+                    <div class="block-body block-body02">With our large touchscreen, interact with customers by telling them about your product with more than just words.</div>
+                </div>
+                <div class="block block-03">
+                    <div class="block-title block-title03">03 ─ Powerful</div>
+                    <div class="block-body block-body03">Soapstand comes with a growing list of features, such as mutli-variable coupons, that gives you the tools needed to grow your business.</div>
+                </div>
+                <div class="block block-04">
+                    <div class="block-title block-title04">04 ─ Plug and Play</div>
+                    <div class="block-body block-body04">We made setting up each station hassle-free. After a quick initial set up, just literally plug the station into the outlet to begin selling packaging-free.</div>
+                </div>
+                <div class="block block-05">
+                    <div class="block-title block-title05">05 ─ Operate Remotely</div>
+                    <div class="block-body block-body05">Save time by using our Soapstand portal to manage your fleet and products with a click of a finger.</div>
+                </div>
+                <div class="block block-06">
+                    <div class="block-title block-title06">06 ─ Scalable</div>
+                    <div class="block-body block-body06">By choosing Soapstand, you can easily add on an extra Soapstand to quickly build your fleet efficiently and cost-effectively.</div>
+                </div>
             </div>
         </div>
-    </section>  
-    <section class="hero--home03 home--section">
-        <div class="title__primary hero--home03__title"><span>{{ section.settings.home03_title }}</span></div>
-        <div class="container row home--container hero--home03__row">
-            <div class="hero--home03__container hero--home03__container01">
-                <div class="hero--home03__content">
-                    <div class="hero--home03__value container01__value">50%</div>
-                    <div class="icon__container">
-                        <div class="icon-dollar-circle">
-                            <i class="fa-solid fa-dollar-sign"></i>
-                        </div>
-                        <div class="icon-dollar-circle">
-                            <i class="fa-solid fa-dollar-sign"></i>
-                        </div>
-                        <div class="icon-dollar-circle">
-                            <i class="fa-solid fa-dollar-sign"></i>
-                        </div>
-                        <div class="icon-dollar-circle">
-                            <i class="fa-solid fa-dollar-sign"></i>
-                        </div>
-                        <div class="icon-dollar-circle">
-                            <i class="fa-solid fa-dollar-sign"></i>
-                        </div>
+        <div class="homepage-container homepage01-container05">
+            <div class="homepage-container05-bg">
+                <div class="homepage-container05-image"></div>
+                <div class="homepage-container05-bgLayer"></div>
+                <div class="homepage-container05-body">
+                    <div class="container05-bodyL">
+                        <div class="container05-bodyL-top">Business in a box</div>
+                        <div class="container05-bodyL-bottom">meet our most powerful station ever</div>
                     </div>
-                    <div class="hero--home03__text container01__text">savings on purchase</div>
-                </div>
-            </div>
-            <div class="hero--home03__container hero--home03__container02">
-                {{ 'home03__container02.svg' | asset_url | img_tag: 'hero home03 container02', 'hero--home03__image-container02' }}  
-                <div class="hero--home03__content">
-                    <div class="hero--home03__text container02__text--primary">each purchase means</div>
-                    <div class="hero--home03__text container02__text--secondary">-1 bottle in our landfill</div>
-                </div>
-            </div>
-            <div class="hero--home03__container hero--home03__container03">
-                {{ 'home03__container03.svg' | asset_url | img_tag: 'hero home03 container02', 'hero--home03__image-container03' }}  
-                <div class="hero--home03__content">
-                    <div class="hero--home03__value container03__value">100%</div>
-                    <div class="hero--home03__text container03__text">positive<br>impact</div>
-                </div>
-                {% if section.settings.include_home03_button01 %}
-                    <a href="{{ section.settings.home03_button01-link }}" class="btn btn__secondary">{{ section.settings.home03_button01 }}</a>
-                {% endif %}
-            </div>
-        </div>
-    </section>
-    <section class="hero--home03a home--section">
-        <div class="container row home--container hero--home03a__row">
-            <div class="hero--home03a__text-container"> 
-                <span class="text-decor text-decor01"></span>    
-                <span class="text-decor text-decor02"></span>
-                <span class="text-decor text-decor03"></span>
-                <span class="text-decor text-decor04"></span>
-                <div class="hero--home03a__title">
-                    <span>{{ section.settings.home03a_title }}</span>
-                </div>
-                <div class="hero--home03a__text">
-                    <span>{{ section.settings.home03a_text }}</span>
-                </div>
-            </div>
-            <div class="hero--home03a__partners-conatiner">
-                <div class="partners partner01">
-                    {{ 'partner01-GoodFilling.png' | asset_url | img_tag: 'partner 01 Good Filling', 'partners-logo partner01-GF' }}  
-                </div>
-                <div class="partners partner02">
-                    {{ 'partner02-ChoicesMarket.png' | asset_url | img_tag: 'partner 02 Choices Market', 'partners-logo partner02-CM' }}  
-                </div>
-                <div class="partners partner03">
-                    {{ 'partner03-Stongs.png' | asset_url | img_tag: 'partner 03 Stongs', 'partners-logo partner03-S' }}  
-                </div>
-                <div class="partners partner04">
-                    {{ 'partner04-FamousFoods.png' | asset_url | img_tag: 'partner 04 FF', 'partners-logo partner04-FF' }}  
-                </div>
-                <div class="partners partner05">
-                    {{ 'partner05-UBC.png' | asset_url | img_tag: 'partner 05 UBC', 'partners-logo partner05-UBC' }}  
+                    <div class="container05-bodyR">
+                        <a href="pages/SS1" class="btn-readMore">Read more</a>                
+                    </div>
                 </div>
             </div>
         </div>
-    </section>
-    <section class="hero--home04 home--section" id="howto">
-        <div class="title__primary hero--home04__title"><span>{{ section.settings.home04_title }}</span></div>
-        {{ 'home04-topCenter.svg' | asset_url | img_tag: 'hero home04 top background image', 'hero--home04__topCenter' }}  
-        <div class="container row home--container hero--home04__row">
-            <div class="box box-image box1-image">
-                {{ 'home04-center.svg' | asset_url | img_tag: 'hero home04 top background image', 'hero--home04__center hero--home04__center01' }}  
-                {{ 'home04__image01.svg' | asset_url | img_tag: 'hero home04 image01', 'hero--home04__image01' }}  
+        <div class="homepage-container homepage01-container06">
+            <div class="container06-imgContainer">
+                <div class="container06-image"></div>
             </div>
-            <div class="box box-text box2-text">
-                <div class="box-text-container box2-text-container">
-                    <div class="box-text-number box2-text-number">1</div>
-                    <p class="box-text-text box2-text-text">{{ section.settings.refill_step01 }}</p>
-                </div>
-            </div>
-            <div class="box box-text box3-text">
-                <div class="box-text-container box3-text-container">
-                    <div class="box-text-number box3-text-number">2</div>
-                    <p class="box-text-text box3-text-text">{{ section.settings.refill_step02 }}</p>
-                </div>
-            </div>
-            <div class="box box-image box4-image">
-                <div class="box-image-container">
-                    {{ 'home04__image02.png' | asset_url | img_tag: 'hero home04 image02', 'hero--home04__image02' }}    
-                    {{ 'home04-center.svg' | asset_url | img_tag: 'hero home04 top background image', 'hero--home04__center hero--home04__center02' }}  
-              
-                </div>
-            </div>
-            <div class="box box-image box5-image">
-                <div class="box-image-container">
-                    {{ 'home04-center.svg' | asset_url | img_tag: 'hero home04 top background image', 'hero--home04__center hero--home04__center03' }}  
-                    {{ 'home04__image03.png' | asset_url | img_tag: 'hero home04 image03', 'hero--home04__image03' }}                  
-                </div>
-
-            </div>
-            <div class="box box-text box6-text">
-                <div class="box-text-container box6-text-container">
-                    <div class="box-text-number box6-text-number">3</div>
-                    <p class="box-text-text box6-text-text">{{ section.settings.refill_step03 }}</p>
-                </div>
-            </div>
-            <div class="box box-text box7-text">
-                <div class="box-text-container box7-text-container">
-                    <div class="box-text-number box7-text-number">4</div>
-                    <p class="box-text-text box7-text-text">{{ section.settings.refill_step04 }}</p>
-                </div>
-            </div>
-            <div class="box box-image box8-image">
-                {{ 'home04-center.svg' | asset_url | img_tag: 'hero home04 top background image', 'hero--home04__center hero--home04__center04' }}  
-                {{ 'home04__image04.png' | asset_url | img_tag: 'hero home04 image04', 'hero--home04__image04' }}                  
+            <div class="container06-textContainer">
+                <div class="container06-title">Soapstand makes being sustainable easy, fast & effective</div>
+                <div class="container06-paragraph">What is that one step you’ve been looking for when promoting a more sustainable lifestyle? That roadblock that made it hard,  yeah we took care of it for you. </div>
+                <a href="/pages/locations-new" class="btn">Our stations</a>                
             </div>
         </div>
-        {{ 'home04-bottomLeft.svg' | asset_url | img_tag: 'hero home04 bottom left background image', 'hero--home04__bottomLeft' }}
-        {{ 'home04-bottomRight.svg' | asset_url | img_tag: 'hero home04 bottom right background image', 'hero--home04__bottomRight' }}  
     </section>
+    
 </section> 
 
 <style>
@@ -212,157 +112,305 @@
         overflow: hidden;
     }
 
-    .home--container{
-        -webkit-transition: opacity 1s, -webkit-transform 1s;
-        transition: opacity 1s, -webkit-transform 1s;
-        -o-transition: transform 1s, opacity 1s;
-        transition: transform 1s, opacity 1s;
-        transition: transform 1s, opacity 1s, -webkit-transform 1s;
-    }
-
-    .hero--home01{
-        position: relative;
-    }
-
-    .hero--home01__row{
-        display:-webkit-box;
-        display:-ms-flexbox;
-        display:flex;
-        -webkit-box-orient:vertical;
-        -webkit-box-direction:normal;
-            -ms-flex-direction:column;
-                flex-direction:column;
-    }
-
-    .hero--home01__image-container{
-        width: 70%;
-        margin: 0 auto;
-    }
-
-    .hero--home01__image{
+    .homepage-container{
         width: 100%;
-        -o-object-fit: fill;
-           object-fit: fill;
+        max-width: 1450px;
+        min-width: 320px;
+        margin: 0 auto;
+        height: auto;
     }
 
-    .hero--home01__circle{
-        width: 15px;
-        height: 15px;
-        border-radius: 50%;
-        background: #005560;
-        position: absolute;
-    }
-
-    .circle-01{
-        right: -10%;
-    }
-
-    .circle-02{
-        left: 2%;
-        bottom: 41%;
-    }
-
-    .hero--home01__text{
-        margin: 20px auto;
+    .homepage01-container01{
         position: relative;
+        max-width: 100% !important;
+        min-width: 100% !important;
+        height: 100vh;
+        min-height: 80rem;
+        max-height: 100rem;
+        margin-top: -50px;
     }
 
-    .hero--home01__primary{
-        font-family: "Brevia", Montserrat, sans-serif;
-        font-size: 36px;
+    .homepage-bg{
+        background-image: url("https://cdn.shopify.com/s/files/1/0549/5580/2693/files/HomepageA.png?v=1684362150");
+        background-size: cover;
+        background-position: center;
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+    }
+
+    .homepage-bgLayer{
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.3);
+    }
+
+    .homepage-titleLayer{
+        position: relative;
+        margin: 0 auto;
+        width: 85%;
+        max-width: 1450px;
+        top: 50%;
+    }
+
+    .homepage01-title{
+        font-size: 5rem;
+        width: 50rem;
+        margin-top: 50px;
+        color: var(--color-white);
+        font-family: "Montserrat";
+        font-weight: 700;
+    }
+
+    .homepage-logo{
+        position: absolute;
+        right: 5%;
+        bottom: -5rem;
+        height: 35rem;
+        width: 35rem;
+    }
+
+    .homepage01-container02{
+        padding: 10vh 2vw;
+    }
+
+    .homepage01-subtitle{
+        text-align: center;
+        font-family: "Montserrat";
+        color: var(--color-dark-blue);
+    }
+
+    .homepage01-subtitle01, .homepage01-subtitle04{
+        font-size: 2rem;
         font-weight: 400;
-        color: #94B7B8;
-        line-height: 1.2;
-        white-space: nowrap;
     }
 
-    .hero--home01__primary--last{
-        color: #005560;
+    .homepage01-subtitle02{
+        font-size: 4rem;
+        width: 40rem;
+        font-weight: 700;
+        margin: 1.5vh auto 0 auto;
     }
 
-    .hero--home01__secondary{
-        margin: 20px 0 0 0;
-        color: #005560;
-        font-size: 14px;
+    .homepage01-container03{
+        position: relative;
+        max-width: 100% !important;
+        min-width: 100% !important;
+        height: 60vh !important;
+        min-height: 55rem;
+    }
+    .homepage-02bg{
+        background-image: url("https://cdn.shopify.com/s/files/1/0549/5580/2693/files/Homepage-02.png?v=1684362249");
+        height: 100%;
+        background-size: cover;
+        background-position: 75%;
     }
 
-    .hero--home01__button-groups{
-        display: -ms-inline-grid;
-        display: inline-grid;
-        -ms-grid-columns: 1fr 2em 1fr;
-        grid-template-columns: 1fr 1fr;
-        grid-gap: 2em;
-        margin-top: 55px;
+    .homepage01-container03slider{
+        height: auto;
+        position: relative;
+        max-width: 100% !important;
+        min-width: 100% !important;
     }
 
-    .heading-socials{
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: flex;
-        margin-top: 30px;
+    .about-contact__slide{
+        width: 100%;
+        min-height: 35rem;
+        margin: 0 auto;
+        position: relative;
+        overflow: hidden;
+        -webkit-transition: all .2s;
+        -o-transition: all .2s;
+        transition: all .2s;
     }
 
-    .heading-socials p{
-        -ms-flex-item-align: center;
-            -ms-grid-row-align: center;
-            align-self: center;
-        font-size: 14px;
-    }
-
-    .heading-socials__list{
-        list-style: none;
+    .slide{
+        position: absolute;
+        background: var(--color-dark-blue);
+        top: 0;
+        width: 100%;
+        height: 100%;
         display: -webkit-box;
         display: -ms-flexbox;
         display: flex;
         -webkit-box-align: center;
             -ms-flex-align: center;
                 align-items: center;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
+        -webkit-transition: -webkit-transform 1s;
+        transition: -webkit-transform 1s;
+        -o-transition: transform 1s;
+        transition: transform 1s;
+        transition: transform 1s, -webkit-transform 1s;
     }
 
-    .heading-socials__list a {
-        color: black;
+    .slide--2{
+        background: var(--color-water);
     }
 
-    .heading-socials__list a:hover{
-        opacity: 0.5;
-        color: #4c828c;
-        text-shadow: 3px 2px 2px rgba(76, 130, 140, 0.2);
+    .slide--3{
+        background: var(--color-bubbles);
     }
 
-    .heading-socials__item{
-        margin: .75em;
+    .slide-content{
+        width: 75%;
+        -webkit-transition: all .2s;
+        -o-transition: all .2s;
+        transition: all .2s;
     }
 
-    .heading-socials__item i{
-        font-size: 14px;
+    .slide-title{
+        font-size: 3.2rem;
+        font-weight: 700;
+        margin-bottom: 3vh;
+        color: var(--color-white);
+        text-align: center;
     }
 
-    .hero--home01__image--bottom{
-        position: absolute;
-        -webkit-filter: drop-shadow(3px 0px 2px rgb(0 0 0 / 0.2));
-                filter: drop-shadow(3px 0px 2px rgb(0 0 0 / 0.2));
-        width: 6%;
-        max-width: 150px;
-        bottom: 0%;
-        left: 10%;
+    .slide-body{
+        text-align: center;
+        width: 72rem;
+        margin: 0 auto;
+        font-size: 1.6rem;
+        line-height: 3rem;
+        color: var(--color-white);
     }
 
-    .hero--home01__image--corner{
-        position: absolute;
-        right: 0%;
-        bottom: 0%;
-    }
+    .slide--3 .slide-title{ color: var(--color-dark-blue);}
+    .slide--3 .slide-body{ color: var(--color-dark-blue);}
 
-    .hero--home02{
-        height: auto;
-        background: -webkit-gradient(linear, left top, left bottom, from(#438897), color-stop(30.92%, rgba(57, 127, 141, 0.843577)), color-stop(60.09%, rgba(42, 114, 128, 0.628703)), color-stop(82.32%, rgba(68, 138, 151, 0.477126)), color-stop(96.41%, rgba(89, 158, 170, 0.350813)));
-        background: -o-linear-gradient(top, #438897 0%, rgba(57, 127, 141, 0.843577) 30.92%, rgba(42, 114, 128, 0.628703) 60.09%, rgba(68, 138, 151, 0.477126) 82.32%, rgba(89, 158, 170, 0.350813) 96.41%);
-        background: linear-gradient(180deg, #438897 0%, rgba(57, 127, 141, 0.843577) 30.92%, rgba(42, 114, 128, 0.628703) 60.09%, rgba(68, 138, 151, 0.477126) 82.32%, rgba(89, 158, 170, 0.350813) 96.41%); 
+    .homepage01-container04{
+        padding: 10rem 10rem 15rem 10rem;
         position: relative;
-        padding: 50px 0;
     }
 
-    .hero--home02__row{
+    .homepage01-titleContainer04{
+        text-align: center;
+        color: var(--color-dark-blue);
+    }
+
+    .homepage01-title04{
+        margin-top: 1.5vh;
+        font-size: 4rem;
+        font-weight: 700;
+    }
+
+    .homepage01-bodyContainer04{
+        display: -ms-grid;
+        display: grid;
+        height: auto;
+        margin: 0 auto;
+        grid-template-columns: repeat(auto-fill, minmax(min(350px,100%), 1fr));
+        -ms-grid-rows: 250px 3rem 250px;
+        grid-template-rows: repeat(2, 250px);
+        grid-auto-flow: row;
+        grid-auto-rows: 250px;
+        grid-gap: 3rem;
+
+        -webkit-box-align: center;
+
+            -ms-flex-align: center;
+
+                align-items: center;
+        justify-items: center;
+    }
+
+    .block{
+        width: 26rem;
+        color: var(--color-dark-blue);
+    }
+
+    .block-title{
+        font-size: 1.9rem;
+        margin-bottom: 1.5vh;
+        font-weight: 700;
+    }
+
+    .block-body{
+        width: 80%;
+        margin-left: auto;
+        font-size: 1.4rem;
+    }
+
+    .homepage-container04-topLeft{
+        width: 20rem;
+        position: absolute;
+        top: 0;
+    }
+
+    .homepage01-container04-decor{
+        width: 25rem;
+        position: absolute;
+        right: 5rem;
+        bottom: 0;
+        display: inline-block;
+    }
+
+    .homepage-container04-bottomRight01{
+        width: 100%;
+    }
+
+    .homepage-container04-bottomRight02{
+        position: absolute;
+        top: -5rem;
+        left: 0;
+        width: 6rem;
+        height: 6rem;
+    }
+
+    .homepage01-container05{
+        max-width: 100% !important;
+        min-width: 100% !important;
+        height: 60rem;
+    }
+
+    .homepage-container05-image{
+        background-image: url("https://cdn.shopify.com/s/files/1/0549/5580/2693/files/Homepage-05.png?v=1684362149");
+        height: 100%;
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
+    .homepage-container05-bg{
+        width: 100%;
+        height: 100%;
+        position: relative;
+    }
+
+    .homepage-container05-bgLayer{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: var(--color-water);
+        opacity: .35;
+    }
+
+    .homepage-container05-body{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -webkit-transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+                transform: translate(-50%, -50%);
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        width: 75%;
+        max-width: 1250px;
+    }
+
+    .container05-bodyL{
+        width: 80%;
         display: -webkit-box;
         display: -ms-flexbox;
         display: flex;
@@ -370,1852 +418,384 @@
         -webkit-box-direction: normal;
             -ms-flex-direction: column;
                 flex-direction: column;
-        -webkit-box-align: center;
-            -ms-flex-align: center;
-                align-items: center;
-        height: auto;
-        padding: 0px 0px 20vh 0px;
+        font-size: 3.2rem;
+        color: var(--color-white);
+        line-height: 2;
     }
 
-    .hero--home02__text{
-        width: 70%;
-        text-align: center;
+    .container05-bodyL-top{
+        font-weight: 700;
+        border-bottom: 3px solid var(--color-white);
     }
 
-    .hero--home02__title{
-        padding: 50px 0 40px 0;
-    }
-
-    .hero--home02__secondary--first{
-        word-spacing: 2px;
-        font-size: 30px;
-        margin: 30px 0 50px 0;
-    }
-
-    .hero--home02__secondary--second{
-        margin-bottom: 40px;
-        font-weight: 200;
-    }
-
-    .hero--home02__secondary{
-        color: #fffdfa;
-    }
-
-    .hero--home02__circle{
-        border-radius: 50%;
-        background: -webkit-gradient(linear, left top, left bottom, from(#65ACAE), color-stop(58.57%, #317C82), to(#004E59));
-        background: -o-linear-gradient(top, #65ACAE 0%, #317C82 58.57%, #004E59 100%);
-        background: linear-gradient(180deg, #65ACAE 0%, #317C82 58.57%, #004E59 100%);
-        position: relative;
-    }
-
-    .home02__circle-01{
-        margin: 0 70% 10% 30%;
-        width: 130px;
-        height: 130px;
-    }
-
-    .home02__circle-02{
-        width: 130px;
-        height: 130px;
-        position: absolute;
-        top: 25%;
-        z-index: -1;
-    }
-
-    .home02__circle-03{
-        width: 30px;
-        height: 30px;
-        position: absolute;
-        z-index: 1;
-    }
-
-    .home02__circle-04{
-        width: 50px;
-        height: 50px;
-        position: absolute;
-        z-index: 1;
-    }
-
-    .home02__circle-05{
-        width: 60px;
-        height: 60px;
-        position: absolute;
-    }
-
-    .home02__circle-06{
-        width: 35px;
-        height: 35px;
-        position: absolute;
-        z-index: 1;
-    }
-
-    .hero--home02__logo{
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        -webkit-transform: translate(-50%, -50%);
-            -ms-transform: translate(-50%, -50%);
-                transform: translate(-50%, -50%);
-    }
-
-    .hero--home02__image-container-L{
-        position: relative;
-        z-index: 0;
-    }
-
-    .hero--home02__image-container{
-        margin: 0 auto;
-        text-align: center;
-        overflow: hidden;
-        border-radius: 50px;
-        border: 8px solid transparent; 
-        background: -o-linear-gradient(45deg, #3A7E91 100%, #6AB1B1 92.15%, #6AB1B1 71.37%, #65ACAE 100%) border-box; 
-        background: linear-gradient(45deg, #3A7E91 100%, #6AB1B1 92.15%, #6AB1B1 71.37%, #65ACAE 100%) border-box;
-        width: 570px;
-        height: 500px;
-    }
-
-    .hero--home02__image{
-        background:url("https://cdn.shopify.com/s/files/1/0549/5580/2693/files/home02__image.png?v=1670367320");
-        height: 100%;
-        width: 100%;
-        background-position: left;
-        background-size: cover;
-        -webkit-transform: scale(1.1);
-            -ms-transform: scale(1.1);
-                transform: scale(1.1);
-    }
-
-    .bold{
-        font-weight: bold;
-    }
-
-    .hero--home03{
-        background-image:url("https://cdn.shopify.com/s/files/1/0549/5580/2693/files/home03.png?v=1670367341");
-        background-size: cover;
-        background-position: top;
-        height: auto;
-        padding: 8em 0 4em 0;
-        margin-top: -17vh;
-        position: relative;
-        font-family: "Brevia", Montserrat, sans-serif;
-        color: #fffdfa;
-        width: 100%;
-    }
-
-    .hero--home03__title{
-        font-size: 29px;
-        padding: 30px 0px 40px 0px;
-    }
-
-    .hero--home03__container{
-        width: 100%;
-        height: 220px;
+    .container05-bodyR{
+        width: 20%;
         display: -webkit-box;
         display: -ms-flexbox;
         display: flex;
-        -webkit-box-pack: center;
-            -ms-flex-pack: center;
-                justify-content: center;
         -webkit-box-align: center;
             -ms-flex-align: center;
                 align-items: center;
-        margin-bottom: 30px;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
     }
 
-    .hero--home03__content{
-        text-align: center;
+    .btn-readMore{
+        font-family: "Montserrat";
+        text-decoration: none;
+        color: var(--color-white);
+        font-size: 2rem;
+        font-weight: 400;
+        border: 2px solid var(--color-white);
+        padding: 1rem 1.5rem;
+        border-radius: 50px;
     }
 
-    .hero--home03__text{
-        white-space: nowrap;
-    }
-
-    .icon-dollar-circle{
-        margin: .4em;
-        width: 30px;
-        height: 30px;
-        border: 3px solid #4c828c;
-        border-radius: 50%;
-        position: relative;
-        display: inline-block;
-    }
-
-    .fa-dollar-sign{
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        -webkit-transform: translate(-50%, -50%);
-            -ms-transform: translate(-50%, -50%);
-                transform: translate(-50%, -50%);
-        font-size: 20px;
-        color: #4c828c;
-    }
-
-    .hero--home03__container{
-        position: relative;
-    }
-
-    .container02__text--primary{
-        color: #a8cccc;
-        margin-bottom: 1em;
-    }
-
-    .hero--home03__image-container02{
-        position: absolute;
-        height: 140%;
-    }
-
-    .container03__value{
-        margin-bottom: .2em;
-    }
-
-    .hero--home03__image-container03{
-        position: absolute;
-        height: 90%;
-        margin: 5% 5% 0 0;
-    }
-
-    .hero--home03a{
-        background: #004E58;
-        padding: 0 0 10em 0;
-        margin-top: -5px;
-    }
-
-    .hero--home03a__row{
-        justify-content: space-evenly;
-    }
-
-    .hero--home03a__text-container{
-        padding: 80px 75px 50px 75px;
-        width: 550px;
-        line-height: 1.5;
-        position: relative;
-    }
-
-    .hero--home03a__title{
-        font-size: 36px;
-        color: #fffdfa;
-        font-family: "Brevia", Montserrat, sans-serif;
-        letter-spacing: .35;
-        word-spacing: .45;
-        position: relative;
-    }
-
-    .hero--home03a__text{
-        width: 400px;
-        font-size: 24px;
-        color: #a8cccc;
-        font-weight: 200;
-        letter-spacing: .25;
-        word-spacing: .45;
-        position: relative;
-        z-index: 10;
-    }
-
-    .text-decor, .text-decor:before, .text-decor:after{
-        content: '';
-        background: #266872;
-        border-radius: 50%;
-        position: absolute;
-    }
-
-    .text-decor01{
-        width: 30px;
-        height: 30px;
-        left: 55px;
-        top: 75px;
-    }
-
-    .text-decor01:before{
-        width: 15px;
-        height: 15px;
-        top: 30px;
-        left: -10px;
-    }
-
-    .text-decor02{
-        width: 27px;
-        height: 27px;
-        right: 120px;
-        top: 105px;
-    }
-
-    .text-decor02:before{
-        width: 10px;
-        height: 10px;
-        right: 5px;
-        top: 30px;
-    }
-
-    .text-decor03{
-        width: 60px;
-        height: 60px;
-        top: 175px;
-        left: 50%;
-    }
-
-    .text-decor03:before{
-        width: 10px;
-        height: 10px;
-        bottom: 0;
-        right: -15px;
-    }
-
-    .text-decor04{
-        width: 35px;
-        height: 35px;
-        bottom: 20%;
-        right: 75px;
-    }
-
-    .text-decor04:before{
-        height: 15px;
-        width: 15px;
-        top: -10px;
-        left: -10px;
-    }
-
-    .text-decor04:after{
-        height: 10px;
-        width: 10px;
-        top: -20px;
-        right: -20px;
-    }
-
-    .hero--home03a__partners-conatiner{
-        width: 650px;
-        max-width: 650px;
-        min-width: 620px;
+    .homepage01-container06{
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        flex-wrap: wrap;
-        justify-content: space-evenly;
-        margin: 0 auto;
+        padding: 5rem 2rem 6rem 2rem;
     }
 
-    .partners{
-        margin: 10px;
-        width: 11em;
-        height: 11em;
-        border-radius: 50%;
-        background: #266872;
-        position: relative;
+    .container06-imgContainer{
+        width: 62%;
+        height: 45vh;
+        min-height: 55rem;
+        margin-right: 5rem;
     }
 
-    .partners:before, .partners:after{
-        content: '';
-        background: #266872;
-        position: absolute;
-        border-radius: 50%;
+    .container06-imgContainer{
+        background-image: url("https://cdn.shopify.com/s/files/1/0549/5580/2693/files/Homepage-06.png?v=1684362150");
+        background-size: cover;
+        background-position: center;
     }
 
-    .partner01:before{
-        width: 15px;
-        height: 15px;
+    .container06-textContainer{
+        color: var(--color-dark-blue);
+        width: 30%;
+        padding: 5vh 0;
+        width: 40rem;
     }
 
-    .partner02:before{
-        width: 15px;
-        height: 15px;
-        top: 6px;
-        left: 28px;
+    .container06-title{
+        font-size: 4rem;
+        font-weight: 700;
+        margin-bottom: 3vh;
     }
 
-    .partner03:before{
-        width: 15px;
-        height: 15px;
-        top: -2px;
-        left: 28px;
+    .container06-paragraph{
+        font-size: 2rem;
+        line-height: 1.5;
+        margin-bottom: 3vh;
     }
 
-    .partner04:before{
-        width: 20px;
-        height: 20px;
-        top: 0px;
-        right: 5px;
+    .btn-ourStations{
+        font-family: "Montserrat";
+        text-decoration: none;
+        color: var(--color-dark-blue);
+        font-size: 1.8rem;
+        font-weight: 400;
+        border: 2px solid var(--color-dark-blue);
+        padding: 1rem 1.5rem;
+        border-radius: 50px; 
     }
 
-    .partner04:after{
-        width: 10px;
-        height: 10px;
-        top: 20px;
-        right: -5px;
+/* 1200px tab-land*/
+@media only screen and (max-width: 75em){
+    .homepage01-title{
+        font-size: 4.5rem;
+        width: 45rem;
     }
-
-    .partner05:before{
-        width: 10px;
-        height: 10px;
-        bottom: 10px;
-        right: 5px;
+    .homepage-logo{
+        height: 30rem;
+        width: 30rem;
     }
-
-    .partners-logo{
-        width: 75%;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
+    .homepage-container05-image{
+        background-size: cover;
+        background-position: 80%;
     }
+}
 
-    .partner02-CM{
+/* 900px tab-port*/
+@media only screen and (max-width: 57em){
+    .homepage01-title{
+        font-size: 4rem;
+        width: 45rem;
+    }
+    .homepage01-subtitle02{
+        font-size: 4rem;
+        width: 45rem;
+    }
+    .homepage01-title04{
+        font-size: 4rem;
+    }
+    .homepage01-bodyContainer04{
+        grid-template-columns: repeat(auto-fill, minmax(min(250px,100%), 1fr));
+    }
+    .container05-bodyL{
+        font-size: 2.8rem;
+    }
+    .container06-imgContainer{
+        margin-right: 2rem;
+    }
+}
+
+@media only screen and (max-width: 50em){
+    .slide-content{
         width: 90%;
     }
-
-    .partner03-S{
-        border-radius: 50%;
-        width: 85%;
-    }
-
-    .partner04-FF{
-        border-radius: 50%;
-        width: 85%;
-    }
-
-    .partner05-UBC{
-        width: 85%;
-        transform: translate(-50%, -45%);
-    }
-
-    .hero--home04{
-        padding: 5em 0 3em 0;
-        position: relative;
-        overflow: hidden;
-    }
-
-    .hero--home04__topCenter{
-        position: absolute;
+    .slide-body{
         width: 100%;
-        top: 27.5rem;
-        z-index: -1;
     }
-
-    .hero--home04__bottomLeft{
-        position: absolute;
-        bottom: 22rem;
-        width: 15rem;
-        left: -20px;
-        z-index: -1;
+    .container05-bodyL{
+        font-size: 2.6rem;
     }
-
-    .hero--home04__bottomRight{
-        position: absolute;
-        width: 12rem;
-        bottom: 0px;
-        right: 0;
-        z-index: -1;
+    .btn-readMore{
+        font-size: 1.8rem;
     }
-    
-    .hero--home04__row{
-        -ms-flex-wrap: wrap;
-            flex-wrap: wrap;
-        padding: 4rem 0;
-        max-width: 1300px;
-    }
-
-    .hero--home04__title{
-        font-size: 29px;
-    }
-
-    .hero--home04__title span{
-        color: #94B7B8;
-    }
-
-    .hero--home04__title span::before{
-        background: #94B7B8;
-    }
-
-    .box{
-        width: 50%;
-        height: 500px;
+    .homepage01-container06{
         display: -webkit-box;
         display: -ms-flexbox;
         display: flex;
-        -webkit-box-pack: center;
-            -ms-flex-pack: center;
-                justify-content: center;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
+    }
+    .container06-imgContainer{
+        -webkit-box-ordinal-group: 3;
+            -ms-flex-order: 2;
+                order: 2;
+        width: 100%;
+        height: 40vh;
+        min-height: 35rem;
+    }
+    .container06-textContainer{
+        -webkit-box-ordinal-group: 2;
+            -ms-flex-order: 1;
+                order: 1;
+        width: 80%;
+        margin: 0 auto;
+        padding: 0rem 0rem 4rem 0rem;
+    }
+    .container06-title{
+        font-size: 3.5rem;
+    }
+}
+
+/*700px*/ 
+@media only screen and (max-width: 43.75em){
+    .homepage-logo{
+        height: 25rem;
+        width: 25rem;
+    }
+    .homepage01-title04{
+        margin-bottom: 2vh;
+    }
+    .homepage01-bodyContainer04{
+        -ms-grid-rows: 150px 3rem 150px;
+        grid-template-rows: repeat(2, 150px);
+        grid-auto-rows: 150px;
+    }
+    .homepage-container04-topLeft{
+        width: 15rem;
+    }
+    .homepage01-container04-decor{
+        width: 22rem;
+    }
+    .homepage-container04-bottomRight02{
+        width: 5rem;
+        height: 5rem;
+    }
+    .homepage-container05-body{
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
         -webkit-box-align: center;
             -ms-flex-align: center;
                 align-items: center;
-        position: relative;
+        width: 80%;
     }
-
-    .box-text{
-        height: 300px;
-    }
-
-    .box-text-container{
-        margin: 0 auto;
-        text-align: center;
-    }
-    
-    .box-text-number{
-        text-align: center;
-        font-size: 5em;
-        font-family: "Brevia", Montserrat, sans-serif;
-        background-color: #014E59;
-        background-image: -webkit-gradient(linear, left top, left bottom, color-stop(34.9%, #4A9397), color-stop(67.71%, rgba(74, 147, 151, 0.4375)), to(rgba(74, 147, 151, 0)));
-        background-image: -o-linear-gradient(top, #4A9397 34.9%, rgba(74, 147, 151, 0.4375) 67.71%, rgba(74, 147, 151, 0) 100%);
-        background-image: linear-gradient(180deg, #4A9397 34.9%, rgba(74, 147, 151, 0.4375) 67.71%, rgba(74, 147, 151, 0) 100%);
-        background-size: 100%;
-        -webkit-background-clip: text;
-        -moz-background-clip: text;
-        -webkit-text-fill-color: transparent; 
-        -moz-text-fill-color: transparent;
-    }
-
-    .box-text-text{
-        font-size: 22px;
-        letter-spacing: .25;
-        font-weight: 700;
-        color: #014E59;
-    }
-
-    .box-image-container{
-        width: 25rem;
-        height: auto;
-        border: 25px solid transparent;
-        border-radius: 50%;
-        background-image: -o-linear-gradient(#fffdfa, #fffdfa), -o-linear-gradient(left, #71B9B6 0%, #6AB1B1 18%, #589EA5 45%, #3A7E91 77%, #216380 100%);
-        background-image: -webkit-gradient(linear, left top, left bottom, from(#fffdfa), to(#fffdfa)), -webkit-gradient(linear, left top, right top, from(#71B9B6), color-stop(18%, #6AB1B1), color-stop(45%, #589EA5), color-stop(77%, #3A7E91), to(#216380));
-        background-image: linear-gradient(#fffdfa, #fffdfa), linear-gradient(to right, #71B9B6 0%, #6AB1B1 18%, #589EA5 45%, #3A7E91 77%, #216380 100%);
-        background-origin: border-box;
-        background-clip: content-box, border-box;
-        position: relative;
-    }
-
-    .hero--home04__center{
-        position: absolute;
-    }
-
-    .hero--home04__center01{
-        width: 40px;
-        top: 50px;
-        right: 20px;        
-    }
-
-    .hero--home04__center02{
-        width: 30px;
-        bottom: -10px;
-        left: -20px;
-    }
-
-    .hero--home04__center03{
-        width: 30px;
-        top: -10px;
-        right: 0px;
-    }
-
-    .hero--home04__center04{
-        width: 30px;
-        top: 50px;
-        left: 50px;
-    }
-
-    .hero--home04__image01{
-        width: 32rem;
-        height: auto;
-    }
-
-    .hero--home04__image02, .hero--home04__image03{
+    .container05-bodyL{
         width: 100%;
-        -webkit-transform: scale(1.01);
-            -ms-transform: scale(1.01);
-                transform: scale(1.01);
-        height: auto;
+        font-size: 2.4rem;
+        margin-bottom: 1vh;
     }
+    .container05-bodyL-bottom{
+        line-height: 1.2;
+    }
+    .container05-bodyR{
+        width: 100%;
+        margin-top: 5rem;
+        -webkit-box-pack: start;
+            -ms-flex-pack: start;
+                justify-content: flex-start;
+    }
+    .btn-readMore{
+        font-size: 1.6rem;
+    }
+}
 
-    .hero--home04__image04{
+/* 600px */
+@media only screen and (max-width: 37.5em){
+    .homepage01-container01{
+        height: 50rem;
+        min-height: 30rem;
+    }
+    .homepage01-title{
+        font-size: 3rem;
+        width: 30rem;
+    }
+    .homepage01-subtitle02{
+        font-size: 3rem;
+        width: 30rem;
+    }
+    .homepage-logo{
+        height: 20rem;
+        width: 20rem;
+        bottom: -2rem;
+        right: 0rem;
+    }
+    .slide-title{
+        font-size: 2.8rem;
+        margin-bottom: 2vh;
+    }
+    .slide-body{
+        font-size: 1.4rem;
+        line-height: 2rem;
+    }
+    .homepage01-title04{
+        font-size: 3rem;
+    }
+    .btn-readMore{
+        font-size: 1.4rem;
+    }
+    .container06-imgContainer{
+        height: 30vh;
+        min-height: 30rem;
+    }
+    .container06-title{
+        font-size: 3rem;
+    }
+    .container06-paragraph{
+        font-size: 1.8rem;
+    }
+    .btn-ourStations{
+        font-size: 1.4rem;
+    }
+}
+
+/* 500px */
+@media only screen and (max-width: 31.25em){
+    .homepage01-title{
+        font-size: 2.5rem;
         width: 25rem;
     }
-
-    .section--left{
-        opacity: 0;
-        -webkit-transform: translateX(-8rem);
-            -ms-transform: translateX(-8rem);
-                transform: translateX(-8rem);
+    .homepage01-subtitle02{
+        font-size: 2.5rem;
+        width: 25rem;
     }
-
-    .section--right{
-        opacity: 0;
-        -webkit-transform: translateX(8rem);
-            -ms-transform: translateX(8rem);
-                transform: translateX(8rem);
+    .homepage01-container02{
+        padding: 5vh 2vw;
     }
-
-
-    @media (min-width: 950px) {
-        .hero--home01__row{
-            display: -webkit-box;
-            display: -ms-flexbox;
-            display: flex;
-            min-height: 650px;
-            max-height: 800px;
-            height: 85vh;
-        }
-
-        .hero--home01__text{
-            margin: 120px 0 50px 0;
-            width: 60%;
-        }
-
-        .hero--home01__circle{
-            width: 20px;
-            height: 20px;
-        }
-
-        .circle-01{
-            right: 12%;
-        }
-
-        .circle-02{
-            left: 2%;
-            bottom: 42%;
-        }
-
-        .hero--home01__image-container{
-            height: 100%;
-            min-height: 700px;
-            position: absolute;
-            bottom: 0;
-            right: 0;
-            z-index: -5;
-        }
-
-        .hero--home01__image{
-            width: 80%;
-            max-width: 100%;
-            min-width: 700px;
-            position: absolute;
-            bottom: 0;
-            right: 0;
-            max-height: 100%;
-        }
-
-        .hero--home01__primary{
-            font-size: 52px;
-        }
-
-        .hero--home01__secondary{
-            font-size: 18px;
-            word-spacing: 5px;
-            letter-spacing: .5
-        }
-
-        .hero--home01__button-groups{
-            margin-top: 75px;
-        }
-        
-        .hero--home01__image--center{
-            right: 12%;
-            height: 85%;
-            width: auto;
-            top: -7%;
-        }
-
-        .hero--home01__image--bottom{
-            left: 35%;
-            width: 8%;
-        }
-
-
-        .heading-socials{
-            margin-top: 50px;
-            margin-bottom: 20px;
-            font-size: 18px;
-        }
-
-        .heading-socials__item i{
-            font-size: 18px;
-        }
-
-        .hero--home02{
-            padding: 50px 0 75px 0;
-        }
-
-        .hero--home02__row{
-            -webkit-box-orient: horizontal;
-            -webkit-box-direction: normal;
-                -ms-flex-direction: row;
-                    flex-direction: row;
-            -ms-flex-pack: distribute;
-                justify-content: space-around;
-            padding: 30px 0px 20vh 0px;
-        }
-
-        .hero--home02__text{
-            height: 100%;
-            width: 40%;
-            text-align: left;
-        }
-
-        .hero--home02__title{
-            font-size: 29px;
-            padding: 30px 0 50px 0;
-        }
-
-        .hero--home02__secondary--second{
-            font-size: 30px;
-            margin-bottom: 10%;
-        }
-
-        .hero--home02__secondary--first{
-            font-size: 38px;
-            margin: 0px 0px 10%;
-        }
-
-        .hero--home02__image-container-L{
-            position: relative;
-        }
-
-        .home02__circle-02{
-            top: 25%;
-            left: -50px;
-        }
-
-        .home02__circle-03{
-            top: -35px;
-            left: -50px;
-        }
-
-        .home02__circle-04{
-            top: -10px;
-            left: -5px;
-        }
-
-        .home02__circle-05{
-            right: -15px;
-            bottom: -15px;
-        }
-
-        .home02__circle-06{
-            bottom: -55px;
-            right: 20px;
-        }
-
-        .hero--home02__image-container{
-            max-width: 55%;
-            min-width: 650px;
-        }
-
-        .hero--home03{
-            padding: 10em 0 5em 0;
-        }
-
-        .hero--home03__container{
-            width: 31%;
-            height: 90%;
-            min-height: 500px;
-            margin-bottom: 0px;
-        }
-
-        .hero--home03__value{
-            font-size: 45px;
-        }
-
-        .hero--home03__text{
-            font-size: 30px;
-        }
-
-        .hero--home03__image-container02{
-            height: 90%;
-            max-height: 500px;
-        }
-
-        .hero--home03__image-container03{
-            height: 40%;
-            width: 100%;
-        }
-
-        .hero--home03a{
-            padding: 5em 0 10em 0;
-        }
-
-        .hero--home03a__title{
-            font-size: 36px;
-        }
-
-        .hero--home03a__text{
-            font-size: 24px;
-        }
-
-        .hero--home04__topCenter{
-            top: 24.5rem;
-        }
-
-        .hero--home04__center{
-            display: none;
-        }
-
-        .box{
-            height: 500px;
-        }
-
-        .box-text-container{
-            width: 430px;
-        }
-
-        .box-text-text{
-            font-size: 22px;
-        }
-
-        .box-image-container{
-            width: 25rem;
-        }
-
-        .hero--home04__image04{
-            width: 25rem;
-        }
+    .about-contact__slide{
+        min-height: 28rem;
     }
-
-    @media (max-width: 1400px) {
-        .hero--home01__image{
-            min-width: 500px;
-        }
-
-        .hero--home01__image--corner{
-            height: 40%;
-        }
-
-        .hero--home02__secondary--first{
-            font-size: 34px;
-        }
-
-        .hero--home02__secondary--second{
-            font-size: 28px;
-        }
-
-        .container02__text--primary, .container02__text--secondary{
-            font-size: 26px;
-        }
-
-        .hero--home04__topCenter{
-            top: 26.5rem;
-        }
+    .slide-title{
+        font-size: 2.5rem;
     }
-
-    @media (max-width: 1300px) {
-        .hero--home01__primary{
-            font-size: 40px;
-        }
-        
-        .hero--home01__secondary{
-            word-spacing: 2px;
-            font-size: 16px;
-        }
-
-        .hero--home01__image{
-            min-width: 400px;
-        }
-
-        .hero--home01__image--corner{
-            height: 35%;
-        }
-
-        .hero--home02__secondary{
-            font-size: 26px;
-        }
-
-        .hero--home02__secondary--first{
-            font-size: 30px;
-        }
-
-        .hero--home02__image-container{
-            min-width: 550px;
-            height: 420px;
-        }
-
-        .box-text-text{
-            font-size: 20px;
-        }
-
-        .hero--home04__topCenter{
-            top: 27.5rem;
-        }
+    .slide-body{
+        font-size: 1.4rem;
     }
-
-    @media (max-width: 1200px) {
-        .hero--home02__secondary{
-            font-size: 26px;
-        }
-
-        .hero--home02__secondary--first{
-            font-size: 30px;
-        }
+    .homepage01-container03{
+        height: 25vh !important;
+        min-height: 35rem;
     }
-
-    @media (max-width: 1180px) {
-        .hero--home02__secondary--first{
-            font-size: 28px;
-        }
-
-        .hero--home02__secondary--second{
-            font-size: 21px;
-        }
-
-        .hero--home02__image-container-L{
-            width: 55%;
-        }
-
-        .hero--home02__image-container{
-            height: 400px;
-            min-width: 500px;
-        }
-
-        .hero--home03__value{
-            font-size: 38px;
-        }
-
-        .icon-dollar-circle{
-            margin: 0.2em;
-        }
-
-        .hero--home03__text{
-            font-size: 22px;
-        }
-
-        .box-text-container{
-            width: 85%;
-        }
-
-        .hero--home03a__text-container{
-            padding: 80px 0px 50px 0px;
-        }
-
-        .hero--home03a__title{
-            font-size: 32px;
-            width: 350px;
-        }
-
-        .hero--home03a__text{
-            font-size: 22px;
-        }
-
-        .text-decor01{
-            left: -15px;
-        }
-
-        .text-decor02{
-            right: 100px;
-        }
-
-        .text-decor03{
-            left: 40%;
-        }
-
-        .text-decor04{
-            bottom: 0;
-        }
-
-        .hero--home03a__partners-conatiner{
-            min-width: 500px;
-        }
-
-        .partners{
-            width: 9em;
-            height: 9em;
-        }
+    .homepage01-title04{
+        font-size: 2.5rem;
     }
-
-    @media (max-width: 990px){
-        .hero--home02__secondary--first{
-            font-size: 28px;
-        }
-
-        .hero--home02__secondary--second{
-            font-size: 20px;
-        }
-
-        .home02__circle-05{
-            right: -55px;
-        }
-
-        .home02__circle-06{
-            right: -15px;
-        }
+    .homepage01-container04{
+        padding: 10rem 5rem 10rem 5rem;
     }
-
-    @media (max-width: 949px) {
-        .hero--home01__primary{
-            font-size: 42px;
-        }
-
-        .hero--home01__secondary{
-            word-spacing: 4px;
-        }
-
-        .hero--home01__image-container{
-            width: 85%;
-        }
-
-        .hero--home02__title{
-            font-size: 24px;
-        }
-
-        .hero--home02__image-container-L{
-            width: 90%;
-        }
-
-        .home02__circle-01{
-            margin: 0 auto;
-            width: 110px;
-            height: 110px;
-        }
-
-        .home02__circle-03{
-            left: 2vw;
-            top: -20px;
-        }
-
-        .home02__circle-04{
-            left: 6vw;
-        }
-
-        .home02__circle-05{
-            right: 5vw;
-            bottom: -10px;
-        }
-
-        .hero--home02__logo{
-            height: 70%;
-        }
-
-        .hero--home03__value{
-            font-size: 42px;
-        }
-
-        .icon-dollar-circle{
-            margin: 0.4em;
-        }
-
-        .hero--home03__text{
-            font-size: 28px;
-        }
-
-        .hero--home03a__text-container{
-            margin: 0 auto;
-            width: 100%;
-        }
-
-        .hero--home03a__title{
-            font-size: 34px;
-            text-align: center;
-            margin: 0 auto;
-        }
-
-        .text-decor01{
-            top: 15px;
-            left: 0;
-        }
-
-        .text-decor02{
-            top: 20px;
-            right: 50px;
-        }
-
-        .text-decor03{
-            left: 50%;
-        }
-
-        .text-decor04{
-            bottom: 20%;
-            right: 50px;
-        }
-
-        .hero--home03a__text{
-            font-size: 24px;
-            margin: 0 auto;
-        }
-
-        .partners{
-            height: 11em;
-            width: 11em;
-        }
-
-        .hero--home04__row{
-            display: -webkit-box;
-            display: -ms-flexbox;
-            display: flex;
-            -webkit-box-orient: vertical;
-            -webkit-box-direction: normal;
-                -ms-flex-direction: column;
-                    flex-direction: column;
-            -ms-flex-wrap: wrap;
-                flex-wrap: wrap;
-            padding: 2rem 0;
-        }
-
-        .hero--home04__topCenter{
-            width: 200%;
-            top: 40rem;
-        }
-
-        .hero--home04__bottomLeft{
-            bottom: 43rem;
-            width: 12rem;
-        }
-
-        .box-text-container{
-            width: 100%;
-            text-align: left;
-        }
-
-        .box-text-text{
-            width: 80%;
-            max-width: 500px;
-            margin: 20px auto;
-        }
-
-        .box{
-            width: 100%;
-        }
-
-        .box1-image{
-            -webkit-box-ordinal-group: 3;
-                -ms-flex-order: 2;
-                    order: 2;
-        }
-
-        .box2-text{
-            -webkit-box-ordinal-group: 2;
-                -ms-flex-order: 1;
-                    order: 1;
-        }
-
-        .box3-text{
-            -webkit-box-ordinal-group: 4;
-                -ms-flex-order: 3;
-                    order: 3;
-        }
-
-        .box4-image{
-            -webkit-box-ordinal-group: 5;
-                -ms-flex-order: 4;
-                    order: 4;
-        }
-
-        .box5-image{
-            -webkit-box-ordinal-group: 7;
-                -ms-flex-order: 6;
-                    order: 6;
-        }
-
-        .box6-text{
-            -webkit-box-ordinal-group: 6;
-                -ms-flex-order: 5;
-                    order: 5;
-        }
-
-        .box7-text{
-            -webkit-box-ordinal-group: 8;
-                -ms-flex-order: 7;
-                    order: 7;
-        }
-
-        .box8-image{
-            -webkit-box-ordinal-group: 9;
-                -ms-flex-order: 8;
-                    order: 8;
-        }
+    .homepage-container04-topLeft{
+        width: 13rem;
     }
-
-    @media (max-width: 900px) {
-        .hero--home02__title{
-            font-size: 29px;
-        }
-
-        .home02__circle-02{
-            left: -30px;
-        }
+    .homepage01-container04-decor{
+        width: 16rem;
     }
-
-    @media (max-width: 800px){
-        .home02__circle-03{
-            left: -2vw;
-            top: -20px;
-        }
-
-       .home02__circle-04{
-            left: 2vw;
-        }
-
-       .home02__circle-05{
-            right: 0px;
-        }
-
-       .home02__circle-06{
-            bottom: -50px;
-            right: 30px;
-        }
-
-        .partners{
-            height: 10em;
-            width: 10em;
-        }
+    .homepage-container04-bottomRight02{
+        width: 4rem;
+        height: 4rem;
+        top: -4rem;
     }
-
-    @media (max-width: 700px) {
-        .hero--home01__image-container{
-            width: 100%;
-        }
-
-        .hero--home01__image--corner{
-            height: 30%;
-        }
-
-        .hero--home02__row{
-            padding: 10px 0px 20vh 0px;
-        }
-
-        .hero--home02__title{
-            font-size: 24px;
-        }
-
-        .hero--home02__text{
-            width: 100%;
-        }
-
-        .home02__circle-01{
-            width: 100px;
-            height: 100px;
-        }
-
-        .home02__circle-03{
-            left: -4vw;
-        }
-
-       .home02__circle-04{
-            left: 0px;
-        }
-
-        .hero--home02__logo{
-            height: 60%;
-        }
-
-        .hero--home02__secondary--first{
-            font-size: 26px;
-        }
-
-        .hero--home02__secondary--second{
-            font-size: 20px;
-        }
-
-        .hero--home02__image-container{
-            width: 100%;
-            min-width: 100%;
-        }
-
-        .hero--home02__image{
-            -webkit-transform: scale(1.1);
-                -ms-transform: scale(1.1);
-                    transform: scale(1.1);
-        }
-
-        .home02__circle-02{
-            width: 100px;
-            height: 100px;
-        }
-
-        .home02__circle-03{
-            width: 20px;
-            height: 20px;
-        }
-
-        .home02__circle-04{
-            width: 40px;
-            height: 40px;
-        }
-
-        .home02__circle-05{
-            width: 50px;
-            height: 50px;
-        }
-
-        .home02__circle-06{
-            width: 25px;
-            height: 25px;
-        }
-
-        .hero--home03__title, .hero--home04__title{
-            font-size: 22px;
-        }
-
-        .hero--home03a__partners-conatiner{
-            min-width: 400px;
-            width: 500px;
-        }
-
-        .partners{
-            height: 9em;
-            width: 9em;
-        }
-
-        .hero--home04__image01{
-            width: 90%;
-        }
-
-        .box-text{
-            height: 250px;
-        }
-
-        .box-text-text{
-            font-size: 18px;
-        }
+    .homepage01-container05{
+        height: 50rem;
     }
-
-    @media (max-width: 600px) {
-        .hero--home01__primary{
-            font-size: 32px;
-        }
-
-        .hero--home01__secondary{
-            font-size: 14px;
-        }
-
-        .hero--home01__image{
-            min-width: 0%;
-        }
-
-        .hero--home01__circle{
-            width: 10px;
-            height: 10px;
-        }
-    
-        .circle-01{
-            right: 5%;
-        }
-
-        .hero--home01__image--corner{
-            height: 25%;
-        }
-
-        .hero--home02__image-container{
-            width: 90%;
-            max-width: 350px;
-            height: 300px;
-        }
-
-        .hero--home02__image{
-            width: 100%;
-            min-width: 0px;
-            height: 100%;
-            -webkit-transform: scale(1.05);
-                -ms-transform: scale(1.05);
-                    transform: scale(1.05);
-            background-position: center;
-        }
-
-        .hero--home03__value{
-            font-size: 38px;
-        }
-
-        .icon-dollar-circle{
-            margin: 0.2em;
-            height: 25px;
-            width: 25px;
-        }
-
-        .fa-dollar-sign{
-            font-size: 14px;
-        }
-
-        .hero--home03__text{
-            font-size: 22px;
-        }
-
-        .hero--home03__image-container03{
-            height: 70%;
-        }
-
-        .hero--home03a__title{
-            font-size: 30px;
-        }
-
-        .hero--home03a__text{
-            font-size: 18px;
-            text-align: center;
-            width: 100%;
-        }
-
-        .text-decor03{
-            left: 50%;
-            top: 160px;
-            height: 50px;
-            width: 50px;
-        }
-
-        .text-decor04{
-            right: 0;
-            height: 30px;
-            width: 30px;
-        }
-
-        .hero--home03a__partners-conatiner{
-            min-width: 100%;
-            width: 100%;
-        }
-
-        .partners{
-            width: 7em;
-            height: 7em;
-        }
-
-        .partner02:before{
-            top: -5px;
-        }
-
-        .partner03:before{
-            top: -15px;
-        }
-
-        .partner04:before{
-            top: -5px;
-            right: 0;
-            height: 15px;
-            width: 15px;
-        }
-
-        .partner04:after{
-            top: 10px;
-        }
-
-        .hero--home04__topCenter{
-            top: 35rem;
-        }
-
-        .hero--home04__bottomLeft{
-            bottom: 36rem;
-            left: -30px;
-            -webkit-transform: rotate(5deg);
-                -ms-transform: rotate(5deg);
-                    transform: rotate(5deg);
-            width: 10rem;
-        }
-
-        .hero--home04__bottomRight{
-            width: 9rem;
-            bottom: -35px;
-        }
-
-        .hero--home04__center01{
-            width: 30px;
-            top: 50px;
-            right: 20px;        
-        }
-
-        .box{
-            height: 400px;
-        }
-
-        .box-text{
-            height: 250px;
-        }
-
-        .box-image-container{
-            width: 20rem;
-            border: 20px solid transparent;
-        }
-
-        .box-text-text{
-            width: 90%;
-            font-size: 16px;
-        }
-
-        .box-text-number{
-            font-size: 3.5rem;
-        }
-
-        .hero--home04__image04{
-            width: 90%;
-            max-width: 320px;
-            min-width: 16rem;
-        }
+    .container06-title{
+        font-size: 2.5rem;
     }
-
-    @media (max-width: 465px){
-        .hero--home03a__text-container{
-            padding: 20px 0px 70px 0px;
-        }
-
-        .text-decor01{
-            width: 25px;
-            height: 25px;
-        }
-
-        .text-decor01:before{
-            width: 10px;
-            height: 10px;
-        }
-
-        .text-decor02{
-            right: 0px;
-            width: 20px;
-            height: 20px;
-        }
-
-        .text-decor03{
-            top: 80px;
-        }
-
-        .text-decor04{
-            height: 20px;
-            width: 20px;
-        }
-
-        .text-decor04:before{
-            height: 12px;
-            width: 12px;
-        }
-        
-        .text-decor04:after{
-            height: 8px;
-            width: 8px;
-        }
-
-        .partners{
-            margin: 0;
-        }
+    .container06-paragraph{
+        font-size: 1.4rem;
     }
+}
 
-    @media (max-width: 450px) {
-        .hero--home01__primary{
-            font-size: 26px;
-        }
-
-        .hero--home01__secondary{
-            font-size: 11px;
-            word-spacing: 1px;
-        }
-
-        .heading-socials{
-            margin-top: 0px;
-        }
-
-        .heading-socials p{
-            font-size: 12px;
-        }
-
-        .hero--home02__title{
-            font-size: 21px;
-        }
-
-        .hero--home02__secondary--first{
-            font-size: 22px;
-        }
-
-        .hero--home02__secondary--second{
-            font-size: 14px;
-        }
-
-        .home02__circle-05{
-            width: 40px;
-            height: 40px;
-        }
-
-        .home02__circle-06{
-            width: 20px;
-            height: 20px;
-        }
-
-        .hero--home03__title, .hero--home04__title{
-            font-size: 21px;
-        }
-
-        .hero--home03__image-container02{
-            position: absolute;
-            height: 120%;
-        }
-
-        .hero--home03a{
-            padding: 0 0 6em 0;
-        }
-
-        .hero--home03a__title{
-            width: 80%;
-            font-size: 22px;
-        }
-
-        .hero--home03a__text{
-            font-size: 14px;
-        }
-
-        .text-decor04, .text-decor04:before, .text-decor04:after{
-            display: none;
-        }
-
-        .partners{
-            width: 6em;
-            height: 6em;
-        }
-
-        .hero--home04__center01{
-            width: 25px;
-            top: 50px;
-            right: 0px;        
-        }
-
-        .hero--home04__center02{
-            width: 25px;
-        }
-
-        .hero--home04__center03{
-            width: 25px;
-            top: -20px;
-            right: -10px;
-        }
-
-        .hero--home04__center04{
-            width: 25px;
-            top: 20px;
-            left: 20px;
-        }
-
-        .hero--home04__topCenter{
-            top: 32rem;
-        }
-
-        .hero--home04__bottomLeft{
-            bottom: 29rem;
-            width: 9rem;
-        }
-
-        .box{
-            height: 300px;
-        }
-
-        .box-text{
-            height: 200px;
-            margin-top: 20px;
-        }
-
-        .box-text-text{
-            font-size: 14px;
-            margin: 20px auto;
-            letter-spacing: 0;
-            word-spacing: .25;
-        }
-
-        .hero--home04__image01{
-            width: 100%;
-        }
-
-        .hero--home04__image04{
-            min-width: 15rem;
-            max-width: 280px;
-        }
-
-        .box-image-container{
-            width: 16rem;
-        }
+/*400px*/
+@media only screen and (max-width: 25em){
+    .homepage01-subtitle01, .homepage01-subtitle04{
+        font-size: 1.4rem;
     }
-
-    @media (max-width: 375px){
-        .hero--home01__secondary{
-            font-size: 10px;
-            word-spacing: .25;
-            letter-spacing: .25;
-        }
-
-        .hero--home03a__row{
-            width: 100%;
-        }
-
-        .partners{
-            margin: 5px;
-            height: 5.5em;
-            width: 5.5em;
-        }
+    .homepage01-subtitle02{
+        font-size: 2rem;
+        width: 20rem;
     }
+    .slide-title{
+        font-size: 2rem;
+    }
+    .slide-body{
+        font-size: 1.2rem;
+    }
+    .homepage01-title04{
+        font-size: 2rem;
+    }
+    .block-title{
+        font-size: 1.8rem;
+    }
+    .container05-bodyL{
+        font-size: 2rem;
+    }
+}
 </style>
 
 {% javascript %}
-    const navToggle = document.querySelector('.nav-toggle');
-    const nav = document.querySelector('.nav');
-    const allSections = document.querySelectorAll('.home--container');
+    const slider = function() {
+        const slides = document.querySelectorAll('.slide');
+        const slider = document.querySelector('.slider');
 
-    navToggle.addEventListener('click', () => {
-        nav.classList.toggle('nav--visible');
-    });
+        let curSlide = 0;
+        const maxSlide = slides.length;
 
+
+        const goToSlide = function(slide){
+            slides.forEach((s, i)=> (s.style.transform = `translateX(${100 * (i - slide)}%)`));
+        }
+
+        const nextSlide = function(){
+            if(curSlide === maxSlide -1){
+            curSlide = 0;
+            }else{
+            curSlide++;
+            }
+            goToSlide(curSlide);
+        }
+        const init = function(){
+            goToSlide(0);
+        }
+        init();
+        window.setInterval(nextSlide, 5000);
+    }
+    slider();
 {% endjavascript %}
 
-{%schema%}
-{
-    "name": "Home",
-    "presets": [
-        {
-            "name": "Home"
-        }
-    ],
-    "settings": [
-        {
-            "type": "checkbox",
-            "id": "include_home01_button01",
-            "label": "Include Homepage 01 Button 01",
-            "default": true
-        },
-        {
-            "type": "text",
-            "id": "home01_button01",
-            "label": "Homepage 01 Button 01 Text",
-            "default": "join us"
-        },
-        {
-            "type": "text",
-            "id": "home01_button01-link",
-            "label": "Homepage 01 Button 01 Link",
-            "default": "/pages/contact"
-        },
-        {
-            "type": "checkbox",
-            "id": "include_home01_button02",
-            "label": "Include Homepage 01 Button 02",
-            "default": true
-        },
-        {
-            "type": "text",
-            "id": "home01_button02",
-            "label": "Homepage 01 Button 02 Text",
-            "default": "watch video"
-        },
-        {
-            "type": "text",
-            "id": "home01_button02-link",
-            "label": "Homepage 01 Button 02 Link",
-            "default": "https://www.youtube.com"
-        },
-        {
-            "type": "checkbox",
-            "id": "include_facebook",
-            "label": "Show Facebook link icon",
-            "default": true
-        },
-        {
-            "type": "text",
-            "id": "facebook-link",
-            "label": "Facebook Link",
-            "default": "https://www.facebook.com/TheSoapstand"
-        },
-        {
-            "type": "checkbox",
-            "id": "include_linkedin",
-            "label": "Show Linkedin link icon",
-            "default": true
-        },
-        {
-            "type": "text",
-            "id": "linkedin-link",
-            "label": "LinkedIn Link",
-            "default": "https://www.linkedin.com/company/soapstand"
-        },
-        {
-            "type": "checkbox",
-            "id": "include_instagram",
-            "label": "Show Instagram link icon",
-            "default": true
-        },
-        {
-            "type": "text",
-            "id": "instagram-link",
-            "label": "Instagram Link",
-            "default": "https://www.instagram.com/soapstandco"
-        },
-        {
-            "type": "checkbox",
-            "id": "include_youtube",
-            "label": "Show Youtube link icon",
-            "default": true
-        },
-        {
-            "type": "text",
-            "id": "youtube-link",
-            "label": "Youtube Link",
-            "default": "https://www.youtube.com"
-        },
-        {
-            "type": "checkbox",
-            "id": "include_twitter",
-            "label": "Show Twitter link icon",
-            "default": true
-        },
-        {
-            "type": "text",
-            "id": "twitter-link",
-            "label": "Twitter Link",
-            "default": "https://www.twitter.com"
-        },
-        {
-            "type": "text",
-            "id": "home02_title",
-            "label": "Homepage 02 Title",
-            "default": "meet Soapstand"
-        },
-        {
-            "type": "text",
-            "id": "home03_title",
-            "label": "Homepage 03 Title",
-            "default": "how we do better"
-        },
-        {
-            "type": "checkbox",
-            "id": "include_home03_button01",
-            "label": "Include Homepage 03 Button 01",
-            "default": true
-        },
-        {
-            "type": "text",
-            "id": "home03_button01",
-            "label": "Homepage 03 Button 01 Text",
-            "default": "about us"
-        },
-        {
-            "type": "text",
-            "id": "home03_button01-link",
-            "label": "Homepage 03 Button 01 Link",
-            "default": "pages/about"
-        },
-        {
-            "type": "text",
-            "id": "home03a_title",
-            "label": "Homepage Partner Section Title",
-            "default": "We work with the best partners"
-        },
-        {
-            "type": "text",
-            "id": "home03a_text",
-            "label": "Homepage Partner Section Text",
-            "default": "Located in Canada and the USA"
-        },
-        {
-            "type": "text",
-            "id": "home04_title",
-            "label": "Homepage 04 Title",
-            "default": "how to refill"
-        },
-        {
-            "type": "text",
-            "id": "refill_step01",
-            "label": "How to Refill Step 01",
-            "default": "Find the nearest Soapstand station at your local grocery or residence, don't forget to bring your container with you!"
-        },
-        {
-            "type": "text",
-            "id": "refill_step02",
-            "label": "How to Refill Step 02",
-            "default": "Once you start interacting with your local Soapstand machine, select the product you wish to dispense as well as the quantity."
-        },
-        {
-            "type": "text",
-            "id": "refill_step03",
-            "label": "How to Refill Step 03",
-            "default": "Once ready to dispense, please press and hold the green light button, your soap will dispense your desired quantity so you can safely stop pressing the button and close the container."
-        },
-        {
-            "type": "text",
-            "id": "refill_step04",
-            "label": "How to Refill Step 04",
-            "default": "Congratulations! You just saved 50% on your purchase and saved a plastic bottle from entering our landfills! Please pay by collecting your reciept from the machine, applying tap payment or QR code."
-        }
-    ]
-}
-{%endschema%}

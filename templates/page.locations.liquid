@@ -1,64 +1,50 @@
 <section class="locations">
-    <div class="container locations-page__row">
-        <div class="title__primary locations-page__title"><span>locations</span></div>
+    <div class="locations-container">
+        <div class="locations__title">Constantly working to get closer and closer to you!</div>
+        <div class="locations__subtitle">Find your nearest Soapstand and refill today.</div>
 
-        <div class="locations-page__primary">
-            find a soapstand near you
-        </div>
-        <div class="locations-page__secondary">
-            Get directions, store hours<br>and product selections for each location
-        </div>
         <div class="locations-page__map-container">
-            {{ 'locations-topLeft.png' | asset_url | img_tag: 'locations page top left icon', 'locations-topLeft' }}  
-            {{ 'locations-topRight.png' | asset_url | img_tag: 'locations page top right icon', 'locations-topRight' }}  
             <div class="elfsight-sapp-61504c44-d10e-4419-ac16-261dce2d91fc"></div>                    
-            {{ 'locations-bottomLeft.png' | asset_url | img_tag: 'locations page bottom left icon', 'locations-bottomLeft' }}  
-            {{ 'locations-bottomRight.png' | asset_url | img_tag: 'locations page bottom right icon', 'locations-bottomRight' }}  
         </div>
-        <div class="locations-page__tertiary">
-            Thank you for refilling,<br>don't forget to bring your container!
-        </div>
-        {{ 'locations-bottles.svg' | asset_url | img_tag: 'contact page top right icon', 'locations-bottles' }}  
+        <div class="locations__title">Want us closer?<br>tell us where we're needed</div>
+        <a href="/pages/contact" class="btn btn--water">contact us</a>                
     </div>
 </section>
 
 <style>
-    body{
-        background: -o-linear-gradient(270.04deg, #014E59 33.07%, #06525D 42.08%, #195F69 55.1%, #38757D 70.13%, #639299 87.15%, #9AB9BD 105.18%, #DCE6E8 124.21%, #fffdfa 133.23%);
-        background: linear-gradient(179.96deg, #014E59 33.07%, #06525D 42.08%, #195F69 55.1%, #38757D 70.13%, #639299 87.15%, #9AB9BD 105.18%, #DCE6E8 124.21%, #fffdfa 133.23%);
-    }
-
     .locations{
-        text-align: center;
-        padding: 0px 0em 3em 0em;
-        min-height: 80vh;
+        width: 100%;
+        background: var(--color-white);
+        position: relative;
+    }
+    .locations-container{
+        max-width: 1450px;
+        margin: 0 auto;
+        width: 90%;
+        min-height: 50rem;
         height: auto;
+        margin-top: -50px;
+        padding: 13rem 4rem 8vw 4rem;
+        position: relative;
     }
 
-    .locations-page__title{
-        font-size: 29px;
-        margin-top:20px;
-        margin-bottom: 50px;
-    }
-
-    .locations-page__primary{
-        font-family: "Brevia", Montserrat, sans-serif;
-        font-size: 3em;
-        color: #94B7B8;
-        margin-bottom: 30px;
-    }
-
-    .locations-page__secondary{
-        font-size: 1.5em;
+    .locations__title{
+        font-size: 6rem;
+        color: var(--color-dark-blue);
         font-weight: 700;
-        color: #fffdfa;
-        margin-bottom: 50px;
+        width: 95%;
+        padding: 8rem 0 3rem 0;
     }
 
+    .locations__subtitle{
+        font-weight: 400;
+        font-size: 3.7rem;
+        color: var(--color-dark-blue);
+        margin-bottom: 5vw;
+    }
     .locations-page__map-container{
         width: 100%;
-        max-width: 1100px;
-        background: #8BB0B2;
+        background: var(--color-water);
         display: -webkit-box;
         display: -ms-flexbox;
         display: flex;
@@ -66,180 +52,91 @@
             -ms-flex-pack: center;
                 justify-content: center;
         border-radius: 15px;
-        margin: 0 auto 75px auto;
         position: relative;
     }
-
-    .locations-topLeft{
-        position: absolute;
-        top: -70px;
-        left: -30px;
-        width: 60px;
-        z-index: -1;
-    }
-
-    .locations-topRight{
-        position: absolute;
-        width: 50px;
-        top: -50px;
-        right: -50px;
-        z-index: -1;
-    }
-
     .elfsight-sapp-61504c44-d10e-4419-ac16-261dce2d91fc{
-        width: 80%;
-        border-radius: 15px;
+        width: 100%;
         text-align: left;
     }
-
-    .locations-bottomLeft{
-        position: absolute;
-        width: 40px;
-        bottom: -30px;
-        left: -45px;
-        z-index: -1;
+    .eapps-google-maps-bar-search-wrapper{
+        background: var(--color-white);
     }
-
-    .locations-bottomRight{
-        position: absolute;
-        width: 80px;
-        bottom: -70px;
-        right: -20px;
-        z-index: -1;
+    .eapps-google-maps-bar-search-input{
+        border-radius: 25px;
+        border: 2px solid var(--color-dark-blue);
     }
-
-    .locations-page__tertiary{
-        font-size: 1.5em;
-        color: #fffdfa;
-        margin-bottom: 45px;
+    .eapps-google-maps-bar-search-buttons{
+        background: var(--color-dark-blue);
+        border-radius: 25px;
     }
-
-    .locations-bottles{
-        width: 300px;
+    .eapps-google-maps-bar-search-buttons svg, .eapps-google-maps-bar-search-location svg{
+        fill: var(--color-white);
     }
-
-    @media (max-width: 949px) {
-        .locations{
-            padding: 20px 0em 3em 0em;
-        }
-
-        .locations-page__primary{
-            font-size: 2.5em;
-        }
-
-        .locations-page__secondary, .locations-page__tertiary{
-            font-size: 1.2em;
-        }
-
-        .locations-bottles{
-            width: 250px;
-        }
+    .eapps-google-maps-bar-search-location{
+        background: var(--color-dark-blue);
+        border-radius: 25px;
     }
-
-    @media (max-width: 750px) {
-        .locations-page__primary{
-            letter-spacing: 0px;
-            font-size: 2.3em;
-        }
-
-        .locations-page__secondary, .locations-page__tertiary{
-            font-size: 1.1em;
-        }
-
-        .locations-bottles{
-            width: 200px;
-        }
+    .eapps-google-maps-bar-button{
+        background: var(--color-dark-blue);
     }
-
-    @media (max-width: 600px) {
-        .locations-page__row{
-            width: 90%;
-        }
-
-        .locations-page__title{
-            font-size: 24px;
-            margin-bottom: 45px;
-        }
-
-        .locations-page__primary{
-            font-size: 2.1em;
-        }
-
-        .locations-page__secondary{
-            font-size: 1em;
-        }
-
-        .locations-topLeft{
-            top: -40px;
-            left: -20px;
-            width: 40px;
-        }
-
-        .locations-topRight{
-            width: 30px;
-            top: -30px;
-            right: -20px
-        }
-
-        .locations-bottomLeft{
-            width: 30px;
-            bottom: -20px;
-            left: -30px;
-        }
-
-        .locations-bottomRight{
-            width: 50px;
-            bottom: -45px;
-            right: -10px;
-        }
-
-        .locations-page__map-container{
-            margin: 0 auto 50px auto;
-        }
-
-        .elfsight-sapp-61504c44-d10e-4419-ac16-261dce2d91fc{
-            width: 90%;
-        }
-
-        .locations-page__tertiary{
-            font-size: 1em;
-            margin-bottom: 30px;
-        }
-
-        .locations-bottles{
-            width: 180px;
-        }
+    .eapps-google-maps-bar-list-item{
+        background: var(--color-bubbles);
+        margin: 5px;
     }
-
-    @media (max-width: 525px) {
-        .locations-page__primary{
-            font-size: 28px;
-        }
-
-        .locations-page__secondary, .locations-page__tertiary{
-            font-size: 14px;
-        }
-
-        .locations-page__map-container{
-            max-height: 600px;
-        }
-
-        #eapps-google-maps-1.eapps-google-maps{
-            height: 600px;
-        }
+    .eapps-google-maps-bar-list-item-info-title{
+        font-family: 'Montserrat', sans-serif;
+        color: var(--color-dark-blue);
+        font-weight: 700;
+        font-style: normal;
     }
-
-    @media (max-width: 450px) {
-        .locations-page__primary{
-            font-size: 24px;
-        }
-
-        .locations-page__secondary, .locations-page__tertiary{
-            font-size: 12px;
-        }
-
-        .locations-bottles{
-            width: 150px;
-        }
+    .eapps-google-maps-bar-list-item-info-item{
+        color: var(--color-dark-blue);
+        font-family: 'Montserrat', sans-serif;
     }
+    
+  /* 1000px tab-land*/
+  @media only screen and (max-width: 62.5em){
+    .locations-container{
+        padding: 13rem 0rem;
+    }
+  }
+  /* 800px tab-port*/
+  @media only screen and (max-width: 50em){
+    .locations__title{
+        width: 100%;
+        font-size: 5rem;
+    }
+    .locations__subtitle{
+        font-size: 3.2rem;
+    }
+  }
+  /*600px*/ 
+  @media only screen and (max-width: 37.5em){
+    .locations__title{
+        font-size: 4rem;
+        padding: 5rem 0;
+    }
+    .locations__subtitle{
+        font-size: 2.8rem;
+        margin-bottom: 5rem;
+    }
+  }
+  /*500px*/
+  @media only screen and (max-width: 31.25em){
+    .locations__title{
+        font-size: 3.8rem;
+    }
+    .locations__subtitle{
+        font-size: 2.6rem;
+    }
+    #eapps-google-maps-1.eapps-google-maps{
+        height: 600px;
+    }
+  }
+  /*400px*/
+  @media only screen and (max-width: 25em){
+    .locations-container{
+        padding: 13rem 0rem 8rem 0;
+    }
+  }
 </style>

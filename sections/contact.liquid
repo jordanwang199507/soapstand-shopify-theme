@@ -1,435 +1,528 @@
 <meta name="format-detection" content="telephone=no">
 <section class="contact">
-    <div class="container contact-page__row">
-        <div class="title__primary contact-page__title"><span>let's connects</span></div>
-
-        <div class="contact-page__primary">
-            better together
-            {{ 'contact-topRight.png' | asset_url | img_tag: 'contact page top right icon', 'contact-topRight' }}  
+    <div class="contact-imageContainer">
+        <div class="contact-bg"></div>
+        <div class="contact-bgLayer"></div>
+        <div class="contact-outerBound">
+            <div class="contact-titleContainer">
+                <h1 class="main-title">Let's get in touch</h1>
+                <div class="sub-title">We can't wait to see what Soapstand can do for you</div>
+            </div>
         </div>
-        <div class="contact-page__secondary">
-            {{ 'contact-topLeft.png' | asset_url | img_tag: 'contact page top left icon', 'contact-topLeft' }}  
-            We can do so much together. Let's talk
-        </div>
-
-        <div class="contact-page__content">
-            {% if section.settings.include_email %}
-                <div class="if-statement">{{ section.settings.include_emailLeft }}&nbsp;<span class="if-answer">{{ section.settings.include_emailRight }}</span></div>
-            {% endif %}
-            {% if section.settings.include_phone %}
-                <div class="if-statement">{{ section.settings.include_phoneLeft }}&nbsp;<span class="if-answer">{{ section.settings.include_phoneRight }}</span></div>            
-            {% endif %}
-            {% if section.settings.include_instagram %}
-                <div class="if-statement">{{ section.settings.include_instagramLeft }}&nbsp;<span class="if-answer">{{ section.settings.include_instagramRight }}</span></div>
-            {% endif %}
-            {% if section.settings.include_address %}
-                <div class="if-statement">{{ section.settings.include_addressLeft }}&nbsp;<span class="if-answer">{{ section.settings.include_addressRight }}</span></div>
-            {% endif %}
-        </div>
-
-        {% form 'contact' %}
-            {% if form.posted_successfully? %}
-                <p class="form-success">
-                    {{ 'contact-middleLeft.png' | asset_url | img_tag: 'contact page middle left icon', 'contact-middleLeft' }}  
-                    Thank you! The Soapstand team will be in contact with you shortly!
-                    {{ 'contact-bottomLeft.png' | asset_url | img_tag: 'contact page bottom left icon', 'contact-bottomLeft' }}  
-                    {{ 'contact-bottomRight.png' | asset_url | img_tag: 'contact page bottom right icon', 'contact-bottomRight' }} 
-                </p>
-            {% else %}
-                <div class="name">
-                    <label for="name" class="name__label">name</label>
-                    <input type="text" name="contact[name]" class="name__input" id="name" placeholder="name" required/>
-                    {{ 'contact-middleRight.png' | asset_url | img_tag: 'contact page middle right icon', 'contact-middleRight' }}  
-                </div>
-
-                <div class="email">
-                    <label for="email" class="email__label">email</label>
-                    <input type="email" name="contact[email]" class="email__input" id="email" placeholder="email" required/>
-                </div>
-
-                <div class="message">
-                    {{ 'contact-middleLeft.png' | asset_url | img_tag: 'contact page middle left icon', 'contact-middleLeft' }}  
-                    <label for="message" class="message__label">message</label>
-                    <textarea name="contact[body]" id="message" class="message__input" placeholder="message" required></textarea>
-                    {{ 'contact-bottomLeft.png' | asset_url | img_tag: 'contact page bottom left icon', 'contact-bottomLeft' }}  
-                    {{ 'contact-bottomRight.png' | asset_url | img_tag: 'contact page bottom right icon', 'contact-bottomRight' }}  
-                </div>
-                <div class="submit">
-                    <input class="btn btn__secondary btn__contact" type="submit" value="submit" />            
-                </div>
-            {% endif %}
-        {% endform %}
     </div>
+    <div class="form">
+        <div class="contact-formL">
+            {% form 'contact' %}
+                <div class="form-title">Send us a direct message</div>
+                {% if form.posted_successfully? %}
+                    <p class="form-success">
+                        Thank you! The Soapstand team will be in contact with you shortly!
+                    </p>
+                {% else %}
+                    <div class="input-row">
+                        <div class="first-name input-field">
+                            <input type="text" name="contact[first-name]" class="name__input input-input" id="first-name" placeholder="First Name" required/>
+                            <label for="first-name" class="name__label input-label">First Name</label>
+                        </div>
+                        <div class="last-name input-field">
+                            <input type="text" name="contact[last-name]" class="name__input input-input" id="last-name" placeholder="Last Name" required/>
+                            <label for="last-name" class="name__label input-label">Last Name</label>
+                        </div>
+                    </div>
+                    <div class="input-row">
+                        <div class="phone input-field">
+                            <input type="tel" pattern="\+?[\d]{5,40}" name="contact[phone]" class="phone__input input-input" id="phone" placeholder="Phone" required/>
+                            <label for="phone" class="phone__label input-label">Phone</label>
+                        </div>
+                        <div class="email input-field">
+                            <input type="email" name="contact[email]" class="email__input input-input" id="email" placeholder="Email" required/>
+                            <label for="email" class="email__label input-label">Email</label>
+                        </div>
+                    </div>
+                    <div class="organization">
+                        <input type="text" name="contact[organization]" class="organization__input input-input" id="organization" placeholder="Group or Company" required/>
+                        <label for="organization" class="organization__label input-label">Group or Company</label>
+                    </div>
+                    <div class="message">
+                        <textarea name="contact[body]" id="message" class="message__input" placeholder="Your message..." required></textarea>
+                        <label for="message" class="message__label">Your message</label>
+                    </div>
+                    <div class="submit">
+                        <input class="btn-contact" type="submit" value="submit" />            
+                    </div>
+                {% endif %}
+            {% endform %}
+        </div>
+        <div class="contact-formR">
+            <div class="form-title">Contact Info</div>
+            <div class="contact-formR-info">
+                <div class="contact-info contact-email">
+                    <i class="fa-regular fa-envelope"></i>
+                    <div class="contact-emailAddress">sales@soapstand.com</div>            
+                </div>
+                <div class="contact-info contact-mobile">
+                    <i class="fa-solid fa-mobile-screen-button"></i>
+                    <div class="contact-mobileNumber">Contact Info</div>
+                </div>
+            </div>
+            <div class="contact-formR-socialMedia">
+                <ul class="contact-formR-socialList">
+                    {% if section.settings.include_facebook %}
+                        <a href="{{ section.settings.facebook-link }}"><li class="contact-socials__item"><i class="fa-brands fa-facebook"></i></li></a>
+                    {% endif %}
+                    {% if section.settings.include_instagram %}
+                        <a href="{{ section.settings.instagram-link }}"><li class="contact-socials__item"><i class="fa-brands fa-instagram"></i></li></a>
+                    {% endif %}
+                </ul>
+            </div>
+        </div>
+        <div class="contact-bgIcon"></div>
+    </div>
+
 </section> 
 
 <style>
-    body{
-        background: #014E59;
-    }
-
     .contact{
-        background: #014E59;
-        min-height: 75vh;
-        height: auto;
-        padding: 0px 5em 3em 5em;
-        text-align: center;
+        width: 100%;
+    }
+    .contact-imageContainer{
+        width: 100%;
+        height: 150vh;
+        min-height: 150rem;
+        max-height: 155rem;
         position: relative;
+        margin-top: -5rem;
     }
-
-    .contact-page__title{
-        font-size: 29px;
-        margin-top:20px;
-        margin-bottom: 40px;
-    }
-
-    .contact-page__primary{
-        font-family: "Brevia", Montserrat, sans-serif;
-        font-size: 4em;
-        color: #94B7B8;
-        margin-bottom: 30px;
-        letter-spacing: 1px;
-        position: relative;
-    }
-
-    .contact-topRight{
+    .contact-bg{
         position: absolute;
-        height: 40px;
-        top: -40px;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url("https://cdn.shopify.com/s/files/1/0549/5580/2693/files/Contact-bg.png?v=1684362151");
+        background-size: cover;
+        background-position: top;
     }
-
-    .contact-page__secondary{
-        font-size: 2em;
+    .contact-bgLayer{
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background-color: #00000059;
+    }
+    .contact-outerBound{
+        max-width: 1650px;
+        width: 100%;
+        height: 100%;
+        margin: 0 auto;
+        padding: 0 4rem;
+    }
+    .contact-titleContainer{
+        padding: 20rem 0;
+        position: absolute;
+        top: 20%;
+        width: 60rem;
+        color: white;
+    }
+    .main-title{
+        font-size: 6rem;
         font-weight: 700;
-        color: #fffdfa;
-        letter-spacing: 1px;
-        position: relative;
+        margin-bottom: 2rem;
     }
-
-    .contact-topLeft{
-        position: absolute;
-        height: 20px;
-        top: -30px;
+    .sub-title{
+        font-weight: 400;
+        font-size: 3.5rem;
     }
-
-    .contact-page__content{
-        text-align: left;
-        max-width: 500px;
-        margin: 40px auto;
-        color: #fffdfa;
-    }
-
-    .if-statement{
-        margin: .25em;
-        font-size: 1.1em;
-    }
-
-    .if-answer{
-        font-weight: bold;
-    }
-
-    .name, .message{
-        position: relative;
-    }
-
-    .contact-middleRight{
-        position: absolute;
-        height: 40px;
-        right: -10px;
-        top: -45px;
-    }
-
-    .contact-middleLeft{
-        position: absolute;
-        height: 25px;
-        top: 15px;
-        left: -35px;
-    }
-
-    .contact-bottomLeft{
-        position: absolute;
-        height: 20px;
-        left: -5px;
-        bottom: -30px;
-    }
-
-    .contact-bottomRight{
-        position: absolute;
-        height: 60px;
-        right: -20px;
-        bottom: -70px;
-    }
-
-    .name__input:not(:-moz-placeholder-shown):invalid, .email__input:not(:-moz-placeholder-shown):invalid, .message__input:not(:-moz-placeholder-shown):invalid{
-        border: none;
-        outline: 2px solid #C75052;
-        border-radius: 5px;
-    }
-
-    .name__input:not(:-ms-input-placeholder):invalid, .email__input:not(:-ms-input-placeholder):invalid, .message__input:not(:-ms-input-placeholder):invalid{
-        border: none;
-        outline: 2px solid #C75052;
-        border-radius: 5px;
-    }
-
-    .name__input:not(:placeholder-shown):invalid, 
-    .email__input:not(:placeholder-shown):invalid, 
-    .message__input:not(:placeholder-shown):invalid{
-        border: none;
-        outline: 2px solid #C75052;
-        border-radius: 5px;
-    }
-
-    .name__label, .email__label, .message__label{
-        display: none;
-    }
-
-    .name__input, .email__input{
-        width: 550px;
-        height: 40px;
-        background: -o-linear-gradient(269.4deg, #004E59 -44.87%, #246770 -7.09%, #66949B 57.12%, #9CBABE 121.34%, #C7D8DA 181.78%, #E5EDEE 234.67%, #F8FAFA 280%, #fffdfa 310.22%);
-        background: linear-gradient(180.6deg, #004E59 -44.87%, #246770 -7.09%, #66949B 57.12%, #9CBABE 121.34%, #C7D8DA 181.78%, #E5EDEE 234.67%, #F8FAFA 280%, #fffdfa 310.22%);
-        border: none;
-        border-radius: 10px;
-        opacity: 0.6;
-        margin-bottom: 20px;
-    }
-
-    .name__input::-webkit-input-placeholder, .email__input::-webkit-input-placeholder, .message__input::-webkit-input-placeholder{
-        color: #fffdfa;
-        font-size: 14px;
-    }
-
-    .name__input::-moz-placeholder, .email__input::-moz-placeholder, .message__input::-moz-placeholder{
-        color: #fffdfa;
-        font-size: 14px;
-    }
-
-    .name__input:-ms-input-placeholder, .email__input:-ms-input-placeholder, .message__input:-ms-input-placeholder{
-        color: #fffdfa;
-        font-size: 14px;
-    }
-
-    .name__input::-ms-input-placeholder, .email__input::-ms-input-placeholder, .message__input::-ms-input-placeholder{
-        color: #fffdfa;
-        font-size: 14px;
-    }
-
-    .name__input::placeholder, .email__input::placeholder, .message__input::placeholder{
-        color: #fffdfa;
-        font-size: 14px;
-    }
-
-    #name, #email, #message{
-        color: #fffdfa;
-        padding-left: 10px;
-        font-family: Montserrat, sans-serif;
-    }
-
-    .message__input{
-        resize: none;
-        width: 550px;
-        height: 150px;
-        background: -o-linear-gradient(269.4deg, #004E59 -44.87%, #246770 -7.09%, #66949B 57.12%, #9CBABE 121.34%, #C7D8DA 181.78%, #E5EDEE 234.67%, #F8FAFA 280%, #fffdfa 310.22%);
-        background: linear-gradient(180.6deg, #004E59 -44.87%, #246770 -7.09%, #66949B 57.12%, #9CBABE 121.34%, #C7D8DA 181.78%, #E5EDEE 234.67%, #F8FAFA 280%, #fffdfa 310.22%);
-        opacity: 0.6;
-        border: none;
-        border-radius: 10px;
-    }
-
-    #message{
-        padding-top: 10px;
-    }
-
-    .name__input:focus, .email__input:focus, .message__input:focus{
-        border: none;
-        outline: 2px solid #a9cdce;
-        border-radius: 10px;
-    }
-
-    form{
-        display: inline-block;
-    }
-
-    .submit{
+    .form{
+        max-width: 131rem;
+        width: 100%;
         height: auto;
+        margin: 0 auto;
+        background: var(--color-water);
+        margin-top: -50rem;
+        margin-bottom: 20rem;
+        position: relative;
+        font-family: "Montserrat", sans-serif;
+        padding: 6rem 6vw;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: justify;
+            -ms-flex-pack: justify;
+                justify-content: space-between;
+    }
+    .contact-formL{
+        width: 58%;
+    }
+    .contact-formR{
+        width: 38%;
+        padding: 0 3rem;
+    }
+    .form-title{
+        font-size: 3rem;
+        color: var(--color-white);
+        margin-bottom: 5rem;
+    }
+    .input-row{
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: justify;
+            -ms-flex-pack: justify;
+                justify-content: space-between;
+        margin-bottom: 0.5rem;
+    }
+    .input-field{
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
+        width: 47%;
+    }
+    .input-label{
+        color: var(--color-white);
+        font-size: 1.6rem;
+        padding-left: 0.2rem;
+        -webkit-transform: translateY(-5rem);
+            -ms-transform: translateY(-5rem);
+                transform: translateY(-5rem);
+        -webkit-transition: all .3s;
+        -o-transition: all .3s;
+        transition: all .3s;
+    }
+    .input-input{
+        border:none;
+        background: transparent;
+        border-bottom: 2px solid var(--color-white);
+        padding: 1em 1em 0.5em 0.3rem;
+        color: var(--color-white);
+        font-family: "Montserrat", sans-serif;
+    }
+    .input-input::-webkit-input-placeholder{
+        color: var(--color-white);
+        font-size: 1.6rem;
+        font-family: "Montserrat", sans-serif;
+    }
+    .input-input::-moz-placeholder{
+        color: var(--color-white);
+        font-size: 1.6rem;
+        font-family: "Montserrat", sans-serif;
+    }
+    .input-input:-ms-input-placeholder{
+        color: var(--color-white);
+        font-size: 1.6rem;
+        font-family: "Montserrat", sans-serif;
+    }
+    .input-input::-ms-input-placeholder{
+        color: var(--color-white);
+        font-size: 1.6rem;
+        font-family: "Montserrat", sans-serif;
+    }
+    .input-input::placeholder{
+        color: var(--color-white);
+        font-size: 1.6rem;
+        font-family: "Montserrat", sans-serif;
+    }
+    .input-input:-moz-placeholder-shown + .input-label{
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-2rem);
+    }
+    .input-input:-ms-input-placeholder + .input-label{
+        opacity: 0;
+        visibility: hidden;
+        -ms-transform: translateY(-2rem);
+            transform: translateY(-2rem);
+    }
+    .input-input:placeholder-shown + .input-label{
+        opacity: 0;
+        visibility: hidden;
+        -webkit-transform: translateY(-2rem);
+            -ms-transform: translateY(-2rem);
+                transform: translateY(-2rem);
+    }
+    .input-input:focus{
+        outline: none;
+    }
+    .phone__input:not(:-moz-placeholder-shown):invalid, .email__input:not(:-moz-placeholder-shown):invalid{
+        border-bottom: 2px solid #C75052;     
     }
 
-    .btn__contact{
-        margin-top: 50px;
-        position: unset;
+    .phone__input:not(:-ms-input-placeholder):invalid, .email__input:not(:-ms-input-placeholder):invalid{
+        border-bottom: 2px solid #C75052;     
     }
 
+    .phone__input:not(:placeholder-shown):invalid, 
+    .email__input:not(:placeholder-shown):invalid{
+        border-bottom: 2px solid #C75052;     
+    }
+    .organization{
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
+        margin-bottom: 3rem;
+    }
+    .message{
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
+    }
+    .message__input{
+        outline: 2px solid white;
+        border: none;
+        background: transparent;
+        height: 20rem;
+        font-family: "Montserrat", sans-serif;
+        font-size: 1.6rem;
+        color: var(--color-white);
+        padding: .75rem .75rem 0 .75rem;
+    }
+    .message__input::-webkit-input-placeholder{
+        color: var(--color-white);
+    }
+    .message__input::-moz-placeholder{
+        color: var(--color-white);
+    }
+    .message__input:-ms-input-placeholder{
+        color: var(--color-white);
+    }
+    .message__input::-ms-input-placeholder{
+        color: var(--color-white);
+    }
+    .message__input::placeholder{
+        color: var(--color-white);
+    }
+    .message__label{
+        color: var(--color-white);
+        font-size: 1.6rem;
+        padding-left: 0.2rem;
+        -webkit-transform: translateY(-23rem);
+            -ms-transform: translateY(-23rem);
+                transform: translateY(-23rem);
+        -webkit-transition: all .3s;
+        -o-transition: all .3s;
+        transition: all .3s;
+    }
+    .message__input:-moz-placeholder-shown + .message__label{
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-21rem);
+    }
+    .message__input:-ms-input-placeholder + .message__label{
+        opacity: 0;
+        visibility: hidden;
+        -ms-transform: translateY(-21rem);
+            transform: translateY(-21rem);
+    }
+    .message__input:placeholder-shown + .message__label{
+        opacity: 0;
+        visibility: hidden;
+        -webkit-transform: translateY(-21rem);
+            -ms-transform: translateY(-21rem);
+                transform: translateY(-21rem);
+    }
+    .submit{
+        text-align: right;
+    }
+    .btn-contact{
+        margin-top: 1rem;
+        border: 2px solid var(--color-white);
+        background: transparent;
+        padding: .5rem 3.5rem;
+        font-size: 1.8rem;
+        color: white;
+        border-radius: 25px;
+        text-transform: capitalize;
+        line-height: 26px;
+        cursor: pointer;
+        -webkit-transition: all .2s;
+        -o-transition: all .2s;
+        transition: all .2s;
+    }
+    .btn-contact:hover{
+        color: #fffdfa;
+        -webkit-box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+                box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+        background: -o-linear-gradient(left, var(--color-dark-blue) 0%, var(--color-bubbles) 100%) border-box;
+        background: -webkit-gradient(linear, left top, right top, from(var(--color-dark-blue)), to(var(--color-bubbles))) border-box;
+        background: linear-gradient(to right, var(--color-dark-blue) 0%, var(--color-bubbles) 100%) border-box;
+        border: 2px solid transparent;
+    }
+    .contact-info{
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        margin: 0 auto 5rem auto;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
+        color: var(--color-white);
+    }
+    .contact-info i{
+        font-size: 4rem;
+        width: 15%;
+        text-align: center;
+        margin-right: 2rem;
+    }
+    .contact-emailAddress, .contact-mobileNumber{
+        font-size: 1.8rem;
+        font-weight: 400;
+    }
+    .contact-formR-socialList{
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        list-style: none;
+        margin-top: 10vh;
+        padding-left: 1rem;
+    }
+    .contact-socials__item{
+        color: var(--color-white);
+        font-size: 4rem;
+        padding-right: 4rem;
+        text-align: center;
+    }
+    .contact-socials__item:hover {
+        opacity: 0.7;
+    }
+    .contact-bgIcon{
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        height: 30rem;
+        width: 30rem;
+        background-image: url("https://cdn.shopify.com/s/files/1/0549/5580/2693/files/Contact-bgIcon.png?v=1685388061");
+        background-size: contain;
+    }
     .form-success{
-        padding: 4em;
+        padding: 2em 3em;
         background: -o-linear-gradient(269.4deg, #004E59 -44.87%, #246770 -7.09%, #66949B 57.12%, #9CBABE 121.34%, #C7D8DA 181.78%, #E5EDEE 234.67%, #F8FAFA 280%, #fffdfa 310.22%);
         background: linear-gradient(180.6deg, #004E59 -44.87%, #246770 -7.09%, #66949B 57.12%, #9CBABE 121.34%, #C7D8DA 181.78%, #E5EDEE 234.67%, #F8FAFA 280%, #fffdfa 310.22%);
-        border-radius: 25px;
+        border-radius: 10px;
         color: #fffdfa;
         opacity: .8;
-        font-family: "Brevia";
-        font-size: 20px;
+        font-size: 1.8rem;
         position: relative;
     }
 
-    @media (max-width: 1000px) {
-        .contact-page__primary{
-            font-size: 3.2em
-        }
-
-        .contact-page__secondary{
-            font-size: 1.5em;
-        }
-
-        .contact-page__content{
-            max-width: 450px;
-        }
-
-        .if-statement{
-            font-size: 1em;
-        }
+  /* 800px tab-port*/
+  @media only screen and (max-width: 50em){
+    .contact-titleContainer{
+        width: 50rem;
     }
-
-    @media (max-width: 949px){
-        .contact{
-            padding: 20px 5em 3em 5em;
-        }
+    .main-title{
+        font-size: 5rem;
     }
-
-    @media (max-width: 800px) {
-        .contact{
-            padding: 20px 0 5vh 0;
-        }
-
-        .contact-page__title{
-            font-size: 26px;
-        }
-
-        .contact-page__primary{
-            font-size: 2.8em;
-        }
-
-        .contact-page__secondary{
-            font-size: 1.4em;
-        }
-
-        .contact-page__content{
-            max-width: 400px;
-        }
-
-        .if-statement{
-            font-size: .9em;
-        }
-
-        .contact-middleLeft{
-        }
-
-        .contact-middleRight{
-        }
-
-        form{
-            display: unset;
-        }
-
-        .name, .email, .message{
-            width: 80%;
-            margin: 0 auto;
-        }
-
-        .name__input, .email__input, .message__input{
-            width: 100%;
-        }
-
-        .form-success{
-            margin-top: 10%;
-            padding: 3em 2em;
-            font-size: 16px;
-        }
+    .sub-title{
+        font-size: 2.8rem;
     }
-
-    @media (max-width: 600px) {
-        .contact-page__title{
-            font-size: 24px;
-        }
-
-        .contact-page__primary{
-            font-size: 2.6em;
-        }
-
-        .contact-page__secondary{
-            font-size: 1.2em;
-            letter-spacing: 0px;
-        }
-
-        .contact-page__content{
-            max-width: 350px;
-        }
-
-        .if-statement{
-            font-size: 12px;
-        }
-
-        .contact-topLeft{
-            height: 15px;
-        }
-
-        .contact-middleRight{
-            top: -35px;
-            height: 30px;
-        }
-
-        .form-success{
-            margin-top: 20%;
-            padding: 3em 2em;
-            font-size: 12px;
-        }
+  }
+  /*700px*/ 
+  @media only screen and (max-width: 43.75em){
+    .form{
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
     }
-
-    @media (max-width: 475px) {
-        .contact-page__title{
-            font-size: 20px;
-        }
-
-        .contact-page__primary{
-            font-size: 2em;
-            letter-spacing: 0px;
-        }
-
-        .contact-page__secondary{
-            font-size: 14px;
-        }
-
-        .contact-page__content{
-            max-width: 275px;
-        }
-
-        .name, .email, .message{
-            width: 90%;
-            margin: 0 auto;
-        }
-
-        .if-statement{
-            font-size: 10px;
-        }
-
-        .contact-topLeft{
-            height: 10px;
-            top: -15px;
-        }
-
-        .contact-topRight{
-            height: 25px;
-        }
-
-        .contact-bottomLeft{
-            height: 15px;
-            bottom: -25px;
-        }
-
-        .contact-bottomRight{
-            height: 40px;
-            bottom: -50px;
-        }
+    .form-title{
+        margin-bottom: 3rem;
     }
+    .contact-formL{
+        width: 90%;
+        margin: 0 auto;
+    }
+    .contact-formR{
+        width: 90%;
+        margin: 0 auto;
+        padding: unset;
+    }
+    .contact-info{
+        margin: 0 5rem 2rem 0;
+    }
+    .contact-info i{
+        text-align: left;
+        width: 8%;
+    }
+    .contact-formR-socialList{
+        margin-top: 2vh;
+        padding-left: 0;
+    }
+    .form-success{
+        padding: 1em 2em;
+        margin-bottom: 2rem;
+    }
+  }
+
+  /*500px*/
+  @media only screen and (max-width: 31.25em){
+    .contact-imageContainer{
+        min-height: 95rem;
+        max-height: 125rem;
+        margin-top: -5rem;
+    }
+    .contact-titleContainer{
+        width: 40rem;
+    }
+    .form{
+        margin-top: -30rem;
+        margin-bottom: 0;
+    }
+    .main-title{
+        font-size: 4rem;
+    }
+    .sub-title{
+        font-size: 2.2rem;
+    }
+    .input-row{
+        display: block;
+    }
+    .input-field{
+        width: 100%;
+    }
+    .contact-info i{
+        font-size: 3.2rem;
+        text-align: unset;
+    }
+    .contact-socials__item{
+        font-size: 3.2rem;
+    }
+    .btn-contact{
+        font-size: 1.4rem;
+        padding: .4rem 3rem;
+    }
+  }
+  /*400px*/
+  @media only screen and (max-width: 25em){
+    .contact-outerBound{
+        padding: 0 2rem;
+    }
+    .contact-titleContainer{
+        width: 90%;
+    }
+    .main-title{
+        font-size: 3.5rem;
+    }
+    .sub-title{
+        width: 90%;
+        font-size: 2rem;
+    }
+    .contact-formR{
+        margin-top: 3rem;
+    }
+  }
 </style>
 
 {% schema %}
@@ -438,75 +531,27 @@
         "settings": [
             {
                 "type": "checkbox",
-                "id": "include_email",
-                "label": "Include Email Information",
+                "id": "include_facebook",
+                "label": "Show Facebook link icon",
                 "default": true
             },
             {
                 "type": "text",
-                "id": "include_emailLeft",
-                "label": "If Statement: Email Information",
-                "default": "If you want mail: "
-            },
-            {
-                "type": "text",
-                "id": "include_emailRight",
-                "label": "Email Information",
-                "default": "sales@soapstand.com"
-            },
-            {
-                "type": "checkbox",
-                "id": "include_phone",
-                "label": "Include Phone Information",
-                "default": true
-            },
-            {
-                "type": "text",
-                "id": "include_phoneLeft",
-                "label": "If Statement: Phone Information",
-                "default": "If you want to hear us out: "
-            },
-            {
-                "type": "text",
-                "id": "include_phoneRight",
-                "label": "Phone Information",
-                "default": "(604) 672 5522"
+                "id": "facebook-link",
+                "label": "Facebook Link",
+                "default": "https://www.facebook.com/TheSoapstand"
             },
             {
                 "type": "checkbox",
                 "id": "include_instagram",
-                "label": "Include Instagram Information",
+                "label": "Show Instagram link icon",
                 "default": true
             },
             {
                 "type": "text",
-                "id": "include_instagramLeft",
-                "label": "If Statement: Instagram Information",
-                "default": "Follow us on Instagram: "
-            },
-            {
-                "type": "text",
-                "id": "include_instagramRight",
-                "label": "Instagram Information",
-                "default": "@soapstandco"
-            },
-            {
-                "type": "checkbox",
-                "id": "include_address",
-                "label": "Include Address Information",
-                "default": true
-            },
-            {
-                "type": "text",
-                "id": "include_addressLeft",
-                "label": "If Statement: Address Information",
-                "default": "Come meet us in person: "
-            },
-            {
-                "type": "text",
-                "id": "include_addressRight",
-                "label": "Address Information",
-                "default": "@ 312 Main St"
+                "id": "instagram-link",
+                "label": "Instagram Link",
+                "default": "https://www.instagram.com/soapstandco"
             }
         ]
     }

@@ -1,0 +1,260 @@
+<section class="SS2">
+    <div class="SS2-container">
+        <div class="SS2-content">
+            <div class="SS2-shortDescription">
+                <div class="SS2-shortDescription01">Easy set-up <span class="SS2-shortDescription01-span">Fits anywhere</span></div>
+                <div class="SS2-shortDescription02">Ideal for tight aisles</div>
+                <div class="SS2-name">SS 2</div>
+            </div>
+            <div class="SS2-image">Coming Soon</div>
+        </div>
+        <div class="SS2-spec">
+            <div class="SS2-spec-title"><span class="station-modelNum">SS 2</span> Light and compact</div>
+            <div class="SS2-spec-table">
+                <div class="SS2-spec-tableL">
+                    <div class="SS2-spec-includes"><span>INCLUDES</span> Payment system: your choice of TAP or receipt printer, user Portal, maintenance mode, touch screen user experience.</div>
+                    <div class="SS2-spec-pricing"><span>PRICING</span> $275/month, 24 month minimum *Security deposit, $1,000*</div>
+                </div>
+                <div class="SS2-spec-tableR">
+                    <div class="SS2-spec-row">
+                        <div class="SS2-height-text">Height</div>
+                        <div class="SS2-height-value">160cm</div>
+                    </div>
+                    <div class="SS2-spec-row">
+                        <div class="SS2-width-text">Width</div>
+                        <div class="SS2-width-value">38cm</div>
+                    </div>
+                    <div class="SS2-spec-row">
+                        <div class="SS2-depth-text">Depth</div>
+                        <div class="SS2-depth-value">63.5cm</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a href="/pages/our-stations" class="btn btn--black">go back</a>                
+    </div>
+</section>
+
+<style>
+    .SS2-container{
+        max-width: 1450px;
+        margin: 0 auto;
+        padding: 0rem 5vw 0rem 10vw; 
+    }
+    .SS2-content{
+        padding: 12rem 0 0 0;   
+        display: -webkit-box;   
+        display: -ms-flexbox;   
+        display: flex;
+        -webkit-box-pack: justify;
+            -ms-flex-pack: justify;
+                justify-content: space-between; 
+        min-height: 70rem;
+    }
+    .SS2-shortDescription{
+        width: 45rem;
+        position: relative;
+    }
+    .SS2-shortDescription01, .SS2-shortDescription02{
+        color: black;
+        font-size: 2.2rem;
+        font-weight: 700;
+    }
+    .SS2-shortDescription01{
+        margin-bottom: 2rem;
+    }
+    .SS2-shortDescription01-span{
+        font-weight: 400;
+        margin-left: 3rem;
+    }
+    .SS2-shortDescription02{
+        padding-bottom: 2rem;
+        border-bottom: 3px solid black;
+    }
+    .SS2-name{
+        position: absolute;
+        left: -1rem;
+        top: 50%;
+        font-weight: 700;
+        font-size: 4.2rem;
+    }
+    .SS2-name::before{
+        content: '';
+        height: 3rem;
+        width: 6rem;
+        background: black;
+        display: inline-block;
+        margin-right: 2rem;
+    }
+    .SS2-image{
+        height: 75rem;
+        width: 62rem;
+        background-image: url("https://cdn.shopify.com/s/files/1/0549/5580/2693/files/Stations-SS2.png?v=1686358795");
+        background-size: contain;
+        background-position: bottom;
+        background-repeat: no-repeat;
+        margin-top: 2rem;
+        text-align: center;
+        padding-top: 30%;
+        color: var(--color-water);
+        font-weight: 700;
+        font-size: 4rem;
+    }
+    .SS2-spec{
+        width: 85%;
+        margin-right: auto;
+        margin-bottom: 5rem;
+    }
+    .SS2-spec-title{
+        color: black;
+        font-weight: 400;
+        font-size: 4.2rem;
+        padding-bottom: 2rem;
+        border-bottom: 3px solid black;
+        text-align: right;
+    }
+    .station-modelNum{
+        font-weight: 700;
+    }
+    .SS2-spec-table{
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: justify;
+            -ms-flex-pack: justify;
+                justify-content: space-between;
+    }
+    .SS2-spec-tableL{
+        width: 60rem;
+        margin-top: 2rem;
+        margin-right: 4rem;
+    }
+    .SS2-spec-includes{
+        margin-bottom: 2rem;
+    }
+    .SS2-spec-includes, .SS2-spec-pricing{
+        font-size: 2rem;
+        font-weight: 400;
+        color: black;
+        line-height: 2;
+    }
+    .SS2-spec-includes span, .SS2-spec-pricing span{
+        font-weight: 700;
+    }
+    .SS2-spec-tableR{
+        margin-top: 2rem;
+        width: 18rem;
+    }
+    .SS2-spec-row{
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: justify;
+            -ms-flex-pack: justify;
+                justify-content: space-between;
+        line-height: 2;
+    }
+    .SS2-height-text, .SS2-width-text, .SS2-depth-text{
+        font-weight: 700;
+        color: black;
+        font-size: 2rem;
+    }
+    .SS2-height-value, .SS2-width-value, .SS2-depth-value{
+        font-weight: 400;
+        color: black;
+        font-size: 2rem;
+    }
+    .btn--black, .btn--black:visited, .btn--black:link{
+        display: inline-block;
+        margin-bottom: 5rem;
+    }
+    /* 800px tab-port*/
+    @media only screen and (max-width: 50em){
+        .SS2-name{
+            bottom: -10rem;
+            top: unset;
+        }
+        .SS2-container{
+            padding: 0 5vw;
+        }
+        .SS2-content{
+            display: block;
+        }
+        .SS2-image{
+            width: 100%;
+            height: 70rem;
+            margin: 3rem auto 0 auto;
+            background-size: contain;
+        }
+        .SS2-spec{
+            width: 90%;
+        }
+    }
+    /*700px*/ 
+    @media only screen and (max-width: 43.75em){
+        .SS2-spec-table{
+            display: block;
+        }
+        .SS2-spec-tableL{
+            width: 100%;
+            margin-right: 0;
+        }
+    }
+    /*500px*/
+    @media only screen and (max-width: 31.25em){
+        .SS2-name{
+            font-size: 3.6rem;
+        }
+        .SS2-shortDescription01, .SS2-shortDescription02{
+            font-size: 1.8rem;
+        }
+        .SS2-shortDescription{
+            width: 90%;
+            margin: 0 auto;
+        }
+        .SS2-image{
+            height: 50rem;
+            width: 90%;
+        }
+        .SS2-spec{
+            margin: 0 auto;
+        }
+        .SS2-spec-title{
+            font-size: 3.6rem;
+        }
+        .SS2-spec-includes, .SS2-spec-pricing{
+            font-size: 1.8rem;
+        }
+        .SS2-height-text, .SS2-width-text, .SS2-depth-text, .SS2-height-value, .SS2-width-value, .SS2-depth-value{
+            font-size: 1.8rem;
+        }
+        .btn--black, .btn--black:visited, .btn--black:link{
+            display: block;
+            width: 15rem;
+            margin: 2rem 0 5rem auto;
+        }
+    }
+    /*400px*/
+    @media only screen and (max-width: 25em){
+        .SS2-content{
+            padding: 10rem 0 0 0;
+        }
+        .SS2-name{
+            bottom: -6rem;
+            font-size: 3rem;
+        }
+        .SS2-shortDescription{
+            width: 100%
+        }
+        .SS2-spec{
+            width: 100%;
+        }
+        .SS2-spec-title{
+            font-size: 3rem;
+            text-align: left;
+        }
+        .btn--black, .btn--black:visited, .btn--black:link{
+            width: 12rem;
+        }
+    }
+</style>

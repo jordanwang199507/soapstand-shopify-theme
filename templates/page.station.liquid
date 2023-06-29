@@ -1,4 +1,386 @@
-<h1>{{page.title}}</h1>
-<div>
-    {{ page.content}}
-</div>
+<section class="stations">
+    <div class="stations-container stations-container01">
+        <div class="stations-titleContainer">
+            <div class="stations-bg-icon"></div>
+            <div class="stations-title">
+                <p class="stations-title01">Our stations</p>
+                <div class="stations-title02">Meet the best station<br>for you</div>        
+            </div>
+        </div>
+        <div class="stations-bg-animation">
+            {% comment %} <div class="stations-animation-L"></div> {% endcomment %}
+            {% comment %} <div class="stations-animation-R"></div> {% endcomment %}
+        </div>
+    </div>
+    {% comment %} <div class="stations-container stations-container02">
+        <div class="stations-SS2-bg">
+            <div class="stations-SS2-image"></div>
+            <div class="stations-SS2-bgLayer"></div>
+            <div class="stations-SS2-body">
+                <div class="SS2-bodyL">
+                    <div class="SS2-bodyL-top">Your light and compact</div>
+                    <div class="SS2-bodyL-bottom">&nbsp; </div>
+                </div>
+                <div class="SS2-bodyR">
+                    <a href="/pages/SS2" class="btn-readMore">Read more</a>                
+                </div>
+            </div>
+        </div>
+    </div> {% endcomment %}
+    <div class="stations-container stations-container02">
+        <div class="stations-SS1-bg">
+            <div class="stations-SS1-image"></div>
+            <div class="stations-SS1-bgLayer"></div>
+            <div class="stations-SS1-body">
+                <div class="SS1-bodyL">
+                    <div class="SS1-bodyL-top">Your business in a box</div>
+                    <div class="SS1-bodyL-bottom">&nbsp;</div>
+                </div>
+                <div class="SS1-bodyR">
+                    <a href="/pages/SS1" class="btn-readMore">Read more</a>                
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="stations-container stations-container02">
+        <div class="stations-SS4-bg">
+            <div class="stations-SS4-image"></div>
+            <div class="stations-SS4-bgLayer"></div>
+            <div class="stations-SS4-body">
+                <div class="SS4-bodyL">
+                    <div class="SS4-bodyL-top">Your portable station</div>
+                    <div class="SS4-bodyL-bottom">&nbsp;</div>
+                </div>
+                <div class="SS4-bodyR">
+                    <a href="/pages/SS4" class="btn-readMore">Read more</a>                
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    .stations-container{
+        width: 100%;
+        background: var(--color-white);
+    }
+    .stations-container01{
+        max-width: 1450px;
+        margin: -50px auto 0rem auto;
+        width: 90%;
+        min-height: 70rem;
+        height: 60vh;
+        padding: 13rem 4rem 5rem 4rem;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
+    }
+    .stations-titleContainer{
+        position: relative;
+        width: 57rem;
+        height: 20rem;
+    }
+    .stations-title{
+        position: absolute;
+        color: var(--color-dark-blue);
+        text-align: center;
+        left: 50%;
+        -webkit-transform: translate(-50%, -0%);
+            -ms-transform: translate(-50%, -0%);
+                transform: translate(-50%, -0%);
+        width: 100%;
+    }
+    .stations-title01{
+        font-weight: 400;
+        font-style: normal;
+        font-size: 2.2rem;
+        margin-bottom: 2rem;
+    }    
+    .stations-title02{
+        font-weight: 700;
+        font-size: 5rem;
+    }
+    .stations-bg-icon{
+        width: 28rem;
+        height: 27.8rem;
+        background-image: url("https://cdn.shopify.com/s/files/1/0549/5580/2693/files/Stations-Icon.png?v=1686328078");
+        background-size: contain;
+        background-repeat: no-repeat;
+        position: absolute;
+        top: 0;
+        right: -15rem;
+        -webkit-transform: translate(-0%, -20%);
+            -ms-transform: translate(-0%, -20%);
+                transform: translate(-0%, -20%);
+        z-index: 0;
+    }
+    .stations-bg-animation{
+        margin-top: 2rem;
+        height: 45px;
+        width: 45px;
+        position: relative;
+        -webkit-transform: rotate(315deg);
+            -ms-transform: rotate(315deg);
+                transform: rotate(315deg);
+        -webkit-transition: all .2s;
+        -o-transition: all .2s;
+        transition: all .2s;
+        -webkit-animation: arrowAnimation 3s infinite;
+                animation: arrowAnimation 3s infinite;
+    }
+    .stations-bg-animation:before{
+        content: '';
+        height: 1rem;
+        width: 115%;
+        border-radius: 0px 99px 99px 0px;
+        background: var(--color-bubbles);
+        position: absolute;
+        bottom: 0;
+    }
+    .stations-bg-animation:after{
+        content: '';
+        height: 1rem;
+        width: 115%;
+        border-radius: 99px 0px 0px 99px;
+        background: var(--color-bubbles);
+        position: absolute;
+        -webkit-transform: rotate(90deg);
+            -ms-transform: rotate(90deg);
+                transform: rotate(90deg);
+        bottom: 50%;
+        left: -50%;
+    }
+    @-webkit-keyframes arrowAnimation{
+        0%   {-webkit-transform: rotate(315deg) scale(1);transform: rotate(315deg) scale(1);}
+        25%  {-webkit-transform: rotate(315deg) scale(1.2);transform: rotate(315deg) scale(1.2);}
+        50%  {-webkit-transform: rotate(315deg) scale(1);transform: rotate(315deg) scale(1);}
+        75% {-webkit-transform: rotate(315deg) scale(1.2);transform: rotate(315deg) scale(1.2);}
+    }
+    @keyframes arrowAnimation{
+        0%   {-webkit-transform: rotate(315deg) scale(1);transform: rotate(315deg) scale(1);}
+        25%  {-webkit-transform: rotate(315deg) scale(1.2);transform: rotate(315deg) scale(1.2);}
+        50%  {-webkit-transform: rotate(315deg) scale(1);transform: rotate(315deg) scale(1);}
+        75% {-webkit-transform: rotate(315deg) scale(1.2);transform: rotate(315deg) scale(1.2);}
+    }
+    .stations-container02{
+        max-width: 100% !important;
+        min-width: 100% !important;
+        height: 60rem;
+        margin-bottom: 5rem;
+    }
+
+    .stations-SS2-bg, .stations-SS1-bg, .stations-SS4-bg{
+        width: 100%;
+        height: 100%;
+        position: relative;
+    }
+
+    .stations-SS2-image, .stations-SS1-image, .stations-SS4-image{
+        height: 100%;
+        background-size: contain;
+        background-position: 60% 100%;
+        background-repeat: no-repeat;
+    }
+
+    .stations-SS1-image{
+        background-image: url("https://cdn.shopify.com/s/files/1/0549/5580/2693/files/SS1.png?v=1686263920");
+    }
+    .stations-SS2-image{
+        background-image: url("https://cdn.shopify.com/s/files/1/0549/5580/2693/files/SS2.png");
+    }
+    .stations-SS4-image{
+        background-image: url("https://cdn.shopify.com/s/files/1/0549/5580/2693/files/SS4.png?v=1686263920")
+    }
+
+    .stations-SS2-bgLayer, .stations-SS1-bgLayer, .stations-SS4-bgLayer{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: var(--color-water);
+        opacity: .35;
+    }
+
+    .stations-SS2-body, .stations-SS1-body, .stations-SS4-body{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -webkit-transform: translate(-70%, -50%);
+            -ms-transform: translate(-70%, -50%);
+                transform: translate(-70%, -50%);
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        width: 60%;
+        max-width: 750px;
+    }
+
+    .SS2-bodyL, .SS1-bodyL, .SS4-bodyL{
+        width: 50rem;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
+        font-size: 3.2rem;
+        color: var(--color-white);
+        line-height: 2;
+    }
+
+    .SS2-bodyL-top, .SS1-bodyL-top, .SS4-bodyL-top{
+        font-weight: 700;
+        border-bottom: 3px solid var(--color-white);
+    }
+
+    .SS2-bodyR, .SS1-bodyR, .SS4-bodyR{
+        width: 20rem;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
+        margin-left: 1rem;
+    }
+    
+    .btn-readMore{
+        font-family: "Montserrat";
+        text-decoration: none;
+        color: var(--color-white);
+        font-size: 2rem;
+        font-weight: 400;
+        border: 2px solid var(--color-white);
+        padding: 1rem 1.5rem;
+        border-radius: 50px;
+    }
+    /* 750px tab-port*/
+    @media only screen and (max-width: 46.875em){
+        .stations-bg-icon{
+            width: 24rem;
+            height: 23.8rem;
+            right: -10rem;
+        }
+        .stations-title02{
+            font-size: 4rem;
+        }
+        .stations-container02{
+            height: 50rem;
+        }
+        .stations-SS2-image, .stations-SS1-image, .stations-SS4-image{
+            background-size: cover;
+        }
+        .stations-SS2-body, .stations-SS1-body, .stations-SS4-body{
+            display: block;
+            -webkit-transform: translate(-60%, -50%);
+                -ms-transform: translate(-60%, -50%);
+                    transform: translate(-60%, -50%);
+        }
+        .SS2-bodyR, .SS1-bodyR, .SS4-bodyR{
+            -webkit-box-pack: unset;
+                -ms-flex-pack: unset;
+                    justify-content: unset;
+            margin-left: 0rem;
+        }
+    }
+    /* 650px */
+    @media only screen and (max-width: 40.625em){
+        .stations-container01{
+            padding: 13rem 0rem 0rem 0rem;
+            overflow: hidden;
+            margin: -50px 0rem 0rem 0rem;
+            width: 100%;
+        }
+        .stations-bg-animation{
+            -webkit-transform: rotate(315deg) scale(.8);
+                -ms-transform: rotate(315deg) scale(.8);
+                    transform: rotate(315deg) scale(.8);
+        }
+        @-webkit-keyframes arrowAnimation{
+            0%   {-webkit-transform: rotate(315deg) scale(.8);transform: rotate(315deg) scale(.8);}
+            25%  {-webkit-transform: rotate(315deg) scale(1);transform: rotate(315deg) scale(1);}
+            50%  {-webkit-transform: rotate(315deg) scale(.8);transform: rotate(315deg) scale(.8);}
+            75% {-webkit-transform: rotate(315deg) scale(1);transform: rotate(315deg) scale(1);}
+        }
+        @keyframes arrowAnimation{
+            0%   {-webkit-transform: rotate(315deg) scale(.8);transform: rotate(315deg) scale(.8);}
+            25%  {-webkit-transform: rotate(315deg) scale(1);transform: rotate(315deg) scale(1);}
+            50%  {-webkit-transform: rotate(315deg) scale(.8);transform: rotate(315deg) scale(.8);}
+            75% {-webkit-transform: rotate(315deg) scale(1);transform: rotate(315deg) scale(1);}
+        }
+    }
+    /*500px*/
+    @media only screen and (max-width: 31.25em){
+        .stations-title02{
+            font-size: 3.6rem;
+        }
+        .stations-bg-icon{
+            width: 22rem;
+            height: 21.8rem;
+            right: -5rem;
+        }
+        .stations-container02{
+            height: 40rem;
+        }
+        .SS2-bodyL, .SS1-bodyL, .SS4-bodyL{
+            width: 40rem;
+        }
+    }
+    /*400px*/
+    @media only screen and (max-width: 25em){
+        .stations-container01{
+            min-height: 60rem;
+        }
+        .stations-title02{
+            font-size: 3.2rem;
+        }
+        .stations-bg-animation{
+            -webkit-transform: rotate(315deg) scale(.6);
+                -ms-transform: rotate(315deg) scale(.6);
+                    transform: rotate(315deg) scale(.6);
+        }
+        @-webkit-keyframes arrowAnimation{
+            0%   {-webkit-transform: rotate(315deg) scale(.6);transform: rotate(315deg) scale(.6);}
+            25%  {-webkit-transform: rotate(315deg) scale(.8);transform: rotate(315deg) scale(.8);}
+            50%  {-webkit-transform: rotate(315deg) scale(.6);transform: rotate(315deg) scale(.6);}
+            75% {-webkit-transform: rotate(315deg) scale(.8);transform: rotate(315deg) scale(.8);}
+        }
+        @keyframes arrowAnimation{
+            0%   {-webkit-transform: rotate(315deg) scale(.6);transform: rotate(315deg) scale(.6);}
+            25%  {-webkit-transform: rotate(315deg) scale(.8);transform: rotate(315deg) scale(.8);}
+            50%  {-webkit-transform: rotate(315deg) scale(.6);transform: rotate(315deg) scale(.6);}
+            75% {-webkit-transform: rotate(315deg) scale(.8);transform: rotate(315deg) scale(.8);}
+        }
+        .stations-container02{
+            height: 30rem;
+        }
+        .stations-SS2-body, .stations-SS1-body, .stations-SS4-body{
+            -webkit-transform: translate(-50%, -50%);
+                -ms-transform: translate(-50%, -50%);
+                    transform: translate(-50%, -50%);
+            width: 80%;
+        }
+        .SS2-bodyL, .SS1-bodyL, .SS4-bodyL{
+            width: 90%;
+            font-size: 2.3rem;
+        }
+        .btn-readMore{
+            font-size: 1.6rem;
+        }
+    }
+</style>

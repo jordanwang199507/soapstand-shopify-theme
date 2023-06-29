@@ -1,4 +1,426 @@
-<h1>{{page.title}}</h1>
-<div>
-    {{ page.content}}
-</div>
+<section class="refill">
+    <div class="refill-container01">
+        <h2 class="refill-title">Preserving the environment one refill at a time - sustainability made easy</h2>
+        <p class="refill-subtitle">We can't wait for you to try our smart dispense stations!</p>
+        <div class="refill-icon-location">
+            <div class="refill-icon"></div>
+        </div>
+    </div>
+    <div class="refill-container02"></div>
+    <div class="refill-container03">
+        <div class="refill-container03-row">
+            <div class="refill-container03-L">
+                <div class="container03-stationImg"></div>
+            </div>
+            <div class="refill-container03-R">
+                <div class="container03-R-title">FIND SOAPSTAND</div>
+                <div class="container03-R-subtitle">Find the soapstand nearest to you!</div>
+                <div class="container03-R-btn">
+                    <a href="/pages/locations-new" class="btn btn--water">our locations</a>                
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="refill-container04">
+        <div class="refill-container04-row">
+            <div class="refill-steps">
+                <div class="box box-text box1-text">
+                    <div class="box-text-container box1-text-container">
+                        <div class="box-title box-title--light">STEP 1</div>
+                        <div class="box-content box-content--light">Out of our product selection tap on the product you wish to dispense and indicate the quantity you wish to purchase. </div>
+                    </div>
+                </div>
+                <div class="box box-image box2-image"></div>
+                <div class="box box-image box3-image"></div>
+                <div class="box box-text box4-text">
+                    <div class="box-text-container box4-text-container">
+                        <div class="box-title box-title--dark">STEP 2</div>
+                        <div class="box-content box-content--dark">Once ready to dispense, press and hold the green light button. your soap will dispense your desired quantity so you can safely stop pressing the button and close the container. </div>
+                    </div>
+                </div>
+                <div class="box box-text box5-text">
+                    <div class="box-text-container box5-text-container">
+                        <div class="box-title box-title--light">STEP 3</div>
+                        <div class="box-content box-content--light">Dispense complete, please pay through one of our payment systems: collecting your receipt from the machine, applying tap payment or QR code.</div>
+                    </div>
+                </div>
+                <div class="box box-image box6-image"></div>
+                <div class="box box-image box7-image"></div>
+                <div class="box box-text box8-text">
+                    <div class="box-text-container box8-text-container">
+                        <div class="box-title box-title--light">Thank you!</div>
+                        <div class="box-content box-content--light">You’ve saved a plastic bottle from entering our landfills.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+  .refill{
+    width: 100%;
+    background: var(--color-dark-blue);
+    position: relative;
+
+  }
+  .refill-container01{
+    max-width: 1450px;
+    margin: 0 auto;
+    width: 90%;
+    min-height: 50rem;
+    height: auto;
+    margin-top: -50px;
+    padding: 13rem 0 8rem 0;
+    position: relative;
+  }
+  .refill-title{
+    font-size: 5rem;
+    color: var(--color-white);
+    padding: 12rem 5rem 0rem 5rem;
+  }
+  .refill-subtitle{
+    font-weight: 200;
+    color: var(--color-white);
+    font-size: 3rem;
+    padding: 0 5rem;
+    margin-top: 2rem;
+    margin-bottom: 5rem;
+  }
+  .refill-icon-location{
+    width: 12rem;
+    height: 12rem;
+    background: var(--color-water);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    border-radius: 50%;
+    position: absolute;
+    bottom: -6rem;
+    right: 5rem;
+    -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  }
+  .refill-icon{
+    width: 80%;
+    height: 80%;
+    background-image: url("https://cdn.shopify.com/s/files/1/0549/5580/2693/files/Refill-icon.png?v=1685405981");
+    background-size: contain;
+  }
+  .refill-container02{
+    width: 100% !important;
+    min-height: 50vw;
+    background-image: url("https://cdn.shopify.com/s/files/1/0549/5580/2693/files/Refill-bg01.png?v=1685405243");
+    background-size: cover;
+    background-position: center;
+  }
+  .refill-container03{
+    width: 100%;
+    min-height: 50rem;
+    height: auto;
+    background: var(--color-white);
+  }
+  .refill-container03-row{
+    max-width: 1450px;
+    margin: 0 auto;
+    width: 90%;
+    height: auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .refill-container03-L{
+    width: 45%;
+    height: auto;
+    min-height: 50rem;
+  }
+  .container03-stationImg{
+    height: 100%;
+    width: 100%;
+    background-image: url("https://cdn.shopify.com/s/files/1/0549/5580/2693/files/Refill-station.png?v=1685984502");
+    background-size: cover;
+    background-position: right;
+  }
+  .refill-container03-R{
+    width: 55%;
+    padding: 12rem 2rem;
+  }
+  .container03-R-title{
+    color: var(--color-water);
+    font-size: 4.8rem;
+    font-weight: 700;
+    margin-bottom: 2vw;
+  }
+  .container03-R-subtitle{
+    color: var(--color-water);
+    font-weight: 400;
+    font-size: 2.6rem;
+    margin-bottom: 5vw;
+  }
+  .refill-container04{
+    width: 100%;
+    min-height: 50rem;
+    height: auto;
+    background: var(--color-white);
+  }
+  .refill-container04-row{
+    max-width: 1450px;
+    margin: 0 auto;
+    width: 100%;
+    height: auto;
+
+  }
+  .refill-steps{
+    width: 100%;
+    display: flex;
+    display: -webkit-box;
+    display: -ms-flexbox;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+    padding: 2rem 0 0 0;
+  }
+  .box{
+    width: 50%;
+  }
+  .box-text{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    padding: 6vw;
+    background: var(--color-water);
+    color: var(--color-bubbles);
+  }
+  .box4-text{
+    color: var(--color-dark-blue);
+    background: var(--color-white);
+  }
+  .box-text-container{
+    width: 50rem;
+  }
+  .box-title{
+    font-size: 5rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+  }
+  .box-content{
+    font-size: 2.4rem;
+    font-weight: 400;
+  }
+  .box2-image{
+    background-image: url("https://cdn.shopify.com/s/files/1/0549/5580/2693/files/Refill-step01.png?v=1685984506");
+    background-size: cover;
+    background-position: center;
+    height: 55rem;
+  }
+  .box3-image{
+    background-image: url("https://cdn.shopify.com/s/files/1/0549/5580/2693/files/Refill-step02.png?v=1685984507");
+    background-size: cover;
+    background-position: center;
+    height: 55rem; 
+    /*40vw*/
+  }
+  .box6-image{
+    background-image: url("https://cdn.shopify.com/s/files/1/0549/5580/2693/files/Refill-step03.png?v=1685984505");
+    background-size: cover;
+    background-position: center;
+    height: 55rem;
+  }
+  .box7-image{
+    background-image: url("https://cdn.shopify.com/s/files/1/0549/5580/2693/files/Refill-step04.png?v=1685984507");
+    background-size: cover;
+    background-position: center;
+    height: 55rem;
+  }
+  /* 1000px tab-land*/
+  @media only screen and (max-width: 62.5em){
+    .refill-container03-R{
+        padding: 12rem 0rem;
+    }
+  }
+  /* 900px tab-port*/
+  @media only screen and (max-width: 56.25em){
+    .refill-title{
+        font-size: 4.5rem;
+    }
+    .refill-subtitle{
+        font-size: 2.8rem;
+    }
+    .refill-container03-row{
+        width: 100%;
+    }
+  }
+  /* 800px tab-port*/
+  @media only screen and (max-width: 50em){
+    .refill-title{
+        font-size: 4rem;
+    }
+    .refill-subtitle{
+        font-size: 2.5rem;
+    }
+    .refill-container03-L{
+        width: 55%;
+    }
+    .refill-container03-R{
+        width: 42%;
+    }
+    .container03-R-title{
+        font-size: 4.2rem;
+    }
+    .container03-R-subtitle{
+        font-size: 2.2rem;
+    }
+    .box-image{
+        height: 55vw;
+    }
+  }
+  /* 750px tab-port*/
+  @media only screen and (max-width: 46.875em){
+
+  }
+  /*700px*/ 
+  @media only screen and (max-width: 43.75em){
+
+  }
+  /* 650px */
+  @media only screen and (max-width: 40.625em){
+    .refill-container03-row{
+        display: block;
+    }
+    .refill-container03-L{
+        width: 100%;
+    }
+    .container03-stationImg{
+        height: 50rem;
+        width: 100%;
+        background-size: contain;
+        background-position: 45%;
+        background-repeat: no-repeat;
+    }
+    .refill-container03-R{
+        width: 100%;
+        padding: 5rem 0;
+        text-align: center;
+    }
+    .refill-steps{
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+    }
+    .box{
+        width: 100%;
+        height: 40rem;
+    }
+    .box1-text{
+        -webkit-box-ordinal-group: 3;
+            -ms-flex-order: 2;
+                order: 2;
+    }
+    .box2-image{
+        -webkit-box-ordinal-group: 2;
+            -ms-flex-order: 1;
+                order: 1;
+    }
+    .box3-image{
+        -webkit-box-ordinal-group: 4;
+            -ms-flex-order: 3;
+                order: 3;
+    }
+    .box4-text{
+        -webkit-box-ordinal-group: 5;
+            -ms-flex-order: 4;
+                order: 4;
+    }
+    .box5-text{
+        -webkit-box-ordinal-group: 7;
+            -ms-flex-order: 6;
+                order: 6;
+    }
+    .box6-image{
+        -webkit-box-ordinal-group: 6;
+            -ms-flex-order: 5;
+                order: 5;
+    }
+    .box7-image{
+        background-position: top;
+        -webkit-box-ordinal-group: 8;
+            -ms-flex-order: 7;
+                order: 7;
+    }
+    .box8-text{
+        -webkit-box-ordinal-group: 9;
+            -ms-flex-order: 8;
+                order: 8;
+    }
+  }
+  /*600px*/ 
+  @media only screen and (max-width: 37.5em){
+    .refill-title{
+        padding: 8rem 0 0 0;
+    }
+    .refill-subtitle{
+        padding: 0;
+    }
+  }
+  /*500px*/
+  @media only screen and (max-width: 31.25em){
+    .refill-title{
+        font-size: 3.5rem;
+    }
+    .refill-subtitle{
+        font-size: 2.4rem;
+    }
+    .refill-container03-L{
+        min-height: unset;
+    }
+    .container03-stationImg{
+        height: 30rem;
+    }
+    .container03-R-title{
+        font-size: 3.5rem;
+    }
+    .container03-R-subtitle{
+        font-size: 2rem;
+    }
+    .box{
+        padding: 4rem;
+    }
+    .box-title{
+        font-size: 4rem;
+    }
+    .box-content{
+        font-size: 2.2rem;
+    }
+  }
+  /*400px*/
+  @media only screen and (max-width: 25em){
+    .refill-container01{
+        padding: 13rem 0 3rem 0;
+    }
+    .refill-title{
+        padding: 5rem 0 0 0;
+    }
+    .refill-icon-location{
+        width: 8rem;
+        height: 8rem;
+        bottom: -4rem;
+    }
+  }
+</style>

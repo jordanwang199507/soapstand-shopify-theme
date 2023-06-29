@@ -1,12 +1,35 @@
+:root{
+    --color-white: #FFFDFA;
+    --color-dark-blue: #004E59;
+    --color-water: #4A8B99;
+    --color-bubbles: #BCD7DB;
+}
+
 *, *::before, *::after{
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 62.5%;
 }
 
 body{
     margin: 0;
     font-family: 'Montserrat', sans-serif;
     background: #FFFDFA;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    height: 100vh;
+}
+
+header{
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
  @font-face {
@@ -55,6 +78,16 @@ body{
 
     border: 2px solid #005560;
     background-color: #fffdfa;
+}
+
+.btn--water, .btn--water:visited, .btn--water:link{
+    color: var(--color-water);
+    border: 2px solid var(--color-water);
+}
+
+.btn--black, .btn--black:visited, .btn--black:link{
+    color: black;
+    border: 2px solid black;
 }
 
 .btn:hover{
@@ -112,30 +145,41 @@ body{
     visibility: hidden !important;
 }
 
-@media (min-width: 950px) {
-    .row {
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: flex;
-        -webkit-box-pack: justify;
-            -ms-flex-pack: justify;
-                justify-content: space-between;
-    }
+/* 1800px big-desktop*/
+@media only screen and (min-width: 112.5em){
+  html{
+    font-size: 75% !important;
+  }
+}
 
+/* 1200px tab-land*/
+@media only screen and (max-width: 75em){
+  html{
+    font-size: 56.25% !important;
+  }
+}
+
+/* 900px tab-port*/
+@media only screen and (max-width: 56.25em){
+  html{
+    font-size: 50% !important;
+  }
+}
+
+/*600px*/
+@media only screen and (max-width: 37.5em){
     .btn, .btn:visited, .btn:link{
-        padding: 10px 25px;
-        font-size: 18px;
-    }
-
-    .btn__secondary, .btn__secondary:link{
-        padding: 1.2em 2.4em;
-        font-size: 14px;
+        padding: 1rem 1.25rem;
+        font-size: 1.6rem;
     }
 }
 
-@media (max-width: 450px) {
+/*400px*/
+@media only screen and (max-width: 25em){
     .btn, .btn:visited, .btn:link{
-        padding: 8px 22px;
-        font-size: 12px;
+        padding: .75rem 1rem;
+        font-size: 1.4rem;
     }
 }
+
+
