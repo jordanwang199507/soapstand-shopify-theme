@@ -34,7 +34,7 @@
         background: var(--color-dark-blue);
         width: 100%;
         height: 30vh;
-        min-height: 37rem;
+        min-height: 35rem;
         position: relative;
     }
     .footerContainer{
@@ -69,8 +69,7 @@
             -ms-flex-pack: space-evenly;
                 justify-content: space-evenly;
         margin: 0 auto;
-        font-size: 2rem;
-        padding: 0 10rem;
+        font-size: 1.8rem;
     }
     .footer-list02{
         list-style: none;
@@ -80,7 +79,7 @@
         list-style: none;
     }
     .footer-item:not(:last-child){
-        margin-right: 5rem;
+        margin-right: 2rem;
     }
     .footer-item a{
         color: white;
@@ -116,9 +115,7 @@
     }
     /* 1200px tab-land*/
     @media only screen and (max-width: 75em){
-        .footer-list{
-            padding: 0 5rem;
-        }
+
     }
     /* 800px tab-port*/
     @media only screen and (max-width: 50em){
@@ -136,6 +133,10 @@
     }
     /* 600px */
     @media only screen and (max-width: 37.5em){
+        .footer{
+            height: 37vh;
+            min-height: 35rem;
+        }
         .footer-logoContainer{
             width: 20rem;
             height: 20rem;
