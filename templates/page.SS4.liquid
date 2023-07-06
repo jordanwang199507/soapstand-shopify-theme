@@ -3,18 +3,19 @@
         <div class="SS4-content">
             <div class="SS4-shortDescription">
                 <div class="SS4-shortDescription01">Easy Plug-n-Play <span class="SS4-shortDescription01-span">Fits anywhere</span></div>
-                <div class="SS4-shortDescription02">Able to carry up to 6 products</div>
+                <div class="SS4-shortDescription02">Able to carry an unlimited amount of product lines</div>
                 <div class="SS4-name">SS 4</div>
             </div>
             <div class="SS4-image"></div>
         </div>
         <div class="SS4-spec">
-            <div class="SS4-spec-title"><span class="station-modelNum">SS 4</span> Your protable station</div>
+            <div class="SS4-spec-title"><span class="station-modelNum">SS 4</span> Customizable basic dispenser</div>
+            <div class="SS4-description">SS4 is our customizable station model that can be tailored to suit the business need. It is a simple system that is designed to pump products with a push of the button and without payment system or quantity measurement. It is highly customizable in terms of the exterior material, color, number of spouts and can be customized to built into walls or dispense islands. For more inquiries please feel free to <a class="contact-us" href="/pages/contact">contact us</a>.</div>
             <div class="SS4-spec-table">
                 <div class="SS4-spec-tableL">
-                    <div class="SS4-spec-includes"><span>INCLUDES</span> plug-n-play and ready to go. able to add multiple units together</div>
-                    <div class="SS4-spec-pricing"><span>PRICING</span> $23/month, 24 month minimum *Security deposit, %50/line*</div>
-                    <div class="SS4-spec-pricing"><span>EXTERIOR</span> can be customizable. For more inquiries, please feel free to contact us via the contact page</div>
+                    <div class="SS4-spec-includes"><span>INCLUDES</span> plug-n-play or customizable. An unlimited amount of product lines can be fitted together.</div>
+                    <div class="SS4-spec-pricing"><span>PRICING</span> $23 per line per month, 24 month minimum. We ask a security deposit of 50% of the monthly payment</div>
+                    <div class="SS4-spec-slots"><span>SLOTS FOR CLEANING PRODUCTS: 4</span></div>
                 </div>
                 <div class="SS4-spec-tableR">
                     <div class="SS4-spec-row">
@@ -32,7 +33,10 @@
                 </div>
             </div>
         </div>
-        <a href="/pages/our-stations" class="btn btn--black">go back</a>                
+        <div class="btn-group">
+            <a href="/pages/our-stations" class="btn btn--black btn--back">go back</a>            
+            <a href="/pages/contact" class="btn btn--black">get a quote</a>  
+        </div>
     </div>
 </section>
 
@@ -51,7 +55,6 @@
             -ms-flex-pack: justify;
                 justify-content: space-between; 
         min-height: 70rem;
-        margin-bottom: 5rem;
     }
     .SS4-shortDescription{
         width: 45rem;
@@ -106,9 +109,18 @@
         color: black;
         font-weight: 400;
         font-size: 4.2rem;
-        padding-bottom: 2rem;
+        margin-bottom: 1.5rem;
+    }
+    .SS4-description{
         border-bottom: 3px solid black;
-        text-align: right;
+        padding-bottom: 2rem;
+        font-size: 2rem;
+        line-height: 1.5;
+    }
+    .contact-us, .contact-us:visited, .contact-us:link{
+        text-decoration: none;
+        color: var(--color-dark-blue);
+        font-weight: 600;
     }
     .station-modelNum{
         font-weight: 700;
@@ -126,16 +138,16 @@
         margin-top: 2rem;
         margin-right: 4rem;
     }
-    .SS4-spec-includes{
+    .SS4-spec-includes, .SS4-spec-pricing{
         margin-bottom: 2rem;
     }
-    .SS4-spec-includes, .SS4-spec-pricing{
+    .SS4-spec-includes, .SS4-spec-pricing, .SS4-spec-slots{
         font-size: 2rem;
         font-weight: 400;
         color: black;
-        line-height: 2;
+        line-height: 1.5;
     }
-    .SS4-spec-includes span, .SS4-spec-pricing span{
+    .SS4-spec-includes span, .SS4-spec-pricing span, .SS4-spec-slots span{
         font-weight: 700;
     }
     .SS4-spec-tableR{
@@ -160,6 +172,9 @@
         font-weight: 400;
         color: black;
         font-size: 2rem;
+    }
+    .btn--back{
+        margin-right: 1.5rem;
     }
     .btn--black, .btn--black:visited, .btn--black:link{
         display: inline-block;
@@ -218,16 +233,19 @@
         .SS4-spec-title{
             font-size: 3.2rem;
         }
-        .SS4-spec-includes, .SS4-spec-pricing{
-            font-size: 1.8rem;
+        .SS4-spec-includes, .SS4-spec-pricing, .SS4-description, .SS4-spec-slots{
+            font-size: 1.6rem;
         }
         .SS4-height-text, .SS4-width-text, .SS4-depth-text, .SS4-height-value, .SS4-width-value, .SS4-depth-value{
-            font-size: 1.8rem;
+            font-size: 1.6rem;
+        }
+        .btn-group{
+            width: 90%;
+            margin: 0 auto;
         }
         .btn--black, .btn--black:visited, .btn--black:link{
-            display: block;
             width: 15rem;
-            margin: 2rem 0 5rem auto;
+            margin: 2rem 1.5rem 5rem 0rem;
         }
     }
     /*400px*/
@@ -255,6 +273,9 @@
         .SS4-spec-title{
             font-size: 3rem;
             text-align: left;
+        }
+        .btn-group{
+            width: 100%;
         }
         .btn--black, .btn--black:visited, .btn--black:link{
             width: 12rem;

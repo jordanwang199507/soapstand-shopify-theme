@@ -10,15 +10,17 @@
         </div>
         <div class="SS1-spec">
             <div class="SS1-spec-title"><span class="station-modelNum">SS 1</span> Business in a box</div>
+            <div class="SS1-description">SS1 is our business in a box solution that can dispense up to four different kinds of cleaning products, such as detergent, hand soap, and dish soap. The easy plug-n-play model allows for gray-label option and customizable exterior wrap that will further elevate the user experience. For more inquiries please feel free to <a class="contact-us" href="/pages/contact">contact us</a>.</div>
             <div class="SS1-spec-table">
                 <div class="SS1-spec-tableL">
-                    <div class="SS1-spec-includes"><span>INCLUDES</span> Payment system: your choice of TAP or receipt printer, user Portal, maintenance mode, touch screen user experience.</div>
-                    <div class="SS1-spec-pricing"><span>PRICING</span> $7,100 or $250/month with $2,000 down payment and a 24-month commitment</div>
+                    <div class="SS1-spec-includes"><span>INCLUDES</span> Payment system: your choice of TAP, QR payment or receipt printer. Also includes Station user Portal,  maintenance mode, and touch screen user experience. </div>
+                    <div class="SS1-spec-pricing"><span>PRICING</span> $7,100 per station. We also offer a leasing option of $250/month with a $2,000 down payment and a 24-month commitment</div>
+                    <div class="SS1-spec-slots"><span>SLOTS FOR CLEANING PRODUCTS: 4</span></div>
                 </div>
                 <div class="SS1-spec-tableR">
                     <div class="SS1-spec-row">
                         <div class="SS1-height-text">Height</div>
-                        <div class="SS1-height-value">142cm</div>
+                        <div class="SS1-height-value">180m</div>
                     </div>
                     <div class="SS1-spec-row">
                         <div class="SS1-width-text">Width</div>
@@ -28,10 +30,17 @@
                         <div class="SS1-depth-text">Depth</div>
                         <div class="SS1-depth-value">61cm</div>
                     </div>
+                    <div class="SS1-spec-row">
+                        <div class="SS1-depth-text">Weight</div>
+                        <div class="SS1-depth-value">105kg</div>
+                    </div>
                 </div>
             </div>
         </div>
-        <a href="/pages/our-stations" class="btn btn--black">go back</a>                
+        <div class="btn-group">
+            <a href="/pages/our-stations" class="btn btn--black btn--back">go back</a>            
+            <a href="/pages/contact" class="btn btn--black">get a quote</a>  
+        </div>
     </div>
 </section>
 
@@ -104,9 +113,18 @@
         color: black;
         font-weight: 400;
         font-size: 4.2rem;
-        padding-bottom: 2rem;
+        margin-bottom: 1.5rem;
+    }
+    .SS1-description{
         border-bottom: 3px solid black;
-        text-align: right;
+        padding-bottom: 2rem;
+        font-size: 2rem;
+        line-height: 1.5;
+    }
+    .contact-us, .contact-us:visited, .contact-us:link{
+        text-decoration: none;
+        color: var(--color-dark-blue);
+        font-weight: 600;
     }
     .station-modelNum{
         font-weight: 700;
@@ -124,16 +142,16 @@
         margin-top: 2rem;
         margin-right: 4rem;
     }
-    .SS1-spec-includes{
+    .SS1-spec-includes, .SS1-spec-pricing{
         margin-bottom: 2rem;
     }
-    .SS1-spec-includes, .SS1-spec-pricing{
+    .SS1-spec-includes, .SS1-spec-pricing, .SS1-spec-slots{
         font-size: 2rem;
         font-weight: 400;
         color: black;
-        line-height: 2;
+        line-height: 1.5;
     }
-    .SS1-spec-includes span, .SS1-spec-pricing span{
+    .SS1-spec-includes span, .SS1-spec-pricing span, .SS1-spec-slots span{
         font-weight: 700;
     }
     .SS1-spec-tableR{
@@ -158,6 +176,9 @@
         font-weight: 400;
         color: black;
         font-size: 2rem;
+    }
+    .btn--back{
+        margin-right: 1.5rem;
     }
     .btn--black, .btn--black:visited, .btn--black:link{
         display: inline-block;
@@ -219,16 +240,19 @@
         .SS1-spec-title{
             font-size: 3.6rem;
         }
-        .SS1-spec-includes, .SS1-spec-pricing{
-            font-size: 1.8rem;
+        .SS1-spec-includes, .SS1-spec-pricing, .SS1-description, .SS1-spec-slots{
+            font-size: 1.6rem;
         }
         .SS1-height-text, .SS1-width-text, .SS1-depth-text, .SS1-height-value, .SS1-width-value, .SS1-depth-value{
-            font-size: 1.8rem;
+            font-size: 1.6rem;
+        }
+        .btn-group{
+            width: 90%;
+            margin: 0 auto;
         }
         .btn--black, .btn--black:visited, .btn--black:link{
-            display: block;
             width: 15rem;
-            margin: 2rem 0 5rem auto;
+            margin: 2rem 1.5rem 5rem 0rem;
         }
     }
     /*400px*/
@@ -254,6 +278,9 @@
         .SS1-spec-title{
             font-size: 3.2rem;
             text-align: left;
+        }
+        .btn-group{
+            width: 100%;
         }
         .btn--black, .btn--black:visited, .btn--black:link{
             width: 12rem;
