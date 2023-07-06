@@ -39,9 +39,25 @@
                             <label for="email" class="email__label input-label">Email</label>
                         </div>
                     </div>
-                    <div class="organization">
-                        <input type="text" name="contact[organization]" class="organization__input input-input" id="organization" placeholder="Group or Company" required/>
-                        <label for="organization" class="organization__label input-label">Group or Company</label>
+                    <div class="input-row">
+                        <div class="country input-field">
+                            <input type="text" name="contact[country]" class="name__input input-input" id="country" placeholder="Country" required/>
+                            <label for="country" class="name__label input-label">Country</label>
+                        </div>
+                        <div class="city input-field">
+                            <input type="text" name="contact[city]" class="name__input input-input" id="last-city" placeholder="City" required/>
+                            <label for="last-city" class="name__label input-label">City</label>
+                        </div>
+                    </div>
+                    <div class="input-row">
+                        <div class="organization input-field">
+                            <input type="text" name="contact[organization]" class="organization__input input-input" id="organization" placeholder="Group or Company" required/>
+                            <label for="organization" class="organization__label input-label">Group or Company</label>
+                        </div>
+                        <div class="how input-field">
+                            <input type="text" name="contact[city]" class="name__input input-input" id="how-hear" placeholder="How did you hear about us?" required/>
+                            <label for="how-hear" class="name__label input-label">How did you hear about us?</label>
+                        </div>
                     </div>
                     <div class="message">
                         <textarea name="contact[body]" id="message" class="message__input" placeholder="Your message..." required></textarea>
@@ -62,7 +78,7 @@
                 </div>
                 <div class="contact-info contact-mobile">
                     <i class="fa-solid fa-mobile-screen-button"></i>
-                    <div class="contact-mobileNumber">Contact Info</div>
+                    <div class="contact-mobileNumber">778-239-2756</div>
                 </div>
             </div>
             <div class="contact-formR-socialMedia">
@@ -181,11 +197,11 @@
         -webkit-box-direction: normal;
             -ms-flex-direction: column;
                 flex-direction: column;
-        width: 47%;
+        width: 48%;
     }
     .input-label{
         color: var(--color-white);
-        font-size: 1.6rem;
+        font-size: 1.4rem;
         padding-left: 0.2rem;
         -webkit-transform: translateY(-5rem);
             -ms-transform: translateY(-5rem);
@@ -209,27 +225,27 @@
     }
     .input-input::-webkit-input-placeholder{
         color: var(--color-white);
-        font-size: 1.6rem;
+        font-size: 1.4rem;
         font-family: "Montserrat", sans-serif;
     }
     .input-input::-moz-placeholder{
         color: var(--color-white);
-        font-size: 1.6rem;
+        font-size: 1.4rem;
         font-family: "Montserrat", sans-serif;
     }
     .input-input:-ms-input-placeholder{
         color: var(--color-white);
-        font-size: 1.6rem;
+        font-size: 1.4rem;
         font-family: "Montserrat", sans-serif;
     }
     .input-input::-ms-input-placeholder{
         color: var(--color-white);
-        font-size: 1.6rem;
+        font-size: 1.4rem;
         font-family: "Montserrat", sans-serif;
     }
     .input-input::placeholder{
         color: var(--color-white);
-        font-size: 1.6rem;
+        font-size: 1.4rem;
         font-family: "Montserrat", sans-serif;
     }
     .input-input:-moz-placeholder-shown + .input-label{
@@ -265,14 +281,7 @@
     .email__input:not(:placeholder-shown):invalid{
         border-bottom: 2px solid #C75052;     
     }
-    .organization{
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: flex;
-        -webkit-box-orient: vertical;
-        -webkit-box-direction: normal;
-            -ms-flex-direction: column;
-                flex-direction: column;
+    .how{
         margin-bottom: 3rem;
     }
     .message{
@@ -349,7 +358,6 @@
         font-size: 1.8rem;
         color: white;
         border-radius: 25px;
-        text-transform: capitalize;
         line-height: 26px;
         cursor: pointer;
         -webkit-transition: all .2s;

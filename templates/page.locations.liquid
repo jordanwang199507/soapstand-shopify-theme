@@ -1,13 +1,13 @@
 <section class="locations">
     <div class="locations-container">
         <div class="locations__title">Constantly working to get closer and closer to you!</div>
-        <div class="locations__subtitle">Find your nearest Soapstand and refill today.</div>
-
+        <div class="locations__subtitle">Find your nearest Soapstand and refill <span>today</span>.</div>
+        <div class="locations__subtitle locations__subtitle02">Select your desired station and see the cleaning products it carries</div>
         <div class="locations-page__map-container">
             <div class="elfsight-sapp-61504c44-d10e-4419-ac16-261dce2d91fc"></div>                    
         </div>
         <div class="locations__title">Want us closer?<br>tell us where we're needed</div>
-        <a href="/pages/contact" class="btn btn--water">Contact us</a>                
+        <a href="/pages/contact" class="btn">contact us</a>                
     </div>
 </section>
 
@@ -29,7 +29,7 @@
     }
 
     .locations__title{
-        font-size: 6rem;
+        font-size: 5rem;
         color: var(--color-dark-blue);
         font-weight: 700;
         width: 95%;
@@ -38,9 +38,15 @@
 
     .locations__subtitle{
         font-weight: 400;
-        font-size: 3.7rem;
+        font-size: 3.2rem;
         color: var(--color-dark-blue);
+    }
+    .locations__subtitle02{
+        margin-top: 1.5rem;
         margin-bottom: 5vw;
+    }
+    .locations__subtitle02, .locations__subtitle span{
+        font-weight: 700;
     }
     .locations-page__map-container{
         width: 100%;
@@ -104,30 +110,29 @@
   @media only screen and (max-width: 50em){
     .locations__title{
         width: 100%;
-        font-size: 5rem;
+        font-size: 4.2rem;
     }
     .locations__subtitle{
-        font-size: 3.2rem;
+        font-size: 2.8rem;
     }
   }
   /*600px*/ 
   @media only screen and (max-width: 37.5em){
     .locations__title{
-        font-size: 4rem;
+        font-size: 3.8rem;
         padding: 5rem 0;
     }
     .locations__subtitle{
-        font-size: 2.8rem;
-        margin-bottom: 5rem;
+        font-size: 2.4rem;
     }
   }
   /*500px*/
   @media only screen and (max-width: 31.25em){
     .locations__title{
-        font-size: 3.8rem;
+        font-size: 3.6rem;
     }
     .locations__subtitle{
-        font-size: 2.6rem;
+        font-size: 2.2rem;
     }
     #eapps-google-maps-1.eapps-google-maps{
         height: 600px;
